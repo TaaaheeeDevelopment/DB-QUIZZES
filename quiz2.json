@@ -1,0 +1,711 @@
+﻿[
+  {
+    "id": 1,
+    "question": "Which of the following describes the 'Three-Schema Architecture'?",
+    "options": [
+      "a. A physical structure for storing data on disk.",
+      "b. A method for connecting multiple databases over a network.",
+      "c. A framework to support program-data independence and multiple views.",
+      "d. A tool for designing Entity-Relationship diagrams.",
+      "e. A security protocol for user authentication."
+    ],
+    "correct_answer": "c. A framework to support program-data independence and multiple views.",
+    "explanation_ar": "بنية المخططات الثلاثة (Three-Schema Architecture) صُممت أساساً لفصل تطبيقات المستخدم عن قواعد البيانات المادية، مما يحقق استقلالية البيانات.",
+    "explanation_en": "The three-schema architecture is a fundamental framework designed to separate the user applications from the physical database, thereby supporting program-data independence and allowing multiple views of the data."
+  },
+  {
+    "id": 2,
+    "question": "In the three-schema architecture, which level describes the part of the database that a particular user group is interested in?",
+    "options": [
+      "a. Internal level.",
+      "b. Conceptual level.",
+      "c. External level.",
+      "d. Physical level.",
+      "e. Logical level."
+    ],
+    "correct_answer": "c. External level.",
+    "explanation_ar": "المستوى الخارجي (External Level) هو مستوى المستخدم النهائي؛ فهو يصف فقط الجزء من قاعدة البيانات الذي يهم مجموعة محددة من المستخدمين ويخفي عنهم بقية التفاصيل.",
+    "explanation_en": "The external level (or view level) describes only the specific portion of the database that a particular user group needs to see, hiding the rest of the database structure."
+  },
+  {
+    "id": 3,
+    "question": "The capacity to change the conceptual schema without having to change external schemas or application programs is called:",
+    "options": [
+      "a. Physical data independence.",
+      "b. Logical data independence.",
+      "c. Conceptual integrity.",
+      "d. External mapping.",
+      "e. Data abstraction."
+    ],
+    "correct_answer": "b. Logical data independence.",
+    "explanation_ar": "الاستقلالية المنطقية للبيانات تعني أنك تستطيع التعديل على المخطط المنطقي (Conceptual Schema) مثل إضافة جداول جديدة، دون أن تضطر لإعادة برمجة واجهات وتطبيقات المستخدمين.",
+    "explanation_en": "Logical data independence is the ability to modify the conceptual schema (like adding new tables) without causing a need to rewrite the external schemas or the applications that rely on them."
+  },
+  {
+    "id": 4,
+    "question": "What is the primary purpose of the 'Internal Schema' in the three-schema architecture?",
+    "options": [
+      "a. To define the entities and relationships for the entire community of users.",
+      "b. To describe the physical storage structure and access paths for the database.",
+      "c. To define the specific views for individual end-users.",
+      "d. To manage the communication between the client and the server.",
+      "e. To store the data dictionary."
+    ],
+    "correct_answer": "b. To describe the physical storage structure and access paths for the database.",
+    "explanation_ar": "المخطط الداخلي (Internal Schema) يهتم بالتفاصيل الدنيوية والتقنية البحتة؛ مثل كيفية تخزين البيانات فعلياً على القرص الصلب ومسارات الوصول (Indexes) إليها.",
+    "explanation_en": "The internal schema operates at the lowest level of abstraction, explicitly detailing the physical storage structures, data types, and access paths (like indexes) on the storage media."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following is true regarding 'Physical Data Independence'?",
+    "options": [
+      "a. It is harder to achieve than logical data independence.",
+      "b. It refers to changing the conceptual schema without affecting the internal schema.",
+      "c. It allows changes to the internal schema without requiring a change to the conceptual schema.",
+      "d. It requires application programs to be rewritten whenever a new index is created.",
+      "e. It is primarily managed by the end-user."
+    ],
+    "correct_answer": "c. It allows changes to the internal schema without requiring a change to the conceptual schema.",
+    "explanation_ar": "الاستقلالية المادية تسمح لك بتغيير كيفية تخزين البيانات فعلياً (تغيير المخطط الداخلي) دون التأثير على المخطط المنطقي أو البرامج.",
+    "explanation_en": "Physical data independence ensures that internal schema modifications (e.g., reorganizing file structures) do not necessitate any changes to the conceptual schema or application programs."
+  },
+  {
+    "id": 6,
+    "question": "In a 'Two-Tier' Client-Server architecture, where does the GUI typically reside?",
+    "options": [
+      "a. On the server side.",
+      "b. On the client side.",
+      "c. In the database engine.",
+      "d. In the cloud middleware.",
+      "e. In the data dictionary."
+    ],
+    "correct_answer": "b. On the client side.",
+    "explanation_ar": "في معمارية الطبقتين، تكون واجهة المستخدم الرسومية (GUI) محملة دائماً على جهاز العميل (Client side)، بينما يبقى محرك قاعدة البيانات على الخادم.",
+    "explanation_en": "In a two-tier architecture, the presentation layer containing the Graphical User Interface (GUI) is consistently hosted on the client machine."
+  },
+  {
+    "id": 7,
+    "question": "The process of transforming requests and results between different levels of the three-schema architecture is called:",
+    "options": [
+      "a. Compilation.",
+      "b. Normalisation.",
+      "c. Mapping.",
+      "d. Integration.",
+      "e. Encapsulation."
+    ],
+    "correct_answer": "c. Mapping.",
+    "explanation_ar": "التخطيط أو الربط (Mapping) هو العملية التي تترجم الأوامر من مستوى إلى آخر، مثلاً ترجمة استعلام من المستوى الخارجي ليفهمه المخطط الداخلي.",
+    "explanation_en": "Mapping is the transformation mechanism that allows the DBMS to translate requests and data formats as they move between the external, conceptual, and internal levels."
+  },
+  {
+    "id": 8,
+    "question": "Which DBMS language is used to specify user views and their mappings to the conceptual schema in a specialised environment?",
+    "options": [
+      "a. DDL.",
+      "b. SDL.",
+      "c. VDL.",
+      "d. High-level DML.",
+      "e. Assembly Language."
+    ],
+    "correct_answer": "c. VDL.",
+    "explanation_ar": "لغة تعريف العرض (VDL) هي اللغة المخصصة لتحديد واجهات المستخدم (Views) وكيفية ربطها بالمخطط المنطقي في بعض أنظمة إدارة قواعد البيانات.",
+    "explanation_en": "The View Definition Language (VDL) is specifically utilized to declare user views and establish their mappings to the conceptual schema."
+  },
+  {
+    "id": 9,
+    "question": "Which statement best distinguishes the 'Conceptual Schema' from the 'Internal Schema'?",
+    "options": [
+      "a. The conceptual schema describes disk blocks; the internal schema describes tables.",
+      "b. The conceptual schema describes the structure of the whole database for all users; the internal schema describes physical storage.",
+      "c. The conceptual schema is written in C++; the internal schema is written in SQL.",
+      "d. The conceptual schema is visible to end-users; the internal schema is visible to the DBA only.",
+      "e. There is no difference; they are two names for the same level of abstraction."
+    ],
+    "correct_answer": "b. The conceptual schema describes the structure of the whole database for all users; the internal schema describes physical storage.",
+    "explanation_ar": "المخطط المنطقي يصف الكيانات والعلاقات لجميع المستخدمين، بينما المخطط الداخلي يركز فقط على التفاصيل الفيزيائية للتخزين على الأقراص.",
+    "explanation_en": "The conceptual schema provides a global, logical view of the entire database structure, whereas the internal schema dictates how this data is physically stored and accessed on the hardware."
+  },
+  {
+    "id": 10,
+    "question": "When a DML is 'Embedded' in a host programming language (like C++ or Java), how are the database results usually handled?",
+    "options": [
+      "a. Through a shared system buffer or variables that interface between the host language and the DBMS.",
+      "b. The host language converts all database tables into local arrays automatically.",
+      "c. The host language is ignored, and the DBMS takes over the entire CPU.",
+      "d. The DML must be rewritten into the host language syntax before execution.",
+      "e. Results can only be printed to the screen and cannot be processed by the program."
+    ],
+    "correct_answer": "a. Through a shared system buffer or variables that interface between the host language and the DBMS.",
+    "explanation_ar": "عند دمج لغة الاستعلام (مثل SQL) داخل لغة برمجة (مثل Java)، يتم تبادل البيانات من خلال متغيرات مشتركة (Variables/Cursors) تعمل كجسر بين البرنامج وقاعدة البيانات.",
+    "explanation_en": "Embedded DML retrieves data into host language variables or cursors, which act as a shared interface allowing the application program to process the database results."
+  }
+,
+
+  {
+    "id": 11,
+    "question": "In the relational model, what is a row in a table technically called?",
+    "options": [
+      "a. An attribute",
+      "b. A domain",
+      "c. A tuple",
+      "d. A relation",
+      "e. A field"
+    ],
+    "correct_answer": "c. A tuple",
+    "explanation_ar": "في النموذج العلائقي الصارم، الصف (Row) يُسمى تقنياً بالـ 'Tuple'. أما الجدول فهو Relation، والعمود هو Attribute.",
+    "explanation_en": "In formal relational database terminology, a row is technically called a tuple, while a table is a relation, and a column is an attribute."
+  },
+  {
+    "id": 12,
+    "question": "Which of the following defines the set of allowed values for an attribute?",
+    "options": [
+      "a. Domain",
+      "b. Relation",
+      "c. Key",
+      "d. Schema",
+      "e. Degree"
+    ],
+    "correct_answer": "a. Domain",
+    "explanation_ar": "المجال (Domain) هو مجموعة القيم المسموح بها والمحتملة التي يمكن أن يأخذها عمود (Attribute) معين (مثلاً: مجال 'الدرجات' يجب أن يكون رقماً بين 0 و 100).",
+    "explanation_en": "A domain specifies the set of all valid, permissible atomic values that an attribute can hold within a relation."
+  },
+  {
+    "id": 13,
+    "question": "The number of attributes in a relation schema is known as its:",
+    "options": [
+      "a. Cardinality",
+      "b. Set",
+      "c. Instance",
+      "d. Degree",
+      "e. Integrity"
+    ],
+    "correct_answer": "d. Degree",
+    "explanation_ar": "الدرجة (Degree) في قواعد البيانات تعبر عن عدد الأعمدة (Attributes) الموجودة في الجدول. بينما عدد الصفوف (Tuples) يُسمى الكاردينالية (Cardinality).",
+    "explanation_en": "The degree (or arity) of a relation refers to the total number of attributes (columns) it contains. The number of tuples is called cardinality."
+  },
+  {
+    "id": 14,
+    "question": "A candidate key that is chosen to uniquely identify tuples in a relation is called the:",
+    "options": [
+      "a. Superkey",
+      "b. Foreign key",
+      "c. Primary key",
+      "d. Secondary key",
+      "e. Domain key"
+    ],
+    "correct_answer": "c. Primary key",
+    "explanation_ar": "المفتاح الأساسي (Primary key) هو ببساطة مفتاح مرشح (Candidate key) تم اختياره رسمياً من قبل مصمم القاعدة ليكون المعرف الرئيسي والوحيد لكل صف.",
+    "explanation_en": "A primary key is a specific candidate key chosen by the database designer to uniquely identify tuples within a relation."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following violates the 'Key Constraint'?",
+    "options": [
+      "a. Inserting a tuple with a NULL foreign key.",
+      "b. Inserting two tuples with the same value for the primary key.",
+      "c. Deleting a tuple that is not referenced by any other table.",
+      "d. Changing a non-key attribute value.",
+      "e. Defining a domain that is too small for the data."
+    ],
+    "correct_answer": "b. Inserting two tuples with the same value for the primary key.",
+    "explanation_ar": "قيد المفتاح (Key Constraint) يفرض أن يكون لكل صف قيمة مفتاح أساسي فريدة. إدخال صفين بنفس قيمة المفتاح الأساسي هو انتهاك مباشر وصارخ لهذا القيد.",
+    "explanation_en": "The Key Constraint mandates absolute uniqueness for the primary key. Attempting to insert two tuples with identical primary key values directly violates this constraint."
+  },
+  {
+    "id": 16,
+    "question": "What happens in a 'CASCADE' delete option for referential integrity?",
+    "options": [
+      "a. When a referenced tuple is deleted, all tuples referencing it are also deleted.",
+      "b. The delete operation is blocked if there are referencing tuples.",
+      "c. The foreign key values in referencing tuples are set to NULL.",
+      "d. The foreign key values in referencing tuples are set to a default value.",
+      "e. Only the referenced tuple is deleted, leaving 'orphans.'"
+    ],
+    "correct_answer": "a. When a referenced tuple is deleted, all tuples referencing it are also deleted.",
+    "explanation_ar": "خيار التتالي (CASCADE) في الحذف يعني أنه إذا تم حذف سجل رئيسي (مثل قسم)، سيقوم النظام تلقائياً وبشكل متتالٍ بحذف جميع السجلات المرتبطة به (مثل جميع موظفي ذلك القسم) لتجنب ترك سجلات يتيمة.",
+    "explanation_en": "With the CASCADE delete option, deleting a referenced tuple in a parent table automatically triggers the cascading deletion of all related referencing tuples in the child table to maintain referential integrity."
+  },
+  {
+    "id": 17,
+    "question": "The 'Relational State' of a database is:",
+    "options": [
+      "a. The definition of the tables and attributes.",
+      "b. The list of all possible values for the domains.",
+      "c. The data currently stored in the database at a specific moment in time.",
+      "d. The set of all integrity constraints.",
+      "e. The SQL code used to create the tables."
+    ],
+    "correct_answer": "c. The data currently stored in the database at a specific moment in time.",
+    "explanation_ar": "حالة القاعدة (Relational State أو Instance) تشير إلى البيانات الفعلية (الصفوف) المخزنة داخل الجداول في لحظة زمنية معينة، وهي تتغير باستمرار مع كل عملية إدخال أو حذف.",
+    "explanation_en": "The relational state (or instance) refers to the actual dataset—the specific set of tuples—populating the database relations at any given, specific moment in time."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following is NOT a formal property of a relation?",
+    "options": [
+      "a. All tuples in a relation are distinct.",
+      "b. Each attribute has a distinct name within the relation.",
+      "c. Each value in a tuple is atomic.",
+      "d. The attributes must be ordered according to their data types.",
+      "e. The values in a column are of the same domain."
+    ],
+    "correct_answer": "d. The attributes must be ordered according to their data types.",
+    "explanation_ar": "الترتيب ليس له أي أهمية في النموذج العلائقي المعتمد على نظرية المجموعات الرياضية؛ لا ترتيب الصفوف يهم، ولا ترتيب الأعمدة يهم.",
+    "explanation_en": "In the relational model, which is based on mathematical set theory, relations are unordered. Therefore, enforcing an order on attributes (or tuples) is not a formal property."
+  },
+  {
+    "id": 19,
+    "question": "Consider a relation R with attributes (A,B,C). If {A,B} is a candidate key, which of the following is definitely a superkey?",
+    "options": [
+      "a. {A,C}",
+      "b. {B,C}",
+      "c. {A,B,C}",
+      "d. {A}",
+      "e. {B}"
+    ],
+    "correct_answer": "c. {A,B,C}",
+    "explanation_ar": "المفتاح الفائق (Superkey) هو أي مجموعة من الأعمدة تضمن التفرد. بما أن {A,B} مفتاح مرشح (وبالتالي هو مفتاح فائق بالضرورة)، فإن إضافة أي عمود آخر إليه مثل C سيجعله يبقى مفتاحاً فائقاً قادراً على تحديد الصف.",
+    "explanation_en": "A superkey uniquely identifies a tuple. If {A, B} is a candidate key, it is inherently a superkey. Adding any other attribute(s) to it, like C, creating {A, B, C}, maintains the uniqueness property, making it a superkey."
+  },
+  {
+    "id": 20,
+    "question": "In the formal relational model, why is a 'multiset' (or bag) of tuples technically not a relation?",
+    "options": [
+      "a. Because a relation is defined as a mathematical set, and sets cannot have duplicate elements.",
+      "b. Because a relation must have at least one foreign key.",
+      "c. Because a multiset allows attributes to have multiple values.",
+      "d. Because a multiset does not support relational algebra.",
+      "e. Because a multiset must be ordered."
+    ],
+    "correct_answer": "a. Because a relation is defined as a mathematical set, and sets cannot have duplicate elements.",
+    "explanation_ar": "العلاقة (Relation) مبنية على نظرية المجموعات (Sets) في الرياضيات، والمجموعة لا تسمح بتكرار العناصر نهائياً. الـ Multiset (أو الحقيبة) تسمح بالتكرار، لذلك فهي تكسر القاعدة الأساسية للنموذج العلائقي.",
+    "explanation_en": "Relational databases are rigorously grounded in mathematical set theory. A fundamental rule of a set is that it contains no duplicate elements, whereas a multiset (bag) explicitly allows duplicates, disqualifying it from being a formal relation."
+  }
+,
+
+  {
+    "id": 21,
+    "question": "In ER modelling, an attribute like 'Age' that can be calculated from a 'Birth_date' is known as a:",
+    "options": [
+      "a. Complex attribute",
+      "b. Key attribute",
+      "c. Stored attribute",
+      "d. Derived attribute",
+      "e. Null attribute"
+    ],
+    "correct_answer": "d. Derived attribute",
+    "explanation_ar": "السمة المشتقة (Derived attribute) هي السمة التي لا يتم تخزين قيمتها فعلياً في قاعدة البيانات لمنع التكرار، بل يتم حسابها واستنتاجها ديناميكياً من سمات أخرى (مثل حساب العمر تلقائياً من تاريخ الميلاد).",
+    "explanation_en": "A derived attribute is one whose value is not physically stored in the database but is calculated dynamically from the value of another stored attribute (like calculating age from a birth date)."
+  },
+  {
+    "id": 22,
+    "question": "A set of entities of the same type that share the same attributes is called an:",
+    "options": [
+      "a. Entity type",
+      "b. Attribute set",
+      "c. Relationship set",
+      "d. Value set",
+      "e. Entity instance"
+    ],
+    "correct_answer": "a. Entity type",
+    "explanation_ar": "نوع الكيان (Entity type) هو الوصف العام أو 'القالب' لمجموعة من الكيانات (Entities) التي تشترك في نفس الهيكل والسمات (مثلاً: نوع الكيان 'طالب' يضم جميع الطلاب الفرديين).",
+    "explanation_en": "An entity type defines a collection (or set) of entities that share the same attributes. It acts as a structural template or schema for those individual entities."
+  },
+  {
+    "id": 23,
+    "question": "Which symbol is used in an ER diagram to represent a relationship type?",
+    "options": [
+      "a. Oval",
+      "b. Diamond",
+      "c. Double Oval",
+      "d. Rectangle",
+      "e. Dashed Oval"
+    ],
+    "correct_answer": "b. Diamond",
+    "explanation_ar": "في مخططات الكيانات والعلاقات (ER Diagrams) القياسية، شكل المعين (Diamond) يمثل دائماً 'العلاقات' بين الكيانات، بينما المستطيل يمثل الكيان، والشكل البيضاوي يمثل السمات.",
+    "explanation_en": "In standard Entity-Relationship (ER) modeling notation, a diamond shape explicitly represents a relationship type connecting two or more entity types."
+  },
+  {
+    "id": 24,
+    "question": "An attribute that can have more than one value for a specific entity (e.g., 'Colours' for a car) is called a:",
+    "options": [
+      "a. Composite attribute",
+      "b. Multi-valued attribute",
+      "c. Required attribute",
+      "d. Single-valued attribute",
+      "e. Key attribute"
+    ],
+    "correct_answer": "b. Multi-valued attribute",
+    "explanation_ar": "السمة متعددة القيم (Multi-valued attribute) هي التي يمكن أن تحتوي على أكثر من قيمة لكيان واحد في نفس الوقت، مثل امتلاك الشخص لعدة أرقام هواتف أو سيارة بعدة ألوان.",
+    "explanation_en": "A multi-valued attribute can hold multiple discrete values for a single entity instance simultaneously, such as a person having multiple phone numbers."
+  },
+  {
+    "id": 25,
+    "question": "Which of the following describes a 'Weak Entity Type'?",
+    "options": [
+      "a. An entity that has no attributes.",
+      "b. An entity that participates in more than three relationships.",
+      "c. An entity that has a unique primary key.",
+      "d. An entity that does not have a key attribute of its own.",
+      "e. An entity that is not connected to any other entity."
+    ],
+    "correct_answer": "d. An entity that does not have a key attribute of its own.",
+    "explanation_ar": "الكيان الضعيف (Weak Entity) هو الكيان الذي يفتقر لوجود مفتاح أساسي خاص به يُميِّزه، ويعتمد كلياً في وجوده وتعريفه على كيان آخر أقوى منه يُسمى الكيان المالك (Owner Entity).",
+    "explanation_en": "A weak entity type is defined by its lack of a distinct primary key. Its existence and identification are strictly dependent on a stronger identifying entity (the owner entity)."
+  },
+  {
+    "id": 26,
+    "question": "The number of participating entity types in a relationship is known as the:",
+    "options": [
+      "a. Cardinality ratio",
+      "b. Participation constraint",
+      "c. Degree of the relationship",
+      "d. Recursive limit",
+      "e. Entity count"
+    ],
+    "correct_answer": "c. Degree of the relationship",
+    "explanation_ar": "درجة العلاقة (Degree of a relationship) تعبر عن عدد الكيانات المشاركة فيها. إذا شارك كيانان فهي علاقة ثنائية (Binary)، وإذا شاركت ثلاثة فهي ثلاثية (Ternary).",
+    "explanation_en": "The degree of a relationship specifies the total number of entity types that participate in that specific relationship type."
+  },
+  {
+    "id": 27,
+    "question": "In a 1:N relationship between DEPARTMENT and EMPLOYEE, which side is the 'many' side?",
+    "options": [
+      "a. Department",
+      "b. Employee",
+      "c. Both Department and Employee",
+      "d. Neither",
+      "e. Only the Manager entity"
+    ],
+    "correct_answer": "b. Employee",
+    "explanation_ar": "في علاقة القسم والموظف (1:N)، القسم الواحد (1) يمكن أن يحتوي على عدة موظفين (N). لذلك، الموظف هو الجانب 'المتعدد' (Many) في هذه العلاقة.",
+    "explanation_en": "In a standard 1:N (one-to-many) relationship between DEPARTMENT and EMPLOYEE, one department can employ many employees, naturally making EMPLOYEE the 'many' (N) side."
+  },
+  {
+    "id": 28,
+    "question": "What is the 'Identifying Relationship' in the context of a weak entity?",
+    "options": [
+      "a. A relationship between two strong entities.",
+      "b. The relationship that associates a weak entity with its owner entity.",
+      "c. Any relationship involving a primary key.",
+      "d. A relationship that has its own attributes.",
+      "e. A relationship with a 1:1 cardinality ratio."
+    ],
+    "correct_answer": "b. The relationship that associates a weak entity with its owner entity.",
+    "explanation_ar": "العلاقة المُعَرِّفة (Identifying Relationship) هي العلاقة الإلزامية التي تربط الكيان الضعيف بكيانه المالك القوي، مما يتيح للكيان الضعيف استعارة مفتاح المالك لتحديد سجلاته.",
+    "explanation_en": "An identifying relationship is the specific dependency relationship that links a weak entity to its strong owner entity, allowing the weak entity to be uniquely identified."
+  },
+  {
+    "id": 29,
+    "question": "Which of the following is TRUE regarding Ternary relationships?",
+    "options": [
+      "a. They can always be accurately represented as three binary relationships.",
+      "b. They only involve two entity types with three attributes.",
+      "c. They represent a relationship between three entity types that is not equivalent to binary relationships.",
+      "d. They must have a 1:1:1 cardinality ratio.",
+      "e. They cannot have their own attributes."
+    ],
+    "correct_answer": "c. They represent a relationship between three entity types that is not equivalent to binary relationships.",
+    "explanation_ar": "العلاقة الثلاثية (Ternary) تربط بين ثلاثة كيانات في وقت واحد، والدلالة المنطقية لها مختلفة تماماً ولا يمكن دائماً تكسيرها إلى علاقات ثنائية منفصلة دون فقدان المعنى.",
+    "explanation_en": "A ternary relationship simultaneously connects three distinct entity types. Its semantics are complex and cannot always be perfectly decomposed into multiple binary relationships without losing critical information constraints."
+  },
+  {
+    "id": 30,
+    "question": "In the Min-Max notation (min, max), if the constraint for an Employee in a 'Works_For' relationship is (1, 1), it implies:",
+    "options": [
+      "a. The employee can work for many departments.",
+      "b. The employee does not have to work for any department.",
+      "c. Every employee must work for exactly one department.",
+      "d. At least one employee must work for the department.",
+      "e. The relationship is M:N."
+    ],
+    "correct_answer": "c. Every employee must work for exactly one department.",
+    "explanation_ar": "في تدوين (min, max)، الرقم الأول (1) يعني الحد الأدنى للمشاركة (مشاركة إجبارية)، والرقم الثاني (1) يعني الحد الأقصى (قسم واحد كحد أقصى). النتيجة: كل موظف يعمل في قسم واحد بالضبط.",
+    "explanation_en": "In (min, max) notation, (1, 1) specifies that the minimum participation is 1 (mandatory) and the maximum is 1. Thus, each specific employee is strictly constrained to work for exactly one department."
+  }
+,
+
+  {
+    "id": 31,
+    "question": "Which of the following is the basic statement for retrieving information from a database in SQL?",
+    "options": [
+      "a. GET",
+      "b. FETCH",
+      "c. SELECT",
+      "d. EXTRACT",
+      "e. LIST"
+    ],
+    "correct_answer": "c. SELECT",
+    "explanation_ar": "أمر SELECT هو الأساس والعمود الفقري في لغة SQL؛ ووظيفته الوحيدة والأساسية هي استرجاع وقراءة البيانات من جداول قاعدة البيانات لعرضها للمستخدم.",
+    "explanation_en": "The SELECT statement is the fundamental and most heavily used command in SQL, specifically designed to retrieve and query data from a database."
+  },
+  {
+    "id": 32,
+    "question": "In an SQL query, which clause is used to specify the conditions that the retrieved tuples must satisfy?",
+    "options": [
+      "a. FROM",
+      "b. SELECT",
+      "c. HAVING",
+      "d. WHERE",
+      "e. GROUP BY"
+    ],
+    "correct_answer": "d. WHERE",
+    "explanation_ar": "جملة WHERE تُستخدم كـ 'مصفاة' لفرض شروط (Conditions) صارمة على الصفوف، حيث يتجاهل المحرك أي صف لا يحقق هذا الشرط ويسترجع المطابق فقط.",
+    "explanation_en": "The WHERE clause acts as a strict filter in a query. It specifies the exact logical conditions that individual tuples must satisfy to be included in the final result set."
+  },
+  {
+    "id": 33,
+    "question": "Which SQL keyword is used to eliminate duplicate tuples from the result of a query?",
+    "options": [
+      "a. UNIQUE",
+      "b. SINGLE",
+      "c. DISTINCT",
+      "d. ONLY",
+      "e. DIFFERENT"
+    ],
+    "correct_answer": "c. DISTINCT",
+    "explanation_ar": "الكلمة المفتاحية DISTINCT تُضاف مباشرة بعد SELECT لإجبار محرك قاعدة البيانات على مسح أي صفوف متطابقة تماماً وإرجاع النتائج الفريدة فقط.",
+    "explanation_en": "The DISTINCT keyword is utilized immediately following the SELECT statement to automatically identify and eliminate any entirely duplicate rows from the returned results."
+  },
+  {
+    "id": 34,
+    "question": "In the context of SQL, what is a 'Schema'?",
+    "options": [
+      "a. A specific row in a table.",
+      "b. The data stored in the database at a specific moment.",
+      "c. A collection of tables and other descriptors that belong to the same database.",
+      "d. A query used to retrieve information.",
+      "e. The physical hardware where data is stored."
+    ],
+    "correct_answer": "c. A collection of tables and other descriptors that belong to the same database.",
+    "explanation_ar": "المخطط (Schema) في بيئة SQL هو عبارة عن حاوية منطقية كبرى تُنظم وتضم بداخلها الجداول، العروض (Views)، القيود، وأي كائنات أخرى تنتمي لقاعدة بيانات أو مستخدم معين.",
+    "explanation_en": "In SQL terminology, a schema is a logical overarching container that groups together related database objects, including tables, views, and integrity constraints."
+  },
+  {
+    "id": 35,
+    "question": "What happens if a DELETE statement is executed without a WHERE clause?",
+    "options": [
+      "a. The table structure is removed from the database.",
+      "b. All tuples in the relation are deleted, but the table definition remains.",
+      "c. Only the first tuple in the relation is deleted.",
+      "d. SQL will prompt for a confirmation for every row.",
+      "e. The statement will result in a syntax error."
+    ],
+    "correct_answer": "b. All tuples in the relation are deleted, but the table definition remains.",
+    "explanation_ar": "هذا خطأ كارثي يقع فيه المبتدئون. تنفيذ أمر DELETE بدون شرط WHERE يعني أنك تقول للنظام 'احذف كل شيء'؛ فتمسح جميع السجلات من الجدول دفعة واحدة، مع بقاء هيكل الجدول فارغاً.",
+    "explanation_en": "Omitting the WHERE clause in a DELETE statement is extremely dangerous; it acts as an unconstrained command, instructing the DBMS to ruthlessly wipe out every single tuple while leaving the empty table structure intact."
+  },
+  {
+    "id": 36,
+    "question": "Which of the following is the correct way to update the value of an attribute in SQL?",
+    "options": [
+      "a. UPDATE TableName SET Attribute = Value WHERE Condition",
+      "b. CHANGE TableName SET Attribute = Value WHERE Condition",
+      "c. MODIFY TableName SET Attribute = Value WHERE Condition",
+      "d. UPDATE Attribute IN TableName TO Value WHERE Condition",
+      "e. SET Attribute = Value FROM TableName"
+    ],
+    "correct_answer": "a. UPDATE TableName SET Attribute = Value WHERE Condition",
+    "explanation_ar": "هذه هي الصياغة القياسية الوحيدة والصارمة في SQL لتعديل البيانات: نستخدم UPDATE (لتحديد الجدول)، ثم SET (لتحديد العمود والقيمة الجديدة)، ثم WHERE (لتحديد الصف المستهدف).",
+    "explanation_en": "The universally accepted and syntactically rigid SQL formula for modifying existing data is to use the UPDATE keyword for the table, SET for the column assignment, and WHERE to target specific rows."
+  },
+  {
+    "id": 37,
+    "question": "How does SQL handle NULL values when evaluating a comparison in a WHERE clause (e.g., Salary > 50000)?",
+    "options": [
+      "a. It treats NULL as 0.",
+      "b. It treats NULL as the maximum possible value.",
+      "c. It returns 'True' if the value is NULL.",
+      "d. The result of the comparison is 'Unknown,' and the tuple is not selected.",
+      "e. It throws an execution error."
+    ],
+    "correct_answer": "d. The result of the comparison is 'Unknown,' and the tuple is not selected.",
+    "explanation_ar": "الـ NULL يعني 'قيمة مجهولة'. لا يمكنك مقارنة رقم بقيمة مجهولة. لذلك، أي مقارنة رياضية مع NULL لا تعطي 'صح' ولا 'خطأ'، بل تعطي 'مجهول' (Unknown)، وبالتالي يتجاهلها المحرك ولا يعرض الصف.",
+    "explanation_en": "NULL represents an unknown or missing value. Standard SQL logic dictates that comparing any concrete value to NULL results in an 'Unknown' boolean state. Since WHERE clauses only pass 'True' results, the tuple is filtered out."
+  },
+  {
+    "id": 38,
+    "question": "Which keyword is used to rename an attribute in the result of a query for better readability?",
+    "options": [
+      "a. NEW",
+      "b. NAME",
+      "c. LIKE",
+      "d. AS",
+      "e. TO"
+    ],
+    "correct_answer": "d. AS",
+    "explanation_ar": "الكلمة المفتاحية AS (الاسم المستعار - Alias) تستخدم لإعطاء عمود معين اسماً تقديمياً مؤقتاً في نتيجة الاستعلام لتكون مقروءة، دون أن يتغير اسم العمود الأصلي في قاعدة البيانات.",
+    "explanation_en": "The AS keyword provides a mechanism to assign a temporary alias (a more readable or descriptive name) to a column specifically for the output display, without permanently altering the schema."
+  },
+  {
+    "id": 39,
+    "question": "Consider the query: SELECT Name FROM Employee WHERE Salary > ALL (SELECT Salary FROM Employee WHERE Dept_no = 5). What does this query retrieve?",
+    "options": [
+      "a. Employees who earn more than at least one person in Department 5.",
+      "b. Employees who work in Department 5 and have high salaries.",
+      "c. Employees who earn more than every single employee in Department 5.",
+      "d. The employee with the highest salary in the entire company.",
+      "e. Employees whose salaries are not null in Department 5."
+    ],
+    "correct_answer": "c. Employees who earn more than every single employee in Department 5.",
+    "explanation_ar": "المعامل ALL يفرض شرطاً مطلقاً. لكي ينجح الشرط، يجب أن يكون راتب الموظف أعلى من راتب 'كل واحد' من موظفي القسم 5، وهذا يعني منطقياً أنه يجب أن يكون أعلى من أقصى راتب في ذلك القسم.",
+    "explanation_en": "The ALL operator acts as a rigorous threshold. It mandates that the outer query's salary value must be strictly greater than every single salary value returned by the inner subquery (essentially greater than the maximum)."
+  },
+  {
+    "id": 40,
+    "question": "Which statement regarding the DROP command is correct?",
+    "options": [
+      "a. It is used to remove specific rows from a table based on a condition.",
+      "b. It clears the data in a table but keeps the columns.",
+      "c. It removes the entire relation definition and all its tuples from the database.",
+      "d. It is a DML (Data Manipulation Language) command.",
+      "e. It can only be used if the table is empty."
+    ],
+    "correct_answer": "c. It removes the entire relation definition and all its tuples from the database.",
+    "explanation_ar": "أمر DROP هو أمر تدميري (DDL). هو لا يمسح البيانات فقط كأمر DELETE، بل يقتلع الجدول من جذوره؛ يمسح الهيكل، الأعمدة، القيود، وكل البيانات المخزنة بداخله.",
+    "explanation_en": "The DROP TABLE command is a severe DDL operation. It completely obliterates the relation from the database, dropping both its structural definition (schema) and all populated tuples permanently."
+  }
+,
+
+  {
+    "id": 41,
+    "question": "For the UNION operation (R U S) to be valid, what condition must be met by relations R and S? ",
+    "options": [
+      "a. They must have the same number of tuples. ",
+      "b. They must share at least one common attribute name. ",
+      "c. They must be type-compatible (or union-compatible). ",
+      "d. One relation must be a subset of the other. ",
+      "e. They must both have a primary key defined. "
+    ],
+    "correct_answer": "c. They must be type-compatible (or union-compatible). ",
+    "explanation_ar": "لكي تنجح عملية الاتحاد (UNION)، يجب أن يكون الجدولان متوافقين نوعياً (Type-compatible أو Union-compatible)، بمعنى أن يكون لهما نفس عدد الأعمدة، والأعمدة المتقابلة لها نفس نوع البيانات.",
+    "explanation_en": "For a UNION operation to be valid, the two participating relations must be union-compatible (or type-compatible), meaning they have the same number of attributes and the domains of corresponding attributes match."
+  },
+  {
+    "id": 42,
+    "question": "Which symbol is used to represent the SELECT operation in relational algebra? ",
+    "options": [
+      "a. σ ",
+      "b. π ",
+      "c. p ",
+      "d. D ",
+      "e. X "
+    ],
+    "correct_answer": "a. σ ",
+    "explanation_ar": "في الجبر العلائقي، الرمز الإغريقي سيجما (σ) يُستخدم لتمثيل عملية الاختيار (SELECT) التي تقوم بفلترة الصفوف.",
+    "explanation_en": "In relational algebra, the lowercase Greek letter sigma (σ) is the standard symbol used to denote the SELECT operation."
+  },
+  {
+    "id": 43,
+    "question": "The result of a SELECT operation can be best described as: ",
+    "options": [
+      "a. A horizontal slice of the relation. ",
+      "b. A vertical slice of the relation. ",
+      "c. A subset of the tuples from the original relation. ",
+      "d. A combination of two different schemas. ",
+      "e. A list of unique attribute names. "
+    ],
+    "correct_answer": "a. A horizontal slice of the relation. ",
+    "explanation_ar": "عملية SELECT تقص الجدول أفقياً (Horizontal slice) لأنها تسترجع صفوفاً كاملة ولكنها تفلترها حسب شرط معين. بينما عملية الإسقاط (PROJECT) تقص الجدول عمودياً.",
+    "explanation_en": "The SELECT operation is often conceptualized as taking a 'horizontal slice' (or partition) of a relation because it filters and returns complete tuples (rows) that satisfy a given condition, leaving the columns intact."
+  },
+  {
+    "id": 44,
+    "question": "If relation R has n tuples and relation S has m tuples, how many tuples will the Cartesian Product (R x S) contain? ",
+    "options": [
+      "a. n+m ",
+      "b. n x m ",
+      "c. n^m ",
+      "d. MAX(n,m) ",
+      "e. n-m "
+    ],
+    "correct_answer": "b. n x m ",
+    "explanation_ar": "الضرب الديكارتي (Cartesian Product) يقوم بربط كل صف في الجدول الأول بكل صف في الجدول الثاني. لذا، إذا كان الأول يحتوي على n والثاني على m، فالنتيجة هي n مضروبة في m.",
+    "explanation_en": "The Cartesian Product combines every tuple of relation R with every tuple of relation S, resulting in a total tuple count of n multiplied by m."
+  },
+  {
+    "id": 45,
+    "question": "Which operation is equivalent to a CARTESIAN PRODUCT followed by a SELECT operation? ",
+    "options": [
+      "a. PROJECT ",
+      "b. UNION ",
+      "c. SET DIFFERENCE ",
+      "d. THETA JOIN ",
+      "e. INTERSECT "
+    ],
+    "correct_answer": "d. THETA JOIN ",
+    "explanation_ar": "عملية الربط (Theta Join) هي في الواقع اختصار رياضي لعملية ضرب ديكارتي (Cartesian Product) لجدولين، يتبعها مباشرة عملية فلترة (SELECT) بناءً على شرط الربط.",
+    "explanation_en": "A Theta Join is mathematically defined as performing a Cartesian Product of two relations and then immediately applying a SELECT operation to filter the results based on the join condition."
+  },
+  {
+    "id": 46,
+    "question": "In relational algebra, the INTERSECT (∩) operation can be expressed using which other basic operation? ",
+    "options": [
+      "a. SET DIFFERENCE ",
+      "b. PROJECT ",
+      "c. UNION ",
+      "d. CARTESIAN PRODUCT ",
+      "e. RENAME "
+    ],
+    "correct_answer": "a. SET DIFFERENCE ",
+    "explanation_ar": "عملية التقاطع (INTERSECT) ليست عملية أساسية بحتة، إذ يمكن محاكاتها باستخدام عملية فرق المجموعات (Set Difference). رياضياً: R ∩ S تعادل R - (R - S).",
+    "explanation_en": "INTERSECT is a derived operation. It can be expressed purely in terms of the basic SET DIFFERENCE operation: R ∩ S is logically equivalent to R - (R - S)."
+  },
+  {
+    "id": 47,
+    "question": "What happens to duplicate tuples in the result of a PROJECT operation? ",
+    "options": [
+      "a. They are kept as they appear in the original relation. ",
+      "b. They are automatically removed to maintain the set property of a relation. ",
+      "c. The operation fails if duplicates are found. ",
+      "d. They are highlighted for the user to manually delete. ",
+      "e. Only the first two occurrences are kept. "
+    ],
+    "correct_answer": "b. They are automatically removed to maintain the set property of a relation. ",
+    "explanation_ar": "بما أن الجبر العلائقي مبني على نظرية المجموعات (التي تمنع التكرار بتاتاً)، فإن عملية الإسقاط (PROJECT) تقوم تلقائياً بمسح أي صفوف متكررة تنتج بعد التحديد.",
+    "explanation_en": "Because formal relational algebra operations always produce mathematically valid relations (sets), the PROJECT operation implicitly and automatically removes any duplicate tuples from its result."
+  },
+  {
+    "id": 48,
+    "question": "A NATURAL JOIN ( ) is different from an EQUIJOIN because: ",
+    "options": [
+      "a. It requires a specific theta condition. ",
+      "b. It implicitly joins on all attributes with the same name and removes the redundant column. ",
+      "c. It can only be performed on relations with different schemas. ",
+      "d. It produces a larger number of attributes than an Equijoin. ",
+      "e. It is a unary operation. "
+    ],
+    "correct_answer": "b. It implicitly joins on all attributes with the same name and removes the redundant column. ",
+    "explanation_ar": "الربط الطبيعي (Natural Join) يبحث تلقائياً عن الأعمدة ذات الأسماء المتطابقة ليربط بناءً عليها، والأهم أنه يزيل العمود المكرر في النتيجة النهائية (عكس الـ Equijoin الذي يبقيه).",
+    "explanation_en": "Unlike an Equijoin which requires an explicit equality condition and keeps both matching columns, a Natural Join implicitly matches on identically named attributes and automatically removes the redundant duplicate column."
+  },
+  {
+    "id": 49,
+    "question": "Which of the following best describes the 'Closure' property of relational algebra? ",
+    "options": [
+      "a. Every relation must have a primary key to be used in an operation. ",
+      "b. Once an operation is performed, the relation is 'closed' to further changes. ",
+      "c. The result of any relational algebra operation is itself a relation. ",
+      "d. All join operations must result in a relation with no NULL values. ",
+      "e. Relations must be closed under the Cartesian Product. "
+    ],
+    "correct_answer": "c. The result of any relational algebra operation is itself a relation. ",
+    "explanation_ar": "خاصية الانغلاق (Closure property) تعني أن أي عملية حسابية يتم إجراؤها على جداول، يجب أن تكون نتيجتها دائماً 'جدولاً جديداً' (Relation) قابلاً لإجراء عمليات جبرية أخرى عليه.",
+    "explanation_en": "The closure property in relational algebra dictates that the output of any relational algebra operation is strictly another valid relation. This allows multiple operations to be nested and chained."
+  },
+  {
+    "id": 50,
+    "question": "In a scenario where you need to find employees who have the same salary as at least one other employee, which strategy is most appropriate? ",
+    "options": [
+      "a. σ salary = Salary (EMPLOYEE) ",
+      "b. π salary (EMPLOYEE) X π salary (EMPLOYEE) ",
+      "c. Perform a JOIN of EMPLOYEE with itself (Self-Join) on the Salary attribute, then filter where SSNs are different. ",
+      "d. Use a UNION operation on two EMPLOYEE relations. ",
+      "e. Use the SELECT operation with a 'COUNT' condition. "
+    ],
+    "correct_answer": "c. Perform a JOIN of EMPLOYEE with itself (Self-Join) on the Salary attribute, then filter where SSNs are different. ",
+    "explanation_ar": "للبحث عن مقارنات بين صفوف داخل نفس الجدول (مثل موظف له نفس راتب موظف آخر)، نستخدم الربط الذاتي (Self-Join) حيث نربط الجدول بنفسه مع التأكد من أن الموظفين المقارنين ليسا نفس الشخص عبر استثناء تطابق معرفاتهم.",
+    "explanation_en": "To compare tuples within the same relation, a Self-Join is required. By joining the EMPLOYEE table to itself on the Salary attribute and excluding exact entity matches (ensuring different IDs), you find distinct employees with the same salary."
+  }
+
+]

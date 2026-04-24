@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Quizzes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header & Disclaimer -->
+    <header class="app-header">
+        <div class="logo">DB QUIZES</div>
+        <div class="student-info">اعداد الطالب: طه احمد غازي</div>
+    </header>
+    <div class="disclaimer">
+        اجوبة هذه الاسئلة تمت بواسطة الذكاء الاصطناعي و الموقع تم صنعه بواسطة الذكاء الاصطناعي لذلك قد توجد بعض الاخطاء اخلي مسؤوليتي عنها
+    </div>
+
+    <!-- Screens -->
+    <main id="app-container">
+        
+        <!-- Splash / Home Screen -->
+        <section id="home-screen" class="screen active-screen">
+            <div class="options-container">
+                <label class="radio-label">
+                    <input type="radio" name="order" value="normal" checked>
+                    <span class="custom-radio"></span>
+                    ترتيب طبيعي
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="order" value="random">
+                    <span class="custom-radio"></span>
+                    ترتيب عشوائي بدون تكرار
+                </label>
+            </div>
+
+            <div class="quizzes-grid">
+                <!-- Quiz 1 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا اختبار بالاسئلة الموضعة بواسطه دكتور عز الدين اول 56 سؤال رسمي من المادة</p>
+                    <button class="btn btn-glow" data-quiz="quiz1.json">ابدأ الاختبار</button>
+                </div>
+                <!-- Quiz 2 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا اختبار ال50 سؤال الاولى المقدمة من جامعة الزهراء (group A)</p>
+                    <button class="btn btn-glow" data-quiz="quiz2.json">ابدأ الاختبار</button>
+                </div>
+                <!-- Quiz 3 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا الاختبار ال50 سؤال الثانية المقدمة من قبل جامعة الزهراء (group B)</p>
+                    <button class="btn btn-glow" data-quiz="quiz3.json">ابدأ الاختبار</button>
+                </div>
+                <!-- Quiz 4 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا اختبار مكون من 150 سؤال تم انشاؤها بواسطة الذكاء الاصطناعي AI. (يحتوي على 10% أسئلة صعبة جداً)</p>
+                    <button class="btn btn-glow" data-quiz="quiz4.json">ابدأ الاختبار</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div id="question-progress">السؤال 1 / 50</div>
+                <div id="score-display">النتيجة: 0</div>
+            </div>
+            
+            <div id="hard-badge" class="badge hidden">HARD QUESTION</div>
+
+            <div class="question-container glass-panel">
+                <h2 id="question-text">نص السؤال هنا؟</h2>
+            </div>
+
+            <div id="options-container" class="options-list">
+                <!-- Options will be injected here -->
+            </div>
+
+            <div id="explanation-container" class="explanation-box hidden glass-panel">
+                <h4>الشرح:</h4>
+                <p id="explanation-ar" dir="rtl"></p>
+                <p id="explanation-en" dir="ltr" class="en-text"></p>
+            </div>
+
+            <button id="next-btn" class="btn btn-glow hidden">السؤال التالي</button>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="result-screen" class="screen">
+            <div class="result-container glass-panel">
+                <h2 id="final-score-text">النتيجة النهائية: 135 من 150</h2>
+                
+                <div id="wrong-answers-container" class="wrong-answers-list">
+                    <h3>الأسئلة التي تم الإجابة عليها بشكل خاطئ:</h3>
+                    <div id="wrong-answers-list">
+                        <!-- Wrong answers will be injected here -->
+                    </div>
+                </div>
+
+                <button id="home-btn" class="btn btn-glow">العودة للقائمة الرئيسية</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

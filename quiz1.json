@@ -1,0 +1,797 @@
+﻿[
+    
+  {
+    "id": 1,
+    "question": "Which option best defines data? ",
+    "options": [
+      "A. Processed facts that have meaning",
+      "B. Raw facts that have not yet been processed",
+      "C. A collection of related records",
+      "D. A description of database structure",
+      "E. A set of related fields"
+    ],
+    "correct_answer": "B. Raw facts that have not yet been processed",
+    "explanation_ar": "البيانات (Data) هي الحقائق الخام والأرقام المجردة التي لم تتم معالجتها بعد. عندما تتم معالجتها وإعطاؤها سياقاً ومعنى، تتحول إلى معلومات (Information).",
+    "explanation_en": "Data refers to raw, unorganized facts that need to be processed. Once processed, organized, and given context, data becomes meaningful information."
+  },
+  {
+    "id": 2,
+    "question": "Which option best describes a field? ",
+    "options": [
+      "A. A collection of related files",
+      "B. A single raw fact",
+      "C. A group of related characters representing one attribute",
+      "D. A complete set of related records",
+      "E. A processed set of data"
+    ],
+    "correct_answer": "C. A group of related characters representing one attribute",
+    "explanation_ar": "في قواعد البيانات، الحقل (Field) هو أصغر وحدة بيانات ذات معنى، ويتكون من مجموعة من الرموز المترابطة التي تمثل خاصية أو سمة واحدة لكيان معين (مثل حقل 'الاسم' أو 'العمر').",
+    "explanation_en": "A field is a fundamental element of data storage, consisting of a group of related characters that represent a single attribute or characteristic of an entity (e.g., a person's first name)."
+  },
+  {
+    "id": 3,
+    "question": "A record can be defined as? ",
+    "options": [
+      "A. A collection of related fields describing one entity",
+      "B. A single character",
+      "C. A processed set of data",
+      "D. A collection of related files",
+      "E. A description of metadata"
+    ],
+    "correct_answer": "A. A collection of related fields describing one entity",
+    "explanation_ar": "السجل (Record) يمثل صفاً كاملاً في الجدول، وهو عبارة عن مجموعة من الحقول المترابطة التي تصف معاً كياناً واحداً محدداً بالكامل (مثل جميع بيانات طالب واحد محدد).",
+    "explanation_en": "A record (or row) is a collection of related fields that logically belong together to describe a single, specific entity, such as all the details pertaining to one specific customer."
+  },
+  {
+    "id": 4,
+    "question": "Which choice correctly defines a file? ",
+    "options": [
+      "A. A collection of related fields",
+      "B. A collection of related records",
+      "C. A single data value",
+      "D. A processed set of information",
+      "E. A description of database structure"
+    ],
+    "correct_answer": "B. A collection of related records",
+    "explanation_ar": "الملف (File)، والذي يشار إليه غالباً باسم الجدول (Table) في قواعد البيانات العلاقية، هو عبارة عن مجموعة منظمة من السجلات (Records) المترابطة التي تشترك في نفس الهيكل.",
+    "explanation_en": "In data management, a file (or table) is a structured collection of related records. For example, a 'Students' file contains all individual student records."
+  },
+  {
+    "id": 5,
+    "question": "What is data redundancy? ",
+    "options": [
+      "A. Storing data in encrypted form",
+      "B. Storing the same data in multiple places unnecessarily",
+      "C. Storing data in a single centralized location",
+      "D. Storing data without metadata",
+      "E. Storing data in normalized form"
+    ],
+    "correct_answer": "B. Storing the same data in multiple places unnecessarily",
+    "explanation_ar": "تكرار البيانات (Data Redundancy) هو عيب قبيح يحدث عندما يتم تخزين نفس المعلومة بالضبط في أكثر من مكان بشكل غير ضروري، مما يسبب هدراً للمساحة التخزينية ويؤدي إلى تناقض البيانات عند التحديث.",
+    "explanation_en": "Data redundancy is the condition created within a database or data storage technology in which the same piece of data is held in two separate places unnecessarily, leading to storage waste and potential data anomalies."
+  },
+  {
+    "id": 6,
+    "question": "Which file-system characteristic most commonly leads to data redundancy? ",
+    "options": [
+      "A. Centralized metadata",
+      "B. Program-data independence",
+      "C. Lack of data sharing and isolated files",
+      "D. Use of relational tables",
+      "E. Use of SQL queries"
+    ],
+    "correct_answer": "C. Lack of data sharing and isolated files",
+    "explanation_ar": "أنظمة الملفات القديمة كانت تعزل البيانات؛ كل قسم يمتلك ملفاته الخاصة ولا يشاركها. هذا الانعزال (Isolated files) يجبر الأقسام المختلفة على إدخال نفس البيانات المشتركة بشكل متكرر في ملفاتهم المنفصلة.",
+    "explanation_en": "Traditional file systems lack centralized control, leading to isolated files. Because data cannot be easily shared across different departments' applications, the same data is duplicated across multiple isolated files."
+  },
+  {
+    "id": 7,
+    "question": "What is data independence? ",
+    "options": [
+      "A. The ability to store data without metadata",
+      "B. The ability to change data without affecting programs",
+      "C. The ability to store data in multiple files",
+      "D. The ability to process data quickly",
+      "E. The ability to encrypt data"
+    ],
+    "correct_answer": "B. The ability to change data without affecting programs",
+    "explanation_ar": "استقلالية البيانات هي ميزة قوية تعني أنه يمكنك تغيير كيفية تخزين البيانات أو هيكلتها دون الحاجة إلى تدمير وإعادة كتابة البرامج (Applications) التي تقرأ هذه البيانات.",
+    "explanation_en": "Data independence refers to the separation of data definitions from the application programs that use the data. It allows you to modify the data structures without having to alter the programs that access them."
+  },
+  {
+    "id": 8,
+    "question": "Why is data independence lacking in file systems? ",
+    "options": [
+      "A. Because file systems use SQL",
+      "B. Because file systems separate programs from data",
+      "C. Because programs are tightly linked to file formats",
+      "D. Because file systems use metadata",
+      "E. Because file systems use normalization"
+    ],
+    "correct_answer": "C. Because programs are tightly linked to file formats",
+    "explanation_ar": "في أنظمة الملفات، يتم برمجة التطبيقات لتفهم هيكلاً محدداً جداً للملف. الكود والبيانات ملتصقان بشدة (Tightly linked). إذا أضفت حقلاً جديداً للملف، سيتعطل البرنامج حتى تقوم بتعديل الكود المصدري الخاص به.",
+    "explanation_en": "In file systems, applications are hardcoded with the specific physical structure of the files they access. Any change to the file format requires a corresponding rewrite of the application's source code, destroying independence."
+  },
+  {
+    "id": 9,
+    "question": "What is a DBMS? ",
+    "options": [
+      "A. A programming language",
+      "B. A collection of related files",
+      "C. Software that manages databases and controls access to data",
+      "D. A hardware device for storing data",
+      "E. A type of metadata"
+    ],
+    "correct_answer": "C. Software that manages databases and controls access to data",
+    "explanation_ar": "نظام إدارة قواعد البيانات (DBMS) ليس لغة برمجة ولا عتاداً، بل هو البرنامج الأساسي والوسيط (مثل MySQL أو Oracle) الذي يتحكم في إنشاء القاعدة، ويدير كيفية وصول المستخدمين والتطبيقات إليها بأمان.",
+    "explanation_en": "A Database Management System (DBMS) is specialized software that serves as an intermediary between the user, applications, and the database. It manages the database structure and controls access to the data within it."
+  },
+  {
+    "id": 10,
+    "question": "Which of the following is a function of a DBMS? ",
+    "options": [
+      "A. Writing application code",
+      "B. Managing data storage, retrieval, security, and integrity",
+      "C. Designing hardware",
+      "D. Encrypting network traffic",
+      "E. Creating operating systems"
+    ],
+    "correct_answer": "B. Managing data storage, retrieval, security, and integrity",
+    "explanation_ar": "وظيفة الـ DBMS هي رفع العبء عن المبرمج، فهو يتولى المهام المعقدة بالنيابة عنك: يخزن البيانات، يسترجعها بكفاءة، يضمن عدم تضاربها (Integrity)، ويحميها من الوصول غير المصرح به (Security).",
+    "explanation_en": "A DBMS abstracts the complexities of data management. Its core functions include efficiently handling data storage and retrieval, enforcing data integrity rules, and providing robust security mechanisms."
+  }
+,
+
+  {
+    "id": 11,
+    "question": "What is structural independence?",
+    "options": [
+      "A. The ability to change data without changing programs",
+      "B. The ability to change the file structure without affecting programs",
+      "C. The ability to store data in multiple locations",
+      "D. The ability to process data quickly",
+      "E. The ability to store metadata separately"
+    ],
+    "correct_answer": "B. The ability to change the file structure without affecting programs",
+    "explanation_ar": "استقلالية الهيكل تعني القدرة على تغيير الخصائص المادية للملف (مثل إضافة حقل جديد أو تغيير نوع البيانات) دون الحاجة إلى تعديل التطبيقات والبرامج التي تستخدم وتتفاعل مع هذا الملف.",
+    "explanation_en": "Structural independence is the ability to make changes to the file structure without requiring modifications to the application programs that access the data."
+  },
+  {
+    "id": 12,
+    "question": "Why is structural independence important?",
+    "options": [
+      "A. It reduces storage cost",
+      "B. It allows changes to physical structure without rewriting applications",
+      "C. It increases redundancy",
+      "D. It eliminates metadata",
+      "E. It prevents normalization"
+    ],
+    "correct_answer": "B. It allows changes to physical structure without rewriting applications",
+    "explanation_ar": "أهميتها تكمن في توفير الوقت والجهد وحماية النظام من الانهيار؛ فهي تسمح لمدير قاعدة البيانات بتطوير الهيكل المادي دون إجبار المبرمجين على إعادة كتابة أكواد التطبيقات من الصفر.",
+    "explanation_en": "It is crucial because it allows changes to physical structure without rewriting applications, saving development time and preventing system failures during database updates."
+  },
+  {
+    "id": 13,
+    "question": "Which option correctly describes the difference between data and information?",
+    "options": [
+      "A. Data is processed; information is raw",
+      "B. Data is raw; information is processed and meaningful",
+      "C. Both are identical",
+      "D. Information is stored in fields; data is stored in files",
+      "E. Information cannot be stored in databases"
+    ],
+    "correct_answer": "B. Data is raw; information is processed and meaningful",
+    "explanation_ar": "البيانات هي المواد الخام (أرقام وحقائق مجردة). لكي تصبح هذه البيانات معلومات مفيدة، يجب معالجتها وتنظيمها وتقديمها في سياق يُمكّن من اتخاذ القرارات.",
+    "explanation_en": "Data is raw and unorganized facts. Information is data that has been processed, organized, and structured to provide meaningful context."
+  },
+  {
+    "id": 14,
+    "question": "Which option best defines a database?",
+    "options": [
+      "A. A collection of unrelated files",
+      "B. A collection of raw facts",
+      "C. A structured collection of related data stored with minimal redundancy",
+      "D. A single record",
+      "E. A programming language"
+    ],
+    "correct_answer": "C. A structured collection of related data stored with minimal redundancy",
+    "explanation_ar": "قاعدة البيانات ليست مجرد ملفات عشوائية مكدسة، بل هي مستودع مهيكل ومصمم بعناية ليضم بيانات مترابطة منطقياً، مع الحرص على تقليل تكرار البيانات (Redundancy) قدر الإمكان.",
+    "explanation_en": "A database is a highly structured collection of related data stored systematically to minimize redundancy and optimize retrieval."
+  },
+  {
+    "id": 15,
+    "question": "What is the primary role of a DBMS?",
+    "options": [
+      "A. To write application programs",
+      "B. To manage data access, security, integrity, and storage",
+      "C. To design hardware",
+      "D. To replace operating systems",
+      "E. To generate network traffic"
+    ],
+    "correct_answer": "B. To manage data access, security, integrity, and storage",
+    "explanation_ar": "نظام إدارة قواعد البيانات (DBMS) هو 'المدير التنفيذي' لبياناتك؛ دوره الأساسي ليس كتابة التطبيقات، بل إدارة التخزين، التحكم بمن يصل للبيانات، توفير الأمان، والتأكد من سلامة البيانات.",
+    "explanation_en": "The primary role of a DBMS is to manage data access, ensure data security and integrity, and handle the physical storage mechanisms behind the scenes."
+  },
+  {
+    "id": 16,
+    "question": "Which of the following is an advantage of a DBMS?",
+    "options": [
+      "A. Increased data redundancy",
+      "B. Improved data sharing and security",
+      "C. Reduced data integrity",
+      "D. Increased program-data dependence",
+      "E. No need for metadata"
+    ],
+    "correct_answer": "B. Improved data sharing and security",
+    "explanation_ar": "بفضل الـ DBMS، أصبحت البيانات مركزية، مما يتيح لعدة مستخدمين وتطبيقات مشاركة نفس البيانات في وقت واحد بفعالية، مع وجود نظام أمان صارم يمنع الدخول غير المصرح به.",
+    "explanation_en": "A major advantage of a DBMS is improved data sharing among multiple users while simultaneously providing centralized and robust security controls."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following is a disadvantage of a DBMS?",
+    "options": [
+      "A. Reduced data security",
+      "B. High cost and complexity",
+      "C. Increased redundancy",
+      "D. Lack of data sharing",
+      "E. No support for metadata"
+    ],
+    "correct_answer": "B. High cost and complexity",
+    "explanation_ar": "لا يوجد نظام مثالي؛ الجانب السلبي لنظم إدارة قواعد البيانات هو تكلفتها العالية (تراخيص وعتاد متقدم) والتعقيد الشديد في إدارتها، مما يتطلب خبراء متخصصين للحفاظ على عملها.",
+    "explanation_en": "Implementing a DBMS involves significant initial costs for software and hardware, and adds complexity that requires specialized personnel to manage effectively."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following is a main component of a database system?",
+    "options": [
+      "A. Operating system only",
+      "B. Database, DBMS, hardware, software, and users",
+      "C. Only tables and queries",
+      "D. Only metadata",
+      "E. Only application programs"
+    ],
+    "correct_answer": "B. Database, DBMS, hardware, software, and users",
+    "explanation_ar": "نظام قاعدة البيانات الناجح لا يعتمد على البرمجيات فقط؛ هو بيئة متكاملة تتألف من خمسة مكونات رئيسية: العتاد، البرمجيات (نظام التشغيل والـ DBMS)، الأشخاص (المستخدمين والإداريين)، الإجراءات، والبيانات.",
+    "explanation_en": "A complete database system is an environment composed of five crucial components: the database itself, the DBMS, hardware, supporting software, and the users interacting with it."
+  },
+  {
+    "id": 19,
+    "question": "What is metadata?",
+    "options": [
+      "A. Data stored in encrypted form",
+      "B. Data about data, describing structure and characteristics",
+      "C. Raw facts",
+      "D. Processed information",
+      "E. A type of file system"
+    ],
+    "correct_answer": "B. Data about data, describing structure and characteristics",
+    "explanation_ar": "البيانات الوصفية (Metadata) ببساطة هي 'بيانات تشرح البيانات'. هي التي تخبر النظام بخصائص البيانات وهيكلها، مثل نوع المتغيرات (نص، رقم) والقيود المفروضة عليها.",
+    "explanation_en": "Metadata is defined as 'data about data.' It provides the necessary description of the data's characteristics and the set of relationships that links the data found within the database."
+  },
+  {
+    "id": 20,
+    "question": "Why is database design important?",
+    "options": [
+      "A. It increases redundancy",
+      "B. It ensures the database is fast, consistent, and supports user needs",
+      "C. It eliminates the need for a DBMS",
+      "D. It removes metadata",
+      "E. It prevents data sharing"
+    ],
+    "correct_answer": "B. It ensures the database is fast, consistent, and supports user needs",
+    "explanation_ar": "التصميم العشوائي سيؤدي إلى كوارث وبطء في النظام. التصميم المدروس هو حجر الأساس لضمان أن قاعدة البيانات تعمل بكفاءة عالية، خالية من التناقضات، وتلبي احتياجات المستخدمين بدقة.",
+    "explanation_en": "Proper database design is critical because it ensures the database operates efficiently, maintains data consistency, avoids anomalies, and effectively supports user requirements."
+  }
+  ,
+  
+  {
+    "id": 21,
+    "question": "A collection of programs that manages the database structure and controls access to the data stored in the database is: ",
+    "options": [
+      "A. DBMS",
+      "B. A record",
+      "C. A tuple",
+      "D. An attribute",
+      "E. A schema"
+    ],
+    "correct_answer": "A. DBMS ",
+    "explanation_ar": "نظام إدارة قواعد البيانات (DBMS) هو البرنامج الأساسي الذي يمتلك الصلاحية المطلقة لإدارة هيكل القاعدة والتحكم في كيفية وصول المستخدمين والتطبيقات للبيانات بأمان.",
+    "explanation_en": "A DBMS is the specialized suite of programs that handles the creation, physical structuring, and access control of the database."
+  },
+  {
+    "id": 22,
+    "question": "A logically connected set of one or more fields that describes a person, place, or thing is: ",
+    "options": [
+      "A. A record",
+      "B. A table",
+      "C. An attribute",
+      "D. DBMS",
+      "E. A file"
+    ],
+    "correct_answer": "A. A record ",
+    "explanation_ar": "السجل (Record) يمثل كياناً واحداً بالكامل (مثل شخص أو مكان). وهو يتكون من مجموعة من الحقول (Fields) المترابطة منطقياً لتقديم وصف كامل لهذا الكيان.",
+    "explanation_en": "A record corresponds to a row in a table and consists of a logically connected set of fields that completely describe a single specific entity."
+  },
+  {
+    "id": 23,
+    "question": "A superkey functionally determines every attribute in the row. ",
+    "options": [
+      "A. True",
+      "B. False",
+      "C. Sometimes",
+      "D. Only in 1NF",
+      "E. Only if composite"
+    ],
+    "correct_answer": "A. True ",
+    "explanation_ar": "هذه حقيقة ثابتة؛ المفتاح الفائق (Superkey) هو أي سمة أو مجموعة سمات قادرة على تحديد كل سمة أخرى في الصف بشكل فريد، مما يمنع تشابه صفين بالكامل.",
+    "explanation_en": "True. By definition, a superkey uniquely identifies each row, meaning it functionally determines all other attributes within that row."
+  },
+  {
+    "id": 24,
+    "question": "In the Orders table (OrderID, OrderDate, CustomerID), the foreign key is: ",
+    "options": [
+      "A. CustomerID",
+      "B. OrderID",
+      "C. Name",
+      "D. Email",
+      "E. OrderDate"
+    ],
+    "correct_answer": "A. CustomerID ",
+    "explanation_ar": "حقل CustomerID هنا هو المفتاح الأجنبي (Foreign Key) لأنه يعود بالأصل كـ مفتاح أساسي (Primary Key) في جدول آخر وهو جدول العملاء (Customers)، ووظيفته هنا هي ربط الطلب بالعميل الذي قام به.",
+    "explanation_en": "CustomerID is the foreign key because it serves as the link pointing back to the primary key of the related Customer table, establishing the relationship."
+  },
+  {
+    "id": 25,
+    "question": "StudentName is not suitable as a primary key in Students(StudentID, StudentName, DoB) because: ",
+    "options": [
+      "A. Names are not unique",
+      "B. Names can be lengthy",
+      "C. Names may be unique",
+      "D. Names may be strong",
+      "E. Names may change over time"
+    ],
+    "correct_answer": "A. Names are not unique ",
+    "explanation_ar": "الشرط الأول والأهم للمفتاح الأساسي هو 'التفرد' (Uniqueness). الأسماء تتكرر باستمرار بين الأشخاص، لذلك الاعتماد عليها كمفتاح أساسي هو فشل ذريع في التصميم.",
+    "explanation_en": "A primary key must be absolutely unique for every record. Since multiple students can share the same name, it cannot reliably identify a specific student."
+  },
+  {
+    "id": 26,
+    "question": "Which relationship type is considered ideal in relational database design? ",
+    "options": [
+      "A. 1:1",
+      "B. 1:M",
+      "C. M:N",
+      "D. None of the above",
+      "E. Self-referencing"
+    ],
+    "correct_answer": "B. 1:M ",
+    "explanation_ar": "علاقة 'واحد إلى متعدد' (1:M) هي المعيار الذهبي والأكثر كفاءة. العلاقات من نوع 'متعدد إلى متعدد' (M:N) يجب كسرها إلى علاقات 1:M لكي تعمل قاعدة البيانات العلاقية بشكل صحيح.",
+    "explanation_en": "The One-to-Many (1:M) relationship is the structural norm and the ideal relationship type for implementing efficient and logical relational databases."
+  },
+  {
+    "id": 27,
+    "question": "What does a LEFT OUTER JOIN return? ",
+    "options": [
+      "A. Only rows that match in both tables",
+      "B. All rows from the right table only",
+      "C. All rows from the left table, even if no match exists in the right table",
+      "D. Only unmatched rows from the right table",
+      "E. Only unmatched rows from the left table"
+    ],
+    "correct_answer": "C. All rows from the left table, even if no match exists in the right table ",
+    "explanation_ar": "هذا الربط يضمن لك استرجاع جميع البيانات من الجدول الأيسر بالكامل. إذا وجد بيانات مطابقة في الجدول الأيمن سيجلبها، وإذا لم يجد، سيضع مكانها قيماً فارغة (NULL) بدلاً من تجاهل الصف.",
+    "explanation_en": "A LEFT OUTER JOIN strictly preserves all records from the 'left' table. For any row that lacks a match in the 'right' table, it simply populates the right side's columns with NULL values."
+  },
+  {
+    "id": 28,
+    "question": "What problem does data redundancy mainly cause? ",
+    "options": [
+      "A. Faster processing",
+      "B. Data anomalies",
+      "C. Larger table sizes only",
+      "D. More flexible queries",
+      "E. Better indexing"
+    ],
+    "correct_answer": "B. Data anomalies ",
+    "explanation_ar": "التكرار لا يستهلك المساحة فقط، بل يؤدي إلى تناقضات وشذوذ (Anomalies). إذا تعدلت معلومة في مكان ولم تتعدل في المكان المكرر الآخر، تفقد قاعدة البيانات سلامتها وتصبح غير موثوقة.",
+    "explanation_en": "Data redundancy is dangerous primarily because it breeds data anomalies—inconsistencies that occur during updates, insertions, or deletions when duplicated data is not managed simultaneously."
+  },
+  {
+    "id": 29,
+    "question": "What symbol represents the PROJECT operator in relational algebra? ",
+    "options": [
+      "A. σ",
+      "B. π",
+      "C. n",
+      "D. ÷",
+      "E. ρ"
+    ],
+    "correct_answer": "B. π ",
+    "explanation_ar": "في الجبر العلائقي، الرمز الإغريقي باي (π) هو المعيار المستخدم لتمثيل عملية الإسقاط (PROJECT)، والتي تقوم بتحديد واستخراج أعمدة (سمات) معينة من الجدول مع تجاهل البقية.",
+    "explanation_en": "In the formal mathematical foundation of databases (relational algebra), the Greek letter pi (π) is specifically designated to represent the PROJECT operation."
+  },
+  {
+    "id": 30,
+    "question": "The SELECT operator is considered: ",
+    "options": [
+      "A. Unary",
+      "B. Binary",
+      "C. Both above",
+      "D. None of the above",
+      "E. Ternary"
+    ],
+    "correct_answer": "A. Unary ",
+    "explanation_ar": "تعتبر عملية الاختيار (SELECT - ويرمز لها بـ σ) عملية أحادية (Unary) لأنها تُطبق وتعمل على جدول واحد فقط لفلترة صفوفه بناءً على شرط معين، ولا تحتاج لربط جدولين لكي تعمل.",
+    "explanation_en": "The SELECT operation is classified as a unary operator because it only requires a single input relation (table) to evaluate conditions and restrict the output rows."
+  }
+,
+
+  {
+    "id": 31,
+    "question": "A university adds a new requirement to store student email addresses. Which SQL operation is appropriate?",
+    "options": [
+      "A. INSERT INTO Students",
+      "B. ALTER TABLE Students ADD COLUMN Email",
+      "C. UPDATE Students SET Email",
+      "D. CREATE TABLE Students",
+      "E. MODIFY Students"
+    ],
+    "correct_answer": "B. ALTER TABLE Students ADD COLUMN Email",
+    "explanation_ar": "لإضافة عمود جديد إلى جدول موجود مسبقاً (مثل إضافة حقل البريد الإلكتروني)، يجب استخدام أمر ALTER TABLE وهو من أوامر تعريف البيانات (DDL) المسؤولة عن تعديل هيكل الجدول.",
+    "explanation_en": "To add a new column to an existing table, the ALTER TABLE command is used. It modifies the physical structure of the table without deleting it."
+  },
+  {
+    "id": 32,
+    "question": "A school wants to remove only students with AVG below 50. Which command is appropriate?",
+    "options": [
+      "A. TRUNCATE TABLE Students",
+      "B. DELETE FROM Students WHERE AVG < 50",
+      "C. DROP TABLE Students",
+      "D. ALTER TABLE Students DROP COLUMN GPA",
+      "E. REMOVE Students"
+    ],
+    "correct_answer": "B. DELETE FROM Students WHERE AVG < 50",
+    "explanation_ar": "أمر DELETE مع جملة WHERE هو الخيار الوحيد الصحيح هنا، لأنه يسمح بحذف صفوف محددة بناءً على شرط معين (المعدل أقل من 50)، بينما TRUNCATE سيمسح كل البيانات.",
+    "explanation_en": "The DELETE command combined with a WHERE clause allows for the targeted removal of specific rows that meet a certain condition, preserving the rest of the data."
+  },
+  {
+    "id": 33,
+    "question": "A company restricts its web application to only SELECT and INSERT permissions. Which principle is applied?",
+    "options": [
+      "A. ACID",
+      "B. Data Type Sanitization",
+      "C. Principle of Least Privilege",
+      "D. Audit Logging",
+      "E. Role Escalation"
+    ],
+    "correct_answer": "C. Principle of Least Privilege",
+    "explanation_ar": "مبدأ الامتياز الأقل (Least Privilege) هو مفهوم أمني صارم يقتضي إعطاء التطبيق الحد الأدنى فقط من الصلاحيات اللازمة لأداء عمله ولا شيء أكثر، وذلك لتقليل المخاطر.",
+    "explanation_en": "The Principle of Least Privilege dictates that a user, program, or process should have only the bare minimum privileges necessary to perform its intended function."
+  },
+  {
+    "id": 34,
+    "question": "Assume that Netflix wants to remove all posts older than 2 years but keep the table. Which command is correct?",
+    "options": [
+      "A. TRUNCATE Posts",
+      "B. DELETE FROM Posts WHERE PostDate < '2024-01-01'",
+      "C. DROP TABLE Posts",
+      "D. ALTER TABLE Posts",
+      "E. REMOVE Posts"
+    ],
+    "correct_answer": "B. DELETE FROM Posts WHERE PostDate < '2024-01-01'",
+    "explanation_ar": "نحن نحتاج لحذف بيانات جزئية بناءً على شرط زمني مع الإبقاء على الجدول بأمان. استخدام DELETE مع WHERE هو الأداة الدقيقة لذلك.",
+    "explanation_en": "A conditional removal requires DELETE FROM ... WHERE .... Commands like TRUNCATE or DROP would destroy either all data or the table itself entirely."
+  },
+  {
+    "id": 35,
+    "question": "A bank system must ensure a money transfer completes fully or not at all. Which ACID property ensures this?",
+    "options": [
+      "A. Consistency",
+      "B. Atomicity",
+      "C. Isolation",
+      "D. Durability",
+      "E. Reliability"
+    ],
+    "correct_answer": "B. Atomicity",
+    "explanation_ar": "الذرية (Atomicity) تعني الكل أو اللاشيء. المعاملة البنكية إما أن تكتمل بجميع خطواتها معاً، أو تفشل بالكامل وتتراجع، ولا يُسمح إطلاقاً بأن تتوقف في المنتصف.",
+    "explanation_en": "Atomicity guarantees that a transaction is treated as a single, indivisible logical unit of work. It either completely succeeds or completely fails and rolls back."
+  },
+  {
+    "id": 36,
+    "question": "A hospital wants to track who modified patient records and when. Which feature should they implement?",
+    "options": [
+      "A. TRUNCATE TABLE",
+      "B. Parameterized Queries",
+      "C. Audit Trails / Logging",
+      "D. DROP TABLE",
+      "E. Indexing"
+    ],
+    "correct_answer": "C. Audit Trails / Logging",
+    "explanation_ar": "مسارات التدقيق (Audit Trails) هي الآلية الاحترافية المستخدمة لتسجيل كل حركة تحدث في قاعدة البيانات (من دخل، متى، وماذا غيّر) لأغراض المراقبة والأمان.",
+    "explanation_en": "Audit Trails or logging mechanisms are essential for security and compliance, recording a detailed history of all accesses and modifications to sensitive data."
+  },
+  {
+    "id": 37,
+    "question": "Which command removes a table and its metadata?",
+    "options": [
+      "A. DELETE",
+      "B. TRUNCATE",
+      "C. DROP",
+      "D. CLEAR",
+      "E. REMOVE"
+    ],
+    "correct_answer": "C. DROP",
+    "explanation_ar": "أمر DROP هو الأكثر تدميراً هنا؛ فهو لا يمسح البيانات فقط، بل يحذف هيكل الجدول بالكامل مع جميع بياناته الوصفية (Metadata) من قاعدة البيانات.",
+    "explanation_en": "The DROP DDL command completely removes the table structure, its data, and its associated metadata from the database schema."
+  },
+  {
+    "id": 38,
+    "question": "ALTER TABLE is used to:",
+    "options": [
+      "A. Insert rows",
+      "B. Modify table structure",
+      "C. Retrieve data",
+      "D. Delete rows",
+      "E. Query metadata"
+    ],
+    "correct_answer": "B. Modify table structure",
+    "explanation_ar": "وظيفة ALTER TABLE مقتصرة بشكل صارم على تعديل الهيكل المادي للجدول (إضافة عمود، حذف عمود، تغيير نوع بيانات) وليس لها علاقة بالتعامل مع البيانات داخله.",
+    "explanation_en": "ALTER TABLE is specifically used to change the physical structure or schema of an existing table without dropping it."
+  },
+  {
+    "id": 39,
+    "question": "INSERT INTO adds:",
+    "options": [
+      "A. New columns",
+      "B. New records",
+      "C. New tables",
+      "D. New constraints",
+      "E. New indexes"
+    ],
+    "correct_answer": "B. New records",
+    "explanation_ar": "أمر INSERT INTO هو من أوامر معالجة البيانات (DML) ووظيفته الوحيدة هي إضافة صفوف أو سجلات (Records) جديدة داخل هيكل الجدول الجاهز.",
+    "explanation_en": "INSERT INTO is a Data Manipulation Language (DML) statement used exclusively to append new records (rows) into an existing table."
+  },
+  {
+    "id": 40,
+    "question": "Which is faster for clearing large datasets?",
+    "options": [
+      "A. DELETE",
+      "B. TRUNCATE",
+      "C. UPDATE",
+      "D. ALTER",
+      "E. MERGE"
+    ],
+    "correct_answer": "B. TRUNCATE",
+    "explanation_ar": "استخدام TRUNCATE لتنظيف الجداول الكبيرة هو الخيار الأذكى والأسرع بكثير من DELETE، لأنه يفرغ الجدول دفعة واحدة دون تضييع الوقت في كتابة كل صف يتم حذفه في سجل المعاملات.",
+    "explanation_en": "TRUNCATE is significantly faster than DELETE for wiping a table because it simply deallocates the data pages entirely instead of logging individual row deletions."
+  }
+,
+
+  {
+    "id": 41,
+    "question": "Least privilege means:",
+    "options": [
+      "A. Full access",
+      "B. Only required permissions",
+      "C. No SELECT access",
+      "D. Only DDL access",
+      "E. Unlimited privileges"
+    ],
+    "correct_answer": "B. Only required permissions",
+    "explanation_ar": "مبدأ الامتياز الأقل (Least privilege) يفرض عدم إعطاء أي مستخدم أو برنامج صلاحيات أوسع مما يحتاجه بالضبط لأداء وظيفته، وذلك للحد من أضرار أي اختراق محتمل.",
+    "explanation_en": "The principle of least privilege mandates that users and systems are granted only the minimum levels of access necessary to complete their required tasks, reducing the attack surface."
+  },
+  {
+    "id": 42,
+    "question": "'ORDER BY' sorts data in:",
+    "options": [
+      "A. ASC or DESC",
+      "B. TRUE or FALSE",
+      "C. MIN or MAX",
+      "D. SUM or AVG",
+      "E. HIGH or LOW"
+    ],
+    "correct_answer": "A. ASC or DESC",
+    "explanation_ar": "في SQL، جملة ORDER BY تستخدم لترتيب النتائج. وهي تقبل معاملين فقط للاتجاه: ASC للترتيب التصاعدي (وهو الافتراضي)، و DESC للترتيب التنازلي.",
+    "explanation_en": "The ORDER BY clause allows data sorting based on specified columns in either Ascending (ASC) or Descending (DESC) order."
+  },
+  {
+    "id": 43,
+    "question": "SELECT * retrieves:",
+    "options": [
+      "A. Only numeric columns",
+      "B. All columns",
+      "C. Only primary keys",
+      "D. Only text columns",
+      "E. Only indexed columns"
+    ],
+    "correct_answer": "B. All columns",
+    "explanation_ar": "علامة النجمة (*) في أمر SELECT هي اختصار (Wildcard) يعني 'جلب كافة الأعمدة' الموجودة في الجدول دون استثناء.",
+    "explanation_en": "The asterisk (*) acts as a wildcard in a SELECT statement, instructing the DBMS to return every single column available in the targeted table."
+  },
+  {
+    "id": 44,
+    "question": "DROP TABLE removes:",
+    "options": [
+      "A. Only rows",
+      "B. Only structure",
+      "C. Structure and data",
+      "D. Only indexes",
+      "E. Only constraints"
+    ],
+    "correct_answer": "C. Structure and data",
+    "explanation_ar": "أمر DROP هو أمر DDL مدمر. فهو يمسح الجدول من الوجود تماماً، شاملاً هيكله (Structure) وجميع البيانات (Data) المخزنة فيه.",
+    "explanation_en": "DROP TABLE entirely obliterates the table object from the database schema, eradicating both the table's structural definition and all the data it holds."
+  },
+  {
+    "id": 45,
+    "question": "DROP TABLE removes:",
+    "options": [
+      "A. Only rows",
+      "B. Only structure",
+      "C. Structure and data",
+      "D. Only indexes",
+      "E. Only metadata"
+    ],
+    "correct_answer": "C. Structure and data",
+    "explanation_ar": "نفس إجابة السؤال السابق. يبدو أن أستاذ المادة قد كرر هذا السؤال في ورقة الامتحان مرتين بطريق الخطأ.",
+    "explanation_en": "Repeated question in the source material. The DROP TABLE command removes both the physical structure and all contained data."
+  },
+  {
+    "id": 46,
+    "question": "INSERT requires:",
+    "options": [
+      "A. Matching data types",
+      "B. Matching table names",
+      "C. Matching index names",
+      "D. Matching constraints only",
+      "E. Matching triggers"
+    ],
+    "correct_answer": "A. Matching data types",
+    "explanation_ar": "عند إدخال بيانات جديدة باستخدام INSERT، يجب أن يتطابق نوع البيانات الذي تدخله تماماً مع نوع البيانات المعرف مسبقاً للعمود (مثلاً: لا يمكنك إدخال نص في عمود مخصص للأرقام).",
+    "explanation_en": "A successful INSERT operation mandates that the inserted values strictly match the pre-defined data types of their respective columns."
+  },
+  {
+    "id": 47,
+    "question": "A hospital wants to clear weekly sanitation logs but keep the table.",
+    "options": [
+      "A. DELETE",
+      "B. DROP",
+      "C. TRUNCATE",
+      "D. ALTER",
+      "E. REMOVE"
+    ],
+    "correct_answer": "C. TRUNCATE",
+    "explanation_ar": "إذا أردت تفريغ جدول كامل من بياناته دورياً مع الاحتفاظ بهيكل الجدول للاستخدام اللاحق وبأسرع وقت ممكن، TRUNCATE هو الخيار الهندسي الصحيح.",
+    "explanation_en": "TRUNCATE rapidly empties a table while keeping its structure intact for future logging, making it highly efficient for resetting periodic tables."
+  },
+  {
+    "id": 48,
+    "question": "A hospital wants to list all doctors and all patients, even if some have no matches. Which join fits?",
+    "options": [
+      "A. INNER JOIN",
+      "B. LEFT JOIN",
+      "C. RIGHT JOIN",
+      "D. FULL OUTER JOIN",
+      "E. SELF JOIN"
+    ],
+    "correct_answer": "D. FULL OUTER JOIN",
+    "explanation_ar": "الربط الخارجي الكامل (FULL OUTER JOIN) يضمن دمج كل البيانات من كلا الجدولين. إذا كان هناك طبيب بلا مريض أو مريض بلا طبيب، سيظهرون في النتيجة مع وضع NULL للجانب المفقود.",
+    "explanation_en": "A FULL OUTER JOIN retrieves all records from both participating tables, displaying NULLs wherever matches are not found on either side."
+  },
+  {
+    "id": 49,
+    "question": "A bank wants to hide the Salary column from customer service staff. What should they use?",
+    "options": [
+      "A. Trigger",
+      "B. Stored Procedure",
+      "C. View",
+      "D. Index",
+      "E. Sequence"
+    ],
+    "correct_answer": "C. View",
+    "explanation_ar": "العرض (View) هو جدول وهمي يتيح لك إنشاء استعلام يستثني الأعمدة الحساسة (مثل الراتب)، وتعطي للموظفين صلاحية الوصول لهذا العرض بدلاً من الجدول الأصلي كإجراء أمني.",
+    "explanation_en": "A View acts as a virtual table representing the result of a pre-defined query. It is a vital security tool to restrict users from seeing sensitive underlying columns."
+  },
+  {
+    "id": 50,
+    "question": "Which statement is true about composite indexes?",
+    "options": [
+      "A. Column order does not matter",
+      "B. They can only contain numeric columns",
+      "C. Column order affects optimization",
+      "D. They replace primary keys",
+      "E. They cannot be unique"
+    ],
+    "correct_answer": "C. Column order affects optimization",
+    "explanation_ar": "في الفهارس المركبة (التي تتكون من أكثر من عمود)، ترتيب الأعمدة أثناء إنشاء الفهرس يعتبر حاسماً لأداء محرك قاعدة البيانات، فالفهرس يُبنى من اليسار لليمين بناءً على هذا الترتيب.",
+    "explanation_en": "In a composite index (spanning multiple columns), the order of columns dictates how the index is traversed, heavily impacting the query optimizer's efficiency."
+  },
+  {
+    "id": 51,
+    "question": "A table violates 3NF if:",
+    "options": [
+      "A. It has repeating groups",
+      "B. It has partial dependencies",
+      "C. It has transitive dependencies",
+      "D. It has no primary key",
+      "E. It has a composite key"
+    ],
+    "correct_answer": "C. It has transitive dependencies",
+    "explanation_ar": "الشكل الطبيعي الثالث (3NF) يركز تحديداً على إزالة الاعتمادية المتعدية (Transitive Dependencies)، وهي أن يعتمد حقل غير أساسي على حقل آخر غير أساسي.",
+    "explanation_en": "Third Normal Form (3NF) strictly prohibits transitive dependencies, dictating that every non-key attribute must depend solely and directly on the primary key."
+  },
+  {
+    "id": 52,
+    "question": "Which is a disadvantage of centralized databases?",
+    "options": [
+      "A. Harder to maintain consistency",
+      "B. Single point of failure",
+      "C. Requires horizontal scaling",
+      "D. Cannot enforce ACID",
+      "E. Cannot use indexes"
+    ],
+    "correct_answer": "B. Single point of failure",
+    "explanation_ar": "الخطر الأكبر للقاعدة المركزية (الموجودة في سيرفر واحد) هو نقطة الفشل الفردية. إذا تعطل هذا السيرفر لأي سبب، يتوقف النظام بأكمله ولن يستطيع أحد الوصول للبيانات.",
+    "explanation_en": "The critical flaw of centralized databases is the single point of failure; if the central server goes offline, data availability across the entire network drops to zero."
+  },
+  {
+    "id": 53,
+    "question": "Which component ensures data is accessible when needed?",
+    "options": [
+      "A. Confidentiality",
+      "B. Integrity",
+      "C. Availability",
+      "D. Authentication",
+      "E. Authorization"
+    ],
+    "correct_answer": "C. Availability",
+    "explanation_ar": "التوافر (Availability) في أمن المعلومات يعني أن تكون البيانات متاحة وقابلة للوصول للمستخدمين المصرح لهم في الوقت الذي يحتاجونها فيه دون انقطاع.",
+    "explanation_en": "Availability ensures that systems, applications, and data remain accessible and operational for authorized users precisely when they require them."
+  },
+  {
+    "id": 54,
+    "question": "A company wants to give analysts read-only access to Orders. Which command is correct?",
+    "options": [
+      "A. GRANT INSERT ON Orders TO analyst",
+      "B. GRANT SELECT ON Orders TO analyst",
+      "C. REVOKE SELECT ON Orders FROM analyst",
+      "D. GRANT ALL PRIVILEGES TO analyst",
+      "E. GRANT EXECUTE TO analyst"
+    ],
+    "correct_answer": "B. GRANT SELECT ON Orders TO analyst",
+    "explanation_ar": "لإعطاء صلاحية 'القراءة فقط'، نستخدم أمر GRANT لإعطاء صلاحية SELECT فقط. لو أعطينا صلاحيات أخرى مثل INSERT سيتمكنون من التعديل وهذا يخالف المطلوب.",
+    "explanation_en": "To provide read-only access, the strict DCL command GRANT SELECT must be used, restricting the user role from modifying or adding data."
+  },
+  {
+    "id": 55,
+    "question": "A distributed DBMS appears to users as:",
+    "options": [
+      "A. Multiple independent databases",
+      "B. A single logical database regardless of physical location",
+      "C. A backup system",
+      "D. A cloud-only database",
+      "E. A peer-to-peer file system"
+    ],
+    "correct_answer": "B. A single logical database regardless of physical location",
+    "explanation_ar": "نظام قواعد البيانات الموزعة يوفر ميزة 'الشفافية'. فرغم أن البيانات موزعة فيزيائياً على عدة أجهزة في عدة دول، إلا أن المستخدم يراها ويتعامل معها كقاعدة بيانات واحدة مركزية.",
+    "explanation_en": "A hallmark of a distributed DBMS is distribution transparency, masking the physical fragmentation and geographic spread to present a unified, single logical database to the user."
+  },
+  {
+    "id": 56,
+    "question": "Which is a key advantage of distributed databases?",
+    "options": [
+      "A. Single point of failure",
+      "B. Lower reliability",
+      "C. Improved performance via local data access",
+      "D. No need for replication",
+      "E. No need for network communication"
+    ],
+    "correct_answer": "C. Improved performance via local data access",
+    "explanation_ar": "أحد أقوى مزاياها هو تحسين الأداء. من خلال تخزين البيانات قريباً من المستخدمين الذين يحتاجونها بكثرة (Local access)، نقلل من الضغط على الشبكة وتسريع الاستجابة.",
+    "explanation_en": "Distributed databases enhance performance by localizing data access. Storing data nodes near the users who query them most frequently significantly reduces network latency."
+  }
+
+]
+
