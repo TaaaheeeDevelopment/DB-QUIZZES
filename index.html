@@ -41,23 +41,41 @@
             </div>
 
             <div class="quizzes-grid">
+                <!-- Quiz 5 (Al-Nahrain Part 1) -->
+                <div class="quiz-card quiz-card-special floating-card">
+                    <div class="badge neon-badge-special">(اختبار مهم جداً‼️)</div>
+                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الاول مكون من 50 سؤال (مهمة جدا جدا) (تحتوي 10% اسئلة صعبة)</p>
+                    <button class="btn btn-special" data-quiz="quiz5.json">ابدأ الاختبار</button>
+                </div>
+                
+                <!-- Quiz 6 (Al-Nahrain Part 2) -->
+                <div class="quiz-card quiz-card-special floating-card">
+                    <div class="badge neon-badge-special">(اختبار مهم جداً‼️)</div>
+                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الثاني مكون من 50 سؤال (مهمة جدا جدا) (تحتوي 10% اسئلة صعبة)</p>
+                    <button class="btn btn-special" data-quiz="quiz6.json">ابدأ الاختبار</button>
+                </div>
+
                 <!-- Quiz 1 -->
                 <div class="quiz-card floating-card neon-border">
                     <p class="quiz-desc">هذا اختبار بالاسئلة الموضعة بواسطه دكتور عز الدين اول 56 سؤال رسمي من المادة</p>
                     <button class="btn btn-glow" data-quiz="quiz1.json">ابدأ الاختبار</button>
                 </div>
+                
                 <!-- Quiz 2 -->
                 <div class="quiz-card floating-card neon-border">
                     <p class="quiz-desc">هذا اختبار ال50 سؤال الاولى المقدمة من جامعة الزهراء (group A)</p>
                     <button class="btn btn-glow" data-quiz="quiz2.json">ابدأ الاختبار</button>
                 </div>
+                
                 <!-- Quiz 3 -->
                 <div class="quiz-card floating-card neon-border">
                     <p class="quiz-desc">هذا الاختبار ال50 سؤال الثانية المقدمة من قبل جامعة الزهراء (group B)</p>
                     <button class="btn btn-glow" data-quiz="quiz3.json">ابدأ الاختبار</button>
                 </div>
-                <!-- Quiz 4 -->
-                <div class="quiz-card floating-card neon-border">
+
+                <!-- Quiz 4 (AI Quiz) -->
+                <div class="quiz-card quiz-card-ai floating-card">
+                    <div class="neon-badge-ai">(اسئلة زائدة غير رسمية)</div>
                     <p class="quiz-desc">هذا اختبار مكون من 150 سؤال تم انشاؤها بواسطة الذكاء الاصطناعي AI. (يحتوي على 10% أسئلة صعبة جداً)</p>
                     <button class="btn btn-glow" data-quiz="quiz4.json">ابدأ الاختبار</button>
                 </div>
@@ -68,9 +86,13 @@
         <section id="quiz-screen" class="screen">
             <div class="quiz-header">
                 <div id="question-progress">السؤال 1 / 50</div>
+                <div class="stop-btn-container">
+                    <button id="stop-quiz-btn" class="btn stop-btn">إنهاء الاختبار الآن</button>
+                </div>
                 <div id="score-display">النتيجة: 0</div>
             </div>
             
+            <div id="topic-badge" class="topic-badge hidden">الموضوع</div>
             <div id="hard-badge" class="badge hidden">HARD QUESTION</div>
 
             <div class="question-container glass-panel">
@@ -107,6 +129,17 @@
         </section>
 
     </main>
+
+    <!-- Confirmation Modal -->
+    <div id="stop-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2>هل أنت متأكد من انك تريد إيقاف الاختبار؟</h2>
+            <div class="modal-actions">
+                <button id="modal-confirm" class="btn modal-btn confirm-btn">تأكيد الإنهاء</button>
+                <button id="modal-cancel" class="btn modal-btn cancel-btn">إلغاء ومتابعة</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

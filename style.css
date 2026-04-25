@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #0b0b0b;
+    --bg-color: #050505;
     --success-color: #00ff00;
     --error-color: #ff0000;
     --hard-color: #FF4500;
@@ -29,16 +29,28 @@ body {
     transition: box-shadow 0.5s ease;
 }
 
+/* Hard Question Vignette */
 body.vignette-active {
     box-shadow: inset 0 0 150px var(--hard-color);
 }
 
-body.state-success {
-    box-shadow: inset 0 0 150px var(--success-color) !important;
+/* Flash Glow Animations (1.5 seconds) */
+.flash-success {
+    animation: flash-success-anim 1.5s ease-out forwards;
 }
 
-body.state-error {
-    box-shadow: inset 0 0 150px var(--error-color) !important;
+.flash-error {
+    animation: flash-error-anim 1.5s ease-out forwards;
+}
+
+@keyframes flash-success-anim {
+    0% { box-shadow: inset 0 0 150px var(--success-color); }
+    100% { box-shadow: inset 0 0 0px var(--success-color); }
+}
+
+@keyframes flash-error-anim {
+    0% { box-shadow: inset 0 0 150px var(--error-color); }
+    100% { box-shadow: inset 0 0 0px var(--error-color); }
 }
 
 /* Rainbow Background Animation */
@@ -86,20 +98,11 @@ body.state-error {
     background-color: rgba(0,0,0,0.8);
     position: relative;
     z-index: 10;
-    border-bottom: 2px solid transparent;
-    animation: rainbow-bottom-border 8s linear infinite;
-    animation-delay: -5s;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff) 1;
 }
 
-@keyframes rainbow-bottom-border {
-    0% { box-shadow: 0 4px 15px #ff0000; border-color: #ff0000; }
-    16% { box-shadow: 0 4px 15px #ffff00; border-color: #ffff00; }
-    33% { box-shadow: 0 4px 15px #00ff00; border-color: #00ff00; }
-    50% { box-shadow: 0 4px 15px #00ffff; border-color: #00ffff; }
-    66% { box-shadow: 0 4px 15px #0000ff; border-color: #0000ff; }
-    83% { box-shadow: 0 4px 15px #ff00ff; border-color: #ff00ff; }
-    100% { box-shadow: 0 4px 15px #ff0000; border-color: #ff0000; }
-}
+/* static 7-color gradient replaces the animated dynamic border to reduce sharp glowing */
 
 .logo, .student-info {
     font-weight: 700;
@@ -136,6 +139,13 @@ body.state-error {
     100% { transform: translateY(0px); }
 }
 
+@keyframes pulse-hard {
+    0% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px var(--hard-color); opacity: 1; }
+    100% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
+}
+
+/* Standard Rainbow Border for Glassmorphism Containers */
 @keyframes border-rainbow {
     0% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000; }
     16% { border-color: #ffff00; box-shadow: 0 0 15px #ffff00, inset 0 0 5px #ffff00; }
@@ -144,12 +154,6 @@ body.state-error {
     66% { border-color: #0000ff; box-shadow: 0 0 15px #0000ff, inset 0 0 5px #0000ff; }
     83% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff, inset 0 0 5px #ff00ff; }
     100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000; }
-}
-
-@keyframes pulse-hard {
-    0% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
-    50% { transform: scale(1.05); box-shadow: 0 0 30px var(--hard-color); opacity: 1; }
-    100% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
 }
 
 /* Glassmorphism */
@@ -162,10 +166,79 @@ body.state-error {
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
+/* Neon Borders specifically for standard containers */
+.neon-border {
+    animation: floating 4s infinite ease-in-out, border-rainbow 12s linear infinite !important;
+}
+
 /* Hovers */
 .glass-panel:hover, .quiz-card:hover {
     transform: translateY(-5px) scale(1.02);
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Quiz Containers Specifics */
+.quiz-card-special {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #FFA500;
+    box-shadow: 0 0 15px #FFA500, inset 0 0 10px #FFA500;
+    animation: floating 4s infinite ease-in-out, pulse-orange 3s infinite alternate !important;
+}
+
+/* Override hover effect for special so it doesnt get too light */
+.quiz-card-special:hover {
+    background: rgba(0, 0, 0, 1) !important;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.quiz-card-special .quiz-desc {
+    color: #ff3300;
+    text-shadow: 0 0 8px #ff4500;
+    font-weight: 700;
+}
+
+@keyframes pulse-orange {
+    0% { box-shadow: 0 0 10px #ff8c00; }
+    100% { box-shadow: 0 0 25px #ff4500, inset 0 0 15px #ff8c00; }
+}
+
+.quiz-card-ai {
+    background: var(--glass-bg);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
+    animation: floating 4s infinite ease-in-out, glass-ai 5s infinite alternate !important;
+}
+
+@keyframes glass-ai {
+    0% { border-color: #00ff80; box-shadow: 0 0 15px #00ff80; }
+    100% { border-color: #00aaff; box-shadow: 0 0 15px #00aaff; }
+}
+
+/* Badges for Quiz Cards */
+.neon-badge-special {
+    background: transparent;
+    color: #FFA500;
+    text-shadow: 0 0 10px #FF4500, 0 0 20px #FF0000;
+    font-size: 1.1rem;
+    padding: 0;
+    margin-bottom: 10px;
+    animation: none; /* overrides badge default animation */
+}
+
+/* AI badge from Neon Green to Blue */
+.neon-badge-ai {
+    color: #00FF00;
+    text-shadow: 
+        0 0 5px #00FF00, 
+        0 0 10px #00FF00, 
+        0 0 20px #00BFFF, 
+        0 0 30px #00BFFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: none; /* overrides badge default animation */
 }
 
 /* Main Container */
@@ -251,7 +324,7 @@ body.state-error {
 /* Quizzes Grid */
 .quizzes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
@@ -262,14 +335,19 @@ body.state-error {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    min-height: 200px;
-    animation: floating 4s infinite ease-in-out, border-rainbow 12s linear infinite;
+    min-height: 220px;
 }
 
-.quiz-card:nth-child(1) { animation-delay: 0s, -1s; }
-.quiz-card:nth-child(2) { animation-delay: -1s, -4s; }
-.quiz-card:nth-child(3) { animation-delay: -2s, -7s; }
-.quiz-card:nth-child(4) { animation-delay: -3s, -10s; }
+.floating-card {
+    animation: floating 4s infinite ease-in-out;
+}
+
+.quiz-card:nth-child(1) { animation-delay: 0s !important; }
+.quiz-card:nth-child(2) { animation-delay: -2s !important; }
+.quiz-card:nth-child(3) { animation-delay: -4s !important; }
+.quiz-card:nth-child(4) { animation-delay: -6s !important; }
+.quiz-card:nth-child(5) { animation-delay: -8s !important; }
+.quiz-card:nth-child(6) { animation-delay: -10s !important; }
 
 .quiz-desc {
     margin-bottom: 20px;
@@ -302,14 +380,45 @@ body.state-error {
     letter-spacing: 1px;
 }
 
+.btn-special {
+    border: 1px solid #FFA500;
+    background: rgba(255, 165, 0, 0.1);
+    box-shadow: 0 0 10px #ff4500;
+}
+
+.btn-special:hover {
+    background: rgba(255, 165, 0, 0.3);
+    box-shadow: 0 0 20px #ff8c00;
+    transform: scale(1.1);
+}
+
 /* Quiz Screen */
 .quiz-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     font-size: 1.2rem;
     font-weight: bold; 
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    flex-wrap: wrap;       
+}
+
+.stop-btn-container {
+    text-align: center;
+}
+
+.stop-btn {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 1px solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.stop-btn:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 20px red;
 }
 
 .badge {
@@ -325,6 +434,21 @@ body.state-error {
     animation: pulse-hard 1.5s infinite;
     text-align: center;
     width: fit-content;
+}
+
+.topic-badge {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #e0e0e0;
+    padding: 4px 15px;
+    border-radius: 12px;
+    margin: 0 auto 15px;
+    display: table;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hidden {
@@ -508,6 +632,64 @@ body.state-error {
     margin-top: 20px;
 }
 
+/* Modal Styling */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,1);
+}
+
+.modal-content h2 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-btn {
+    min-width: 120px;
+}
+
+.confirm-btn {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid red;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 15px red;
+}
+
+.cancel-btn {
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid lime;
+}
+
+.cancel-btn:hover {
+    background: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 15px lime;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .app-header {
@@ -532,5 +714,9 @@ body.state-error {
     .wrong-item .user-ans, .wrong-item .corr-ans {
         display: block;
         margin-top: 5px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
     }
 }

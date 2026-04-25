@@ -24,9 +24,56 @@ CanvasRenderingContext2D.prototype.stroke = function() {
 // State Variables
 let currentQuizData = [];
 let currentQuestionIndex = 0;
+let answeredQuestionsCount = 0; // for partial tracking when stopping early
 let score = 0;
 let wrongAnswers = [];
 let isRandomOrder = false;
+let activeQuizFile = '';
+
+// State Persistence
+const SAVED_STATE_KEY = "quiz_saved_state";
+
+function saveState() {
+    if (!activeQuizFile) return;
+    const stateObj = {
+        activeQuizFile,
+        isRandomOrder,
+        studentInfoText: studentInfo.textContent,
+        currentQuizData,
+        currentQuestionIndex,
+        answeredQuestionsCount,
+        score,
+        wrongAnswers
+    };
+    localStorage.setItem(SAVED_STATE_KEY, JSON.stringify(stateObj));
+}
+
+function loadState() {
+    const saved = localStorage.getItem(SAVED_STATE_KEY);
+    if (saved) {
+        try {
+            const stateObj = JSON.parse(saved);
+            activeQuizFile = stateObj.activeQuizFile;
+            isRandomOrder = stateObj.isRandomOrder;
+            studentInfo.textContent = stateObj.studentInfoText;
+            currentQuizData = stateObj.currentQuizData;
+            currentQuestionIndex = stateObj.currentQuestionIndex;
+            answeredQuestionsCount = stateObj.answeredQuestionsCount;
+            score = stateObj.score;
+            wrongAnswers = stateObj.wrongAnswers;
+            return true;
+        } catch (e) {
+            console.error("Failed to parse saved state", e);
+            clearState();
+        }
+    }
+    return false;
+}
+
+function clearState() {
+    localStorage.removeItem(SAVED_STATE_KEY);
+    activeQuizFile = '';
+}
 
 // DOM Elements
 const homeScreen = document.getElementById('home-screen');
@@ -38,12 +85,21 @@ const startButtons = document.querySelectorAll('.quiz-card .btn');
 const questionProgress = document.getElementById('question-progress');
 const scoreDisplay = document.getElementById('score-display');
 const hardBadge = document.getElementById('hard-badge');
+const topicBadge = document.getElementById('topic-badge');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const explanationContainer = document.getElementById('explanation-container');
 const explanationAr = document.getElementById('explanation-ar');
 const explanationEn = document.getElementById('explanation-en');
 const nextBtn = document.getElementById('next-btn');
+
+// Modal & Stop Buttons
+const stopQuizBtn = document.getElementById('stop-quiz-btn');
+const stopModal = document.getElementById('stop-modal');
+const modalConfirmBtn = document.getElementById('modal-confirm');
+const modalCancelBtn = document.getElementById('modal-cancel');
+
+// Result Screen
 const finalScoreText = document.getElementById('final-score-text');
 const wrongAnswersList = document.getElementById('wrong-answers-list');
 const homeBtn = document.getElementById('home-btn');
@@ -104,7 +160,13 @@ function initParticles(colorType = 'normal') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles('normal');
+    if (loadState()) {
+        homeScreen.classList.remove('active-screen');
+        quizScreen.classList.add('active-screen');
+        renderQuestion();
+    } else {
+        initParticles('normal');
+    }
 });
 
 // Event Listeners
@@ -115,10 +177,12 @@ startButtons.forEach(btn => {
             if (radio.checked) isRandomOrder = (radio.value === 'random');
         });
         
-        if (file === 'quiz1.json') studentInfo.textContent = 'اختبار دكتور عز الدين';
+        if (file === 'quiz5.json') studentInfo.textContent = 'اختبار جامعة النهرين - الجزء الأول';
+        else if (file === 'quiz6.json') studentInfo.textContent = 'اختبار جامعة النهرين - الجزء الثاني';
+        else if (file === 'quiz4.json') studentInfo.textContent = 'اختبار اسئلة الذكاء الاصطناعي';
+        else if (file === 'quiz1.json') studentInfo.textContent = 'اختبار دكتور عز الدين';
         else if (file === 'quiz2.json') studentInfo.textContent = 'اختبار جامعة الزهراء (group A)';
         else if (file === 'quiz3.json') studentInfo.textContent = 'اختبار جامعة الزهراء (group B)';
-        else if (file === 'quiz4.json') studentInfo.textContent = 'اختبار اسئلة الذكاء الاصطناعي';
 
         loadQuiz(file);
     });
@@ -127,17 +191,37 @@ startButtons.forEach(btn => {
 nextBtn.addEventListener('click', () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < currentQuizData.length) {
+        saveState();
         renderQuestion();
     } else {
         showResults();
     }
 });
 
+// Modal Logic
+stopQuizBtn.addEventListener('click', () => {
+    stopModal.classList.remove('hidden');
+});
+
+modalCancelBtn.addEventListener('click', () => {
+    stopModal.classList.add('hidden');
+});
+
+modalConfirmBtn.addEventListener('click', () => {
+    stopModal.classList.add('hidden');
+    clearState();
+    // If the user hasn't clicked an answer for the current question yet, 
+    // it shouldn't deduct points but we consider the quiz 'ended'.
+    showResults();
+});
+
+
 homeBtn.addEventListener('click', () => {
+    clearState();
     resultScreen.classList.remove('active-screen');
     homeScreen.classList.add('active-screen');
     initParticles('normal');
-    document.body.classList.remove('vignette-active', 'state-success', 'state-error');
+    document.body.classList.remove('vignette-active', 'flash-success', 'flash-error');
     studentInfo.textContent = 'اعداد الطالب: طه احمد غازي';
 });
 
@@ -153,7 +237,6 @@ function shuffleArray(array) {
 // Load Quiz Data
 async function loadQuiz(filename) {
     try {
-        // Also add a little cache burst in case browser caches JSON files heavily
         const response = await fetch(filename + "?v=" + new Date().getTime());
         let data = await response.json();
         
@@ -161,18 +244,21 @@ async function loadQuiz(filename) {
             data = shuffleArray(data);
         }
 
+        activeQuizFile = filename;
         currentQuizData = data;
         currentQuestionIndex = 0;
         score = 0;
+        answeredQuestionsCount = 0; // count updated on answer
         wrongAnswers = [];
 
         homeScreen.classList.remove('active-screen');
         quizScreen.classList.add('active-screen');
 
+        saveState();
         renderQuestion();
     } catch (err) {
         console.error("Failed to load quiz", err);
-        alert("فشل تحميل الاختبار. تأكد من وجود ملف " + filename);
+        alert("فشل تحميل الاختبار. تأكد من وجود ملف " + filename + " وأن محتواه ليس فارغاً بصيغة JSON.");
     }
 }
 
@@ -187,9 +273,17 @@ function renderQuestion() {
     questionProgress.textContent = `السؤال ${currentQuestionIndex + 1} / ${currentQuizData.length}`;
     scoreDisplay.textContent = `النتيجة: ${score}`;
 
-    // Handle Difficulty logic
-    document.body.classList.remove('state-success', 'state-error');
+    // Reset Flash Glow and body classes
+    document.body.classList.remove('flash-success', 'flash-error');
     
+    // Topic & Difficulty Logic
+    if (qData.topic) {
+        topicBadge.textContent = qData.topic;
+        topicBadge.classList.remove('hidden');
+    } else {
+        topicBadge.classList.add('hidden');
+    }
+
     if (qData.difficulty === 'hard') {
         hardBadge.classList.remove('hidden');
         document.body.classList.add('vignette-active');
@@ -224,19 +318,23 @@ function renderQuestion() {
 
 // Handle Answer Logic
 function handleAnswer(selectedOpt, qData, btnSelected) {
-    // Disable all options
+    // Disable all options once answered
     const allBtns = document.querySelectorAll('.option-btn');
     allBtns.forEach(b => b.disabled = true);
 
+    answeredQuestionsCount++; // Increment answered tracking
     const isCorrect = (selectedOpt.trim() === qData.correct_answer.trim());
     
-    document.body.classList.remove('state-success', 'state-error');
+    // Restart animation by re-adding class
+    document.body.classList.remove('flash-success', 'flash-error');
+    // Force DOM Reflow
+    void document.body.offsetWidth;
 
     if (isCorrect) {
         btnSelected.classList.add('correct');
         score++;
         scoreDisplay.textContent = `النتيجة: ${score}`;
-        document.body.classList.add('state-success');
+        document.body.classList.add('flash-success');
         initParticles('success');
     } else {
         btnSelected.classList.add('wrong');
@@ -255,32 +353,42 @@ function handleAnswer(selectedOpt, qData, btnSelected) {
             selected: selectedOpt
         });
 
-        document.body.classList.add('state-error');
+        document.body.classList.add('flash-error');
         initParticles('error');
     }
 
     // Show explanations
-    explanationAr.textContent = qData.explanation_ar || "لا يوجد شرح بالعربية.";
-    explanationEn.textContent = qData.explanation_en || "No explanation available.";
-    explanationContainer.classList.remove('hidden');
+    if (qData.explanation_ar || qData.explanation_en) {
+        explanationAr.textContent = qData.explanation_ar || "لا يوجد شرح بالعربية.";
+        explanationEn.textContent = qData.explanation_en || "";
+        explanationContainer.classList.remove('hidden');
+    }
 
     nextBtn.classList.remove('hidden');
 }
 
 // Show Results
 function showResults() {
+    clearState();
     quizScreen.classList.remove('active-screen');
     resultScreen.classList.add('active-screen');
-    document.body.classList.remove('vignette-active', 'state-success', 'state-error');
+    document.body.classList.remove('vignette-active', 'flash-success', 'flash-error');
     initParticles('normal'); // revert particles to default
 
-    finalScoreText.textContent = `النتيجة النهائية: ${score} من ${currentQuizData.length}`;
+    // Using answeredQuestionsCount to show partial / full score accurately
+    const totalAttempted = answeredQuestionsCount;
+    
+    if(totalAttempted === 0) {
+        finalScoreText.textContent = `لم تجب على أي سؤال.`;
+    } else {
+        finalScoreText.textContent = `النتيجة النهائية: ${score} من ${totalAttempted}`;
+    }
 
     wrongAnswersList.innerHTML = '';
     
-    if (wrongAnswers.length === 0) {
+    if (wrongAnswers.length === 0 && totalAttempted > 0) {
         wrongAnswersList.innerHTML = '<p style="text-align:center; color: var(--success-color); font-size: 1.5rem; font-weight: bold; animation: text-rainbow 5s infinite;">عاش! أبدعت وأجبت على جميع الأسئلة بصورة صحيحة.</p>';
-    } else {
+    } else if (wrongAnswers.length > 0) {
         wrongAnswers.forEach(wa => {
             const div = document.createElement('div');
             div.classList.add('wrong-item');
