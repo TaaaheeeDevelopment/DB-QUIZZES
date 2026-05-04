@@ -1,702 +1,752 @@
 ﻿[
     {
         "id": 1,
+        "difficulty": "normal",
         "question": "Which language is used by the DBA and database designers to define the conceptual and internal schemas?",
         "options": [
-            "a. DDL (Data Definition Language).",
-            "b. DML (Data Manipulation Language).",
-            "c. VDL (View Definition Language).",
-            "d. SDL (Storage Definition Language).",
-            "e. SQL only."
+            "DDL (Data Definition Language).",
+            "DML (Data Manipulation Language).",
+            "VDL (View Definition Language).",
+            "SDL (Storage Definition Language).",
+            "SQL only."
         ],
-        "correct_answer": "a. DDL (Data Definition Language).",
-        "explanation_ar": "لغة تعريف البيانات (DDL) هي اللغة الأساسية التي يستخدمها مدير قاعدة البيانات (DBA) لتحديد وبناء المخططات (Schemas) الجداول، والقيود. في معظم الأنظمة الحديثة، تقوم DDL بوظيفة تعريف المخططين المنطقي والداخلي معاً.",
-        "explanation_en": "Data Definition Language (DDL) is used by the DBA and designers to specify the conceptual schema. In many modern DBMSs, DDL is also used to define internal storage structures when a separate Storage Definition Language (SDL) is not provided."
+        "correct_answer": "DDL (Data Definition Language).",
+        "explanation_ar": "لغة تعريف البيانات (DDL) تُستخدم من قبل مصممي قاعدة البيانات لتعريف المخططين المفاهيمي والداخلي.",
+        "explanation_en": "Data Definition Language (DDL) is used by database designers to define both conceptual and internal schemas."
     },
     {
         "id": 2,
+        "difficulty": "normal",
         "question": "A data model that represents data as it is stored on computer storage media is known as a:",
         "options": [
-            "a. High-level data model.",
-            "b. Conceptual data model.",
-            "c. Representational data model.",
-            "d. Low-level or Physical data model.",
-            "e. Object-oriented data model."
+            "High-level data model.",
+            "Conceptual data model.",
+            "Representational data model.",
+            "Low-level or Physical data model.",
+            "Object-oriented data model."
         ],
-        "correct_answer": "d. Low-level or Physical data model.",
-        "explanation_ar": "النموذج المادي (Physical Data Model) أو منخفض المستوى، هو النموذج الذي يصف التفاصيل التقنية الدقيقة لكيفية تخزين البيانات فعلياً على الأقراص الصلبة، مثل مسارات الوصول وصيغ السجلات.",
-        "explanation_en": "A low-level or physical data model provides concepts that describe the precise details of how data is physically stored on the computer storage media, including record formats and access paths."
+        "correct_answer": "Low-level or Physical data model.",
+        "explanation_ar": "نموذج البيانات الفيزيائي أو منخفض المستوى (Physical data model) هو الذي يصف كيفية تخزين البيانات فعلياً على وسائط التخزين.",
+        "explanation_en": "A Low-level or Physical data model describes how data is actually stored on computer storage media."
     },
     {
         "id": 3,
+        "difficulty": "normal",
         "question": "Which component of a DBMS is responsible for ensuring that the database is restored to a consistent state after a failure?",
         "options": [
-            "a. Query Optimiser.",
-            "b. Runtime Database Processor.",
-            "c. Recovery Subsystem.",
-            "d. DDL Compiler.",
-            "e. Buffer Manager."
+            "Query Optimiser.",
+            "Runtime Database Processor.",
+            "Recovery Subsystem.",
+            "DDL Compiler.",
+            "Buffer Manager."
         ],
-        "correct_answer": "c. Recovery Subsystem.",
-        "explanation_ar": "نظام الاسترداد (Recovery Subsystem) هو خط الدفاع الأخير؛ وظيفته التأكد من أنه في حال انقطاع الكهرباء أو تعطل النظام، تعود قاعدة البيانات إلى حالة مستقرة (إما إكمال المعاملات الناقصة أو إلغاؤها بالكامل).",
-        "explanation_en": "The Recovery Subsystem ensures that the database is restored to a consistent and valid state in the event of hardware or software failures, typically by rolling back incomplete transactions."
+        "correct_answer": "Recovery Subsystem.",
+        "explanation_ar": "النظام الفرعي للاسترداد (Recovery Subsystem) هو المسؤول عن إعادة قاعدة البيانات إلى حالة متسقة بعد حدوث أي عطل أو فشل.",
+        "explanation_en": "The Recovery Subsystem ensures that the database is restored to a consistent state after a hardware or software failure."
     },
     {
         "id": 4,
-        "question": "A 'Catalogue' or 'Data Dictionary' in a DBMS environment contains:",
+        "difficulty": "normal",
+        "question": "A \"Catalogue\" or \"Data Dictionary\" in a DBMS environment contains:",
         "options": [
-            "a. Meta-data describing the structure and constraints of the database.",
-            "b. The actual raw data records of the users.",
-            "c. The source code of the DBMS software.",
-            "d. The hardware specifications of the server.",
-            "e. A list of all passwords for all users in plain text."
+            "Meta-data describing the structure and constraints of the database.",
+            "The actual raw data records of the users.",
+            "The source code of the DBMS software.",
+            "The hardware specifications of the server.",
+            "A list of all passwords for all users in plain text."
         ],
-        "correct_answer": "a. Meta-data describing the structure and constraints of the database.",
-        "explanation_ar": "قاموس البيانات (Data Dictionary) لا يحتوي على بيانات المستخدمين الفعلية، بل يحتوي على 'البيانات الوصفية' (Metadata)؛ أي معلومات عن الجداول، أنواع البيانات، القيود، والصلاحيات.",
-        "explanation_en": "The Data Dictionary or Catalog stores metadata—data about the data. It contains definitions of database structures, constraints, users, and mapping information, rather than the actual user records."
+        "correct_answer": "Meta-data describing the structure and constraints of the database.",
+        "explanation_ar": "قاموس البيانات (Data Dictionary) يحتوي على البيانات الوصفية (Meta-data) التي تصف هيكل قاعدة البيانات وقيودها.",
+        "explanation_en": "A Data Dictionary or Catalogue contains meta-data, which describes the structure, schemas, and constraints of the database."
     },
     {
         "id": 5,
-        "question": "What is the characteristic of 'High-Level' or 'Non-procedural' DML?",
+        "difficulty": "normal",
+        "question": "What is the characteristic of \"High-Level\" or \"Non-procedural\" DML?",
         "options": [
-            "a. It requires the user to specify how to retrieve data step-by-step.",
-            "b. It can only be used when embedded in a general-purpose programming language.",
-            "c. It allows users to specify what data is needed rather than how to get it.",
-            "d. It is mainly used by system programmers to write DBMS code.",
-            "e. It operates on only one record at a time."
+            "It requires the user to specify how to retrieve data step-by-step.",
+            "It can only be used when embedded in a general-purpose programming language.",
+            "It allows users to specify what data is needed rather than how to get it.",
+            "It is mainly used by system programmers to write DBMS code.",
+            "It operates on only one record at a time."
         ],
-        "correct_answer": "c. It allows users to specify what data is needed rather than how to get it.",
-        "explanation_ar": "اللغات عالية المستوى (مثل SQL) هي لغات تعريفية؛ أنت تخبر النظام 'بماذا' تريد (مثلاً: أريد أسماء الطلاب)، وتترك للنظام مهمة تحديد 'كيف' يصل لهذه البيانات بأفضل طريقة.",
-        "explanation_en": "High-level, non-procedural DMLs (like SQL) are declarative. They allow the user to specify exactly *what* data is required without needing to specify the step-by-step physical execution plan of *how* to retrieve it."
+        "correct_answer": "It allows users to specify what data is needed rather than how to get it.",
+        "explanation_ar": "لغة DML غير الإجرائية (Non-procedural) تسمح للمستخدم بتحديد 'ماذا' يريد من البيانات دون الحاجة لكتابة خطوات 'كيفية' جلبها.",
+        "explanation_en": "High-Level or Non-procedural DML allows users to specify what data is needed, leaving the DBMS to determine how to retrieve it."
     },
     {
         "id": 6,
-        "question": "Which of the following is considered a 'Representational' data model?",
+        "difficulty": "normal",
+        "question": "Which of the following is considered a \"Representational\" data model?",
         "options": [
-            "a. Entity-Relationship (ER) model.",
-            "b. Physical data model.",
-            "c. Relational data model.",
-            "d. Object-based data model.",
-            "e. Semantic data model."
+            "Entity-Relationship (ER) model.",
+            "Physical data model.",
+            "Relational data model.",
+            "Object-based data model.",
+            "Semantic data model."
         ],
-        "correct_answer": "c. Relational data model.",
-        "explanation_ar": "النموذج التمثيلي (Representational) يقع في المنتصف؛ هو مفهوم للمستخدمين ولكنه قابل للتطبيق برمجياً مباشرة على الكمبيوتر. النموذج العلائقي (Relational) هو أشهر مثال على هذا النوع.",
-        "explanation_en": "The Relational data model is a representational (or implementation) data model. It hides some details of data storage but can be implemented directly on a computer system, bridging the gap between conceptual and physical."
+        "correct_answer": "Relational data model.",
+        "explanation_ar": "النموذج العلائقي (Relational data model) يُعتبر نموذجاً تمثيلياً (Representational) لأنه يوازن بين الفهم المنطقي وتفاصيل التنفيذ.",
+        "explanation_en": "The Relational data model is considered a Representational (or implementation) data model, balancing user logic with computer storage."
     },
     {
         "id": 7,
+        "difficulty": "normal",
         "question": "In a Three-Tier Client-Server architecture, the middle tier usually handles:",
         "options": [
-            "a. Data storage and query processing.",
-            "b. User interface display.",
-            "c. Application programs and business logic.",
-            "d. Physical hardware management.",
-            "e. Network protocol definitions."
+            "Data storage and query processing.",
+            "User interface display.",
+            "Application programs and business logic.",
+            "Physical hardware management.",
+            "Network protocol definitions."
         ],
-        "correct_answer": "c. Application programs and business logic.",
-        "explanation_ar": "في معمارية الـ 3 طبقات، الطبقة الوسطى (Application Server) هي العقل المدبر الذي يحتوي على قواعد العمل والمنطق البرمجي، حيث تفصل واجهة المستخدم (الطبقة 1) عن قاعدة البيانات (الطبقة 3).",
-        "explanation_en": "In a three-tier architecture, the middle tier (application server) is responsible for executing application programs and enforcing business rules/logic, serving as an intermediary between the client UI and the database server."
+        "correct_answer": "Application programs and business logic.",
+        "explanation_ar": "في المعمارية ثلاثية الطبقات، الطبقة الوسطى (Middle tier) مسؤولة عن تشغيل البرامج ومنطق العمل (Business logic).",
+        "explanation_en": "In a Three-Tier Client-Server architecture, the middle tier (application server) typically handles application programs and business logic."
     },
     {
         "id": 8,
+        "difficulty": "normal",
         "question": "Which utility is typically used to reorganise database files to improve performance?",
         "options": [
-            "a. Loading utility.",
-            "b. Backup utility.",
-            "c. Reorganisation utility.",
-            "d. Monitoring utility.",
-            "e. Data compression utility."
+            "Loading utility.",
+            "Backup utility.",
+            "Reorganisation utility.",
+            "Monitoring utility.",
+            "Data compression utility."
         ],
-        "correct_answer": "c. Reorganisation utility.",
-        "explanation_ar": "أداة إعادة التنظيم (Reorganisation utility) تُستخدم لترتيب البيانات المبعثرة على الأقراص الصلبة وتحسين مسارات الوصول وإلغاء التجزئة، مما يسرع من أداء قاعدة البيانات بشكل ملحوظ.",
-        "explanation_en": "A reorganization utility optimizes the physical layout of database files on storage devices, such as rebuilding fragmented indexes or grouping related records, to significantly enhance query performance."
+        "correct_answer": "Reorganisation utility.",
+        "explanation_ar": "أداة إعادة التنظيم (Reorganisation utility) تُستخدم لإعادة ترتيب ملفات قاعدة البيانات لتحسين سرعة الأداء والاستجابة.",
+        "explanation_en": "A Reorganisation utility is used to reorganize database files into new physical locations or structures to improve performance."
     },
     {
         "id": 9,
+        "difficulty": "normal",
         "question": "Why is the Three-Schema Architecture rarely fully implemented in commercial DBMS products?",
         "options": [
-            "a. Because it is theoretically impossible to map between levels.",
-            "b. Because logical data independence is not desirable in modern systems.",
-            "c. Because the overhead of multiple mappings leads to significant performance inefficiencies.",
-            "d. Because the DDL cannot support the definition of an internal schema.",
-            "e. Because it requires the use of multiple different database engines simultaneously."
+            "Because it is theoretically impossible to map between levels.",
+            "Because logical data independence is not desirable in modern systems.",
+            "Because the overhead of multiple mappings leads to significant performance inefficiencies.",
+            "Because the DDL cannot support the definition of an internal schema.",
+            "Because it requires the use of multiple different database engines simultaneously."
         ],
-        "correct_answer": "c. Because the overhead of multiple mappings leads to significant performance inefficiencies.",
-        "explanation_ar": "التطبيق الحرفي والكامل لهذه المعمارية يتطلب من النظام ترجمة (Mapping) الأوامر عدة مرات عبر مستويات مختلفة، هذا العبء الإضافي يبطئ أداء النظام بشدة في البيئات التجارية.",
-        "explanation_en": "Strict adherence to the three-schema architecture requires complex, multi-level mapping for every query. This overhead consumes significant CPU resources, leading to unacceptable performance inefficiencies in high-demand commercial systems."
+        "correct_answer": "Because the overhead of multiple mappings leads to significant performance inefficiencies.",
+        "explanation_ar": "نادراً ما تُنفذ معمارية المخططات الثلاث بالكامل لأن كثرة عمليات التحويل (Mappings) بين مستوياتها تسبب بطئاً في الأداء.",
+        "explanation_en": "Fully implementing the Three-Schema Architecture introduces excessive mapping overhead, which leads to significant performance inefficiencies."
     },
     {
         "id": 10,
-        "question": "In the context of DBMS interfaces, a 'Stand-alone' query language interface is best suited for:",
+        "difficulty": "normal",
+        "question": "In the context of DBMS interfaces, a \"Stand-alone\" query language interface is best suited for:",
         "options": [
-            "a. Professional programmers writing complex applications.",
-            "b. Casual users who need to access information sporadically using a high-level language.",
-            "c. DBA's who are defining the internal storage structures.",
-            "d. Parametric users who perform repetitive 'canned' transactions.",
-            "e. Mobile devices with limited processing power."
+            "Professional programmers writing complex applications.",
+            "Casual users who need to access information sporadically using a high-level language.",
+            "DBA's who are defining the internal storage structures.",
+            "Parametric users who perform repetitive \"canned\" transactions.",
+            "Mobile devices with limited processing power."
         ],
-        "correct_answer": "b. Casual users who need to access information sporadically using a high-level language.",
-        "explanation_ar": "الواجهة المستقلة (مثل نافذة كتابة SQL مباشرة) مصممة للمستخدمين الذين يحتاجون للاستعلام عن معلومات محددة من حين لآخر باستخدام أوامر مباشرة، دون الحاجة لبرنامج كامل.",
-        "explanation_en": "Stand-alone query interfaces allow casual or ad-hoc users to directly execute commands in a high-level query language (like SQL) to retrieve specific information sporadically without writing full applications."
+        "correct_answer": "Casual users who need to access information sporadically using a high-level language.",
+        "explanation_ar": "واجهة لغة الاستعلام المستقلة (Stand-alone) تناسب المستخدمين العاديين (Casual users) الذين يحتاجون للوصول للبيانات بين الحين والآخر.",
+        "explanation_en": "A Stand-alone query language interface is primarily designed for casual users who need to query the database sporadically."
     },
     {
         "id": 11,
+        "difficulty": "normal",
         "question": "Which constraint specifies that no primary key value can be NULL?",
         "options": [
-            "a. Referential integrity",
-            "b. Key constraint",
-            "c. Entity integrity",
-            "d. Domain constraint",
-            "e. Unique constraint"
+            "Referential integrity",
+            "Key constraint",
+            "Entity integrity",
+            "Domain constraint",
+            "Unique constraint"
         ],
-        "correct_answer": "c. Entity integrity",
-        "explanation_ar": "قيد تكامل الكيان (Entity integrity) ينص صراحة على أن المفتاح الأساسي لا يمكن أن يكون فارغاً (NULL)، لأنه يُستخدم لتمييز كل صف، ولا يمكن تمييز صف بقيمة مجهولة.",
-        "explanation_en": "Entity integrity is a basic relational rule stating that no primary key attribute can be null because it is fundamentally used to identify individual tuples."
+        "correct_answer": "Entity integrity",
+        "explanation_ar": "قيد سلامة الكيان (Entity integrity) يشترط ألا يكون أي جزء من المفتاح الأساسي فارغاً (NULL).",
+        "explanation_en": "The Entity integrity constraint dictates that no primary key value can be NULL."
     },
     {
         "id": 12,
-        "question": "In a relational database, what does a 'Relation' represent?",
+        "difficulty": "normal",
+        "question": "In a relational database, what does a \"Relation\" represent?",
         "options": [
-            "a. A single row of data",
-            "b. A connection between two tables",
-            "c. A table of values",
-            "d. A specific data type",
-            "e. A primary key"
+            "A single row of data",
+            "A connection between two tables",
+            "A table of values",
+            "A specific data type",
+            "A primary key"
         ],
-        "correct_answer": "c. A table of values",
-        "explanation_ar": "في النموذج العلائقي، العلاقة (Relation) هي المسمى الرياضي والأكاديمي لما نعرفه عملياً في قواعد البيانات باسم 'الجدول' (Table) الذي يحتوي على الصفوف والأعمدة.",
-        "explanation_en": "In relational database theory, a 'relation' directly corresponds to a table of values consisting of rows (tuples) and columns (attributes)."
+        "correct_answer": "A table of values",
+        "explanation_ar": "في قاعدة البيانات العلائقية، مصطلح 'العلاقة' (Relation) يُشير رياضياً إلى جدول يحتوي على بيانات.",
+        "explanation_en": "In a relational database model, a 'Relation' technically refers to a table of values."
     },
     {
         "id": 13,
+        "difficulty": "normal",
         "question": "If a relation has 100 rows and 50 attributes, what is its cardinality?",
         "options": [
-            "a. 1",
-            "b. 10",
-            "c. 50",
-            "d. 100",
-            "e. 0"
+            "1",
+            "10",
+            "50",
+            "100",
+            "0"
         ],
-        "correct_answer": "d. 100",
-        "explanation_ar": "الكاردينالية (Cardinality) تشير دائماً إلى عدد الصفوف (Tuples) في الجدول. بما أن الجدول يحتوي على 100 صف، فكارديناليته 100. الرقم 50 هنا يمثل درجة الجدول (Degree).",
-        "explanation_en": "Cardinality refers exactly to the total number of tuples (rows) in a relation. The number of attributes (columns) is referred to as the relation's degree."
+        "correct_answer": "100",
+        "explanation_ar": "عدد العناصر (Cardinality) في العلاقة يساوي عدد الصفوف (Tuples) فيها، وهو هنا 100.",
+        "explanation_en": "The cardinality of a relation is the number of tuples (rows) it contains, which is 100 in this case."
     },
     {
         "id": 14,
+        "difficulty": "normal",
         "question": "Which of the following is true regarding the ordering of tuples in a relation?",
         "options": [
-            "a. Tuples must be stored in alphabetical order.",
-            "b. Tuples must be stored by primary key order.",
-            "c. The order of tuples is not part of the logical definition of a relation.",
-            "d. The order of tuples is defined by the physical disk address.",
-            "e. Tuples must be stored in the order they were inserted."
+            "Tuples must be stored in alphabetical order.",
+            "Tuples must be stored by primary key order.",
+            "The order of tuples is not part of the logical definition of a relation.",
+            "The order of tuples is defined by the physical disk address.",
+            "Tuples must be stored in the order they were inserted."
         ],
-        "correct_answer": "c. The order of tuples is not part of the logical definition of a relation.",
-        "explanation_ar": "الترتيب المنطقي للصفوف غير موجود في النموذج العلائقي المعتمد على نظرية المجموعات الرياضية. النظام يمكنه تخزين الصفوف وعرضها بأي ترتيب، مالم تستخدم أمر ORDER BY.",
-        "explanation_en": "Relational databases are conceptually based on mathematical sets. By mathematical definition, elements in a set have no inherent order, meaning the logical ordering of tuples is irrelevant."
+        "correct_answer": "The order of tuples is not part of the logical definition of a relation.",
+        "explanation_ar": "نظرياً وفي التعريف المنطقي للعلاقة، ترتيب السجلات (الصفـوف) ليس له أي أهمية ولا يُعتبر جزءاً من تعريفها.",
+        "explanation_en": "In the formal relational model, a relation is a set of tuples, meaning the logical order of tuples is completely irrelevant."
     },
     {
         "id": 15,
+        "difficulty": "normal",
         "question": "A superkey is defined as:",
         "options": [
-            "a. A minimal set of attributes that uniquely identifies a tuple.",
-            "b. A set of attributes that includes a key, which uniquely identifies a tuple.",
-            "c. Any attribute that is not a primary key.",
-            "d. A key that consists of exactly two attributes.",
-            "e. A key that can never be NULL."
+            "A minimal set of attributes that uniquely identifies a tuple.",
+            "A set of attributes that includes a key, which uniquely identifies a tuple.",
+            "Any attribute that is not a primary key.",
+            "A key that consists of exactly two attributes.",
+            "A key that can never be NULL."
         ],
-        "correct_answer": "b. A set of attributes that includes a key, which uniquely identifies a tuple.",
-        "explanation_ar": "المفتاح الفائق (Superkey) هو أي مجموعة من الأعمدة تضمن عدم تكرار أي صفين. يمكن أن يحتوي على أعمدة زائدة عن الحاجة، طالما أنه يتضمن مفتاحاً أساسياً يضمن التفرد.",
-        "explanation_en": "A superkey is any set of attributes that uniquely identifies a tuple. It inherently includes a candidate/primary key and may contain additional, technically unnecessary attributes."
+        "correct_answer": "A set of attributes that includes a key, which uniquely identifies a tuple.",
+        "explanation_ar": "المفتاح الفائق (Superkey) هو مجموعة من السمات التي تتضمن مفتاحاً قادراً على تمييز كل صف بشكل فريد.",
+        "explanation_en": "A superkey is any set of attributes that contains a candidate key as a subset, thus uniquely identifying a tuple."
     },
     {
         "id": 16,
+        "difficulty": "normal",
         "question": "The referential integrity constraint is enforced between:",
         "options": [
-            "a. Two attributes in the same tuple.",
-            "b. A primary key and its domain.",
-            "c. A foreign key and the primary key it references.",
-            "d. A superkey and a candidate key.",
-            "e. Two different databases."
+            "Two attributes in the same tuple.",
+            "A primary key and its domain.",
+            "A foreign key and the primary key it references.",
+            "A superkey and a candidate key.",
+            "Two different databases."
         ],
-        "correct_answer": "c. A foreign key and the primary key it references.",
-        "explanation_ar": "التكامل المرجعي (Referential integrity) هو القيد الصارم الذي يربط الجداول ببعضها، ويُطبق حصراً لضمان أن قيم المفتاح الأجنبي تتطابق مع قيم المفتاح الأساسي في الجدول الأب.",
-        "explanation_en": "Referential integrity is the structural rule that dictates a rigorous relationship between a foreign key in a child table and the primary key it references in a parent table."
+        "correct_answer": "A foreign key and the primary key it references.",
+        "explanation_ar": "قيد التكامل المرجعي (Referential integrity) يتم فرضه لضمان التطابق بين المفتاح الأجنبي (Foreign key) في جدول والمفتاح الأساسي (Primary key) الذي يشير إليه في جدول آخر.",
+        "explanation_en": "The referential integrity constraint ensures consistency between tables by enforcing a valid link between a foreign key and the primary key it references."
     },
     {
         "id": 17,
+        "difficulty": "normal",
         "question": "Which operation is used to change the values of some attributes in existing tuples?",
         "options": [
-            "a. INSERT",
-            "b. DELETE",
-            "c. UPDATE",
-            "d. SELECT",
-            "e. ALTER"
+            "INSERT",
+            "DELETE",
+            "UPDATE",
+            "SELECT",
+            "ALTER"
         ],
-        "correct_answer": "c. UPDATE",
-        "explanation_ar": "أمر UPDATE من أوامر تعديل البيانات (DML) هو الأداة الوحيدة المخصصة لتغيير قيم البيانات الموجودة بالفعل داخل صفوف الجدول، ولا علاقة له بتغيير الهيكل.",
-        "explanation_en": "The UPDATE statement is exclusively used to modify existing data values within specific attributes of the current tuples in a relation."
+        "correct_answer": "UPDATE",
+        "explanation_ar": "أمر UPDATE هو المسؤول عن تغيير أو تعديل البيانات والقيم داخل الصفوف (السجلات) الموجودة بالفعل في الجدول.",
+        "explanation_en": "The UPDATE operation is a DML command used to modify existing data or attribute values within the tuples of a relation."
     },
     {
         "id": 18,
-        "question": "If an attribute A is a foreign key in relation R1 referencing relation R2, then:",
+        "difficulty": "normal",
+        "question": "If an attribute A is a foreign key in relation $R_{1}$ referencing relation $R_{2},$ then:",
         "options": [
-            "a. Every value of A in R1 must be unique.",
-            "b. A cannot contain NULL values.",
-            "c. Every value of A in R1 must either be NULL or exist in the primary key of R2.",
-            "d. A must have the same name as the primary key of R2",
-            "e. R1 and R2 must have the same number of tuples."
+            "Every value of A in $R_{1}$ must be unique.",
+            "A cannot contain NULL values.",
+            "Every value of A in $R_{1}$ must either be NULL or exist in the primary key of $R_{2}$.",
+            "A must have the same name as the primary key of $R_{2}$",
+            "$R_{1}$ and $R_{2}$ must have the same number of tuples."
         ],
-        "correct_answer": "c. Every value of A in R1 must either be NULL or exist in the primary key of R2.",
-        "explanation_ar": "هذا هو جوهر التكامل المرجعي: أي قيمة تضعها في مفتاح أجنبي يجب أن تكون موجودة مسبقاً في الجدول الرئيسي، أو تتركها فارغة (NULL) إذا كانت العلاقة غير إلزامية.",
-        "explanation_en": "A foreign key value must legally and exactly match an existing primary key value in the referenced relation, or it can be legitimately left as NULL if the relationship is optional."
+        "correct_answer": "Every value of A in $R_{1}$ must either be NULL or exist in the primary key of $R_{2}$.",
+        "explanation_ar": "قاعدة المفتاح الأجنبي تنص على أن قيمته إما أن تكون فارغة (NULL) أو يجب أن تكون موجودة فعلياً كمفتاح أساسي في الجدول المرجعي (R2).",
+        "explanation_en": "A foreign key must either contain a NULL value or a value that perfectly matches an existing primary key value in the referenced relation."
     },
     {
         "id": 19,
+        "difficulty": "normal",
         "question": "When a referential integrity violation occurs during an INSERT into the referencing relation, which of the following is the standard default response?",
         "options": [
-            "a. Reject the insertion.",
-            "b. Insert the tuple and set the foreign key to NULL.",
-            "c. Insert the tuple and set the foreign key to a default value.",
-            "d. Automatically insert the missing referenced tuple in the other relation.",
-            "e. Delete the referenced relation."
+            "Reject the insertion.",
+            "Insert the tuple and set the foreign key to NULL.",
+            "Insert the tuple and set the foreign key to a default value.",
+            "Automatically insert the missing referenced tuple in the other relation.",
+            "Delete the referenced relation."
         ],
-        "correct_answer": "a. Reject the insertion.",
-        "explanation_ar": "إذا حاولت إدخال سجل يحتوي على مفتاح أجنبي يشير إلى شيء غير موجود في الجدول الرئيسي (مثل إدخال موظف في قسم رقم 99 والقسم غير موجود)، فإن قاعدة البيانات سترفض العملية (Reject) فوراً.",
-        "explanation_en": "The strict default action by a DBMS upon detecting a referential integrity violation during an INSERT operation is to immediately reject the transaction to prevent orphaned records."
+        "correct_answer": "Reject the insertion.",
+        "explanation_ar": "الرد الافتراضي القياسي في قواعد البيانات عند محاولة إدخال قيمة مفتاح أجنبي غير موجودة في الجدول الأب هو رفض العملية (Reject) وإظهار خطأ.",
+        "explanation_en": "By default, if an INSERT operation introduces a foreign key value that does not exist in the referenced table, the DBMS will reject the insertion to maintain referential integrity."
     },
     {
         "id": 20,
-        "question": "Which of the following best describes the 'Closed World Assumption' in relational databases?",
+        "difficulty": "normal",
+        "question": "Which of the following best describes the \"Closed World Assumption\" in relational databases?",
         "options": [
-            "a. Data that is not encrypted is not secure.",
-            "b. Only users with specific keys can access the data.",
-            "c. Only facts explicitly represented in the database are considered true; everything else is false.",
-            "d. The database cannot be connected to external networks.",
-            "e. Once a transaction is committed, it cannot be undone."
+            "Data that is not encrypted is not secure.",
+            "Only users with specific keys can access the data.",
+            "Only facts explicitly represented in the database are considered true; everything else is false.",
+            "The database cannot be connected to external networks.",
+            "Once a transaction is committed, it cannot be undone."
         ],
-        "correct_answer": "c. Only facts explicitly represented in the database are considered true; everything else is false.",
-        "explanation_ar": "افتراض العالم المغلق يعني ببساطة: 'ما هو مسجل صراحة في قاعدة البيانات هو الحقيقة الوحيدة، وأي شيء غير موجود فيها نعتبره غير صحيح أو غير موجود في الواقع.'",
-        "explanation_en": "The Closed World Assumption specifies that the database contains all valid truths; any fact, record, or relationship not explicitly stored within the schema is automatically presumed to be false."
+        "correct_answer": "Only facts explicitly represented in the database are considered true; everything else is false.",
+        "explanation_ar": "فرضية العالم المغلق (Closed World Assumption) تعني أن أي حقيقة غير مسجلة في قاعدة البيانات تُعتبر تلقائياً غير صحيحة (خاطئة).",
+        "explanation_en": "The Closed World Assumption implies that any statement or fact that is not explicitly represented and true within the database is assumed to be false."
     },
     {
         "id": 21,
-        "question": "In an Entity-Relationship diagram, what does a rectangle typically represent? ",
+        "difficulty": "normal",
+        "question": "In an Entity-Relationship diagram, what does a rectangle typically represent?",
         "options": [
-            "a. An attribute of an entity",
-            "b. A relationship between entities ",
-            "c. An entity type ",
-            "d. A derived property",
-            "e. A primary key constraint"
+            "An attribute of an entity",
+            "A relationship between entities",
+            "An entity type",
+            "A derived property",
+            "A primary key constraint"
         ],
-        "correct_answer": "c. An entity type ",
-        "explanation_ar": "في مخططات الكيانات والعلاقات (ERD)، يُستخدم المستطيل بشكل قياسي وصارم لتمثيل 'نوع الكيان' (Entity Type) مثل كيان الموظف أو القسم. الأشكال الأخرى لها دلالات مختلفة كالمعين للعلاقات والبيضاوي للسمات.",
-        "explanation_en": "In standard ER modeling, a rectangle is strictly used to denote an entity type, whereas diamonds represent relationships and ovals represent attributes."
+        "correct_answer": "An entity type",
+        "explanation_ar": "في مخططات الـ ER، يتم استخدام شكل المستطيل (Rectangle) لتمثيل نوع الكيان (Entity type) مثل 'موظف' أو 'قسم'.",
+        "explanation_en": "In standard Entity-Relationship notation, a rectangle shape is used to represent an entity type or an entity set."
     },
     {
         "id": 22,
-        "question": "Which of the following is defined as a property that describes an entity? ",
+        "difficulty": "normal",
+        "question": "Which of the following is defined as a property that describes an entity?",
         "options": [
-            "a. Relationship",
-            "b. Attribute ",
-            "c. Schema",
-            "d. Instance",
-            "e. Domain"
+            "Relationship",
+            "Attribute",
+            "Schema",
+            "Instance",
+            "Domain"
         ],
-        "correct_answer": "b. Attribute ",
-        "explanation_ar": "السمة (Attribute) هي الخاصية أو المعلومة التي تصف الكيان وتُعطيه تفاصيله. مثلاً، الكيان 'طالب' له سمات تصفه مثل 'الاسم' و'العمر'.",
-        "explanation_en": "An attribute is fundamentally defined as a property or characteristic that describes an entity type, providing specific details about it (e.g., 'Name' for an 'Employee' entity)."
+        "correct_answer": "Attribute",
+        "explanation_ar": "السمة (Attribute) هي الخاصية التي تصف الكيان، مثل سمة 'اللون' أو 'الاسم'.",
+        "explanation_en": "An attribute is a property or characteristic that describes an entity, such as a name, date of birth, or color."
     },
     {
         "id": 23,
-        "question": "What type of attribute can be divided into smaller sub-parts with independent meanings, such as a Name being divided into First Name and Last Name? ",
+        "difficulty": "normal",
+        "question": "What type of attribute can be divided into smaller sub-parts with independent meanings, such as a Name being divided into First Name and Last Name?",
         "options": [
-            "a. Simple attribute ",
-            "b. Atomic attribute",
-            "c. Composite attribute ",
-            "d. Multi-valued attribute",
-            "e. Derived attribute"
+            "Simple attribute",
+            "Atomic attribute",
+            "Composite attribute",
+            "Multi-valued attribute",
+            "Derived attribute"
         ],
-        "correct_answer": "c. Composite attribute ",
-        "explanation_ar": "السمة المركبة (Composite attribute) هي السمة التي يمكن تقسيمها منطقياً إلى أجزاء أصغر لكل منها معنى مستقل. العنوان يمكن تقسيمه إلى دولة، مدينة، وشارع.",
-        "explanation_en": "A composite attribute is one that can be logically subdivided into smaller sub-parts, each with its own independent meaning, such as dividing an address into street, city, and zip code."
+        "correct_answer": "Composite attribute",
+        "explanation_ar": "السمة المركبة (Composite attribute) هي السمة التي تتكون من أجزاء أصغر ذات معنى مستقل، كالعنوان الذي يتكون من شارع ومدينة.",
+        "explanation_en": "A composite attribute can be logically divided into smaller, meaningful subparts, such as separating a full name into a first and last name."
     },
     {
         "id": 24,
-        "question": "A 'Partial Key' is used to uniquely identify: ",
+        "difficulty": "normal",
+        "question": "A \"Partial Key\" is used to uniquely identify:",
         "options": [
-            "a. A strong entity type. ",
-            "b. A multi-valued attribute.",
-            "c. A relationship instance.",
-            "d. Weak entity instances related to the same owner entity. ",
-            "e. A composite attribute."
+            "A strong entity type.",
+            "A multi-valued attribute.",
+            "A relationship instance.",
+            "Weak entity instances related to the same owner entity.",
+            "A composite attribute."
         ],
-        "correct_answer": "d. Weak entity instances related to the same owner entity. ",
-        "explanation_ar": "المفتاح الجزئي (Partial Key) هو سمة تُستخدم داخل الكيان الضعيف، ليس لتمييزه عن كل الكيانات في القاعدة، بل لتمييزه فقط عن بقية الكيانات الضعيفة المرتبطة بنفس الكيان المالك.",
-        "explanation_en": "A partial key is an attribute of a weak entity that does not uniquely identify it globally, but only uniquely identifies weak entity instances that are related to the exact same owner entity."
+        "correct_answer": "Weak entity instances related to the same owner entity.",
+        "explanation_ar": "المفتاح الجزئي (Partial Key) يُستخدم للتمييز بين كيانات ضعيفة تابعة لنفس الكيان المالك (القوي)، ولكنه لا يكفي لتمييزها في قاعدة البيانات بالكامل.",
+        "explanation_en": "A partial key uniquely identifies weak entity instances only among those related to the same specific strong owner entity."
     },
     {
         "id": 25,
-        "question": "Which constraint determines whether the existence of an entity depends on its being related to another entity via the relationship type? ",
+        "difficulty": "normal",
+        "question": "Which constraint determines whether the existence of an entity depends on its being related to another entity via the relationship type?",
         "options": [
-            "a. Cardinality ratio ",
-            "b. Participation constraint (Total vs. Partial) ",
-            "c. Degree constraint",
-            "d. Attribute constraint",
-            "e. Key constraint"
+            "Cardinality ratio",
+            "Participation constraint (Total vs. Partial)",
+            "Degree constraint",
+            "Attribute constraint",
+            "Key constraint"
         ],
-        "correct_answer": "b. Participation constraint (Total vs. Partial) ",
-        "explanation_ar": "قيد المشاركة (Participation constraint) يحدد ما إذا كانت مشاركة الكيان في العلاقة إجبارية (Total) مما يعني اعتماده الوجودي عليها، أو اختيارية (Partial).",
-        "explanation_en": "The participation constraint dictates the existence dependency of an entity. Total participation means the entity's existence strictly depends on the relationship, whereas partial participation means it does not."
+        "correct_answer": "Participation constraint (Total vs. Partial)",
+        "explanation_ar": "قيد المشاركة (Participation constraint) يحدد ما إذا كانت مشاركة الكيان في العلاقة إجبارية (كلية) أو اختيارية (جزئية).",
+        "explanation_en": "The participation constraint (total or partial) specifies whether the existence of an entity depends on its association with another entity through a relationship type."
     },
     {
         "id": 26,
-        "question": "If every Department must have a Manager, the participation of Department in the 'Manages' relationship is: ",
+        "difficulty": "normal",
+        "question": "If every Department must have a Manager, the participation of Department in the \"Manages\" relationship is:",
         "options": [
-            "a. Total ",
-            "b. Partial",
-            "c. Weak",
-            "d. Recursive",
-            "e. Multi-valued"
+            "Total",
+            "Partial",
+            "Weak",
+            "Recursive",
+            "Multi-valued"
         ],
-        "correct_answer": "a. Total ",
-        "explanation_ar": "بما أن الشرط يقول 'يجب' (must have)، فهذا يعني أن القسم لا يمكن أن يوجد في قاعدة البيانات بدون أن يكون مرتبطاً بمدير. هذه مشاركة كلية وإجبارية (Total participation).",
-        "explanation_en": "The word 'must' dictates a mandatory condition. Because every department is required to participate in the 'Manages' relationship, its participation is defined as total (or existence-dependent)."
+        "correct_answer": "Total",
+        "explanation_ar": "بما أن كل قسم 'يجب' أن يكون له مدير، فهذا يعني أن مشاركة القسم في علاقة الإدارة هي مشاركة إجبارية وكلية (Total).",
+        "explanation_en": "Since every Department must participate in the 'Manages' relationship, its participation is mandatory, which is known as Total participation."
     },
     {
         "id": 27,
-        "question": "A relationship type where the same entity type participates more than once in different roles is called a: ",
+        "difficulty": "normal",
+        "question": "A relationship type where the same entity type participates more than once in different roles is called a:",
         "options": [
-            "a. Binary relationship ",
-            "b. Ternary relationship",
-            "c. Recursive relationship ",
-            "d. Identifying relationship",
-            "e. Multi-valued relationship"
+            "Binary relationship",
+            "Ternary relationship",
+            "Recursive relationship",
+            "Identifying relationship",
+            "Multi-valued relationship"
         ],
-        "correct_answer": "c. Recursive relationship ",
-        "explanation_ar": "العلاقة التكرارية أو العودية (Recursive relationship) تحدث عندما يرتبط الكيان بنفسه. مثال: كيان 'الموظف' يرتبط بعلاقة مع كيان 'الموظف' لتوضيح من هو المدير ومن هو التابع.",
-        "explanation_en": "A recursive relationship occurs when an entity type is related to itself. The same entity type participates in the relationship multiple times, taking on different roles (e.g., an employee acting as a supervisor to another employee)."
+        "correct_answer": "Recursive relationship",
+        "explanation_ar": "العلاقة التكرارية (Recursive relationship) تحدث عندما يرتبط الكيان بنفسه بأدوار مختلفة، مثل إدارة موظف لموظفين آخرين.",
+        "explanation_en": "A recursive (or unary) relationship occurs when an entity type is related to itself, participating in the relationship in different roles."
     },
     {
         "id": 28,
-        "question": "In an ER diagram, a double line connecting an entity type to a relationship represents: ",
+        "difficulty": "normal",
+        "question": "In an ER diagram, a double line connecting an entity type to a relationship represents:",
         "options": [
-            "a. Partial participation",
-            "b. A weak entity ",
-            "c. A multi-valued attribute",
-            "d. Total participation (Existence dependency) ",
-            "e. A 1:1 relationship"
+            "Partial participation",
+            "A weak entity",
+            "A multi-valued attribute",
+            "Total participation (Existence dependency)",
+            "A 1:1 relationship"
         ],
-        "correct_answer": "d. Total participation (Existence dependency) ",
-        "explanation_ar": "في الترميز القياسي لمخطط الـ ER، الخط المزدوج الذي يربط الكيان بالعلاقة يعبر بصرياً عن أن هذا الكيان له 'مشاركة كلية' وإجبارية في تلك العلاقة.",
-        "explanation_en": "In standard ER diagram notation, a double line drawn between an entity type and a relationship diamond explicitly signifies total participation, also known as existence dependency."
+        "correct_answer": "Total participation (Existence dependency)",
+        "explanation_ar": "الخط المزدوج في رسومات ER يرمز إلى أن الكيان مشارك بشكل كلي (إجباري) في العلاقة ويعتمد وجوده عليها.",
+        "explanation_en": "A double line connecting an entity type to a relationship diamond in an ER diagram universally signifies total participation (existence dependency)."
     },
     {
         "id": 29,
-        "question": "What is the difference between a 'Relationship Type' and a 'Relationship Set'? ",
+        "difficulty": "normal",
+        "question": "What is the difference between a \"Relationship Type\" and a \"Relationship Set\"?",
         "options": [
-            "a. There is no difference; they are synonymous. ",
-            "b. A Type is the schema description, while a Set is the current collection of instances. ",
-            "c. A Type refers to 1:N relationships, while a Set refers to M:N relationships.",
-            "d. A Set is the schema description, while a Type is the instance. ",
-            "e. A Type only includes entities, while a Set includes attributes."
+            "There is no difference; they are synonymous.",
+            "A Type is the schema description, while a Set is the current collection of instances.",
+            "A Type refers to 1:N relationships, while a Set refers to M:N relationships.",
+            "A Set is the schema description, while a Type is the instance.",
+            "A Type only includes entities, while a Set includes attributes."
         ],
-        "correct_answer": "b. A Type is the schema description, while a Set is the current collection of instances. ",
-        "explanation_ar": "كلمة 'النوع' (Type) تشير دائماً إلى الهيكل المجرد والتعريف البرمجي للعلاقة (المخطط). بينما كلمة 'المجموعة' (Set) تشير إلى البيانات الفعلية والروابط الحقيقية الموجودة بين السجلات في لحظة معينة.",
-        "explanation_en": "A 'Relationship Type' is the intension or schema definition of the relationship. A 'Relationship Set' is the extension, meaning the actual, current collection of relationship instances populating the database."
+        "correct_answer": "A Type is the schema description, while a Set is the current collection of instances.",
+        "explanation_ar": "النوع (Type) هو تعريف العلاقة في المخطط، بينما المجموعة (Set) هي البيانات أو الروابط الفعلية الموجودة في الجداول الآن.",
+        "explanation_en": "A relationship type defines the schema and nature of the relationship, whereas a relationship set is the actual collection of relationship instances present in the database."
     },
     {
         "id": 30,
-        "question": "When an attribute of a relationship type cannot be moved to one of the participating entity types without changing the meaning, it is most likely a: ",
+        "difficulty": "normal",
+        "question": "When an attribute of a relationship type cannot be moved to one of the participating entity types without changing the meaning, it is most likely a:",
         "options": [
-            "a. 1:1 relationship ",
-            "b. 1:N relationship",
-            "c. M:N relationship ",
-            "d. Recursive relationship",
-            "e. Weak entity relationship"
+            "1:1 relationship",
+            "1:N relationship",
+            "M:N relationship",
+            "Recursive relationship",
+            "Weak entity relationship"
         ],
-        "correct_answer": "c. M:N relationship ",
-        "explanation_ar": "في علاقات 1:N أو 1:1 يمكن نقل سمة العلاقة إلى أحد الكيانات بسهولة. لكن في علاقة 'متعدد إلى متعدد' (M:N)، سمة العلاقة (مثل عدد ساعات العمل لموظف في مشروع) تخص الارتباط نفسه ولا يمكن إجبارها على كيان الموظف أو كيان المشروع وحده.",
-        "explanation_en": "In M:N (Many-to-Many) relationships, relationship attributes directly describe the specific interaction between the two entities. Moving such an attribute to either participating entity type would distort its meaning and cause redundancy."
+        "correct_answer": "M:N relationship",
+        "explanation_ar": "في علاقات المتعدد إلى متعدد (M:N)، تكون سمات العلاقة خاصة بالرابط نفسه (مثل درجة الطالب في كورس معين)، ولا يمكن نقلها لجدول الطالب أو جدول الكورس بمفرده.",
+        "explanation_en": "In an M:N (many-to-many) relationship, attributes often belong strictly to the relationship itself because their meaning depends on the specific pairing of both entities."
     },
     {
         "id": 31,
-        "question": "What does the asterisk symbol (*) represent when used in a SELECT clause? ",
+        "difficulty": "normal",
+        "question": "What does the asterisk symbol (*) represent when used in a SELECT clause?",
         "options": [
-            "a. All attributes of the relations specified in the FROM clause.",
-            "b. All tables present in the entire database.",
-            "c. Only the primary key attributes of the relation.",
-            "d. A wildcard for matching any single character.",
-            "e. The count of all rows in the table."
+            "All attributes of the relations specified in the FROM clause.",
+            "All tables present in the entire database.",
+            "Only the primary key attributes of the relation.",
+            "A wildcard for matching any single character.",
+            "The count of all rows in the table."
         ],
-        "correct_answer": "a. All attributes of the relations specified in the FROM clause.",
-        "explanation_ar": "في جملة SELECT، علامة النجمة (*) هي اختصار يعني حرفياً 'اجلب جميع الأعمدة (السمات)' الموجودة في الجداول التي تم تحديدها في جملة FROM دون الحاجة لكتابة أسمائها واحداً تلو الآخر.",
-        "explanation_en": "In SQL, the asterisk (*) acts as a shorthand wildcard in the SELECT clause, instructing the DBMS to retrieve and display all columns (attributes) from the specified table(s)."
+        "correct_answer": "All attributes of the relations specified in the FROM clause.",
+        "explanation_ar": "في لغة SQL، يمثل رمز النجمة (*) في جملة SELECT جميع الأعمدة (السمات) للجداول المحددة في جملة FROM.",
+        "explanation_en": "The asterisk (*) in a SELECT clause is a shorthand representing all attributes (columns) of the relations specified in the FROM clause."
     },
     {
         "id": 32,
-        "question": "Which command is used to add a new tuple to an existing relation in SQL? ",
+        "difficulty": "normal",
+        "question": "Which command is used to add a new tuple to an existing relation in SQL?",
         "options": [
-            "a. ADD",
-            "b. UPDATE",
-            "c. CREATE",
-            "d. INSERT",
-            "e. APPEND"
+            "ADD",
+            "UPDATE",
+            "CREATE",
+            "INSERT",
+            "APPEND"
         ],
-        "correct_answer": "d. INSERT",
-        "explanation_ar": "أمر INSERT INTO هو الأمر القياسي والوحيد في لغة معالجة البيانات (DML) لإضافة صفوف (Tuples) جديدة داخل هيكل جدول موجود مسبقاً.",
-        "explanation_en": "The INSERT statement is the standard DML command used specifically to add (or append) new rows/tuples into an already existing database table."
+        "correct_answer": "INSERT",
+        "explanation_ar": "يُستخدم أمر INSERT في SQL لإضافة صفوف (tuples) جديدة إلى جدول موجود.",
+        "explanation_en": "The INSERT command is used in SQL to add a new row (tuple) to an existing table."
     },
     {
         "id": 33,
-        "question": "If you want to sort the results of a query based on a specific attribute, which clause should you use? ",
+        "difficulty": "normal",
+        "question": "If you want to sort the results of a query based on a specific attribute, which clause should you use?",
         "options": [
-            "a. SORT BY",
-            "b. ALIGN BY",
-            "c. LIST BY",
-            "d. ORDER BY",
-            "e. GROUP BY"
+            "SORT BY",
+            "ALIGN BY",
+            "LIST BY",
+            "ORDER BY",
+            "GROUP BY"
         ],
-        "correct_answer": "d. ORDER BY",
-        "explanation_ar": "جملة ORDER BY تستخدم لترتيب البيانات المسترجعة سواء أبجدياً أو رقمياً، ولا يوجد أمر في SQL القياسية اسمه SORT BY.",
-        "explanation_en": "The ORDER BY clause is explicitly used in SQL to sort the result set of a query either ascending or descending based on one or more specified columns."
+        "correct_answer": "ORDER BY",
+        "explanation_ar": "تُستخدم جملة ORDER BY لترتيب أو فرز نتائج الاستعلام بناءً على عمود معين.",
+        "explanation_en": "The ORDER BY clause is used to sort the result set of a query by one or more specific attributes."
     },
     {
         "id": 34,
-        "question": "In SQL, what is the default order for the ORDER BY clause if ASC or DESC is not specified? ",
+        "difficulty": "normal",
+        "question": "In SQL, what is the default order for the ORDER BY clause if ASC or DESC is not specified?",
         "options": [
-            "a. Random order",
-            "b. Ascending order",
-            "c. Descending order",
-            "d. Order of insertion",
-            "e. Numerical order only"
+            "Random order",
+            "Ascending order",
+            "Descending order",
+            "Order of insertion",
+            "Numerical order only"
         ],
-        "correct_answer": "b. Ascending order",
-        "explanation_ar": "إذا كتبت ORDER BY لعمود معين ولم تحدد الاتجاه، فإن محرك SQL يفترض تلقائياً أنك تريد الترتيب التصاعدي (Ascending - ASC) من الأصغر للأكبر أو من A إلى Z.",
-        "explanation_en": "By default, if no sort direction is explicitly provided, the ORDER BY clause sorts the records in Ascending (ASC) order (lowest to highest, or A to Z)."
+        "correct_answer": "Ascending order",
+        "explanation_ar": "الترتيب الافتراضي في جملة ORDER BY إذا لم يتم التحديد هو الترتيب التصاعدي (ASC).",
+        "explanation_en": "By default, if neither ASC nor DESC is specified, the ORDER BY clause sorts the results in ascending order."
     },
     {
         "id": 35,
-        "question": "Which of the following is true about the use of the WHERE clause in SQL? ",
+        "difficulty": "normal",
+        "question": "Which of the following is true about the use of the WHERE clause in SQL?",
         "options": [
-            "a. It is mandatory in every SELECT statement.",
-            "b. It acts as a filter that performs a selection operation on the tuples.",
-            "c. It is used to specify which tables the data should be pulled from.",
-            "d. It can only be used with numeric data types.",
-            "e. It must always follow the ORDER BY clause."
+            "It is mandatory in every SELECT statement.",
+            "It acts as a filter that performs a selection operation on the tuples.",
+            "It is used to specify which tables the data should be pulled from.",
+            "It can only be used with numeric data types.",
+            "It must always follow the ORDER BY clause."
         ],
-        "correct_answer": "b. It acts as a filter that performs a selection operation on the tuples.",
-        "explanation_ar": "جملة WHERE ليست إجبارية، ولكنها تعمل كمصفاة (Filter) لتطبيق عملية الاختيار (Selection)، حيث تستبعد الصفوف التي لا تحقق الشرط المكتوب.",
-        "explanation_en": "The WHERE clause is optional, but when used, it acts as a row-level filter, logically corresponding to the relational algebra 'Selection' operation to restrict the output to tuples meeting specific criteria."
+        "correct_answer": "It acts as a filter that performs a selection operation on the tuples.",
+        "explanation_ar": "جملة WHERE تعمل كفلتر (مرشح) ينفذ عملية الاختيار (Selection) لتحديد الصفوف التي تطابق شروطاً معينة.",
+        "explanation_en": "The WHERE clause functions as a filter, applying a selection operation to return only those tuples that satisfy the specified condition."
     },
     {
         "id": 36,
-        "question": "When using the LIKE operator, which character is used to represent a sequence of zero or more arbitrary characters? ",
+        "difficulty": "normal",
+        "question": "When using the LIKE operator, which character is used to represent a sequence of zero or more arbitrary characters?",
         "options": [
-            "a. Question mark (?)",
-            "b. Underscore (_)",
-            "c. Asterisk (*)",
-            "d. Percent sign (%)",
-            "e. Hash (#)"
+            "Question mark (?)",
+            "Underscore (_)",
+            "Asterisk (*)",
+            "Percent sign (%)",
+            "Hash (#)"
         ],
-        "correct_answer": "d. Percent sign (%)",
-        "explanation_ar": "مع المعامل LIKE، علامة النسبة المئوية (%) تعني 'أي عدد من الحروف أو حتى لا شيء'. بينما الشرطة السفلية (_) تعني 'حرف واحد فقط بالضبط'.",
-        "explanation_en": "In SQL pattern matching using LIKE, the percent sign (%) acts as a wildcard representing a sequence of zero, one, or multiple characters."
+        "correct_answer": "Percent sign (%)",
+        "explanation_ar": "في معامل LIKE، يمثل رمز النسبة المئوية (%) سلسلة مكونة من صفر أو أكثر من الأحرف العشوائية.",
+        "explanation_en": "When using the LIKE operator in SQL, the percent sign (%) acts as a wildcard representing a sequence of zero or more arbitrary characters."
     },
     {
         "id": 37,
-        "question": "What is the result of a SELECT statement that does not have a WHERE clause? ",
+        "difficulty": "normal",
+        "question": "What is the result of a SELECT statement that does not have a WHERE clause?",
         "options": [
-            "a. An error message.",
-            "b. Only the first row of the table.",
-            "c. The entire Cartesian product of the relations in the FROM clause (or all rows if one table is used).",
-            "d. Only the schema of the table without any data.",
-            "e. A null value."
+            "An error message.",
+            "Only the first row of the table.",
+            "The entire Cartesian product of the relations in the FROM clause (or all rows if one table is used).",
+            "Only the schema of the table without any data.",
+            "A null value."
         ],
-        "correct_answer": "c. The entire Cartesian product of the relations in the FROM clause (or all rows if one table is used).",
-        "explanation_ar": "عدم وجود WHERE يعني عدم وجود شروط. إذا كنت تستعلم من جدول واحد، سيتم جلب كل صفوفه. وإذا كنت تستعلم من أكثر من جدول بدون شرط ربط، سيحدث ضرب ديكارتي كارثي (Cartesian product) يدمج كل صف من الجدول الأول مع كل صف من الجدول الثاني.",
-        "explanation_en": "Without a WHERE clause to filter or join conditions, a SELECT statement retrieves all rows if querying a single table. If multiple tables are in the FROM clause, it unconditionally produces a Cartesian product (Cross Join)."
+        "correct_answer": "The entire Cartesian product of the relations in the FROM clause (or all rows if one table is used).",
+        "explanation_ar": "الاستعلام بدون شرط WHERE يعيد كافة الصفوف إذا كان هناك جدول واحد، أو حاصل الضرب الديكارتي إذا كان هناك أكثر من جدول في جملة FROM.",
+        "explanation_en": "Without a WHERE clause to restrict the results, a SELECT statement returns all rows of the table, or the full Cartesian product if multiple tables are queried."
     },
     {
         "id": 38,
-        "question": "Which SQL operator is specifically designed to check whether an attribute value is within a certain range? ",
+        "difficulty": "normal",
+        "question": "Which SQL operator is specifically designed to check whether an attribute value is within a certain range?",
         "options": [
-            "a. IN",
-            "b. BETWEEN",
-            "c. WITHIN",
-            "d. RANGE",
-            "e. LIMIT"
+            "IN",
+            "BETWEEN",
+            "WITHIN",
+            "RANGE",
+            "LIMIT"
         ],
-        "correct_answer": "b. BETWEEN",
-        "explanation_ar": "المعامل BETWEEN يختصر كتابة الشروط (أكبر من أو يساوي X وأصغر من أو يساوي Y). وهو مصمم تحديداً لاختبار ما إذا كانت القيمة تقع ضمن نطاق معين، ويشمل الحدين معاً.",
-        "explanation_en": "The BETWEEN operator provides a clean, shorthand syntax to filter values within a specific range, including the boundary values (inclusive)."
+        "correct_answer": "BETWEEN",
+        "explanation_ar": "يُستخدم المعامل BETWEEN للتحقق مما إذا كانت القيمة تقع ضمن نطاق معين (بين قيمتين).",
+        "explanation_en": "The BETWEEN operator is specifically designed to evaluate whether a value falls within a defined inclusive range."
     },
     {
         "id": 39,
-        "question": "When using the LIKE operator, how would you search for a string that specifically starts with 'A' and is exactly three characters long? ",
+        "difficulty": "normal",
+        "question": "When using the LIKE operator, how would you search for a string that specifically starts with \"A\" and is exactly three characters long?",
         "options": [
-            "a. LIKE 'A%'",
-            "b. LIKE 'A?'",
-            "c. LIKE 'A' (A followed by two underscores)",
-            "d. LIKE 'A##'",
-            "e. LIKE 'A{3}'"
+            "LIKE 'A%'",
+            "LIKE 'A?'",
+            "LIKE 'A' (A followed by two underscores)",
+            "LIKE 'A##'",
+            "LIKE 'A{3}'"
         ],
-        "correct_answer": "c. LIKE 'A' (A followed by two underscores)",
-        "explanation_ar": "الشرطة السفلية (_) تجبر محرك البحث على إيجاد حرف واحد فقط. لكي تبحث عن كلمة من 3 حروف تبدأ بـ A، يجب أن تضع A يليها شرطتان سفليتان (A__) لتمثيل الحرفين المتبقيين.",
-        "explanation_en": "The underscore (_) wildcard strictly matches exactly one character. To find a three-character string starting with 'A', you must use 'A' followed by precisely two underscores ('A__')."
+        "correct_answer": "LIKE 'A' (A followed by two underscores)",
+        "explanation_ar": "للبحث عن نص يبدأ بحرف A ويتكون من 3 أحرف بالضبط، نستخدم حرف A متبوعاً بشرطتين سفليتين __ (حيث كل شرطة تمثل حرفاً واحداً).",
+        "explanation_en": "To find a 3-character string starting with 'A', you use 'A' followed by two underscores ('A__'), as each underscore represents exactly one character."
     },
     {
         "id": 40,
-        "question": "Which of the following best describes the 'Three-Valued Logic' used in SQL?",
+        "difficulty": "normal",
+        "question": "Which of the following best describes the \"Three-Valued Logic\" used in SQL?",
         "options": [
-            "a. True, False, and Error.",
-            "b. Positive, Negative, and Zero.",
-            "c. 1, 0, and -1.",
-            "d. True, False, and Unknown.",
-            "e. Valid, Invalid, and Pending."
+            "True, False, and Error.",
+            "Positive, Negative, and Zero.",
+            "1, 0, and -1.",
+            "True, False, and Unknown.",
+            "Valid, Invalid, and Pending."
         ],
-        "correct_answer": "d. True, False, and Unknown.",
-        "explanation_ar": "المنطق في SQL ليس ثنائياً (صح/خطأ) كما في لغات البرمجة الأخرى بسبب وجود القيم الفارغة (NULL). عندما تقارن قيمة بـ NULL، النتيجة لا تكون صح أو خطأ، بل تكون 'مجهول' (Unknown).",
-        "explanation_en": "Due to the existence of NULLs (representing missing or undefined data), SQL employs three-valued logic for boolean expressions: True, False, and Unknown."
+        "correct_answer": "True, False, and Unknown.",
+        "explanation_ar": "المنطق ثلاثي القيم في SQL يعتمد على ثلاث حالات عند التعامل مع (NULL): صحيح، خاطئ، وغير معروف (Unknown).",
+        "explanation_en": "SQL uses Three-Valued Logic to evaluate expressions containing NULL values, which can result in True, False, or Unknown."
     },
     {
         "id": 41,
+        "difficulty": "normal",
         "question": "Which relational algebra operation is used to select a subset of the tuples from a relation that satisfy a specific selection condition?",
         "options": [
-            "a. PROJECT",
-            "b. JOIN",
-            "c. SELECT",
-            "d. UNION",
-            "e. INTERSECT"
+            "PROJECT",
+            "JOIN",
+            "SELECT",
+            "UNION",
+            "INTERSECT"
         ],
-        "correct_answer": "c. SELECT",
-        "explanation_ar": "عملية الاختيار (SELECT) في الجبر العلائقي هي العملية المسؤولة عن فلترة 'الصفوف' (Tuples) واقتطاع مجموعة فرعية أفقية من الجدول بناءً على شرط رياضي محدد.",
-        "explanation_en": "The SELECT operation in relational algebra is explicitly used to filter and extract a horizontal subset of tuples (rows) from a relation that satisfy a given boolean condition."
+        "correct_answer": "SELECT",
+        "explanation_ar": "عملية الاختيار (SELECT) في الجبر العلائقي تقوم بفلترة الصفوف لاختيار مجموعة فرعية تطابق شروطاً محددة.",
+        "explanation_en": "The SELECT operation in relational algebra filters a relation horizontally, choosing only the tuples that satisfy a given selection condition."
     },
     {
         "id": 42,
+        "difficulty": "normal",
         "question": "The PROJECT operation (π) is used to:",
         "options": [
-            "a. Filter rows based on a condition.",
-            "b. Combine two relations based on a common attribute.",
-            "c. Select specific columns (attributes) from a relation and discard the rest.",
-            "d. Remove all duplicate tuples from two different relations.",
-            "e. Rename the attributes of a relation for clarity."
+            "Filter rows based on a condition.",
+            "Combine two relations based on a common attribute.",
+            "Select specific columns (attributes) from a relation and discard the rest.",
+            "Remove all duplicate tuples from two different relations.",
+            "Rename the attributes of a relation for clarity."
         ],
-        "correct_answer": "c. Select specific columns (attributes) from a relation and discard the rest.",
-        "explanation_ar": "عملية الإسقاط (PROJECT) تعمل بشكل عمودي؛ فهي تقتطع أعمدة (سمات) معينة تحددها أنت من الجدول وتقوم بتجاهل وحذف باقي الأعمدة من النتيجة النهائية.",
-        "explanation_en": "The PROJECT operation (π) creates a vertical subset of a relation by extracting only the specified columns (attributes) and completely discarding all other columns from the result."
+        "correct_answer": "Select specific columns (attributes) from a relation and discard the rest.",
+        "explanation_ar": "عملية الإسقاط (PROJECT) تقوم باختيار أعمدة معينة من الجدول والتخلص من باقي الأعمدة.",
+        "explanation_en": "The PROJECT operation is used to vertically slice a relation, retaining only the specified attributes (columns) and discarding all others."
     },
     {
         "id": 43,
-        "question": "Which of the following operations is considered a 'Unary' operation?",
+        "difficulty": "normal",
+        "question": "Which of the following operations is considered a \"Unary\" operation?",
         "options": [
-            "a. RENAME (ρ)",
-            "b. CARTESIAN PRODUCT (X)",
-            "c. NATURAL JOIN (⋈)",
-            "d. INTERSECT (∩)",
-            "e. UNION (∪)"
+            "RENAME (ρ)",
+            "CARTESIAN PRODUCT ( )",
+            "NATURAL JOIN ( )",
+            "INTERSECT (0)",
+            "UNION (U)"
         ],
-        "correct_answer": "a. RENAME (ρ)",
-        "explanation_ar": "العملية الأحادية (Unary) هي التي تُطبق على جدول واحد فقط. عمليات إعادة التسمية (RENAME)، والاختيار (SELECT)، والإسقاط (PROJECT) هي عمليات أحادية. البقية تحتاج لجدولين (Binary).",
-        "explanation_en": "A unary operation takes exactly one relation as input. RENAME (ρ), along with SELECT and PROJECT, is a unary operation. Operations like JOIN, UNION, and CARTESIAN PRODUCT are binary because they require two relations."
+        "correct_answer": "RENAME (ρ)",
+        "explanation_ar": "العملية الأحادية (Unary) هي التي تُطبق على جدول واحد، وعملية إعادة التسمية (RENAME) تُعد مثالاً عليها.",
+        "explanation_en": "A Unary operation operates on a single relation. The RENAME (ρ) operation is unary because it applies to one relation at a time."
     },
     {
         "id": 44,
+        "difficulty": "normal",
         "question": "Which of the following is true about the SET DIFFERENCE (R-S) operation?",
         "options": [
-            "a. It is commutative (R-S is the same as S-R).",
-            "b. It returns tuples that are in R but not in S.",
-            "c. It returns tuples that are in both R and S.",
-            "d. It does not require R and S to be union-compatible.",
-            "e. It is used to combine all tuples from both relations."
+            "It is commutative (R-S is the same as S-R).",
+            "It returns tuples that are in R but not in S.",
+            "It returns tuples that are in both R and S.",
+            "It does not require R and S to be union-compatible.",
+            "It is used to combine all tuples from both relations."
         ],
-        "correct_answer": "b. It returns tuples that are in R but not in S.",
-        "explanation_ar": "فرق المجموعات (R-S) يعيد فقط الصفوف الموجودة في الجدول الأول (R) والتي لا يوجد لها أي نظير متطابق في الجدول الثاني (S). وتذكر أنها ليست عملية تبادلية (R-S لا تساوي S-R).",
-        "explanation_en": "The SET DIFFERENCE operation (R - S) strictly returns the set of tuples that exist in relation R but are absolutely absent from relation S."
+        "correct_answer": "It returns tuples that are in R but not in S.",
+        "explanation_ar": "عملية الفرق (SET DIFFERENCE) تعيد الصفوف الموجودة في الجدول الأول (R) وغير الموجودة في الجدول الثاني (S).",
+        "explanation_en": "The SET DIFFERENCE operation (R-S) returns all tuples that exist in relation R but do not exist in relation S."
     },
     {
         "id": 45,
-        "question": "The 'degree' of a relation resulting from a CARTESIAN PRODUCT (R x S) is:",
+        "difficulty": "normal",
+        "question": "The \"degree\" of a relation resulting from a CARTESIAN PRODUCT $(R\\times S)$ is:",
         "options": [
-            "a. The sum of the degrees of R and S.",
-            "b. The product of the degrees of R and S.",
-            "c. The degree of R plus the number of tuples in S.",
-            "d. Equal to the degree of the larger relation.",
-            "e. Always two."
+            "The sum of the degrees of R and S.",
+            "The product of the degrees of R and S.",
+            "The degree of R plus the number of tuples in S.",
+            "Equal to the degree of the larger relation.",
+            "Always two."
         ],
-        "correct_answer": "a. The sum of the degrees of R and S.",
-        "explanation_ar": "الدرجة (Degree) تعني عدد الأعمدة. عندما نضرب جدولين ديكارتياً، فإن الجدول الناتج سيحتوي على جميع أعمدة الجدول الأول بجانب جميع أعمدة الجدول الثاني (لذا نجمع الدرجتين).",
-        "explanation_en": "The degree (number of attributes) of a Cartesian Product result is the exact sum of the degree of relation R and the degree of relation S, as all columns from both tables are concatenated."
+        "correct_answer": "The sum of the degrees of R and S.",
+        "explanation_ar": "درجة (عدد أعمدة) الجدول الناتج من عملية الضرب الديكارتي هي مجموع عدد أعمدة الجدول الأول زائد عدد أعمدة الجدول الثاني.",
+        "explanation_en": "The degree (number of attributes) of a Cartesian Product is the sum of the degrees of the two participating relations."
     },
     {
         "id": 46,
-        "question": "When nesting relational algebra operations, what is the purpose of the RENAME (ρ) operation?",
+        "difficulty": "normal",
+        "question": "When nesting relational algebra operations, what is the purpose of the RENAME (p) operation?",
         "options": [
-            "a. To delete attributes that are no longer needed.",
-            "b. To change the data type of an attribute.",
-            "c. To provide a name for an intermediate result or to disambiguate attribute names.",
-            "d. To sort the resulting tuples alphabetically.",
-            "e. To convert a relation into a flat file."
+            "To delete attributes that are no longer needed.",
+            "To change the data type of an attribute.",
+            "To provide a name for an intermediate result or to disambiguate attribute names.",
+            "To sort the resulting tuples alphabetically.",
+            "To convert a relation into a flat file."
         ],
-        "correct_answer": "c. To provide a name for an intermediate result or to disambiguate attribute names.",
-        "explanation_ar": "عند إجراء عمليات معقدة متداخلة، نستخدم عملية إعادة التسمية (RENAME) لإعطاء اسم مؤقت للجدول الناتج، أو لتغيير أسماء الأعمدة لتجنب التضارب (خصوصاً عند عمل ربط ذاتي للجدول بنفسه).",
-        "explanation_en": "The RENAME operation (ρ) is crucial in complex nested expressions. It provides a formal name to intermediate result relations and helps disambiguate attribute names, which is essential for operations like self-joins."
+        "correct_answer": "To provide a name for an intermediate result or to disambiguate attribute names.",
+        "explanation_ar": "عملية إعادة التسمية تُستخدم لإعطاء اسم للنتائج الوسيطة أو لفك التشابه بين أسماء الأعمدة المتطابقة.",
+        "explanation_en": "The RENAME operation is used to assign a new name to an intermediate query result or to rename attributes to avoid ambiguity."
     },
     {
         "id": 47,
+        "difficulty": "normal",
         "question": "Which of these is a sequence of operations that could identify employees who work in Research AND earn more than 30,000?",
         "options": [
-            "a. σ salary>30000(σ Dname='Research'(EMPLOYEE))",
-            "b. σ Salary>30000(σ Dname='Research'(EMPLOYEE DEPARTMENT))",
-            "c. σ Salary>30000 U σ Dname='Research'",
-            "d. EMPLOYEE ⋈ DEPARTMENT",
-            "e. ρ (Salary, Dname)"
+            "salary>30000(ODname='Research' (EMPLOYEE))",
+            "Salary>30000 (ODname='Research' (EMPLOYEE DEPARTMENT))",
+            "Salary>30000UODname='Research'",
+            "EMPLOYEE DEPARTMENT",
+            "p(Salary, Dname)"
         ],
-        "correct_answer": "a. σ salary>30000(σ Dname='Research'(EMPLOYEE))",
-        "explanation_ar": "لتحقيق شرطين معاً، يمكن تداخل عمليتي اختيار (SELECT). العملية الداخلية تصفي الموظفين الذين يعملون في قسم الأبحاث، والعملية الخارجية تأخذ هذه النتيجة وتصفي منها من راتبه أعلى من 30,000.",
-        "explanation_en": "Applying nested SELECT (σ) operations acts as a logical AND. The inner operation filters for the 'Research' department, and the outer operation further restricts that result set to those with a salary greater than 30,000."
+        "correct_answer": "salary>30000(ODname='Research' (EMPLOYEE))",
+        "explanation_ar": "لتحقيق هذا الشرط المزدوج، نستخدم عملية اختيار متداخلة؛ نختار أولاً من يعمل في (Research)، ومن ثم نختار من بينهم من راتبه أكبر من 30 ألف.",
+        "explanation_en": "This is achieved through nested selection operations, first filtering for the department, and then filtering the resulting subset for the salary condition."
     },
     {
         "id": 48,
-        "question": "The SELECT operation is considered 'commutative,' which means:",
+        "difficulty": "normal",
+        "question": "The SELECT operation is considered \"commutative,\" which means:",
         "options": [
-            "a. It can only be applied to one relation at a time.",
-            "b. σ_c1(σ_c2(R)) is the same as σ_c2(σ_c1(R)).",
-            "c. The order of attributes in the result does not matter.",
-            "d. It always results in a relation with fewer attributes.",
-            "e. It can be replaced by a PROJECT operation."
+            "It can only be applied to one relation at a time.",
+            "$\\sigma_{c1}(\\sigma_{c2}(R))$ is the same as $\\sigma_{c2}(\\sigma_{c1}(R))$.",
+            "The order of attributes in the result does not matter.",
+            "It always results in a relation with fewer attributes.",
+            "It can be replaced by a PROJECT operation."
         ],
-        "correct_answer": "b. σ_c1(σ_c2(R)) is the same as σ_c2(σ_c1(R)).",
-        "explanation_ar": "التبادلية (Commutativity) في عملية الاختيار تعني أن الترتيب الذي تطبق فيه الشروط لا يغير النتيجة النهائية. سواء اخترت القسم أولاً ثم الراتب، أو الراتب أولاً ثم القسم، ستحصل على نفس الموظفين.",
-        "explanation_en": "The commutative property of the SELECT operation guarantees that the sequence in which multiple filter conditions are applied does not alter the final resulting set of tuples."
+        "correct_answer": "$\\sigma_{c1}(\\sigma_{c2}(R))$ is the same as $\\sigma_{c2}(\\sigma_{c1}(R))$.",
+        "explanation_ar": "التبادلية (Commutative) في الاختيار تعني أن ترتيب تنفيذ الشروط لا يهم؛ النتيجة ستكون هي نفسها دائماً.",
+        "explanation_en": "Being commutative means that the order in which consecutive selection operations are applied does not affect the final resulting relation."
     },
     {
         "id": 49,
-        "question": "If we perform a LEFT OUTER JOIN (R ⟕ S), what happens to tuples in R that do not have a matching tuple in S based on the join condition?",
+        "difficulty": "normal",
+        "question": "If we perform an LEFT OUTER JOIN $(R\\triangleright AS)$, what happens to tuples in R that do not have a matching tuple in S based on the join condition?",
         "options": [
-            "a. They are excluded from the final result.",
-            "b. The operation returns an error message.",
-            "c. They are included in the result, padded with NULL values for the attributes of S.",
-            "d. They are included in the result, but the attributes of S are left blank.",
-            "e. They are moved to a separate error relation."
+            "They are excluded from the final result.",
+            "The operation returns an error message.",
+            "They are included in the result, padded with NULL values for the attributes of S.",
+            "They are included in the result, but the attributes of S are left blank.",
+            "They are moved to a separate error relation."
         ],
-        "correct_answer": "c. They are included in the result, padded with NULL values for the attributes of S.",
-        "explanation_ar": "الربط الخارجي الأيسر يضمن الاحتفاظ بجميع سجلات الجدول الأيسر (R). إذا لم يجد للـسجل ما يطابقه في الجدول الأيمن (S)، فإنه يضعه في النتيجة ويعبئ الفراغات الخاصة بأعمدة الجدول الأيمن بقيمة NULL.",
-        "explanation_en": "A LEFT OUTER JOIN preserves all tuples from the left relation (R). Unmatched left tuples are retained in the final output, and their missing corresponding columns from the right relation (S) are systematically padded with NULL values."
+        "correct_answer": "They are included in the result, padded with NULL values for the attributes of S.",
+        "explanation_ar": "في الربط الخارجي الأيسر، الصفوف من الجدول الأيسر التي لا تجد ما يطابقها في الجدول الأيمن ستظل تظهر في النتيجة، ويتم تعويض أعمدة الجدول الأيمن بقيم (NULL).",
+        "explanation_en": "A Left Outer Join retains all tuples from the left relation, substituting NULL values for the attributes of the right relation where no match exists."
     },
     {
         "id": 50,
-        "question": "Consider the operation π_L1(π_L2(R)). Under what specific condition is this operation valid and simplified to π_L1(R)?",
+        "difficulty": "normal",
+        "question": "Consider the operation $\\pi_{L1}(\\pi_{L2}(R)).$ Under what specific condition is this operation valid and simplified to $\\pi_{L1}(R)$?",
         "options": [
-            "a. If L1 and L2 are identical sets of attributes.",
-            "b. If L2 contains only the primary key of R.",
-            "c. If the attributes in list L1 are a subset of the attributes in list L2.",
-            "d. If L1 contains more attributes than L2.",
-            "e. This operation is never valid in relational algebra."
+            "If L1 and L2 are identical sets of attributes.",
+            "If L2 contains only the primary key of R.",
+            "If the attributes in list L1 are a subset of the attributes in list L2.",
+            "If L1 contains more attributes than L2.",
+            "This operation is never valid in relational algebra."
         ],
-        "correct_answer": "c. If the attributes in list L1 are a subset of the attributes in list L2.",
-        "explanation_ar": "إذا قمت باقتطاع مجموعة أعمدة (L2) ثم حاولت اقتطاع مجموعة أخرى (L1) منها، فهذا لن ينجح إلا إذا كانت الأعمدة التي تطلبها في المرة الثانية (L1) موجودة بالفعل ضمن الأعمدة التي اقتطعتها في المرة الأولى (L2). أي يجب أن تكون L1 مجموعة جزئية من L2.",
-        "explanation_en": "A sequence of PROJECT operations π_L1(π_L2(R)) is mathematically valid and can be simplified to π_L1(R) only if the final attribute list L1 is entirely contained within the initial extracted attribute list L2 (L1 is a subset of L2)."
+        "correct_answer": "If the attributes in list L1 are a subset of the attributes in list L2.",
+        "explanation_ar": "عملية الإسقاط المتداخلة تصبح صالحة ومبسطة فقط إذا كانت جميع الأعمدة المطلوبة في الإسقاط الخارجي (L1) موجودة بالفعل ضمن الأعمدة المستخرجة في الإسقاط الداخلي (L2).",
+        "explanation_en": "The nested projection is valid and simplifies to the outer projection only if the set of attributes L1 is a subset of the attributes L2."
     }
 ]

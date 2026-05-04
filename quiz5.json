@@ -1,802 +1,752 @@
 [
     {
         "id": 1,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of the following best describes a Database Management System (DBMS)?",
         "options": [
-            "a. A programming language for building GUIs",
-            "b. A system for storing, retrieving, and managing data in databases",
-            "c. A protocol for network communication",
-            "d. A hardware device for data encryption",
-            "e. A markup language for web pages"
+            "A programming language for building GUIs",
+            "A system for storing, retrieving, and managing data in databases",
+            "A protocol for network communication",
+            "A hardware device for data encryption",
+            "A markup language for web pages"
         ],
-        "correct_answer": "b. A system for storing, retrieving, and managing data in databases",
-        "explanation_ar": "نظام إدارة قواعد البيانات (DBMS) هو عبارة عن مجموعة من البرمجيات المصممة خصيصاً لإنشاء، تخزين، استرجاع، وإدارة البيانات داخل قاعدة البيانات بكفاءة وأمان.",
-        "explanation_en": "A Database Management System (DBMS) is a software system designed to store, retrieve, define, and manage data in a database efficiently and securely."
+        "correct_answer": "A system for storing, retrieving, and managing data in databases",
+        "explanation_ar": "نظام إدارة قواعد البيانات (DBMS) هو برنامج أساسي وظيفته تخزين البيانات، استرجاعها، وإدارتها بكفاءة عالية.",
+        "explanation_en": "A Database Management System (DBMS) is a software system used for efficiently storing, retrieving, and managing data."
     },
     {
         "id": 2,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which property is NOT typically a goal of a DBMS?",
         "options": [
-            "a. Data independence",
-            "b. Efficient query processing",
-            "c. Redundant manual backups as the only recovery method",
-            "d. Concurrency control",
-            "e. Security and authorization"
+            "Data independence",
+            "Efficient query processing",
+            "Redundant manual backups as the only recovery method",
+            "Concurrency control",
+            "Security and authorization"
         ],
-        "correct_answer": "c. Redundant manual backups as the only recovery method",
-        "explanation_ar": "من أهم أهداف الـ DBMS هو توفير آليات استرداد (Recovery) تلقائية وذكية عند حدوث الأعطال، وليس الاعتماد حصرياً على النسخ الاحتياطي اليدوي والمكرر.",
-        "explanation_en": "A modern DBMS provides automated and sophisticated crash recovery mechanisms (like transaction logs). Relying solely on redundant manual backups is a characteristic of outdated file systems, not a DBMS goal."
+        "correct_answer": "Redundant manual backups as the only recovery method",
+        "explanation_ar": "أنظمة DBMS الحديثة توفر آليات استرداد ذكية وتلقائية، ولا تعتمد أبداً على النسخ الاحتياطي اليدوي كطريقة وحيدة للاسترداد.",
+        "explanation_en": "Modern DBMSs provide automated recovery mechanisms and do not rely solely on redundant manual backups."
     },
     {
         "id": 3,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of these is an example of a database application?",
         "options": [
-            "a. Word processor",
-            "b. Airline reservation system",
-            "c. Image editor",
-            "d. Video player",
-            "e. Spreadsheet with no persistent storage"
+            "Word processor",
+            "Airline reservation system",
+            "Image editor",
+            "Video player",
+            "Spreadsheet with no persistent storage"
         ],
-        "correct_answer": "b. Airline reservation system",
-        "explanation_ar": "نظام حجز تذاكر الطيران هو تطبيق كلاسيكي لقواعد البيانات؛ لأنه يتطلب تخزين بيانات ضخمة (رحلات، ركاب، مقاعد) ويتطلب تحكماً عالياً في التزامن (Concurrency) لمنع حجز نفس المقعد لشخصين.",
-        "explanation_en": "An airline reservation system is a classic database application because it requires persistent storage of large amounts of structured data and strict concurrency control for simultaneous bookings."
+        "correct_answer": "Airline reservation system",
+        "explanation_ar": "نظام حجز تذاكر الطيران هو تطبيق قواعد بيانات نموذجي لأنه يتعامل مع بيانات ضخمة ومعاملات متزامنة.",
+        "explanation_en": "An airline reservation system is a classic database application that handles large amounts of data and concurrent transactions."
     },
     {
         "id": 4,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which term refers to the logical organization of data independent of physical storage?",
         "options": [
-            "a. Physical schema",
-            "b. Data independence",
-            "c. Network topology",
-            "d. Encryption",
-            "e. File fragmentation"
+            "Physical schema",
+            "Data independence",
+            "Network topology",
+            "Encryption",
+            "File fragmentation"
         ],
-        "correct_answer": "b. Data independence",
-        "explanation_ar": "استقلالية البيانات (Data independence) تعني القدرة على تنظيم البيانات منطقياً والتعامل معها دون الحاجة لمعرفة أو تغيير كيفية تخزينها فعلياً على الأقراص الصلبة.",
-        "explanation_en": "Data independence is the property that allows the logical organization of data to be separated from its physical storage details, meaning applications don't need to be rewritten if the storage hardware changes."
+        "correct_answer": "Data independence",
+        "explanation_ar": "استقلالية البيانات تعني القدرة على تنظيم البيانات والتعامل معها برمجياً دون الحاجة لمعرفة كيفية تخزينها فعلياً على الأقراص.",
+        "explanation_en": "Data independence is the property that allows the logical structure of data to be separated from its physical storage details."
     },
     {
         "id": 5,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of the following is a benefit of using a DBMS over file-based systems?",
         "options": [
-            "a. Increased redundancy",
-            "b. Lack of concurrency control",
-            "c. Centralized data management and reduced redundancy",
-            "d. Manual index creation only",
-            "e. No support for transactions"
+            "Increased redundancy",
+            "Lack of concurrency control",
+            "Centralized data management and reduced redundancy",
+            "Manual index creation only",
+            "No support for transactions"
         ],
-        "correct_answer": "c. Centralized data management and reduced redundancy",
-        "explanation_ar": "أنظمة الملفات القديمة كانت تعاني من تكرار البيانات (Redundancy). الـ DBMS جاء ليحل هذه المشكلة عبر مركزية البيانات، مما يقلل التكرار ويضمن تناسق المعلومات.",
-        "explanation_en": "A primary benefit of a DBMS over traditional file systems is the centralized management of data, which drastically reduces data redundancy and prevents data inconsistency."
+        "correct_answer": "Centralized data management and reduced redundancy",
+        "explanation_ar": "من أهم فوائد DBMS أنه يدير البيانات بشكل مركزي، مما يقلل بشكل كبير من تكرار البيانات (Redundancy).",
+        "explanation_en": "A primary benefit of a DBMS is centralized data management, which drastically reduces data redundancy."
     },
     {
         "id": 6,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which layer in the three-schema architecture describes the user view?",
         "options": [
-            "a. Internal schema",
-            "b. Conceptual schema",
-            "c. External schema",
-            "d. Physical storage",
-            "e. Network layer"
+            "Internal schema",
+            "Conceptual schema",
+            "External schema",
+            "Physical storage",
+            "Network layer"
         ],
-        "correct_answer": "c. External schema",
-        "explanation_ar": "المخطط الخارجي (External Schema) في معمارية الثلاث مستويات هو الطبقة التي تصف شكل البيانات كما يراها المستخدم النهائي، حيث يتم إخفاء التفاصيل التي لا تهمه.",
-        "explanation_en": "The External Schema (or View Level) describes the part of the database that a particular user group is interested in, hiding the rest of the database for security and simplification."
+        "correct_answer": "External schema",
+        "explanation_ar": "المخطط الخارجي (External schema) هو المستوى الذي يصف وجهة نظر المستخدم النهائي للبيانات.",
+        "explanation_en": "The External schema (or view level) describes the part of the database that is relevant to a particular user."
     },
     {
         "id": 7,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which data model uses entities, attributes, and relationships as primary constructs?",
         "options": [
-            "a. Relational model",
-            "b. Hierarchical model",
-            "c. Entity-Relationship model",
-            "d. Object code model",
-            "e. Flat-file model"
+            "Relational model",
+            "Hierarchical model",
+            "Entity-Relationship model",
+            "Object code model",
+            "Flat-file model"
         ],
-        "correct_answer": "c. Entity-Relationship model",
-        "explanation_ar": "نموذج الكيانات والعلاقات (ER Model) يعتمد بشكل أساسي على ثلاثة مكونات لبناء المخطط: الكيانات (Entities)، السمات (Attributes)، والعلاقات (Relationships).",
-        "explanation_en": "The Entity-Relationship (ER) model is a high-level conceptual data model that constructs a database representation using Entities, Attributes, and Relationships."
+        "correct_answer": "Entity-Relationship model",
+        "explanation_ar": "نموذج الكيانات والعلاقات (ER Model) يعتمد بشكل أساسي على الكيانات، السمات، والعلاقات لتمثيل البيانات.",
+        "explanation_en": "The Entity-Relationship (ER) model uses entities, attributes, and relationships as its foundational building blocks."
     },
     {
         "id": 8,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which model stores data as tables with rows and columns?",
         "options": [
-            "a. Document model",
-            "b. Graph model",
-            "c. Relational model",
-            "d. Key-value model",
-            "e. Column-family model"
+            "Document model",
+            "Graph model",
+            "Relational model",
+            "Key-value model",
+            "Column-family model"
         ],
-        "correct_answer": "c. Relational model",
-        "explanation_ar": "النموذج العلائقي (Relational Model) هو النموذج الأكثر شيوعاً، ويقوم بتخزين البيانات في شكل جداول (Relations) تتكون من صفوف وأعمدة.",
-        "explanation_en": "The Relational model represents data purely as two-dimensional tables consisting of rows (tuples) and columns (attributes)."
+        "correct_answer": "Relational model",
+        "explanation_ar": "النموذج العلائقي (Relational model) هو الذي ينظم البيانات في شكل جداول تتكون من صفوف وأعمدة.",
+        "explanation_en": "The Relational model represents data purely as two-dimensional tables consisting of rows and columns."
     },
     {
         "id": 9,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which architecture component is responsible for query optimization?",
         "options": [
-            "a. Storage manager",
-            "b. Query processor",
-            "c. Transaction log",
-            "d. Network interface",
-            "e. User interface"
+            "Storage manager",
+            "Query processor",
+            "Transaction log",
+            "Network interface",
+            "User interface"
         ],
-        "correct_answer": "b. Query processor",
-        "explanation_ar": "معالج الاستعلامات (Query Processor) هو العقل المدبر في الـ DBMS. هو الذي يستقبل استعلام الـ SQL، يحلله، ويجد أسرع وأفضل مسار (Optimization) لتنفيذه قبل إرساله لمدير التخزين.",
-        "explanation_en": "The Query Processor is the component responsible for parsing, compiling, and heavily optimizing SQL queries to find the most efficient execution plan."
+        "correct_answer": "Query processor",
+        "explanation_ar": "معالج الاستعلامات (Query processor) هو المسؤول عن تحليل وتحسين استعلامات SQL لتسريع التنفيذ.",
+        "explanation_en": "The Query processor is the component responsible for parsing, compiling, and optimizing database queries."
     },
     {
         "id": 10,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which data model is most suitable for representing many-to-many relationships explicitly?",
         "options": [
-            "a. Key-value model",
-            "b. Relational model",
-            "c. Simple flat file",
-            "d. Binary tree model",
-            "e. None of the above"
+            "Key-value model",
+            "Relational model",
+            "Simple flat file",
+            "Binary tree model",
+            "None of the above"
         ],
-        "correct_answer": "b. Relational model",
-        "explanation_ar": "النموذج العلائقي (Relational Model) هو الأنسب والقياسي بين هذه الخيارات لتمثيل العلاقات المتعددة (M:N)، حيث يتم ذلك بوضوح عبر إنشاء جدول وسيط (Junction Table).",
-        "explanation_en": "Among the given choices, the Relational model is standard for handling M:N relationships, achieving this explicitly by breaking them down using a junction (associative) table."
+        "correct_answer": "Relational model",
+        "explanation_ar": "النموذج العلائقي هو الأنسب للتعامل مع علاقات متعدد-إلى-متعدد (M:N) من خلال إنشاء جداول وسيطة.",
+        "explanation_en": "The Relational model is standard for handling many-to-many relationships explicitly by using junction tables."
     },
     {
         "id": 11,
-        "topic": "ER Modeling",
         "difficulty": "normal",
         "question": "In an ER diagram, what does a diamond typically represent?",
         "options": [
-            "a. Attribute",
-            "b. Entity",
-            "c. Relationship",
-            "d. Primary key",
-            "e. Weak entity"
+            "Attribute",
+            "Entity",
+            "Relationship",
+            "Primary key",
+            "Weak entity"
         ],
-        "correct_answer": "c. Relationship",
-        "explanation_ar": "في مخططات ER القياسية، يُستخدم شكل المعين (Diamond) لتمثيل العلاقة (Relationship) التي تربط بين كيانين أو أكثر.",
-        "explanation_en": "In standard Entity-Relationship (ER) diagram notation, a diamond shape is universally used to represent a relationship between entities."
+        "correct_answer": "Relationship",
+        "explanation_ar": "في مخططات الـ ER، يتم استخدام شكل المعين (Diamond) لتمثيل العلاقة بين الكيانات.",
+        "explanation_en": "In an Entity-Relationship diagram, a diamond shape is universally used to represent a relationship."
     },
     {
         "id": 12,
-        "topic": "ER Modeling",
         "difficulty": "normal",
         "question": "Which of the following is a weak entity?",
         "options": [
-            "a. An entity with its own primary key independent of other entities",
-            "b. An entity that cannot be uniquely identified without a relationship to another entity",
-            "c. An entity with only single-valued attributes",
-            "d. An entity that has no attributes",
-            "e. An entity that is always optional"
+            "An entity with its own primary key independent of other entities",
+            "An entity that cannot be uniquely identified without a relationship to another entity",
+            "An entity with only single-valued attributes",
+            "An entity that has no attributes",
+            "An entity that is always optional"
         ],
-        "correct_answer": "b. An entity that cannot be uniquely identified without a relationship to another entity",
-        "explanation_ar": "الكيان الضعيف (Weak Entity) هو الكيان الذي لا يمتلك مفتاحاً أساسياً خاصاً به، ولذلك لا يمكن التعرف عليه إلا من خلال ارتباطه بكيان آخر قوي يسمى (المالك).",
-        "explanation_en": "A weak entity lacks a primary key of its own and depends entirely on an identifying relationship with a strong 'owner' entity for its unique identification."
+        "correct_answer": "An entity that cannot be uniquely identified without a relationship to another entity",
+        "explanation_ar": "الكيان الضعيف هو الكيان الذي لا يمتلك مفتاحاً أساسياً مستقلاً، ويحتاج للارتباط بكيان مالك لكي يتم التعرف عليه.",
+        "explanation_en": "A weak entity lacks a primary key of its own and depends entirely on an identifying relationship with an owner entity."
     },
     {
         "id": 13,
-        "topic": "ER Modeling",
         "difficulty": "normal",
         "question": "Which cardinality indicates that one instance of A relates to many instances of B?",
         "options": [
-            "a. 1:1",
-            "b. 1:N",
-            "c. N:1",
-            "d. N:N",
-            "e. 0:0"
+            "1:1",
+            "1:N",
+            "N:1",
+            "N:N",
+            "0:0"
         ],
-        "correct_answer": "b. 1:N",
-        "explanation_ar": "علاقة (واحد إلى متعدد) يُرمز لها بـ 1:N. هذا يعني أن سجلاً واحداً من الجدول A يمكن أن يرتبط بعدة سجلات في الجدول B.",
-        "explanation_en": "The 1:N (One-to-Many) cardinality dictates that a single instance of entity A can be associated with multiple instances of entity B."
+        "correct_answer": "1:N",
+        "explanation_ar": "العلاقة 1:N تشير إلى أن عنصراً واحداً في الجدول A يمكن أن يرتبط بعدة عناصر في الجدول B (واحد إلى متعدد).",
+        "explanation_en": "The 1:N cardinality indicates a one-to-many relationship, where one instance of A relates to multiple instances of B."
     },
     {
         "id": 14,
-        "topic": "ER Modeling",
         "difficulty": "normal",
         "question": "Which ER construct models attributes that themselves have sub-attributes?",
         "options": [
-            "a. Composite attribute",
-            "b. Multivalued attribute",
-            "c. Derived attribute",
-            "d. Key attribute",
-            "e. Relationship attribute"
+            "Composite attribute",
+            "Multivalued attribute",
+            "Derived attribute",
+            "Key attribute",
+            "Relationship attribute"
         ],
-        "correct_answer": "a. Composite attribute",
-        "explanation_ar": "السمة المركبة (Composite attribute) هي السمة التي يمكن تقسيمها إلى أجزاء فرعية أصغر لها معنى. مثل سمة 'العنوان' التي تتكون من (المدينة، الشارع، الرمز البريدي).",
-        "explanation_en": "A composite attribute is an attribute that can be logically subdivided into smaller, meaningful sub-attributes (e.g., breaking 'Name' into 'First Name' and 'Last Name')."
+        "correct_answer": "Composite attribute",
+        "explanation_ar": "السمة المركبة (Composite attribute) هي السمة التي يمكن تقسيمها إلى سمات فرعية أصغر (مثل الاسم الأول والأخير).",
+        "explanation_en": "A composite attribute can be subdivided into smaller, meaningful sub-attributes."
     },
     {
         "id": 15,
-        "topic": "ER Modeling",
         "difficulty": "hard",
         "question": "When converting an ER model with a ternary relationship into relational schemas, which is a correct approach?",
         "options": [
-            "a. Always merge all three entities into one table",
-            "b. Create a separate relation for the ternary relationship including foreign keys to the three entities and any relationship attributes",
-            "c. Drop the relationship and use only attributes of entities",
-            "d. Convert the ternary relationship into three binary relationships without extra relation",
-            "e. Use only multivalued attributes in one entity"
+            "Always merge all three entities into one table",
+            "Create a separate relation for the ternary relationship including foreign keys to the three entities and any relationship attributes",
+            "Drop the relationship and use only attributes of entities",
+            "Convert the ternary relationship into three binary relationships without extra relation",
+            "Use only multivalued attributes in one entity"
         ],
-        "correct_answer": "b. Create a separate relation for the ternary relationship including foreign keys to the three entities and any relationship attributes",
-        "explanation_ar": "العلاقة الثلاثية (Ternary Relationship) تربط بين 3 كيانات. عند تحويلها لجداول، يجب إنشاء 'جدول جديد' يمثل هذه العلاقة، ويحتوي على المفاتيح الأجنبية للكيانات الثلاثة معاً كمفتاح أساسي مركب.",
-        "explanation_en": "A ternary (3-way) relationship is mapped by creating a distinct new relation. This new table must include the primary keys of all three participating entities as foreign keys, which together typically form its composite primary key."
+        "correct_answer": "Create a separate relation for the ternary relationship including foreign keys to the three entities and any relationship attributes",
+        "explanation_ar": "لتحويل علاقة ثلاثية بشكل صحيح في قواعد البيانات، يجب إنشاء جدول جديد يضم المفاتيح الأجنبية للكيانات الثلاثة المرتبطة.",
+        "explanation_en": "To map a ternary relationship properly, a separate relation is created containing the foreign keys of the three participating entities."
     },
     {
         "id": 16,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
         "question": "Which of the following is a relation in the relational model?",
         "options": [
-            "a. A table with rows and columns",
-            "b. A file on disk",
-            "c. A network socket",
-            "d. A stored procedure",
-            "e. A view only"
+            "A table with rows and columns",
+            "A file on disk",
+            "A network socket",
+            "A stored procedure",
+            "A view only"
         ],
-        "correct_answer": "a. A table with rows and columns",
-        "explanation_ar": "في النموذج العلائقي، مصطلح العلاقة (Relation) هو التعبير الرياضي والتقني الدقيق للإشارة إلى 'الجدول' الذي يتكون من صفوف (Tuples) وأعمدة (Attributes).",
-        "explanation_en": "In the formal relational model, a 'Relation' is the mathematical term used to describe a two-dimensional table consisting of rows and columns."
+        "correct_answer": "A table with rows and columns",
+        "explanation_ar": "في النموذج العلائقي، تُعرف العلاقة (Relation) عملياً بأنها جدول يحتوي على صفوف (Tuples) وأعمدة (Attributes).",
+        "explanation_en": "In the relational model, a relation is formally represented as a two-dimensional table with rows and columns."
     },
     {
         "id": 17,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
         "question": "Which constraint ensures uniqueness of a column or set of columns?",
         "options": [
-            "a. NOT NULL",
-            "b. CHECK",
-            "c. UNIQUE",
-            "d. DEFAULT",
-            "e. FOREIGN KEY"
+            "NOT NULL",
+            "CHECK",
+            "UNIQUE",
+            "DEFAULT",
+            "FOREIGN KEY"
         ],
-        "correct_answer": "c. UNIQUE",
-        "explanation_ar": "قيد UNIQUE يضمن عدم تكرار أي قيمة في العمود أو مجموعة الأعمدة المحددة، مماثل للمفتاح الأساسي ولكنه يسمح عادةً بقيمة NULL واحدة.",
-        "explanation_en": "The UNIQUE constraint strictly enforces that all values in a column or a set of columns are distinct and not repeated across any rows."
+        "correct_answer": "UNIQUE",
+        "explanation_ar": "قيد UNIQUE يضمن عدم وجود قيم مكررة داخل العمود المحدد، مما يحافظ على فرادة البيانات.",
+        "explanation_en": "The UNIQUE constraint ensures that all values in a column or a set of columns are distinct from one another."
     },
     {
         "id": 18,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
         "question": "Which normal form eliminates repeating groups?",
         "options": [
-            "a. 1NF (First Normal Form)",
-            "b. 2NF",
-            "c. 3NF",
-            "d. BCNF",
-            "e. 4NF"
+            "1NF (First Normal Form)",
+            "2NF",
+            "3NF",
+            "BCNF",
+            "4NF"
         ],
-        "correct_answer": "a. 1NF (First Normal Form)",
-        "explanation_ar": "الشكل الطبيعي الأول (1NF) هو الخطوة التأسيسية للتسوية، ويشترط أن تكون كل القيم 'ذرية' (Atomic)، أي يمنع تماماً وجود مجموعات متكررة (Repeating groups) داخل خلية واحدة.",
-        "explanation_en": "First Normal Form (1NF) mandates that attributes must be atomic, effectively eliminating multi-valued attributes or repeating groups from a relation."
+        "correct_answer": "1NF (First Normal Form)",
+        "explanation_ar": "الشكل الطبيعي الأول (1NF) هو الذي يفرض أن تكون جميع القيم ذرية (Atomic)، ويمنع وجود مجموعات مكررة أو مصفوفات داخل الخلية الواحدة.",
+        "explanation_en": "First Normal Form (1NF) enforces atomicity, thereby eliminating repeating groups and multi-valued attributes from a relation."
     },
     {
         "id": 19,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
         "question": "Which of the following is a reason to decompose a relation?",
         "options": [
-            "a. To increase redundancy",
-            "b. To eliminate update anomalies",
-            "c. To make queries slower",
-            "d. To remove primary keys",
-            "e. To avoid using foreign keys"
+            "To increase redundancy",
+            "To eliminate update anomalies",
+            "To make queries slower",
+            "To remove primary keys",
+            "To avoid using foreign keys"
         ],
-        "correct_answer": "b. To eliminate update anomalies",
-        "explanation_ar": "السبب الرئيسي لتفكيك الجداول (Decomposition) أثناء التسوية هو التخلص من التكرار الذي يؤدي حتماً إلى شذوذ التحديث، الإدخال، والحذف (Anomalies).",
-        "explanation_en": "Decomposing a relation into smaller, well-structured relations is the primary method for eliminating data redundancy and resolving update, insertion, and deletion anomalies."
+        "correct_answer": "To eliminate update anomalies",
+        "explanation_ar": "تفكيك الجداول (Decomposition) أثناء عملية التسوية يهدف إلى التخلص من التكرار غير المبرر وبالتالي منع شذوذ التحديث والحذف والإدراج (Anomalies).",
+        "explanation_en": "Decomposing a relation during normalization is primarily done to eliminate redundancy and the resulting update anomalies."
     },
     {
         "id": 20,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
         "question": "What is a candidate key?",
         "options": [
-            "a. Any attribute that can be NULL",
-            "b. A minimal set of attributes that uniquely identify a tuple",
-            "c. A foreign key referencing another table",
-            "d. A non-unique attribute used for indexing",
-            "e. A temporary key used during transactions"
+            "Any attribute that can be NULL",
+            "A minimal set of attributes that uniquely identify a tuple",
+            "A foreign key referencing another table",
+            "A non-unique attribute used for indexing",
+            "A temporary key used during transactions"
         ],
-        "correct_answer": "b. A minimal set of attributes that uniquely identify a tuple",
-        "explanation_ar": "المفتاح المرشح هو مجموعة من الأعمدة (أو عمود واحد) قادرة على تمييز الصف بالكامل (Superkey)، ولكنها 'أصغرية' (Minimal) أي لا يمكن إزالة أي عمود منها دون فقدان خاصية التمييز الفريد.",
-        "explanation_en": "A candidate key is a minimal superkey; it uniquely identifies a tuple but contains no unnecessary attributes that could be removed while still maintaining uniqueness."
+        "correct_answer": "A minimal set of attributes that uniquely identify a tuple",
+        "explanation_ar": "المفتاح المرشح (Candidate key) هو أصغر مجموعة ممكنة من السمات التي تستطيع معاً تمييز أي صف في الجدول بشكل فريد (لا يحتوي على سمات زائدة).",
+        "explanation_en": "A candidate key is a minimal superkey; a set of attributes that uniquely identifies a tuple with no redundant attributes."
     },
     {
         "id": 21,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "normal",
         "question": "Which relational algebra operator returns tuples that are in relation A but not in relation B?",
         "options": [
-            "a. Union",
-            "b. Intersection",
-            "c. Difference",
-            "d. Cartesian product",
-            "e. Join"
+            "Union",
+            "Intersection",
+            "Difference",
+            "Cartesian product",
+            "Join"
         ],
-        "correct_answer": "c. Difference",
-        "explanation_ar": "عملية الفرق (Set Difference) الممثلة بـ (A - B) تُرجع فقط الصفوف الموجودة في الجدول الأول وغير الموجودة إطلاقاً في الجدول الثاني.",
-        "explanation_en": "The Set Difference operator (A - B) mathematically returns all tuples that exist in relation A but are completely absent from relation B."
+        "correct_answer": "Difference",
+        "explanation_ar": "عملية الفرق (Difference) تعيد السجلات الموجودة في الجدول الأول (A) والتي لا يوجد لها مثيل في الجدول الثاني (B).",
+        "explanation_en": "The set Difference operator mathematically returns the tuples that exist in relation A but are completely absent from relation B."
     },
     {
         "id": 22,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "normal",
         "question": "Which operator combines tuples from two relations based on a condition?",
         "options": [
-            "a. Projection",
-            "b. Selection",
-            "c. Join",
-            "d. Rename",
-            "e. Division"
+            "Projection",
+            "Selection",
+            "Join",
+            "Rename",
+            "Division"
         ],
-        "correct_answer": "c. Join",
-        "explanation_ar": "عملية الربط (Join) هي المسؤولة عن دمج صفوف جدولين مختلفين لتكوين صف جديد، بشرط تطابق القيم بناءً على شرط رياضي أو منطقي محدد.",
-        "explanation_en": "The Join operator combines related tuples from two different relations into a single tuple based on a specified matching condition (join condition)."
+        "correct_answer": "Join",
+        "explanation_ar": "عملية الربط (Join) تدمج صفوفاً من جدولين مختلفين لتكوين صف جديد متى ما تحقق شرط الربط بينهما.",
+        "explanation_en": "The Join operator combines related tuples from two relations into a single tuple based on a specified matching condition."
     },
     {
         "id": 23,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "normal",
         "question": "Which relational algebra operation corresponds to SQL SELECT with WHERE?",
         "options": [
-            "a. Projection",
-            "b. Selection",
-            "c. Join",
-            "d. Union",
-            "e. Intersection"
+            "Projection",
+            "Selection",
+            "Join",
+            "Union",
+            "Intersection"
         ],
-        "correct_answer": "b. Selection",
-        "explanation_ar": "في الجبر العلائقي، عملية Selection (σ) هي التي تقوم بالفلترة الأفقية للصفوف بناءً على شرط معين، وهذا يقابل تماماً أمر WHERE في لغة SQL.",
-        "explanation_en": "The Selection (σ) operation in relational algebra acts as a row filter based on a predicate, precisely corresponding to the WHERE clause in an SQL SELECT statement."
+        "correct_answer": "Selection",
+        "explanation_ar": "عملية الاختيار (Selection - سيجما) في الجبر العلائقي تعمل تماماً مثل أمر WHERE في SQL، حيث تقوم بفلترة الصفوف أفقياً بناءً على شرط.",
+        "explanation_en": "The Selection operation in relational algebra filters tuples based on a predicate, directly corresponding to the WHERE clause in SQL."
     },
     {
         "id": 24,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "normal",
         "question": "Which operator returns only specified columns from a relation?",
         "options": [
-            "a. Selection",
-            "b. Projection",
-            "c. Join",
-            "d. Difference",
-            "e. Cartesian product"
+            "Selection",
+            "Projection",
+            "Join",
+            "Difference",
+            "Cartesian product"
         ],
-        "correct_answer": "b. Projection",
-        "explanation_ar": "عملية الإسقاط (Projection - π) تقوم بقطع الجدول عمودياً، حيث تحتفظ بالأعمدة المحددة فقط وتتجاهل الباقي، مع حذف أي صفوف مكررة ناتجة.",
-        "explanation_en": "The Projection (π) operator extracts explicitly specified columns from a relation, effectively filtering the relation vertically and eliminating any resulting duplicate tuples."
+        "correct_answer": "Projection",
+        "explanation_ar": "عملية الإسقاط (Projection) هي المسؤولة عن اختيار أعمدة (سمات) محددة من الجدول واستبعاد البقية.",
+        "explanation_en": "The Projection operator vertically filters a relation, returning only the explicitly specified attributes or columns."
     },
     {
         "id": 25,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "hard",
         "question": "Given relations R(A,B) and S(B,C), which relational algebra expression yields all A values that are associated with every C in S?",
         "options": [
-            "a. (\\pi_{A}(R))",
-            "b. ( \\pi_{A}(R \\bowtie S))",
-            "c. ( \\pi_{A}(R \\div \\pi_{B}(S)))",
-            "d. ( \\pi_{A}(R) - \\pi_{A}(S))",
-            "e. ( \\pi_{A}(R) \\cup \\pi_{A}(S))"
+            "(\\pi_{A}(R))",
+            "( \\pi_{A}(R \\bowtie S))",
+            "( \\pi_{A}(R \\div \\pi_{B}(S)))",
+            "( \\pi_{A}(R) - \\pi_{A}(S))",
+            "( \\pi_{A}(R) \\cup \\pi_{A}(S))"
         ],
-        "correct_answer": "c. ( \\pi_{A}(R \\div \\pi_{B}(S)))",
-        "explanation_ar": "سؤال متقدم: البحث عن قيمة ارتبطت بـ 'كافة' (Every/All) القيم في كيان آخر يتطلب استخدام عملية القسمة (Division). الخيار C يمثل استخراج A من R بعد قسمته على S.",
-        "explanation_en": "Queries requesting an instance associated with 'ALL' or 'EVERY' instance of another relation mathematically require the Division operator (÷). This is the standard relational algebra solution for universal quantification."
+        "correct_answer": "( \\pi_{A}(R \\div \\pi_{B}(S)))",
+        "explanation_ar": "عندما يطلب الاستعلام إيجاد قيمة مرتبطة بـ 'كافة' (Every/All) القيم في جدول آخر، فإن العملية الرياضية الصحيحة هي القسمة (Division).",
+        "explanation_en": "Queries requiring an element to be associated with 'every' or 'all' elements of another set are solved using the Division operator (÷) in relational algebra."
     },
     {
         "id": 26,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
         "question": "Which SQL statement is used to create a new table?",
         "options": [
-            "a. INSERT INTO",
-            "b. CREATE TABLE",
-            "c. ALTER TABLE",
-            "d. UPDATE TABLE",
-            "e. SELECT INTO"
+            "INSERT INTO",
+            "CREATE TABLE",
+            "ALTER TABLE",
+            "UPDATE TABLE",
+            "SELECT INTO"
         ],
-        "correct_answer": "b. CREATE TABLE",
-        "explanation_ar": "أمر CREATE TABLE هو أحد أوامر لغة تعريف البيانات (DDL) ويستخدم لإنشاء الجداول في قاعدة البيانات وتحديد هيكلها.",
-        "explanation_en": "The CREATE TABLE statement is a Data Definition Language (DDL) command used to explicitly instantiate a new table and define its structural schema."
+        "correct_answer": "CREATE TABLE",
+        "explanation_ar": "أمر CREATE TABLE يُستخدم لبناء وهيكلة جداول جديدة في قاعدة البيانات ضمن لغة DDL.",
+        "explanation_en": "CREATE TABLE is the standard Data Definition Language (DDL) statement used to instantiate a new table schema."
     },
     {
         "id": 27,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
         "question": "Which clause is used to restrict rows returned by a SELECT?",
         "options": [
-            "a. GROUP BY",
-            "b. HAVING",
-            "c. WHERE",
-            "d. ORDER BY",
-            "e. FROM"
+            "GROUP BY",
+            "HAVING",
+            "WHERE",
+            "ORDER BY",
+            "FROM"
         ],
-        "correct_answer": "c. WHERE",
-        "explanation_ar": "جملة WHERE هي الأداة الأساسية لفلترة الصفوف بناءً على شروط منطقية محددة قبل عرض النتائج للمستخدم.",
-        "explanation_en": "The WHERE clause restricts the result set of a SELECT query by evaluating a boolean condition against each individual row."
+        "correct_answer": "WHERE",
+        "explanation_ar": "جملة WHERE تُستخدم لتقييد وفلترة الصفوف المُسترجعة من أمر SELECT لتطابق شروطاً محددة.",
+        "explanation_en": "The WHERE clause restricts the result set by evaluating a condition against each row retrieved by a SELECT statement."
     },
     {
         "id": 28,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
         "question": "Which statement changes existing rows in a table?",
         "options": [
-            "a. CREATE",
-            "b. DROP",
-            "c. UPDATE",
-            "d. SELECT",
-            "e. GRANT"
+            "CREATE",
+            "DROP",
+            "UPDATE",
+            "SELECT",
+            "GRANT"
         ],
-        "correct_answer": "c. UPDATE",
-        "explanation_ar": "أمر UPDATE من أوامر DML يُستخدم لتعديل قيمة أو أكثر داخل السجلات (الصفوف) الموجودة بالفعل في الجدول.",
-        "explanation_en": "The UPDATE statement is a Data Manipulation Language (DML) command utilized exclusively to modify the data contained within existing rows of a table."
+        "correct_answer": "UPDATE",
+        "explanation_ar": "أمر UPDATE يُستخدم لتغيير وتعديل البيانات الموجودة مسبقاً داخل صفوف الجدول.",
+        "explanation_en": "The UPDATE statement is used in Data Manipulation Language (DML) to modify the values of existing rows in a table."
     },
     {
         "id": 29,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
         "question": "Which DDL command removes a table and its data permanently?",
         "options": [
-            "a. TRUNCATE TABLE",
-            "b. DELETE FROM",
-            "c. DROP TABLE",
-            "d. REMOVE TABLE",
-            "e. CLEAR TABLE"
+            "TRUNCATE TABLE",
+            "DELETE FROM",
+            "DROP TABLE",
+            "REMOVE TABLE",
+            "CLEAR TABLE"
         ],
-        "correct_answer": "c. DROP TABLE",
-        "explanation_ar": "أمر DROP TABLE هو أمر تدميري يمحو الهيكل البنائي للجدول وكافة البيانات بداخله نهائياً من قاموس البيانات.",
-        "explanation_en": "DROP TABLE is a structural DDL command that permanently destroys the table schema and physically removes all associated data from the database system."
+        "correct_answer": "DROP TABLE",
+        "explanation_ar": "أمر DROP TABLE يمحو الجدول بأكمله من قاعدة البيانات نهائياً، وهذا يشمل البيانات والهيكل الخاص بالجدول معاً.",
+        "explanation_en": "DROP TABLE is a DDL command that permanently destroys both the table's structural definition and all its stored data."
     },
     {
         "id": 30,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
         "question": "Which SQL clause is used to ensure a column cannot contain NULL values?",
         "options": [
-            "a. UNIQUE",
-            "b. NOT NULL",
-            "c. CHECK",
-            "d. DEFAULT",
-            "e. PRIMARY KEY"
+            "UNIQUE",
+            "NOT NULL",
+            "CHECK",
+            "DEFAULT",
+            "PRIMARY KEY"
         ],
-        "correct_answer": "b. NOT NULL",
-        "explanation_ar": "قيد NOT NULL يُجبر النظام على رفض أي إدخال (INSERT أو UPDATE) لا يحتوي على قيمة فعلية لهذا العمود، مما يمنع الفراغات.",
-        "explanation_en": "The NOT NULL constraint explicitly forbids an attribute from accepting a NULL (unknown or missing) value during data entry operations."
+        "correct_answer": "NOT NULL",
+        "explanation_ar": "قيد NOT NULL يُلزم النظام برفض أي مدخلات لا تحتوي على قيمة في هذا العمود لمنع الفراغات.",
+        "explanation_en": "The NOT NULL constraint explicitly forbids an attribute from accepting a NULL value, ensuring data presence."
     },
     {
         "id": 31,
-        "topic": "SQL Joins, Subqueries, Views, Indexing",
         "difficulty": "normal",
         "question": "Which join returns all rows from the left table and matching rows from the right table?",
         "options": [
-            "a. INNER JOIN",
-            "b. RIGHT OUTER JOIN",
-            "c. LEFT OUTER JOIN",
-            "d. FULL OUTER JOIN",
-            "e. CROSS JOIN"
+            "INNER JOIN",
+            "RIGHT OUTER JOIN",
+            "LEFT OUTER JOIN",
+            "FULL OUTER JOIN",
+            "CROSS JOIN"
         ],
-        "correct_answer": "c. LEFT OUTER JOIN",
-        "explanation_ar": "الربط الخارجي الأيسر (LEFT OUTER JOIN) يضمن استرجاع كافة السجلات من الجدول الموجود على اليسار، حتى لو لم يكن لها ما يطابقها في الجدول الأيمن (حيث يضع قيم NULL كبديل).",
-        "explanation_en": "A LEFT OUTER JOIN preserves all rows from the left-hand table, filling in NULL values for columns from the right-hand table when no match is found."
+        "correct_answer": "LEFT OUTER JOIN",
+        "explanation_ar": "الرابط الخارجي الأيسر (LEFT OUTER JOIN) يضمن استرجاع كافة الصفوف من الجدول الأيسر، مع القيم المطابقة من الجدول الأيمن (إن وجدت).",
+        "explanation_en": "A LEFT OUTER JOIN returns all rows from the left table, along with any matching rows from the right table."
     },
     {
         "id": 32,
-        "topic": "SQL Joins, Subqueries, Views, Indexing",
         "difficulty": "normal",
         "question": "Which SQL construct allows embedding a SELECT inside another SELECT?",
         "options": [
-            "a. View",
-            "b. Subquery",
-            "c. Index",
-            "d. Trigger",
-            "e. Cursor"
+            "View",
+            "Subquery",
+            "Index",
+            "Trigger",
+            "Cursor"
         ],
-        "correct_answer": "b. Subquery",
-        "explanation_ar": "الاستعلام الفرعي (Subquery) هو استعلام SELECT متداخل داخل استعلام SQL آخر (الأب) ويستخدم لتمرير نتيجة مؤقتة لاستخدامها في شرط الفلترة أو العرض.",
-        "explanation_en": "A subquery (or nested query) is a SELECT query embedded within another SQL query, allowing the use of dynamically retrieved results in the outer query's logic."
+        "correct_answer": "Subquery",
+        "explanation_ar": "الاستعلام الفرعي (Subquery) هو استعلام SELECT يكون متداخلاً (Embedded) داخل استعلام SELECT أو UPDATE أو DELETE آخر.",
+        "explanation_en": "A Subquery is a query nested inside another SQL query, allowing for complex data filtering and retrieval."
     },
     {
         "id": 33,
-        "topic": "SQL Joins, Subqueries, Views, Indexing",
         "difficulty": "normal",
         "question": "Which object provides a virtual table defined by a query?",
         "options": [
-            "a. Index",
-            "b. View",
-            "c. Trigger",
-            "d. Stored procedure",
-            "e. Constraint"
+            "Index",
+            "View",
+            "Trigger",
+            "Stored procedure",
+            "Constraint"
         ],
-        "correct_answer": "b. View",
-        "explanation_ar": "العرض (View) هو جدول افتراضي يتم إنشاؤه عبر حفظ استعلام SELECT. لا يخزن بيانات فعلية، بل يستدعيها ديناميكياً من الجداول الأصلية عند طلبه.",
-        "explanation_en": "A View is a virtual table based on the result-set of an SQL statement. It contains no physical data of its own but dynamically presents data from base tables."
+        "correct_answer": "View",
+        "explanation_ar": "العرض (View) هو جدول افتراضي لا يخزن البيانات بنفسه، بل يتم تعريفه وتوليده بناءً على استعلام محدد.",
+        "explanation_en": "A View is a virtual table based on the result-set of an SQL statement, containing rows and columns just like a real table."
     },
     {
         "id": 34,
-        "topic": "SQL Joins, Subqueries, Views, Indexing",
         "difficulty": "normal",
         "question": "Which index type is most appropriate for range queries on a numeric column?",
         "options": [
-            "a. Hash index",
-            "b. B-tree index",
-            "c. Bitmap index only for text",
-            "d. No index",
-            "e. Full-text index"
+            "Hash index",
+            "B-tree index",
+            "Bitmap index only for text",
+            "No index",
+            "Full-text index"
         ],
-        "correct_answer": "b. B-tree index",
-        "explanation_ar": "فهرس B-tree (شجرة ب) هو الهيكل الأمثل للاستعلامات التي تستخدم النطاقات (مثل الأكبر من أو الأصغر من) لأنه يحافظ على ترتيب البيانات المنطقي بشكل متوازن.",
-        "explanation_en": "B-tree (Balanced Tree) indexes are highly optimized for range queries (e.g., BETWEEN, <, >) because they maintain keys in sorted order, allowing fast traversal."
+        "correct_answer": "B-tree index",
+        "explanation_ar": "فهرس شجرة الباء (B-tree index) هو الهيكل الأمثل للتعامل مع استعلامات النطاق (Range queries) مثل (أكبر من وأصغر من) للبيانات الرقمية.",
+        "explanation_en": "A B-tree index is highly optimized for range queries because it stores keys in a sorted hierarchical structure."
     },
     {
         "id": 35,
-        "topic": "SQL Joins, Subqueries, Views, Indexing",
         "difficulty": "hard",
         "question": "Which SQL join condition can cause a result set to grow multiplicatively and often requires careful use of grouping or DISTINCT to avoid duplicates?",
         "options": [
-            "a. Equi-join on unique keys",
-            "b. Cross join or Cartesian product",
-            "c. Left join on primary key",
-            "d. Natural join on disjoint attributes",
-            "e. Self-join on unique attribute"
+            "Equi-join on unique keys",
+            "Cross join or Cartesian product",
+            "Left join on primary key",
+            "Natural join on disjoint attributes",
+            "Self-join on unique attribute"
         ],
-        "correct_answer": "b. Cross join or Cartesian product",
-        "explanation_ar": "سؤال هندسي متقدم: الربط المتقاطع (Cross Join) يعيد حاصل الضرب الديكارتي، حيث يرتبط كل صف في الجدول الأول بكل صف في الجدول الثاني، مما يؤدي إلى تضخم هائل في عدد السجلات.",
-        "explanation_en": "A Cross Join (Cartesian Product) pairs every tuple of the first relation with every tuple of the second, causing multiplicative growth and massive data duplication if not filtered."
+        "correct_answer": "Cross join or Cartesian product",
+        "explanation_ar": "الربط التقاطعي (Cross join) يقوم بضرب كل صف من الجدول الأول في كل صف من الجدول الثاني، مما ينتج عنه نمو مضاعف للبيانات (حاصل ضرب ديكارتي).",
+        "explanation_en": "A Cross join (Cartesian product) combines every row from the first table with every row from the second table, leading to multiplicative growth of the result set."
     },
     {
         "id": 36,
-        "topic": "Database Design (Lifecycle)",
         "difficulty": "normal",
         "question": "Which phase of the database lifecycle focuses on gathering user requirements?",
         "options": [
-            "a. Implementation",
-            "b. Requirements analysis",
-            "c. Physical design",
-            "d. Tuning",
-            "e. Backup planning"
+            "Implementation",
+            "Requirements analysis",
+            "Physical design",
+            "Tuning",
+            "Backup planning"
         ],
-        "correct_answer": "b. Requirements analysis",
-        "explanation_ar": "مرحلة تحليل المتطلبات هي الخطوة التأسيسية التي يتم فيها فهم المشكلة، جمع احتياجات المستخدمين، وتوثيق ما يجب أن تنجزه قاعدة البيانات قبل البدء بتصميمها.",
-        "explanation_en": "Requirements analysis is the crucial initial phase where database designers interview stakeholders to document data requirements and business rules before modeling begins."
+        "correct_answer": "Requirements analysis",
+        "explanation_ar": "مرحلة تحليل المتطلبات (Requirements analysis) هي المرحلة الأولى التي يتم فيها جمع وفهم احتياجات المستخدمين من قاعدة البيانات.",
+        "explanation_en": "Requirements analysis is the phase in the database lifecycle dedicated to understanding and gathering what the users need from the system."
     },
     {
         "id": 37,
-        "topic": "Database Design (Lifecycle)",
         "difficulty": "normal",
         "question": "Which activity is part of logical design?",
         "options": [
-            "a. Choosing file placement on disk",
-            "b. Defining relations, keys, and constraints",
-            "c. Configuring RAID levels",
-            "d. Setting up OS-level users",
-            "e. Installing DBMS binaries"
+            "Choosing file placement on disk",
+            "Defining relations, keys, and constraints",
+            "Configuring RAID levels",
+            "Setting up OS-level users",
+            "Installing DBMS binaries"
         ],
-        "correct_answer": "b. Defining relations, keys, and constraints",
-        "explanation_ar": "التصميم المنطقي يختص بتحويل مخططات ER إلى جداول فعلية، وتحديد المفاتيح الأساسية والأجنبية والقيود، ولا علاقة له بالهاردوير أو التخزين الفيزيائي.",
-        "explanation_en": "Logical design involves mapping the conceptual data model into a specific relational schema, defining tables, attributes, primary/foreign keys, and integrity constraints."
+        "correct_answer": "Defining relations, keys, and constraints",
+        "explanation_ar": "التصميم المنطقي يُعنى بتعريف الجداول (العلاقات)، المفاتيح الأساسية والأجنبية، والقيود، دون التدخل في كيفية تخزينها فعلياً.",
+        "explanation_en": "Logical design involves mapping the conceptual model to a specific database model, which includes defining relations, keys, and constraints."
     },
     {
         "id": 38,
-        "topic": "Database Design (Lifecycle)",
         "difficulty": "normal",
         "question": "Which testing type verifies that the database meets functional requirements?",
         "options": [
-            "a. Performance testing",
-            "b. Unit testing only for code",
-            "c. Functional testing",
-            "d. Stress testing",
-            "e. Load balancing"
+            "Performance testing",
+            "Unit testing only for code",
+            "Functional testing",
+            "Stress testing",
+            "Load balancing"
         ],
-        "correct_answer": "c. Functional testing",
-        "explanation_ar": "الاختبار الوظيفي (Functional Testing) يضمن أن قاعدة البيانات تعمل كما هو مخطط لها، مثل تنفيذ الاستعلامات بشكل صحيح وتطبيق القيود بشكل سليم.",
-        "explanation_en": "Functional testing validates that the database operations (queries, constraints, triggers) produce the expected outcomes aligned with the business requirements."
+        "correct_answer": "Functional testing",
+        "explanation_ar": "الاختبار الوظيفي (Functional testing) يضمن أن قاعدة البيانات تنفذ جميع الوظائف والمهام المطلوبة منها بشكل صحيح كما هو متوقع.",
+        "explanation_en": "Functional testing verifies that the database operations, queries, and constraints work correctly according to the specified business requirements."
     },
     {
         "id": 39,
-        "topic": "Database Design (Lifecycle)",
         "difficulty": "normal",
         "question": "During maintenance, which task helps keep performance stable?",
         "options": [
-            "a. Ignoring logs",
-            "b. Index rebuilding and statistics update",
-            "c. Deleting backups",
-            "d. Removing constraints",
-            "e. Disabling monitoring"
+            "Ignoring logs",
+            "Index rebuilding and statistics update",
+            "Deleting backups",
+            "Removing constraints",
+            "Disabling monitoring"
         ],
-        "correct_answer": "b. Index rebuilding and statistics update",
-        "explanation_ar": "عمليات الصيانة كإعادة بناء الفهارس (Index rebuilding) وتحديث الإحصائيات ضرورية لمعالج الاستعلامات لكي يختار أسرع مسار لجلب البيانات بعد فترات من إدخال وتعديل البيانات.",
-        "explanation_en": "Routine maintenance like index rebuilding and updating database statistics prevents fragmentation and ensures the query optimizer chooses the most efficient execution plans."
+        "correct_answer": "Index rebuilding and statistics update",
+        "explanation_ar": "إعادة بناء الفهارس وتحديث الإحصائيات هي عمليات صيانة دورية ضرورية للحفاظ على سرعة الاستعلامات وكفاءة قاعدة البيانات.",
+        "explanation_en": "Rebuilding indexes and updating database statistics ensures the query optimizer has accurate information to maintain stable and efficient performance."
     },
     {
         "id": 40,
-        "topic": "Logical & Physical Design",
         "difficulty": "normal",
         "question": "Which design decision is part of physical design?",
         "options": [
-            "a. Choosing attribute names",
-            "b. Selecting indexes and partitioning strategy",
-            "c. Drawing ER diagrams",
-            "d. Defining conceptual schema only",
-            "e. Writing user manuals"
+            "Choosing attribute names",
+            "Selecting indexes and partitioning strategy",
+            "Drawing ER diagrams",
+            "Defining conceptual schema only",
+            "Writing user manuals"
         ],
-        "correct_answer": "b. Selecting indexes and partitioning strategy",
-        "explanation_ar": "التصميم الفيزيائي يتعامل مع أداء وسرعة التخزين على القرص الصلب، لذا فإن اختيار الفهارس وتقسيم الجداول (Partitioning) هو جزء أساسي من هذه المرحلة.",
-        "explanation_en": "Physical design dictates how data is actually stored on hardware, involving critical decisions like index creation, data clustering, and table partitioning for optimal I/O."
+        "correct_answer": "Selecting indexes and partitioning strategy",
+        "explanation_ar": "التصميم الفيزيائي يركز على تفاصيل التخزين والأداء، مثل اختيار الفهارس المناسبة وتقسيم البيانات (Partitioning) على الأقراص.",
+        "explanation_en": "Physical design deals with performance and storage layout, making decisions about indexing, partitioning, and file organization."
     },
     {
         "id": 41,
-        "topic": "Logical & Physical Design",
         "difficulty": "normal",
         "question": "Which technique maps logical relations to physical storage to improve I/O?",
         "options": [
-            "a. Normalization only",
-            "b. Denormalization and clustering",
-            "c. Removing primary keys",
-            "d. Dropping indexes always",
-            "e. Using only views"
+            "Normalization only",
+            "Denormalization and clustering",
+            "Removing primary keys",
+            "Dropping indexes always",
+            "Using only views"
         ],
-        "correct_answer": "b. Denormalization and clustering",
-        "explanation_ar": "إلغاء التسوية (Denormalization) وتجميع البيانات (Clustering) هما تقنيتان تستخدمان لتقليل القراءة من القرص الصلب (I/O) عبر تجميع البيانات المرتبطة فيزيائياً في مكان واحد.",
-        "explanation_en": "Techniques like denormalization (introducing controlled redundancy) and clustering (storing related rows physically close together) are specifically used to minimize disk I/O bottlenecks."
+        "correct_answer": "Denormalization and clustering",
+        "explanation_ar": "التجميع (Clustering) والتخلي عن التسوية (Denormalization) هي تقنيات تستخدم في التخزين الفيزيائي لتقليل عمليات الإدخال والإخراج (I/O) وتسريع القراءة.",
+        "explanation_en": "Denormalization reduces joins, and clustering stores related rows together physically, both of which significantly improve disk I/O performance."
     },
     {
         "id": 42,
-        "topic": "Logical & Physical Design",
         "difficulty": "normal",
         "question": "Which is a trade-off when denormalizing a schema?",
         "options": [
-            "a. Reduced redundancy and slower writes",
-            "b. Increased redundancy and faster reads",
-            "c. No change in storage",
-            "d. Eliminates need for backups",
-            "e. Always improves write performance"
+            "Reduced redundancy and slower writes",
+            "Increased redundancy and faster reads",
+            "No change in storage",
+            "Eliminates need for backups",
+            "Always improves write performance"
         ],
-        "correct_answer": "b. Increased redundancy and faster reads",
-        "explanation_ar": "إلغاء التسوية هو مقايضة (Trade-off): نحن نضحي بالمساحة عبر زيادة التكرار (Redundancy) بهدف تجنب عمليات JOIN البطيئة، مما يسرع قراءة واسترجاع البيانات بشكل ملحوظ.",
-        "explanation_en": "Denormalization accepts the penalty of increased data redundancy and potentially slower writes in exchange for the significant benefit of faster read operations by avoiding complex JOINS."
+        "correct_answer": "Increased redundancy and faster reads",
+        "explanation_ar": "عكس التسوية (Denormalization) يسرع عمليات القراءة لأنه يقلل الحاجة للربط (Joins)، لكنه يأتي على حساب زيادة تكرار البيانات (Redundancy).",
+        "explanation_en": "Denormalization speeds up read queries by combining tables, but the trade-off is that it intentionally introduces data redundancy."
     },
     {
         "id": 43,
-        "topic": "Logical & Physical Design",
         "difficulty": "hard",
         "question": "When designing for OLTP workloads, which physical design choice is usually preferred?",
         "options": [
-            "a. Wide denormalized tables for analytical scans",
-            "b. Highly normalized schema with appropriate indexing for fast transactional updates",
-            "c. No indexes to speed up inserts always",
-            "d. Partitioning only by random hash for all tables",
-            "e. Storing everything in a single large file"
+            "Wide denormalized tables for analytical scans",
+            "Highly normalized schema with appropriate indexing for fast transactional updates",
+            "No indexes to speed up inserts always",
+            "Partitioning only by random hash for all tables",
+            "Storing everything in a single large file"
         ],
-        "correct_answer": "b. Highly normalized schema with appropriate indexing for fast transactional updates",
-        "explanation_ar": "أنظمة معالجة المعاملات (OLTP) تعتمد على الإدخال والتعديل السريع. التصميم الأفضل لها هو الجداول المسواة (Normalized) لتجنب شذوذ التحديث، مع فهارس دقيقة لتسريع المعاملات.",
-        "explanation_en": "OLTP (Online Transaction Processing) systems prioritize fast, reliable writes. A highly normalized schema minimizes redundant data updates, ensuring fast and consistent transactional performance."
+        "correct_answer": "Highly normalized schema with appropriate indexing for fast transactional updates",
+        "explanation_ar": "في أنظمة معالجة المعاملات (OLTP)، يُفضل استخدام جداول مسواة بالكامل (Highly normalized) لتسريع التحديثات وتقليل شذوذ البيانات.",
+        "explanation_en": "OLTP (Online Transaction Processing) systems heavily favour highly normalized schemas to ensure fast, safe inserts and updates without anomalies."
     },
     {
         "id": 44,
-        "topic": "Database Security & Authorization",
         "difficulty": "normal",
         "question": "Which SQL command grants specific privileges to a user?",
         "options": [
-            "a. ALLOW",
-            "b. GRANT",
-            "c. PERMIT",
-            "d. ENABLE",
-            "e. AUTHORIZE"
+            "ALLOW",
+            "GRANT",
+            "PERMIT",
+            "ENABLE",
+            "AUTHORIZE"
         ],
-        "correct_answer": "b. GRANT",
-        "explanation_ar": "أمر GRANT من أوامر (DCL) وهو الأمر القياسي المستخدم لإعطاء المستخدمين صلاحيات محددة على قاعدة البيانات (مثل صلاحية القراءة SELECT أو التعديل UPDATE).",
-        "explanation_en": "The GRANT statement is the standard Data Control Language (DCL) command used by administrators to explicitly bestow specific privileges (e.g., SELECT, INSERT) upon database users."
+        "correct_answer": "GRANT",
+        "explanation_ar": "أمر GRANT في SQL يُستخدم لإعطاء صلاحيات وامتيازات محددة للمستخدمين على جداول قاعدة البيانات.",
+        "explanation_en": "The GRANT command is used in SQL to provide specific access privileges or permissions to database users."
     },
     {
         "id": 45,
-        "topic": "Distributed DBMS",
         "difficulty": "hard",
         "question": "Which problem is unique to distributed DBMS compared to centralized DBMS?",
         "options": [
-            "a. Single-node crash recovery",
-            "b. Network partitioning and distributed consensus for transactions",
-            "c. Local index maintenance",
-            "d. Simple file locking",
-            "e. Single-process scheduling"
+            "Single-node crash recovery",
+            "Network partitioning and distributed consensus for transactions",
+            "Local index maintenance",
+            "Simple file locking",
+            "Single-process scheduling"
         ],
-        "correct_answer": "b. Network partitioning and distributed consensus for transactions",
-        "explanation_ar": "قواعد البيانات الموزعة تعاني من تحديات فريدة كضمان توافق البيانات عبر عدة خوادم متباعدة (Consensus)، والتعامل مع انقطاع الشبكة (Network Partitioning) الذي يفصل الخوادم عن بعضها.",
-        "explanation_en": "Distributed databases face complex challenges not present in centralized systems, specifically achieving distributed consensus across nodes and maintaining consistency during network partitions (split-brain scenarios)."
+        "correct_answer": "Network partitioning and distributed consensus for transactions",
+        "explanation_ar": "الانقطاعات في الشبكة والتوافق الموزع هي مشاكل تظهر فقط في قواعد البيانات الموزعة التي تعتمد على عدة خوادم متصلة شبكياً.",
+        "explanation_en": "Distributed databases face unique challenges like network partitions and achieving consensus across multiple nodes, issues not present in centralized systems."
     },
     {
         "id": 46,
-        "topic": "Database Connectivity",
         "difficulty": "normal",
         "question": "Which API is commonly used to connect applications to relational databases in many languages?",
         "options": [
-            "a. HTTP",
-            "b. JDBC/ODBC",
-            "c. FTP",
-            "d. SMTP",
-            "e. SNMP"
+            "HTTP",
+            "JDBC/ODBC",
+            "FTP",
+            "SMTP",
+            "SNMP"
         ],
-        "correct_answer": "b. JDBC/ODBC",
-        "explanation_ar": "واجهات برمجة التطبيقات (APIs) مثل JDBC للغة جافا و ODBC بشكل عام تعتبر المعايير الصناعية لتوصيل التطبيقات البرمجية بقواعد البيانات العلائقية لتنفيذ الاستعلامات.",
-        "explanation_en": "ODBC (Open Database Connectivity) and JDBC (Java Database Connectivity) are standard APIs that allow application code to seamlessly connect to and interact with relational databases."
+        "correct_answer": "JDBC/ODBC",
+        "explanation_ar": "واجهات JDBC (للجافا) و ODBC هي المعايير الأكثر شيوعاً لربط التطبيقات بقواعد البيانات العلائقية.",
+        "explanation_en": "JDBC (Java Database Connectivity) and ODBC (Open Database Connectivity) are standard APIs for connecting applications to relational databases."
     },
     {
         "id": 47,
-        "topic": "NoSQL & Emerging DB Technologies",
         "difficulty": "normal",
         "question": "Which NoSQL model stores data as documents (e.g., JSON)?",
         "options": [
-            "a. Key-value store",
-            "b. Document store",
-            "c. Column-family store",
-            "d. Relational store",
-            "e. Graph store"
+            "Key-value store",
+            "Document store",
+            "Column-family store",
+            "Relational store",
+            "Graph store"
         ],
-        "correct_answer": "b. Document store",
-        "explanation_ar": "قواعد بيانات المستندات (Document Store) مثل MongoDB، لا تستخدم الجداول، بل تحفظ البيانات كملفات ذات هيكل مرن كـ JSON أو BSON.",
-        "explanation_en": "A Document store NoSQL database manages semi-structured data by storing it as flexible documents, typically encoded in formats like JSON, XML, or BSON, rather than rigid tables."
+        "correct_answer": "Document store",
+        "explanation_ar": "متاجر المستندات (Document stores) مثل MongoDB تُخزن البيانات على شكل مستندات مرنة تشبه صيغة JSON.",
+        "explanation_en": "A Document store NoSQL database organizes data into document structures like JSON, allowing for flexible, semi-structured data."
     },
     {
         "id": 48,
-        "topic": "NoSQL & Emerging DB Technologies",
         "difficulty": "hard",
         "question": "Which scenario is NoSQL most likely chosen over relational DBMS?",
         "options": [
-            "a. Strict ACID transactional banking system",
-            "b. Highly structured normalized data with complex joins only",
-            "c. Large-scale, schema-flexible, high-throughput web application requiring horizontal scaling",
-            "d. Small single-user desktop app with simple storage needs",
-            "e. When SQL is required by regulation"
+            "Strict ACID transactional banking system",
+            "Highly structured normalized data with complex joins only",
+            "Large-scale, schema-flexible, high-throughput web application requiring horizontal scaling",
+            "Small single-user desktop app with simple storage needs",
+            "When SQL is required by regulation"
         ],
-        "correct_answer": "c. Large-scale, schema-flexible, high-throughput web application requiring horizontal scaling",
-        "explanation_ar": "تتفوق قواعد بيانات NoSQL في بيئات الويب الضخمة التي تتطلب تخزين بيانات غير مهيكلة وتوسيعاً أفقياً (إضافة خوادم جديدة) للتعامل مع ضغط القراءة والكتابة العالي جداً.",
-        "explanation_en": "NoSQL databases are specifically engineered for massive scalability, high availability, and schema flexibility, making them ideal for massive web-scale applications needing horizontal scaling."
+        "correct_answer": "Large-scale, schema-flexible, high-throughput web application requiring horizontal scaling",
+        "explanation_ar": "قواعد بيانات NoSQL تتألق في التطبيقات التي تتطلب مرونة عالية في الهيكل، وتوسعاً أفقياً سريعاً للتعامل مع كميات هائلة من البيانات.",
+        "explanation_en": "NoSQL is typically selected for large-scale applications that need flexible schemas and horizontal scalability, where strict relational structure is too rigid."
     },
     {
         "id": 49,
-        "topic": "Normalization & Functional Dependencies",
         "difficulty": "normal",
         "question": "Which normal form requires that every non-prime attribute be fully functionally dependent on the whole candidate key?",
         "options": [
-            "a. 1NF",
-            "b. 2NF",
-            "c. 3NF",
-            "d. BCNF",
-            "e. 4NF"
+            "1NF",
+            "2NF",
+            "3NF",
+            "BCNF",
+            "4NF"
         ],
-        "correct_answer": "b. 2NF",
-        "explanation_ar": "الشكل الطبيعي الثاني (2NF) هو الذي يعالج مشكلة 'التبعية الجزئية'، حيث يشترط أن يعتمد كل عمود غير رئيسي على كافة أجزاء المفتاح الأساسي المركب، وليس على جزء منه فقط.",
-        "explanation_en": "Second Normal Form (2NF) strictly requires that all non-prime attributes are fully functionally dependent on the entire primary key, eliminating partial dependencies."
+        "correct_answer": "2NF",
+        "explanation_ar": "الشكل الطبيعي الثاني (2NF) هو الذي يعالج التبعية الجزئية، ويشترط أن يعتمد كل عمود غير مفتاحي على المفتاح الأساسي بأكمله وليس على جزء منه.",
+        "explanation_en": "Second Normal Form (2NF) states that no non-prime attribute can be partially dependent on any candidate key."
     },
     {
         "id": 50,
-        "topic": "Normalization & Functional Dependencies",
         "difficulty": "hard",
         "question": "Given a relation R(A,B,C) with FDs: A → B and B → C, which of the following is true about normalization?",
         "options": [
-            "a. R is in BCNF already",
-            "b. R has a transitive dependency and should be decomposed to remove A → C via B",
-            "c. No decomposition is needed for 3NF",
-            "d. A is not a key and nothing can be done",
-            "e. The relation must be merged with another unrelated relation"
+            "R is in BCNF already",
+            "R has a transitive dependency and should be decomposed to remove A → C via B",
+            "No decomposition is needed for 3NF",
+            "A is not a key and nothing can be done",
+            "The relation must be merged with another unrelated relation"
         ],
-        "correct_answer": "b. R has a transitive dependency and should be decomposed to remove A → C via B",
-        "explanation_ar": "سؤال متقدم: بما أن A تحدد B، و B تحدد C (والتي بدورها تجعل A تحدد C بشكل غير مباشر)، فهذه هي التبعية المتعدية. لتصحيحها والوصول لـ 3NF، يجب فصل B و C في جدول مستقل لتجنب التكرار.",
-        "explanation_en": "Because A uniquely identifies B, and B uniquely identifies C, C depends on A transitively through B. To achieve 3NF, the relation must be decomposed to eliminate this transitive dependency."
+        "correct_answer": "R has a transitive dependency and should be decomposed to remove A → C via B",
+        "explanation_ar": "بما أن A يحدد B، وB يحدد C، فهناك تبعية متعدية (A يحدد C من خلال B)، وهذا يخالف قواعد الشكل الطبيعي الثالث (3NF) ويتطلب التفكيك.",
+        "explanation_en": "The functional dependencies A → B and B → C create a transitive dependency (A → C). To achieve 3NF, the relation must be decomposed."
     }
 ]

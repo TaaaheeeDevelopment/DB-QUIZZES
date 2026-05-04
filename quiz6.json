@@ -1,802 +1,752 @@
 [
     {
         "id": 1,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of the following best captures the role of a DBMS transaction?",
         "options": [
-            "a. A single SQL statement only",
-            "b. A sequence of operations treated as a single logical unit",
-            "c. A backup routine",
-            "d. A user authentication method",
-            "e. A network packet"
+            "A single SQL statement only",
+            "A sequence of operations treated as a single logical unit",
+            "A backup routine",
+            "A user authentication method",
+            "A network packet"
         ],
-        "correct_answer": "b. A sequence of operations treated as a single logical unit",
-        "explanation_ar": "المعاملة (Transaction) هي مجموعة من العمليات (قراءة/كتابة) التي تُعامل كوحدة منطقية واحدة، إما أن تكتمل كلها معاً أو تُلغى بالكامل لضمان سلامة البيانات.",
-        "explanation_en": "A transaction is a sequence of database operations that are treated as a single, indivisible logical unit of work, ensuring the 'all-or-nothing' rule (Atomicity)."
+        "correct_answer": "A sequence of operations treated as a single logical unit",
+        "explanation_ar": "المعاملة (Transaction) في قاعدة البيانات هي سلسلة من العمليات التي تُنفذ كوحدة منطقية واحدة؛ إما أن تكتمل كلها بنجاح أو تُلغى كلها.",
+        "explanation_en": "A DBMS transaction is a sequence of database operations that are treated as a single logical unit of work, ensuring all-or-nothing execution."
     },
     {
         "id": 2,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which characteristic distinguishes a database from a simple file system?",
         "options": [
-            "a. Lack of structure",
-            "b. Support for concurrent access with consistency guarantees",
-            "c. Only local access",
-            "d. No indexing",
-            "e. No query language"
+            "Lack of structure",
+            "Support for concurrent access with consistency guarantees",
+            "Only local access",
+            "No indexing",
+            "No query language"
         ],
-        "correct_answer": "b. Support for concurrent access with consistency guarantees",
-        "explanation_ar": "ما يميز قواعد البيانات الحديثة عن أنظمة الملفات هو قدرتها على السماح لعدة مستخدمين بالوصول إلى البيانات وتعديلها في نفس الوقت (التزامن) دون حدوث تضارب أو فقدان للبيانات.",
-        "explanation_en": "Unlike simple file systems, a robust DBMS allows multiple users to concurrently access and modify data while guaranteeing consistency and isolation through locking and transaction management."
+        "correct_answer": "Support for concurrent access with consistency guarantees",
+        "explanation_ar": "من أهم ما يميز قواعد البيانات عن أنظمة الملفات العادية هو قدرتها على دعم وصول عدة مستخدمين في نفس الوقت مع ضمان اتساق وصحة البيانات.",
+        "explanation_en": "A key distinguishing feature of a database over a simple file system is its built-in support for concurrent access while maintaining data consistency."
     },
     {
         "id": 3,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which term describes the ability to change the physical storage without affecting application programs?",
         "options": [
-            "a. Physical independence",
-            "b. Logical independence",
-            "c. Data independence",
-            "d. Schema rigidity",
-            "e. File locking"
+            "Physical independence",
+            "Logical independence",
+            "Data independence",
+            "Schema rigidity",
+            "File locking"
         ],
-        "correct_answer": "a. Physical independence",
-        "explanation_ar": "الاستقلالية الفيزيائية (Physical Independence) تعني أنك تستطيع تغيير طريقة التخزين على القرص الصلب أو نوع الأقراص دون الحاجة لتغيير كود البرامج التي تستخدم هذه البيانات.",
-        "explanation_en": "Physical data independence is the capacity to change the internal schema (how data is physically stored) without having to alter the conceptual schema or application programs."
+        "correct_answer": "Physical independence",
+        "explanation_ar": "الاستقلالية الفيزيائية تعني القدرة على تغيير كيفية ومكان تخزين البيانات في الأقراص دون أن تضطر لتعديل البرامج التي تستخدم هذه البيانات.",
+        "explanation_en": "Physical data independence refers to the ability to modify the physical schema (storage structure) without causing application programs to be rewritten."
     },
     {
         "id": 4,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of the following is a primary function of a DBMS storage manager?",
         "options": [
-            "a. Rendering UI",
-            "b. Managing disk space and buffering",
-            "c. Compiling code",
-            "d. Sending emails",
-            "e. Encrypting network traffic"
+            "Rendering UI",
+            "Managing disk space and buffering",
+            "Compiling code",
+            "Sending emails",
+            "Encrypting network traffic"
         ],
-        "correct_answer": "b. Managing disk space and buffering",
-        "explanation_ar": "مدير التخزين (Storage Manager) هو المكون المسؤول عن التفاعل مع نظام تشغيل الملفات لإدارة مساحة القرص الصلب، بالإضافة إلى إدارة الذاكرة المؤقتة (Buffering) لتسريع القراءة والكتابة.",
-        "explanation_en": "The storage manager is a critical DBMS component responsible for managing the allocation of disk space and efficiently caching/buffering data in main memory to optimize I/O operations."
+        "correct_answer": "Managing disk space and buffering",
+        "explanation_ar": "مدير التخزين (Storage manager) في نظام DBMS هو المسؤول عن إدارة المساحة على الأقراص والتحكم في الذاكرة المؤقتة (Buffering) للبيانات.",
+        "explanation_en": "The DBMS storage manager is primarily responsible for interacting with the file system to manage disk space, file structures, and buffering of data in memory."
     },
     {
         "id": 5,
-        "topic": "Introduction to Databases and DBMS",
         "difficulty": "normal",
         "question": "Which of these is NOT a typical DBMS component?",
         "options": [
-            "a. Query processor",
-            "b. Storage manager",
-            "c. Transaction manager",
-            "d. Web browser",
-            "e. Authorization manager"
+            "Query processor",
+            "Storage manager",
+            "Transaction manager",
+            "Web browser",
+            "Authorization manager"
         ],
-        "correct_answer": "d. Web browser",
-        "explanation_ar": "متصفح الويب (Web Browser) هو تطبيق خارجي يستخدمه العميل، وليس جزءاً من المكونات الداخلية المعمارية لنظام إدارة قواعد البيانات (DBMS).",
-        "explanation_en": "A web browser is an external client application. Typical internal DBMS components include the query processor, storage manager, transaction manager, and authorization manager."
+        "correct_answer": "Web browser",
+        "explanation_ar": "متصفح الويب ليس جزءاً من مكونات نظام إدارة قواعد البيانات (DBMS)، بل هو تطبيق خارجي قد يتصل بها.",
+        "explanation_en": "A web browser is an external client application, not an internal component of a Database Management System."
     },
     {
         "id": 6,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which data model represents data as nodes and edges optimized for relationship traversal?",
         "options": [
-            "a. Relational model",
-            "b. Document model",
-            "c. Graph model",
-            "d. Keyvalue model",
-            "e. Columnar model"
+            "Relational model",
+            "Document model",
+            "Graph model",
+            "Keyvalue model",
+            "Columnar model"
         ],
-        "correct_answer": "c. Graph model",
-        "explanation_ar": "نموذج الرسم البياني (Graph model) يخزن البيانات كعُقد (Nodes) ويربط بينها بخطوط (Edges)، وهو مصمم خصيصاً لتسريع الاستعلام عن العلاقات المعقدة والعميقة جداً.",
-        "explanation_en": "The Graph data model explicitly represents entities as nodes and relationships as edges, making it highly optimized for traversing complex, highly interconnected data networks."
+        "correct_answer": "Graph model",
+        "explanation_ar": "نموذج الرسم البياني (Graph model) يستخدم العُقد (Nodes) والروابط (Edges) لتمثيل البيانات، وهو الأمثل لتتبع وتحليل العلاقات المعقدة.",
+        "explanation_en": "The Graph data model represents data as nodes (entities) and edges (relationships), making it highly optimized for rapid relationship traversal."
     },
     {
         "id": 7,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
         "question": "Which schema level describes the overall logical structure of the entire database?",
         "options": [
-            "a. External schema",
-            "b. Internal schema",
-            "c. Conceptual schema",
-            "d. Physical schema",
-            "e. View schema"
+            "External schema",
+            "Internal schema",
+            "Conceptual schema",
+            "Physical schema",
+            "View schema"
         ],
-        "correct_answer": "c. Conceptual schema",
-        "explanation_ar": "المخطط المنطقي (Conceptual schema) يصف الهيكل الشامل للقاعدة بأكملها لجميع المستخدمين، حيث يوضح الجداول، أنواع البيانات، والعلاقات دون الخوض في تفاصيل التخزين.",
-        "explanation_en": "The conceptual schema describes the global logical structure of the entire database, defining all entities, attributes, and relationships independently of any physical storage considerations."
+        "correct_answer": "Conceptual schema",
+        "explanation_ar": "المخطط المفاهيمي (Conceptual schema) هو المستوى الذي يصف الهيكل المنطقي العام لقاعدة البيانات بالكامل لجميع المستخدمين.",
+        "explanation_en": "The Conceptual schema defines the overall logical structure of the entire database, integrating all external views."
     },
     {
         "id": 8,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
-        "question": "Which of the following data models organizes data into a strict tree-like structure where each record has a single parent?",
+        "question": "Which model is most natural for hierarchical parent-child data like file systems?",
         "options": [
-            "a. Network model",
-            "b. Hierarchical model",
-            "c. Object-oriented model",
-            "d. Relational model",
-            "e. Dimensional model"
+            "Relational",
+            "Hierarchical",
+            "Graph",
+            "Document",
+            "Keyvalue"
         ],
-        "correct_answer": "b. Hierarchical model",
-        "explanation_ar": "النموذج الهرمي (Hierarchical Model) يربط البيانات على شكل شجرة متفرعة من الأعلى للأسفل، حيث يملك كل سجل (ابن) أباً واحداً فقط، مما يمنع تمثيل علاقات متعدد-إلى-متعدد مباشرة.",
-        "explanation_en": "The Hierarchical model organizes data into a strict tree structure with parent-child relationships, strictly limiting a child node to having exactly one parent node."
+        "correct_answer": "Hierarchical",
+        "explanation_ar": "النموذج الهرمي (Hierarchical model) هو الأنسب لتمثيل البيانات التي تتخذ شكل الشجرة (أب وابن)، مثل أنظمة الملفات.",
+        "explanation_en": "The Hierarchical model organizes data in a tree-like structure with clear parent-child relationships, naturally fitting domains like file systems."
     },
     {
         "id": 9,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
-        "question": "What is the primary purpose of the Internal Schema in the Three-Schema Architecture?",
+        "question": "Which of the following is a benefit of using a layered DBMS architecture?",
         "options": [
-            "a. To present custom views to end-users",
-            "b. To define business rules and logic",
-            "c. To describe the physical storage structures and access paths",
-            "d. To format data for network transmission",
-            "e. To translate SQL into machine code"
+            "Tighter coupling between apps and storage",
+            "Easier portability and data independence",
+            "Eliminates need for backups",
+            "Removes need for indexes",
+            "Forces single-user access"
         ],
-        "correct_answer": "c. To describe the physical storage structures and access paths",
-        "explanation_ar": "المخطط الداخلي (Internal Schema) هو الطبقة السفلى التي تتعامل حصراً مع كيفية تخزين البيانات فعلياً على الأقراص وطرق الفهرسة والوصول إليها.",
-        "explanation_en": "The Internal Schema resides at the lowest level of data abstraction, exclusively describing the physical storage data structures, file organizations, and access paths (like indexes)."
+        "correct_answer": "Easier portability and data independence",
+        "explanation_ar": "المعمارية متعددة الطبقات (Layered Architecture) توفر مرونة عالية، وتسهل عملية نقل النظام وتحقق استقلالية البيانات.",
+        "explanation_en": "A layered DBMS architecture separates concerns, which significantly promotes easier portability and varying degrees of data independence."
     },
     {
         "id": 10,
-        "topic": "Database Architecture & Data Models",
         "difficulty": "normal",
-        "question": "Which level of data abstraction completely hides the details of how data is physically stored, focusing only on what data is stored and its relationships?",
+        "question": "Which data model allows flexible, schemaless records often stored as JSON?",
         "options": [
-            "a. Physical level",
-            "b. Logical (Conceptual) level",
-            "c. View level",
-            "d. Storage level",
-            "e. Hardware level"
+            "Relational",
+            "Document",
+            "Hierarchical",
+            "Network",
+            "Flat file"
         ],
-        "correct_answer": "b. Logical (Conceptual) level",
-        "explanation_ar": "المستوى المنطقي (التجريدي) يخفي تماماً كل تعقيدات الهاردوير وكيفية الحفظ، ويركز بدلاً من ذلك على (ماذا) نريد أن نحفظ وما هي طبيعة العلاقات بين هذه البيانات.",
-        "explanation_en": "The Logical (or Conceptual) level of abstraction hides complex physical storage details from the DBA and developers, focusing entirely on describing what data is stored and the relationships among that data."
+        "correct_answer": "Document",
+        "explanation_ar": "نموذج المستندات (Document model) لا يتطلب هيكلاً ثابتاً (schemaless) ويقوم غالباً بتخزين البيانات بصيغة JSON المرنة.",
+        "explanation_en": "The Document data model (a type of NoSQL) manages semi-structured data without a rigid schema, commonly storing records as JSON documents."
     },
     {
         "id": 11,
-        "topic": "ER Modeling",
         "difficulty": "normal",
-        "question": "In an ER diagram, how is a weak entity type typically visually distinguished from a strong entity type?",
+        "question": "In ER modeling, which symbol commonly denotes a multivalued attribute?",
         "options": [
-            "a. By a dashed rectangle",
-            "b. By a single diamond",
-            "c. By a double rectangle",
-            "d. By an oval with an underline",
-            "e. By a triangle"
+            "Double oval",
+            "Rectangle",
+            "Diamond",
+            "Dashed oval",
+            "Underlined oval"
         ],
-        "correct_answer": "c. By a double rectangle",
-        "explanation_ar": "في رسومات نموذج الكيانات والعلاقات (ERD)، يتم تمييز الكيان الضعيف الذي يعتمد في وجوده على كيان آخر باستخدام مستطيل مزدوج (مستطيل بداخل مستطيل).",
-        "explanation_en": "In standard ER diagram notation, a weak entity type—which lacks its own primary key—is visually represented by a double-outlined rectangle."
+        "correct_answer": "Double oval",
+        "explanation_ar": "في رسومات الـ ER، يتم استخدام الشكل البيضاوي المزدوج (Double oval) للإشارة إلى سمة متعددة القيم (التي تحمل أكثر من قيمة لنفس الكيان).",
+        "explanation_en": "In standard Entity-Relationship diagrams, a double oval is used to visually denote a multivalued attribute."
     },
     {
         "id": 12,
-        "topic": "ER Modeling",
         "difficulty": "normal",
-        "question": "What type of attribute can be logically divided into smaller subparts with independent meanings?",
+        "question": "Which relationship type requires an associative (junction) entity when converted to relations?",
         "options": [
-            "a. Composite attribute",
-            "b. Derived attribute",
-            "c. Multi-valued attribute",
-            "d. Simple atomic attribute",
-            "e. Key attribute"
+            "1:1 without attributes",
+            "1:N without attributes",
+            "M:N with attributes",
+            "Optional unary",
+            "Derived relationship"
         ],
-        "correct_answer": "a. Composite attribute",
-        "explanation_ar": "السمة المركبة (Composite attribute) هي السمة التي تتكون من عدة أجزاء فرعية. مثال: سمة 'الاسم' يمكن تقسيمها إلى 'الاسم الأول' و 'الاسم الأخير'.",
-        "explanation_en": "A composite attribute can be meaningfully subdivided into smaller subparts. For example, a full address can be divided into street, city, state, and zip code."
+        "correct_answer": "M:N with attributes",
+        "explanation_ar": "علاقة متعدد-إلى-متعدد (M:N) تتطلب دائماً إنشاء جدول وسيط (Junction entity) عند تحويلها إلى النموذج العلائقي.",
+        "explanation_en": "A Many-to-Many (M:N) relationship inherently requires a junction (associative) table to resolve it properly in the relational model."
     },
     {
         "id": 13,
-        "topic": "ER Modeling",
         "difficulty": "normal",
-        "question": "When an entity type participates in a relationship with itself, this specific type of relationship is known as a:",
+        "question": "What is the purpose of identifying weak entities in ER design?",
         "options": [
-            "a. Binary relationship",
-            "b. Recursive relationship",
-            "c. Ternary relationship",
-            "d. Weak relationship",
-            "e. Many-to-many relationship"
+            "To remove all attributes",
+            "To model entities that depend on another entity for identity",
+            "To enforce uniqueness across databases",
+            "To speed up queries",
+            "To avoid foreign keys"
         ],
-        "correct_answer": "b. Recursive relationship",
-        "explanation_ar": "العلاقة التكرارية (Recursive) تحدث عندما يرتبط الكيان بنفسه، مثل ارتباط 'الموظف' بـ 'الموظف' لتوضيح أن موظفاً معيناً هو (مدير) لموظف آخر.",
-        "explanation_en": "A recursive (or unary) relationship exists when an entity type is related to itself, meaning the same entity type participates in the relationship in two different roles."
+        "correct_answer": "To model entities that depend on another entity for identity",
+        "explanation_ar": "الهدف من الكيانات الضعيفة هو تمثيل البيانات التي لا تملك هوية أو مفتاحاً مستقلاً وتعتمد كلياً في وجودها وهويتها على كيان آخر (أب).",
+        "explanation_en": "Identifying weak entities allows designers to correctly model entities that cannot exist independently and rely on an identifying relationship with an owner entity."
     },
     {
         "id": 14,
-        "topic": "ER Modeling",
-        "difficulty": "hard",
-        "question": "In (min, max) constraints of an ER model, what does a minimum participation of 1, represented as (1, N), logically imply?",
+        "difficulty": "normal",
+        "question": "Which ER concept models an attribute computed from other attributes?",
         "options": [
-            "a. Total participation (Existence dependency)",
-            "b. Partial participation",
-            "c. That the entity is weak",
-            "d. A one-to-one relationship",
-            "e. That the attribute is derived"
+            "Composite attribute",
+            "Multivalued attribute",
+            "Derived attribute",
+            "Key attribute",
+            "Relationship attribute"
         ],
-        "correct_answer": "a. Total participation (Existence dependency)",
-        "explanation_ar": "عندما يكون الحد الأدنى للمشاركة هو 1 (وليس صفر)، فهذا يعني أن الكيان (مُجبر) على المشاركة في العلاقة لكي يوجد، وهو ما يسمى بالمشاركة الكلية (Total Participation).",
-        "explanation_en": "A minimum cardinality of 1 explicitly dictates that an entity instance must participate in at least one relationship instance. This mandates total participation, also known as existence dependency."
+        "correct_answer": "Derived attribute",
+        "explanation_ar": "السمة المشتقة (Derived attribute) هي التي لا تُخزن مباشرة، بل يتم حساب قيمتها أو اشتقاقها من سمات أخرى (مثل استنتاج العمر من تاريخ الميلاد).",
+        "explanation_en": "A derived attribute is one whose value is dynamically calculated or derived from the values of other related attributes."
     },
     {
         "id": 15,
-        "topic": "ER Modeling",
-        "difficulty": "normal",
-        "question": "Which of the following best describes an identifying relationship in an ER model?",
+        "difficulty": "hard",
+        "question": "When an entity participates in two different relationships with different cardinalities, which design consideration is most important during conversion to relations?",
         "options": [
-            "a. The relationship between two strong entities",
-            "b. A relationship that has its own derived attributes",
-            "c. A many-to-many relationship that requires a junction table",
-            "d. The relationship connecting a weak entity to its strong owner entity",
-            "e. A relationship with partial participation on both sides"
+            "Always merge relationships into one table",
+            "Preserve cardinality constraints using foreign keys and possibly additional relations",
+            "Drop one relationship to simplify schema",
+            "Convert both to multivalued attributes",
+            "Use triggers only to enforce constraints"
         ],
-        "correct_answer": "d. The relationship connecting a weak entity to its strong owner entity",
-        "explanation_ar": "العلاقة المعرفة (Identifying Relationship) هي علاقة الإعالة التي تربط الكيان الضعيف بالكيان القوي المالك له، وتُرسم عادة كمعين مزدوج الخطوط.",
-        "explanation_en": "An identifying relationship is the specific, mandatory relationship that ties a weak entity to its strong owner entity, providing the context needed to uniquely identify the weak entity instances."
+        "correct_answer": "Preserve cardinality constraints using foreign keys and possibly additional relations",
+        "explanation_ar": "عند تحويل الكيانات التي تشارك في علاقات متعددة، من الضروري جداً الحفاظ على قيود التعددية (الـ Cardinality) لكل علاقة عن طريق استخدام المفاتيح الأجنبية أو الجداول الإضافية بالشكل الصحيح.",
+        "explanation_en": "During schema conversion, accurately representing each distinct relationship's cardinality rules via correct placement of foreign keys or junction tables is critical."
     },
     {
         "id": 16,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
-        "question": "Which constraint allows NULL values but requires all non-NULL values to be completely distinct across the table?",
+        "question": "Which of the following is true about a primary key?",
         "options": [
-            "a. PRIMARY KEY",
-            "b. FOREIGN KEY",
-            "c. UNIQUE",
-            "d. CHECK",
-            "e. NOT NULL"
+            "It may contain NULL values",
+            "It uniquely identifies tuples and cannot be NULL",
+            "It is always a single attribute",
+            "It is optional for every relation",
+            "It must be numeric"
         ],
-        "correct_answer": "c. UNIQUE",
-        "explanation_ar": "قيد (UNIQUE) يضمن عدم تكرار القيم في العمود. وعلى عكس المفتاح الأساسي (PRIMARY KEY) الذي يمنع الفراغات تماماً، يسمح قيد UNIQUE بوجود قيم فارغة (NULL) طالما أن القيم المكتوبة غير مكررة.",
-        "explanation_en": "The UNIQUE constraint ensures all values in a column are distinct. Unlike a PRIMARY KEY, a UNIQUE constraint typically allows NULL values, provided no two non-NULL values are identical."
+        "correct_answer": "It uniquely identifies tuples and cannot be NULL",
+        "explanation_ar": "المفتاح الأساسي (Primary key) يضمن سلامة الكيان، حيث يُميز كل صف بشكل فريد ويُمنع منعاً باتاً أن يحتوي على قيمة فارغة (NULL).",
+        "explanation_en": "A primary key enforces entity integrity; it must uniquely identify each tuple in a relation and strictly cannot contain NULL values."
     },
     {
         "id": 17,
-        "topic": "Relational Model & Schema Design",
         "difficulty": "normal",
-        "question": "What happens when 'ON DELETE CASCADE' is specified for a foreign key constraint?",
+        "question": "Which constraint enforces referential integrity between two relations?",
         "options": [
-            "a. The deletion is blocked to protect data integrity.",
-            "b. Deleting a referenced row automatically deletes all referencing rows in the child table.",
-            "c. The foreign key values are set to NULL.",
-            "d. The parent table is dropped.",
-            "e. A trigger must be fired manually to delete rows."
+            "UNIQUE",
+            "CHECK",
+            "FOREIGN KEY",
+            "NOT NULL",
+            "DEFAULT"
         ],
-        "correct_answer": "b. Deleting a referenced row automatically deletes all referencing rows in the child table.",
-        "explanation_ar": "خيار (CASCADE) في الحذف يعني 'التتالي'. إذا حذفت سجلاً من الجدول الأب (مثل قسم)، سيقوم النظام تلقائياً بحذف جميع السجلات المرتبطة به في الجدول الابن (مثل الموظفين في ذلك القسم) لمنع وجود سجلات يتيمة.",
-        "explanation_en": "ON DELETE CASCADE is a referential action that automatically deletes all related child rows (referencing rows) when the parent row (referenced row) is deleted, maintaining referential integrity."
+        "correct_answer": "FOREIGN KEY",
+        "explanation_ar": "قيد المفتاح الأجنبي (FOREIGN KEY) هو المسؤول عن فرض التكامل المرجعي لضمان وجود علاقة صحيحة ومطابقة بين الجداول.",
+        "explanation_en": "The FOREIGN KEY constraint is explicitly used to enforce referential integrity between two relations."
     },
     {
         "id": 18,
-        "topic": "Relational Algebra & Query Fundamentals",
         "difficulty": "normal",
-        "question": "Which relational algebra operation combines all rows from two tables unconditionally, resulting in every possible pairing?",
+        "question": "Which design goal does normalization primarily serve?",
         "options": [
-            "a. Natural Join",
-            "b. Cartesian Product (Cross Join)",
-            "c. Intersection",
-            "d. Union",
-            "e. Set Difference"
+            "Increase redundancy",
+            "Reduce update anomalies",
+            "Slow down queries",
+            "Remove primary keys",
+            "Prevent indexing"
         ],
-        "correct_answer": "b. Cartesian Product (Cross Join)",
-        "explanation_ar": "الضرب الديكارتي (Cartesian Product) يقوم بدمج كل صف من الجدول الأول مع جميع صفوف الجدول الثاني بدون أي شروط، مما ينتج عنه تضخم كبير في عدد السجلات.",
-        "explanation_en": "The Cartesian Product (or Cross Join) unconditionally pairs every tuple of one relation with every tuple of another relation, resulting in all possible combinations."
+        "correct_answer": "Reduce update anomalies",
+        "explanation_ar": "الهدف الأساسي من عملية التسوية (Normalization) هو تقليل تكرار البيانات لتجنب حدوث شذوذ (Anomalies) عند التحديث أو الإدراج أو الحذف.",
+        "explanation_en": "Normalization primarily aims to minimize data redundancy, thereby preventing update, insertion, and deletion anomalies."
     },
     {
         "id": 19,
-        "topic": "Relational Algebra & Query Fundamentals",
-        "difficulty": "hard",
-        "question": "Which relational algebra operation is mathematically equivalent to executing a Cartesian Product followed immediately by a Selection (filter) condition?",
+        "difficulty": "normal",
+        "question": "Which decomposition property ensures no loss of information?",
         "options": [
-            "a. Natural Join",
-            "b. Theta Join",
-            "c. Left Outer Join",
-            "d. Division",
-            "e. Projection"
+            "Dependency preservation",
+            "Lossless join decomposition",
+            "Redundancy maximization",
+            "Denormalization",
+            "Attribute hiding"
         ],
-        "correct_answer": "b. Theta Join",
-        "explanation_ar": "الربط الشرطي (Theta Join) هو في الواقع عملية ضرب ديكارتي للجدولين متبوعة فوراً بعملية فلترة (Selection) لاختيار الصفوف التي تطابق الشرط المحدد فقط.",
-        "explanation_en": "A Theta Join is mathematically defined as a Cartesian Product of two relations followed immediately by a Selection operation that filters the tuples based on a specified boolean condition."
+        "correct_answer": "Lossless join decomposition",
+        "explanation_ar": "تفكيك الربط غير المفقود (Lossless join decomposition) يضمن إمكانية إعادة بناء الجدول الأصلي بالكامل وبدقة دون فقدان أي بيانات عند ربط الجداول المفككة.",
+        "explanation_en": "Lossless join decomposition ensures that the original relation can be perfectly reconstructed without any loss of data or spurious tuples."
     },
     {
         "id": 20,
-        "topic": "SQL Basics (DDL & DML)",
         "difficulty": "normal",
-        "question": "Which SQL clause is strictly used to filter the grouped results produced by aggregate functions?",
+        "question": "Which of the following is a candidate key?",
         "options": [
-            "a. WHERE",
-            "b. ORDER BY",
-            "c. HAVING",
-            "d. GROUP BY",
-            "e. LIMIT"
+            "A minimal set of attributes that uniquely identify tuples",
+            "Any attribute with duplicates",
+            "A foreign key",
+            "A computed column only",
+            "A non-unique index"
         ],
-        "correct_answer": "c. HAVING",
-        "explanation_ar": "لا يمكن استخدام دوال التجميع (مثل SUM أو COUNT) داخل جملة WHERE. لذلك نستخدم جملة HAVING لفلترة المجاميع بعد أن يتم تقسيمها بواسطة GROUP BY.",
-        "explanation_en": "The HAVING clause is specifically designed to filter groups created by the GROUP BY clause based on aggregate function results, which cannot be done using the WHERE clause."
+        "correct_answer": "A minimal set of attributes that uniquely identify tuples",
+        "explanation_ar": "المفتاح المرشح (Candidate key) هو الحد الأدنى من السمات التي يمكنها تمييز أي صف في الجدول بشكل فريد، دون أن تحتوي على أي سمات زائدة لا حاجة لها.",
+        "explanation_en": "A candidate key is a minimal superkey; it is the smallest set of attributes required to uniquely identify a tuple."
     },
     {
         "id": 21,
-        "topic": "SQL Joins, Subqueries, Views",
-        "difficulty": "hard",
-        "question": "In SQL, what is the defining characteristic of a 'Correlated Subquery'?",
+        "difficulty": "normal",
+        "question": "Which relational algebra operator returns all combinations of tuples from two relations?",
         "options": [
-            "a. It executes exactly once before the main query.",
-            "b. It references at least one column from the outer query, causing it to re-execute for every row evaluated by the outer query.",
-            "c. It can only be used in the FROM clause.",
-            "d. It is used to join a table to itself.",
-            "e. It cannot contain aggregate functions."
+            "Join",
+            "Union",
+            "Cartesian product",
+            "Difference",
+            "Intersection"
         ],
-        "correct_answer": "b. It references at least one column from the outer query, causing it to re-execute for every row evaluated by the outer query.",
-        "explanation_ar": "الاستعلام الفرعي المترابط (Correlated Subquery) يعتمد على بيانات من الاستعلام الخارجي (الأب). هذا الترابط يجعله يضطر لإعادة تنفيذ نفسه مراراً وتكراراً مع كل صف يمر عليه الاستعلام الخارجي.",
-        "explanation_en": "A Correlated Subquery contains a reference to a column from the outer query. Because of this dependency, the subquery must be evaluated repeatedly, once for each row processed by the outer query."
+        "correct_answer": "Cartesian product",
+        "explanation_ar": "حاصل الضرب الديكارتي (Cartesian product) يدمج كل صف من الجدول الأول مع كافة صفوف الجدول الثاني لإرجاع جميع التجميعات الممكنة.",
+        "explanation_en": "The Cartesian product (or cross product) generates a new relation containing all possible combinations of tuples from the two input relations."
     },
     {
         "id": 22,
-        "topic": "Transaction Management",
         "difficulty": "normal",
-        "question": "Which ACID property guarantees that a transaction is never left partially applied in the database?",
+        "question": "Which operator selects rows satisfying a predicate?",
         "options": [
-            "a. Isolation",
-            "b. Durability",
-            "c. Consistency",
-            "d. Atomicity",
-            "e. Authorization"
+            "Projection",
+            "Selection",
+            "Rename",
+            "Division",
+            "Join"
         ],
-        "correct_answer": "d. Atomicity",
-        "explanation_ar": "الذرية (Atomicity) هي الخاصية التي تضمن قاعدة (الكل أو اللاشيء). إما أن تتم جميع أجزاء المعاملة بنجاح تام، أو تُلغى كلها إذا حدث خطأ في أي جزء منها.",
-        "explanation_en": "Atomicity (the 'all-or-nothing' property) ensures that a transaction is treated as a single indivisible unit, guaranteeing that incomplete transactions are never partially applied to the database."
+        "correct_answer": "Selection",
+        "explanation_ar": "عملية الاختيار (Selection) تقوم بتصفية البيانات أفقياً لإرجاع الصفوف التي تتوافق مع شرط (Predicate) معين فقط.",
+        "explanation_en": "The Selection operator horizontally filters a relation, returning only the rows that satisfy the specified predicate condition."
     },
     {
         "id": 23,
-        "topic": "Transaction Management",
-        "difficulty": "hard",
-        "question": "Which of the following database isolation levels provides the highest security but lowest concurrency, solving the Phantom Read anomaly?",
+        "difficulty": "normal",
+        "question": "Which relational algebra operator corresponds to SQL SELECT DISTINCT column_list?",
         "options": [
-            "a. READ UNCOMMITTED",
-            "b. READ COMMITTED",
-            "c. REPEATABLE READ",
-            "d. SERIALIZABLE",
-            "e. SNAPSHOT"
+            "Selection",
+            "Projection",
+            "Join",
+            "Union",
+            "Intersection"
         ],
-        "correct_answer": "d. SERIALIZABLE",
-        "explanation_ar": "مستوى العزل التسلسلي (SERIALIZABLE) هو الأعلى والأكثر صرامة. يمنع جميع مشاكل التزامن بما فيها القراءة الشبحية (Phantom Reads) عبر قفل نطاق البيانات بالكامل، ولكنه يقلل من سرعة النظام (Concurrency).",
-        "explanation_en": "SERIALIZABLE is the strictest isolation level. It prevents dirty reads, non-repeatable reads, and phantom reads by locking data ranges, ensuring complete isolation at the cost of lower concurrency."
+        "correct_answer": "Projection",
+        "explanation_ar": "عملية الإسقاط (Projection) في الجبر العلائقي تختار أعمدة محددة وتزيل التكرار تلقائياً، وهو ما يعادل أمر SELECT DISTINCT في SQL.",
+        "explanation_en": "The Projection operator corresponds to SELECT DISTINCT because it selects specific columns and mathematically guarantees the removal of duplicate tuples."
     },
     {
         "id": 24,
-        "topic": "Distributed DBMS",
         "difficulty": "normal",
-        "question": "Which architecture pattern in distributed databases provides higher availability at the cost of potential temporary inconsistency?",
+        "question": "Which operation is used to find tuples in both relations?",
         "options": [
-            "a. Synchronous replication only",
-            "b. Asynchronous replication",
-            "c. No replication",
-            "d. Single master with no replicas",
-            "e. Local backups only"
+            "Difference",
+            "Intersection",
+            "Cartesian product",
+            "Division",
+            "Projection"
         ],
-        "correct_answer": "b. Asynchronous replication",
-        "explanation_ar": "النسخ المتزامن غير اللحظي (Asynchronous replication) يجعل النظام سريعاً ومتاحاً دائماً، لأنه لا ينتظر تأكيد النسخ من كل الخوادم الأخرى. لكن الثمن هو أن بعض الخوادم قد تحمل بيانات قديمة لبضع ثوانٍ (عدم اتساق مؤقت).",
-        "explanation_en": "Asynchronous replication favors high availability and lower write latency by not waiting for replicas to confirm writes. However, this introduces the possibility of temporary data inconsistency across nodes."
+        "correct_answer": "Intersection",
+        "explanation_ar": "عملية التقاطع (Intersection) تعيد فقط الصفوف المشتركة والموجودة في كلا الجدولين معاً.",
+        "explanation_en": "The Intersection operator retrieves only the tuples that are common and exist in both participating relations."
     },
     {
         "id": 25,
-        "topic": "Database Connectivity",
-        "difficulty": "normal",
-        "question": "Which protocol or API is commonly used by applications written in Java to connect to relational databases?",
+        "difficulty": "hard",
+        "question": "Given R(A,B), S(B,C), and T(C,D), which relational algebra sequence yields A values related to some D via B and C?",
         "options": [
-            "a. ODBC",
-            "b. JDBC",
-            "c. FTP",
-            "d. SMTP",
-            "e. SOAP"
+            "(\\pi_A(R \\bowtie S \\bowtie T))",
+            "(\\pi_A(R) \\div \\pi_B(S))",
+            "(\\pi_A(R) \\cup \\pi_A(T))",
+            "(\\pi_A(R) - \\pi_A(S))",
+            "(\\pi_A(R \\times T))"
         ],
-        "correct_answer": "b. JDBC",
-        "explanation_ar": "واجهة JDBC (Java Database Connectivity) هي المعيار البرمجي الأساسي في لغة جافا للاتصال وإرسال الاستعلامات إلى قواعد البيانات العلائقية.",
-        "explanation_en": "JDBC (Java Database Connectivity) is the standard Java API that manages connecting to a database, issuing queries and commands, and handling result sets obtained from the database."
+        "correct_answer": "(\\pi_A(R \\bowtie S \\bowtie T))",
+        "explanation_ar": "للوصول إلى العلاقة بين A و D يجب ربط الجداول الثلاثة معاً عبر السمات المشتركة B و C (Natural Join)، ثم يتم إسقاط العمود A.",
+        "explanation_en": "By naturally joining R, S, and T (R ⨝ S ⨝ T), the attributes connect A to B, B to C, and C to D. Finally, projecting A yields the desired values."
     },
     {
         "id": 26,
-        "topic": "NoSQL & Emerging DB Technologies",
         "difficulty": "normal",
-        "question": "Which NoSQL model is optimized for storing wide tables with many columns and high write throughput?",
+        "question": "Which SQL statement removes all rows but keeps the table structure?",
         "options": [
-            "a. Document store",
-            "b. Column-family store",
-            "c. Graph store",
-            "d. Key-value store",
-            "e. Relational store"
+            "DROP TABLE",
+            "TRUNCATE TABLE",
+            "DELETE TABLE",
+            "REMOVE TABLE",
+            "CLEAR TABLE"
         ],
-        "correct_answer": "b. Column-family store",
-        "explanation_ar": "قواعد بيانات عائلة الأعمدة (Column-family store) مثل Cassandra صُممت خصيصاً للتعامل مع الجداول العريضة جداً والسرعة الفائقة في كتابة البيانات الموزعة.",
-        "explanation_en": "Column-family stores (like Apache Cassandra) are highly optimized for fast read/write operations on wide datasets, storing data by columns rather than rows for high throughput and scalability."
+        "correct_answer": "TRUNCATE TABLE",
+        "explanation_ar": "أمر TRUNCATE TABLE يمحو كل البيانات من الجدول بسرعة ولكنه يحافظ على هيكل الجدول (الأعمدة والقيود) سليماً.",
+        "explanation_en": "TRUNCATE TABLE efficiently deletes all rows from a table while preserving its structural definition for future use."
     },
     {
         "id": 27,
-        "topic": "NoSQL & Emerging DB Technologies",
-        "difficulty": "hard",
-        "question": "Which CAP theorem trade-off is typically accepted by many distributed NoSQL stores that prioritize availability and partition tolerance?",
+        "difficulty": "normal",
+        "question": "Which clause is used to group rows for aggregate functions?",
         "options": [
-            "a. Consistency sacrificed for availability and partition tolerance",
-            "b. Partition tolerance sacrificed",
-            "c. Availability sacrificed for consistency",
-            "d. All three always satisfied",
-            "e. None of the above"
+            "WHERE",
+            "HAVING",
+            "GROUP BY",
+            "ORDER BY",
+            "FROM"
         ],
-        "correct_answer": "a. Consistency sacrificed for availability and partition tolerance",
-        "explanation_ar": "نظرية CAP تؤكد أنك لا تستطيع امتلاك (الاتساق، التوفر، والتسامح مع الانقسام) في نفس الوقت. أنظمة NoSQL غالباً تختار التوفر الدائم (Availability) وتضحي بالاتساق اللحظي (Consistency) لصالح اتساق نهائي.",
-        "explanation_en": "According to the CAP theorem, systems prioritizing Availability (A) and Partition tolerance (P) must sacrifice strict Consistency (C), adopting eventual consistency to ensure the system remains responsive during network partitions."
+        "correct_answer": "GROUP BY",
+        "explanation_ar": "جملة GROUP BY تُستخدم لتجميع الصفوف التي تمتلك قيماً متطابقة في أعمدة معينة لغرض تطبيق دوال التجميع (مثل المجموع والمتوسط) عليها.",
+        "explanation_en": "The GROUP BY clause is used to arrange identical data into groups, enabling the execution of aggregate functions (like SUM, AVG) on each group."
     },
     {
         "id": 28,
-        "topic": "Normalization & Functional Dependencies",
         "difficulty": "normal",
-        "question": "Which normal form specifically addresses the removal of transitive dependencies?",
+        "question": "Which command adds a new column to an existing table?",
         "options": [
-            "a. 1NF",
-            "b. 2NF",
-            "c. 3NF",
-            "d. BCNF",
-            "e. 4NF"
+            "CREATE COLUMN",
+            "ALTER TABLE ADD COLUMN",
+            "UPDATE TABLE ADD",
+            "INSERT COLUMN",
+            "MODIFY TABLE"
         ],
-        "correct_answer": "c. 3NF",
-        "explanation_ar": "الشكل الطبيعي الثالث (3NF) يركز كلياً على إزالة 'التبعية المتعدية'، وهي حالة يعتمد فيها عمود غير أساسي على عمود آخر غير أساسي بدلاً من الاعتماد المباشر على المفتاح الأساسي.",
-        "explanation_en": "Third Normal Form (3NF) is specifically designed to eliminate transitive dependencies, ensuring that non-prime attributes depend ONLY on the primary key, and not on other non-prime attributes."
+        "correct_answer": "ALTER TABLE ADD COLUMN",
+        "explanation_ar": "لتعديل هيكل جدول موجود مسبقاً بإضافة عمود جديد، نستخدم الأمر القياسي ALTER TABLE متبوعاً بـ ADD COLUMN.",
+        "explanation_en": "The ALTER TABLE ADD COLUMN command is specifically used in DDL to modify an existing schema by inserting a new attribute."
     },
     {
         "id": 29,
-        "topic": "Normalization & Functional Dependencies",
-        "difficulty": "hard",
-        "question": "Given relation R(A,B,C,D) with FDs: A→B, B→C, and A→D, which decomposition is appropriate to remove transitive dependency while preserving keys?",
+        "difficulty": "normal",
+        "question": "Which DML statement removes specific rows from a table?",
         "options": [
-            "a. Keep R as is",
-            "b. Decompose into R1(A,B,D) and R2(B,C)",
-            "c. Decompose into R1(A,C) and R2(B,D)",
-            "d. Merge with unrelated relation",
-            "e. Decompose into single-attribute relations only"
+            "DROP",
+            "TRUNCATE",
+            "DELETE FROM with WHERE",
+            "REMOVE",
+            "CLEAR"
         ],
-        "correct_answer": "b. Decompose into R1(A,B,D) and R2(B,C)",
-        "explanation_ar": "هناك تبعية متعدية لأن A يحدد B، و B يحدد C (إذن A يحدد C عبر B). لحل هذه المشكلة، نفصل B و C في جدول R2(B,C) حيث B هو المفتاح. ونبقي A, B, D في جدول R1(A,B,D) حيث A هو المفتاح.",
-        "explanation_en": "The functional dependencies show a transitive dependency: A→B and B→C. To normalize to 3NF, the dependent attribute C and its determinant B are extracted into a new relation R2(B,C), leaving R1(A,B,D)."
+        "correct_answer": "DELETE FROM with WHERE",
+        "explanation_ar": "لحذف صفوف معينة وليس كل البيانات، نستخدم أمر DELETE FROM مع إضافة جملة WHERE لتحديد الصفوف المستهدفة.",
+        "explanation_en": "The DELETE FROM statement, when paired with a WHERE clause, allows for the selective removal of specific rows based on a condition."
     },
     {
         "id": 30,
-        "topic": "Database Security & Authorization",
         "difficulty": "normal",
-        "question": "Which database programming technique is highly recommended as the primary defense against SQL Injection attacks?",
+        "question": "Which clause limits the number of rows returned by a query in many SQL dialects?",
         "options": [
-            "a. Disabling the firewall",
-            "b. Hashing all database tables",
-            "c. Using Prepared Statements (Parameterized Queries)",
-            "d. Granting full DBA rights to the web application",
-            "e. Removing primary keys"
+            "WHERE",
+            "LIMIT or TOP",
+            "HAVING",
+            "GROUP BY",
+            "ORDER BY"
         ],
-        "correct_answer": "c. Using Prepared Statements (Parameterized Queries)",
-        "explanation_ar": "العبارات المجهزة (Prepared Statements) تقوم بفصل كود الـ SQL عن البيانات المدخلة من المستخدم. هذا يمنع المخترق من كتابة أوامر خبيثة يتم تنفيذها، لأن النظام سيعتبرها مجرد (نصوص) وليس أوامر.",
-        "explanation_en": "Prepared statements (parameterized queries) inherently prevent SQL injection. They separate the SQL logic from the user-supplied data, ensuring the database treats the input strictly as data, never as executable code."
+        "correct_answer": "LIMIT or TOP",
+        "explanation_ar": "لتقييد عدد السجلات التي يعرضها الاستعلام (مثلاً عرض أول 10 نتائج فقط)، يُستخدم أمر LIMIT (في MySQL/PostgreSQL) أو TOP (في SQL Server).",
+        "explanation_en": "The LIMIT (or TOP) clause restricts the result set to a specified maximum number of rows, optimizing performance for large queries."
     },
     {
         "id": 31,
-        "topic": "Database Security & Authorization",
         "difficulty": "normal",
-        "question": "Which security model assigns permissions to specific job functions rather than individual users?",
+        "question": "Which join returns only rows that have matching values in both tables?",
         "options": [
-            "a. Mandatory Access Control (MAC)",
-            "b. Discretionary Access Control (DAC)",
-            "c. Role-Based Access Control (RBAC)",
-            "d. Attribute-Based Access Control (ABAC)",
-            "e. Bell-LaPadula Model"
+            "LEFT OUTER JOIN",
+            "RIGHT OUTER JOIN",
+            "INNER JOIN",
+            "FULL OUTER JOIN",
+            "CROSS JOIN"
         ],
-        "correct_answer": "c. Role-Based Access Control (RBAC)",
-        "explanation_ar": "نظام التحكم في الوصول المبني على الأدوار (RBAC) يقوم بإنشاء 'أدوار' (مثل: مدير، محاسب) ويمنحها الصلاحيات. ثم يتم ربط المستخدمين بهذه الأدوار، مما يسهل إدارة الأمان بدلاً من إعطاء الصلاحيات لكل مستخدم على حدة.",
-        "explanation_en": "Role-Based Access Control (RBAC) simplifies security administration by assigning privileges to predefined roles (job functions) rather than individual users. Users are then granted membership to these roles."
+        "correct_answer": "INNER JOIN",
+        "explanation_ar": "الربط الداخلي (INNER JOIN) يعيد فقط الصفوف التي تحتوي على قيم متطابقة ومترابطة في كلا الجدولين.",
+        "explanation_en": "An INNER JOIN strictly returns only the rows that have matching values in both participating tables."
     },
     {
         "id": 32,
-        "topic": "Database Security & Authorization",
-        "difficulty": "hard",
-        "question": "In database auditing, what is the primary purpose of maintaining an audit trail?",
+        "difficulty": "normal",
+        "question": "Which subquery type can reference columns from the outer query?",
         "options": [
-            "a. To improve query execution speed",
-            "b. To track and record all database events and user actions for security compliance",
-            "c. To automatically encrypt data at rest",
-            "d. To prevent SQL injection attacks",
-            "e. To backup the database schema"
+            "Correlated subquery",
+            "Uncorrelated subquery",
+            "Inline view",
+            "Materialized subquery",
+            "Static subquery"
         ],
-        "correct_answer": "b. To track and record all database events and user actions for security compliance",
-        "explanation_ar": "مسار التدقيق (Audit Trail) هو سجل زمني غير قابل للتلاعب، يسجل كل حدث يقع في قاعدة البيانات (من دخل، متى، وماذا عدّل). الغرض منه هو المحاسبة والامتثال الأمني لمعرفة سبب الاختراقات إن حدثت.",
-        "explanation_en": "An audit trail is a tamper-proof chronological log that records all critical database activities and user interactions, essential for security investigations, compliance auditing, and accountability."
+        "correct_answer": "Correlated subquery",
+        "explanation_ar": "الاستعلام الفرعي المرتبط (Correlated subquery) هو الذي يعتمد على بيانات من الاستعلام الخارجي لتنفيذه في كل صف.",
+        "explanation_en": "A correlated subquery references columns from the outer query and evaluates once for each row processed by the parent statement."
     },
     {
         "id": 33,
-        "topic": "Indexing and Performance Tuning",
         "difficulty": "normal",
-        "question": "What is the primary difference between a Clustered and a Non-Clustered index?",
+        "question": "Which SQL object can improve read performance by providing quick access paths?",
         "options": [
-            "a. A table can have multiple clustered indexes but only one non-clustered index.",
-            "b. Clustered indexes dictate the physical order of data on the disk, while non-clustered indexes do not.",
-            "c. Non-clustered indexes are faster for sequential reads.",
-            "d. Clustered indexes cannot be created on primary keys.",
-            "e. There is no structural difference."
+            "View",
+            "Index",
+            "Trigger",
+            "Stored procedure",
+            "Constraint"
         ],
-        "correct_answer": "b. Clustered indexes dictate the physical order of data on the disk, while non-clustered indexes do not.",
-        "explanation_ar": "الفهرس المجمع (Clustered Index) يقوم فعلياً بترتيب وتخزين صفوف الجدول على القرص الصلب بناءً على مفتاح الفهرس (لذا لا يمكن أن يكون هناك سوى واحد). أما غير المجمع فهو مجرد مؤشر منفصل عن البيانات.",
-        "explanation_en": "A clustered index strictly determines the physical storage order of the data rows in the table. Because data can only be sorted in one physical order, a table can have only one clustered index."
+        "correct_answer": "Index",
+        "explanation_ar": "الفهارس (Indexes) توفر مسارات وصول سريعة للبيانات مما يحسن أداء عمليات القراءة والاستعلام بشكل كبير.",
+        "explanation_en": "Indexes improve read performance by providing fast access paths to the data, significantly speeding up data retrieval operations."
     },
     {
         "id": 34,
-        "topic": "Indexing and Performance Tuning",
-        "difficulty": "hard",
-        "question": "While adding multiple indexes to a table can drastically speed up SELECT queries, what is the major operational trade-off?",
+        "difficulty": "normal",
+        "question": "Which view is automatically updated when underlying tables change?",
         "options": [
-            "a. It reduces the maximum number of columns allowed.",
-            "b. It slows down data modification statements (INSERT, UPDATE, DELETE) due to index maintenance overhead.",
-            "c. It prevents the use of JOIN operations.",
-            "d. It causes frequent database deadlocks.",
-            "e. It converts all data to text format."
+            "Materialized view only",
+            "Standard (virtual) view",
+            "Indexed view only",
+            "Temporary view only",
+            "No view updates automatically"
         ],
-        "correct_answer": "b. It slows down data modification statements (INSERT, UPDATE, DELETE) due to index maintenance overhead.",
-        "explanation_ar": "ضريبة الفهارس (Index Overhead) هي أنك كلما أضفت فهرساً لتسريع القراءة، ستصبح عمليات التعديل والإدخال أبطأ؛ لأن المحرك سيضطر لتحديث الجدول وتحديث جميع الفهارس المرتبطة به في نفس اللحظة.",
-        "explanation_en": "The trade-off of indexing is write-performance degradation. Every INSERT, UPDATE, or DELETE operation requires the DBMS to synchronously update both the base table and all associated B-Tree index structures."
+        "correct_answer": "Standard (virtual) view",
+        "explanation_ar": "العرض القياسي الافتراضي (Virtual view) لا يخزن البيانات، بل يجلبها ديناميكياً، لذا يتحدث تلقائياً عند تغير الجداول الأساسية.",
+        "explanation_en": "A standard virtual view dynamically queries the underlying tables, so it inherently and automatically reflects the latest data changes."
     },
     {
         "id": 35,
-        "topic": "Advanced SQL & Views",
-        "difficulty": "normal",
-        "question": "How does a Materialized View differ from a standard View?",
+        "difficulty": "hard",
+        "question": "When should a bitmap index be preferred over a B-tree index?",
         "options": [
-            "a. It cannot be refreshed.",
-            "b. It only stores the SQL query structure, not data.",
-            "c. It physically stores the result set of the query on disk to improve read performance.",
-            "d. It is strictly used for security masking.",
-            "e. It requires manual query execution every time."
+            "For high-cardinality unique columns",
+            "For low-cardinality columns in readheavy data warehouses",
+            "For transactional OLTP primary keys",
+            "For JSON document fields only",
+            "For full-text search"
         ],
-        "correct_answer": "c. It physically stores the result set of the query on disk to improve read performance.",
-        "explanation_ar": "العرض المجسد (Materialized View) يختلف عن العرض العادي بأنه لا يحفظ الاستعلام فقط، بل يقوم بتنفيذه ويخزن النتيجة (البيانات) فعلياً على القرص الصلب لتسريع الاستعلامات التحليلية المعقدة.",
-        "explanation_en": "Unlike a standard virtual view, a Materialized View physically calculates and caches the result set of the query on disk. This drastically speeds up read-heavy analytical queries but requires periodic refreshing."
+        "correct_answer": "For low-cardinality columns in readheavy data warehouses",
+        "explanation_ar": "فهارس Bitmap ممتازة للأعمدة ذات التنوع القليل للقيم (Low-cardinality) مثل (ذكر/أنثى) في بيئات مستودعات البيانات التي تعتمد على القراءة.",
+        "explanation_en": "Bitmap indexes are highly efficient and preferred for low-cardinality columns in read-heavy data warehousing environments."
     },
     {
         "id": 36,
-        "topic": "Advanced SQL & Views",
         "difficulty": "normal",
-        "question": "When combining result sets using the UNION operator, what implicit action does the DBMS perform that UNION ALL skips?",
+        "question": "Which activity is typically performed during requirements analysis?",
         "options": [
-            "a. It encrypts the output.",
-            "b. It removes duplicate rows and sorts the result.",
-            "c. It groups the data by the primary key.",
-            "d. It joins the tables using a foreign key.",
-            "e. It limits the output to 100 rows."
+            "Choosing disk block size",
+            "Interviewing stakeholders to capture data needs",
+            "Creating physical partitions",
+            "Rebuilding indexes",
+            "Scheduling backups"
         ],
-        "correct_answer": "b. It removes duplicate rows and sorts the result.",
-        "explanation_ar": "عملية (UNION) تقوم ضمناً بفرز النتائج والبحث عن أي صفوف مكررة لحذفها، مما يستهلك وقتاً. بينما (UNION ALL) تدمج النتائج فوراً دون فحص التكرار، مما يجعلها أسرع بكثير.",
-        "explanation_en": "The UNION operator implicitly performs a distinct sort to identify and eliminate duplicate rows across the combined result sets. UNION ALL simply concatenates the results without deduplication, executing much faster."
+        "correct_answer": "Interviewing stakeholders to capture data needs",
+        "explanation_ar": "مرحلة تحليل المتطلبات تتضمن بالأساس إجراء مقابلات مع أصحاب المصلحة لفهم احتياجاتهم من النظام بشكل دقيق.",
+        "explanation_en": "Requirements analysis primarily involves interviewing stakeholders to accurately capture and document the data needs of the business."
     },
     {
         "id": 37,
-        "topic": "Advanced SQL & Views",
-        "difficulty": "hard",
-        "question": "Which SQL feature allows you to perform calculations across a set of rows related to the current row without collapsing the result into a single output row?",
+        "difficulty": "normal",
+        "question": "Which deliverable documents the logical schema and relationships?",
         "options": [
-            "a. GROUP BY clause",
-            "b. HAVING clause",
-            "c. Window Functions (OVER clause)",
-            "d. Correlated Subqueries",
-            "e. Aggregate Functions"
+            "ER diagrams and relational schemas",
+            "Disk layout plan",
+            "OS configuration file",
+            "Backup scripts",
+            "User manuals"
         ],
-        "correct_answer": "c. Window Functions (OVER clause)",
-        "explanation_ar": "دوال النوافذ (Window Functions) تستخدم الكلمة المفتاحية OVER لإجراء عمليات رياضية (مثل المجموع التراكمي) على مجموعة من الصفوف مع إبقاء كل صف مستقلاً في النتيجة، على عكس GROUP BY التي تدمجهم في صف واحد.",
-        "explanation_en": "Window functions operate on a logical 'window' of rows related to the current row to calculate metrics like running totals or rankings, returning a value for every original row without collapsing them."
+        "correct_answer": "ER diagrams and relational schemas",
+        "explanation_ar": "المخططات الكيانية (ER diagrams) والمخططات العلائقية هي المخرجات الأساسية التي توثق التصميم المنطقي لقاعدة البيانات.",
+        "explanation_en": "ER diagrams and relational schemas are the primary deliverables used to formally document the logical design and relationships."
     },
     {
         "id": 38,
-        "topic": "Concurrency Control",
         "difficulty": "normal",
-        "question": "In the Two-Phase Locking (2PL) protocol, what characterizes the 'Shrinking Phase'?",
+        "question": "Which phase follows logical design in the typical lifecycle?",
         "options": [
-            "a. The transaction acquires all necessary locks.",
-            "b. The transaction releases locks and cannot acquire any new ones.",
-            "c. The database size is reduced.",
-            "d. The transaction is rolled back.",
-            "e. Deadlocks are detected."
+            "Requirements analysis",
+            "Physical design and implementation",
+            "Retirement",
+            "Conceptual modeling",
+            "Testing only"
         ],
-        "correct_answer": "b. The transaction releases locks and cannot acquire any new ones.",
-        "explanation_ar": "بروتوكول القفل ذو المرحلتين (2PL) يضمن التسلسلية. في مرحلة 'التقلص' (Shrinking Phase)، تبدأ المعاملة في التخلي عن الأقفال التي حجزتها، وبمجرد أن تفك أول قفل، يُمنع عليها حجز أي أقفال جديدة.",
-        "explanation_en": "In Two-Phase Locking (2PL), the Shrinking Phase occurs when a transaction begins to release its acquired locks. Once a lock is released, the transaction is strictly prohibited from acquiring any new locks."
+        "correct_answer": "Physical design and implementation",
+        "explanation_ar": "بعد الانتهاء من التصميم المنطقي، تبدأ مباشرة مرحلة التصميم الفيزيائي والتنفيذ الفعلي لقاعدة البيانات على الخوادم.",
+        "explanation_en": "Physical design and implementation immediately follow the logical design phase in the standard database development lifecycle."
     },
     {
         "id": 39,
-        "topic": "Concurrency Control",
         "difficulty": "normal",
-        "question": "Which concurrency anomaly occurs when a transaction reads data that has been modified by another uncommitted transaction?",
+        "question": "Which activity is part of postdeployment maintenance?",
         "options": [
-            "a. Phantom Read",
-            "b. Non-repeatable Read",
-            "c. Dirty Read",
-            "d. Lost Update",
-            "e. Deadlock"
+            "Schema design only",
+            "Monitoring performance and applying patches",
+            "Initial requirements gathering",
+            "Conceptual modeling",
+            "Creating ER diagrams"
         ],
-        "correct_answer": "c. Dirty Read",
-        "explanation_ar": "القراءة القذرة (Dirty Read) تحدث عندما تقرأ المعاملة بيانات قامت معاملة أخرى بتعديلها ولكنها لم تقم بحفظها (Commit) بعد. الخطر هنا هو احتمال تراجع المعاملة الثانية، مما يجعل بياناتك الأولى غير صالحة.",
-        "explanation_en": "A Dirty Read anomaly happens when a transaction reads data modified by an uncommitted concurrent transaction. If the uncommitted transaction rolls back, the first transaction operates on invalid, phantom data."
+        "correct_answer": "Monitoring performance and applying patches",
+        "explanation_ar": "عمليات الصيانة بعد النشر تشمل بالضرورة مراقبة أداء النظام وتطبيق التحديثات والترقيعات (Patches) لضمان استقراره.",
+        "explanation_en": "Post-deployment maintenance actively involves monitoring system performance and applying software patches or updates."
     },
     {
         "id": 40,
-        "topic": "Concurrency Control",
-        "difficulty": "hard",
-        "question": "What is a 'Deadlock' in a database system?",
+        "difficulty": "normal",
+        "question": "Which physical design choice can reduce I/O for range queries?",
         "options": [
-            "a. A server crash due to memory overflow.",
-            "b. A situation where two or more transactions are waiting indefinitely for locks held by each other.",
-            "c. A query that takes more than 10 seconds to execute.",
-            "d. A failed login attempt.",
-            "e. An unrecoverable hardware failure."
+            "Hash partitioning only",
+            "Clustering rows by key and appropriate indexing",
+            "Removing all indexes",
+            "Storing data in random order",
+            "Using only views"
         ],
-        "correct_answer": "b. A situation where two or more transactions are waiting indefinitely for locks held by each other.",
-        "explanation_ar": "الاختناق (Deadlock) هو حالة الجمود التام. تحدث عندما تمسك المعاملة (أ) بقفل تريده المعاملة (ب)، وفي نفس الوقت تمسك المعاملة (ب) بقفل تريده (أ). كلاهما ينتظر الآخر للأبد ويتوقف النظام.",
-        "explanation_en": "A deadlock is a cyclical wait state in concurrency control. It occurs when two or more transactions form a circular dependency, each waiting indefinitely for the other to release specific database locks."
+        "correct_answer": "Clustering rows by key and appropriate indexing",
+        "explanation_ar": "تجميع الصفوف المتشابهة فيزيائياً وفهرستها يقلل بشكل كبير من عمليات القراءة من القرص (I/O) عند تنفيذ استعلامات النطاق (Range).",
+        "explanation_en": "Clustering rows by key physically groups related data, significantly reducing disk I/O when executing range queries."
     },
     {
         "id": 41,
-        "topic": "Database Recovery Techniques",
         "difficulty": "normal",
-        "question": "What is the primary purpose of the Write-Ahead Logging (WAL) protocol?",
+        "question": "What is the main reason to denormalize a schema?",
         "options": [
-            "a. To write data to the disk before logging it.",
-            "b. To ensure that all log records representing changes are written to stable storage before the actual data is modified on disk.",
-            "c. To delete old log files automatically.",
-            "d. To bypass the buffer cache.",
-            "e. To encrypt log files."
+            "To increase update anomalies",
+            "To improve read performance for specific queries",
+            "To remove primary keys",
+            "To avoid backups",
+            "To reduce storage always"
         ],
-        "correct_answer": "b. To ensure that all log records representing changes are written to stable storage before the actual data is modified on disk.",
-        "explanation_ar": "بروتوكول الكتابة المسبقة للسجل (WAL) يضمن أمان البيانات. القاعدة الصارمة هي: يجب حفظ 'وصف التعديل' في ملف السجل (Log) على القرص الصلب أولاً، قبل أن يتم تعديل البيانات الفعلية في القاعدة.",
-        "explanation_en": "Write-Ahead Logging (WAL) is the foundational protocol for database recovery. It mandates that a log record detailing a modification must be flushed to stable storage before the corresponding data block is written to disk."
+        "correct_answer": "To improve read performance for specific queries",
+        "explanation_ar": "إلغاء التسوية (Denormalization) يستخدم كحل هندسي لتسريع القراءة عن طريق تقليل الحاجة لعمليات الربط (Joins) المتعددة.",
+        "explanation_en": "Denormalization intentionally introduces redundancy into a database to optimize and improve read performance for specific, heavy queries."
     },
     {
         "id": 42,
-        "topic": "Database Recovery Techniques",
         "difficulty": "normal",
-        "question": "In the context of database recovery, what does a 'Checkpoint' do?",
+        "question": "Which technique helps distribute large tables across multiple disks or nodes?",
         "options": [
-            "a. It stops the database server.",
-            "b. It creates a full backup of the database.",
-            "c. It flushes all modified buffers (dirty pages) from main memory to the disk, reducing recovery time.",
-            "d. It deletes the transaction log.",
-            "e. It verifies user permissions."
+            "Indexing only",
+            "Partitioning or sharding",
+            "Removing foreign keys",
+            "Using views",
+            "Normalization"
         ],
-        "correct_answer": "c. It flushes all modified buffers (dirty pages) from main memory to the disk, reducing recovery time.",
-        "explanation_ar": "نقطة الفحص (Checkpoint) هي عملية دورية يقوم فيها المحرك بكتابة كل البيانات المعلقة في الذاكرة (RAM) إلى القرص الصلب. هذا يقلل من الوقت الذي سيحتاجه النظام لاسترداد البيانات في حال حدوث انهيار مفاجئ.",
-        "explanation_en": "A checkpoint reduces recovery time by periodically flushing all dirty buffer pages from main memory to disk and writing a checkpoint record to the log, meaning recovery algorithms don't have to scan past this point."
+        "correct_answer": "Partitioning or sharding",
+        "explanation_ar": "التقسيم (Partitioning) أو التجزئة (Sharding) يوزع الجداول الضخمة عبر عدة أقراص لتحسين الأداء وتسهيل الإدارة.",
+        "explanation_en": "Partitioning or sharding divides large tables horizontally across multiple storage nodes or disks, enhancing performance and scalability."
     },
     {
         "id": 43,
-        "topic": "Database Recovery Techniques",
         "difficulty": "hard",
-        "question": "During system recovery after a crash, what is the role of the UNDO operation?",
+        "question": "For a mixed OLTP/OLAP environment, which physical design compromise is often necessary?",
         "options": [
-            "a. To reapply changes of committed transactions.",
-            "b. To reverse the effects of transactions that were active (uncommitted) at the time of the crash.",
-            "c. To delete the database.",
-            "d. To restore the last full backup.",
-            "e. To bypass the transaction log."
+            "Use a single denormalized schema for all workloads",
+            "Maintain separate schemas or replicas optimized for transactional and analytical workloads",
+            "Eliminate indexes to simplify design",
+            "Store everything in memory only",
+            "Use only hash indexes everywhere"
         ],
-        "correct_answer": "b. To reverse the effects of transactions that were active (uncommitted) at the time of the crash.",
-        "explanation_ar": "عملية الإلغاء (UNDO) في الاسترداد تقوم بعكس ومسح أي تغييرات قامت بها معاملات كانت قيد التنفيذ (لم تقم بعمل Commit) لحظة انقطاع الكهرباء أو انهيار النظام، لضمان بقاء البيانات متسقة.",
-        "explanation_en": "During crash recovery, the UNDO phase actively rolls back any data modifications written to disk by transactions that were still active (uncommitted) when the system failed, restoring database consistency."
+        "correct_answer": "Maintain separate schemas or replicas optimized for transactional and analytical workloads",
+        "explanation_ar": "في بيئات (OLTP/OLAP) المختلطة، يُفضل فصل النسخ وقواعد البيانات لكي لا تتأثر المعاملات السريعة بالتحليلات الثقيلة المعقدة.",
+        "explanation_en": "Maintaining separate schemas or read replicas prevents resource-intensive analytical queries (OLAP) from slowing down fast transactional updates (OLTP)."
     },
     {
         "id": 44,
-        "topic": "Distributed Databases",
         "difficulty": "normal",
-        "question": "What is the primary goal of the Two-Phase Commit (2PC) protocol in distributed databases?",
+        "question": "Which mechanism enforces rowlevel access control in many DBMSs?",
         "options": [
-            "a. To split data across multiple servers.",
-            "b. To ensure atomic commitment of a transaction across multiple distributed nodes.",
-            "c. To detect deadlocks.",
-            "d. To encrypt distributed data.",
-            "e. To balance the network load."
+            "Table locks",
+            "Rowlevel security policies or finegrained access control",
+            "Indexes",
+            "Views only",
+            "Triggers only"
         ],
-        "correct_answer": "b. To ensure atomic commitment of a transaction across multiple distributed nodes.",
-        "explanation_ar": "بروتوكول الالتزام ذو المرحلتين (2PC) يضمن 'الذرية' في قواعد البيانات الموزعة. فهو يتأكد من أن جميع الخوادم المشاركة في المعاملة قد حفظت البيانات بنجاح، أو تراجعت عنها جميعاً في حال فشل أحدها.",
-        "explanation_en": "The Two-Phase Commit (2PC) protocol guarantees global transaction atomicity across a distributed database system. All participating nodes must unanimously agree to commit; if one fails, all nodes must abort."
+        "correct_answer": "Rowlevel security policies or finegrained access control",
+        "explanation_ar": "سياسات أمان مستوى الصفوف (Row-level security) تتيح تقييد وصول المستخدمين لصفوف معينة داخل الجدول بناءً على صلاحياتهم.",
+        "explanation_en": "Row-level security (RLS) policies enforce fine-grained access control, restricting which specific rows a user is permitted to access or modify."
     },
     {
         "id": 45,
-        "topic": "Distributed Databases",
         "difficulty": "normal",
-        "question": "Which data fragmentation technique divides a table by rows, placing different subsets of rows on different nodes?",
+        "question": "Which replication strategy provides higher availability at the cost of potential temporary inconsistency?",
         "options": [
-            "a. Vertical Fragmentation",
-            "b. Horizontal Fragmentation",
-            "c. Mixed Fragmentation",
-            "d. Derived Fragmentation",
-            "e. Replication"
+            "Synchronous replication only",
+            "Asynchronous replication",
+            "No replication",
+            "Single master with no replicas",
+            "Local backups only"
         ],
-        "correct_answer": "b. Horizontal Fragmentation",
-        "explanation_ar": "التجزئة الأفقية (Horizontal Fragmentation) هي تقنية لتقسيم الجدول الواحد إلى عدة جداول بناءً على الصفوف (مثلاً: صفوف عملاء الشمال في سيرفر، وصفوف عملاء الجنوب في سيرفر آخر).",
-        "explanation_en": "Horizontal fragmentation (or sharding) divides a relation by its tuples (rows), distributing subsets of rows to different distributed database nodes based on specific selection predicates."
+        "correct_answer": "Asynchronous replication",
+        "explanation_ar": "النسخ غير المتزامن (Asynchronous replication) يعطي أولوية لتوافر النظام وسرعته، رغم أنه قد يسبب تأخيراً مؤقتاً في تطابق البيانات بين الخوادم.",
+        "explanation_en": "Asynchronous replication prioritizes system availability and write performance, accepting the trade-off of potential temporary data inconsistencies across nodes."
     },
     {
         "id": 46,
-        "topic": "Data Warehousing & OLAP",
         "difficulty": "normal",
-        "question": "What is the primary characteristic of an OLAP (Online Analytical Processing) system compared to an OLTP system?",
+        "question": "Which protocol or API is commonly used by applications written in Java to connect to relational databases?",
         "options": [
-            "a. Optimized for fast, short insert/update transactions.",
-            "b. Highly normalized schema.",
-            "c. Optimized for complex read-heavy queries, aggregations, and historical data analysis.",
-            "d. Processes only real-time current data.",
-            "e. Requires minimal indexing."
+            "ODBC",
+            "JDBC",
+            "FTP",
+            "SMTP",
+            "SOAP"
         ],
-        "correct_answer": "c. Optimized for complex read-heavy queries, aggregations, and historical data analysis.",
-        "explanation_ar": "أنظمة التحليل (OLAP) مثل مستودعات البيانات، ليست مصممة للإدخال السريع، بل هي مصممة خصيصاً لقراءة كميات هائلة من البيانات التاريخية، تجميعها، واستخراج تقارير تدعم اتخاذ القرارات.",
-        "explanation_en": "OLAP systems are fundamentally designed to support complex, multi-dimensional analytical queries, heavy data aggregations, and historical trend analysis rather than fast, high-volume transactional writes."
+        "correct_answer": "JDBC",
+        "explanation_ar": "واجهة (JDBC) هي المعيار البرمجي المعتمد في لغة جافا للاتصال بقواعد البيانات العلائقية والتفاعل معها.",
+        "explanation_en": "JDBC (Java Database Connectivity) is the standard API used exclusively by Java applications to connect to and interact with relational databases."
     },
     {
         "id": 47,
-        "topic": "Data Warehousing & OLAP",
         "difficulty": "normal",
-        "question": "Which schema design is most commonly used in Data Warehouses to simplify complex queries?",
+        "question": "Which NoSQL model is optimized for storing wide tables with many columns and high write throughput?",
         "options": [
-            "a. 3NF Schema",
-            "b. Star Schema",
-            "c. BCNF Schema",
-            "d. Network Schema",
-            "e. Hierarchical Schema"
+            "Document store",
+            "Column-family store",
+            "Graph store",
+            "Key-value store",
+            "Relational store"
         ],
-        "correct_answer": "b. Star Schema",
-        "explanation_ar": "المخطط النجمي (Star Schema) هو أشهر تصميم لمستودعات البيانات. يتكون من جدول (حقائق) مركزي ضخم محاط بجداول (أبعاد) أصغر، مما يجعل الاستعلامات أسرع وأقل تعقيداً.",
-        "explanation_en": "The Star Schema is a dimensional modeling technique standard in Data Warehousing. It features a central fact table containing metrics, surrounded by denormalized dimension tables, optimizing read performance."
+        "correct_answer": "Column-family store",
+        "explanation_ar": "نموذج (Column-family) مثل كاساندرا مصمم خصيصاً للتعامل مع الجداول العريضة جداً وعمليات الكتابة السريعة والمكثفة.",
+        "explanation_en": "Column-family stores are highly optimized NoSQL databases designed to handle extremely wide tables and massive write throughput."
     },
     {
         "id": 48,
-        "topic": "Normalization & Advanced FDs",
-        "difficulty": "normal",
-        "question": "A table is in Boyce-Codd Normal Form (BCNF) if and only if:",
+        "difficulty": "hard",
+        "question": "Which CAP theorem trade-off is typically accepted by many distributed NoSQL stores that prioritize availability and partition tolerance?",
         "options": [
-            "a. It has no foreign keys.",
-            "b. Every determinant is a candidate key.",
-            "c. It contains no multi-valued attributes.",
-            "d. It has a single-column primary key.",
-            "e. It is fully denormalized."
+            "Consistency sacrificed for availability and partition tolerance",
+            "Partition tolerance sacrificed",
+            "Availability sacrificed for consistency",
+            "All three always satisfied",
+            "None of the above"
         ],
-        "correct_answer": "b. Every determinant is a candidate key.",
-        "explanation_ar": "قاعدة بويس-كود (BCNF) هي نسخة أشد صرامة من الشكل الثالث. قاعدتها بسيطة وحازمة: أي عمود يقوم بتحديد عمود آخر، يجب أن يكون مفتاحاً مرشحاً بحد ذاته.",
-        "explanation_en": "Boyce-Codd Normal Form (BCNF) strengthens 3NF by stating a strict rule: for every non-trivial functional dependency X → Y, the determinant X must strictly be a candidate key."
+        "correct_answer": "Consistency sacrificed for availability and partition tolerance",
+        "explanation_ar": "في أنظمة NoSQL الموزعة، يتم غالباً التضحية بالاتساق الفوري القوي (Consistency) لضمان بقاء النظام متاحاً (Availability) حتى عند انقطاع الشبكة.",
+        "explanation_en": "In the CAP theorem, many distributed NoSQL systems explicitly sacrifice strong consistency in favor of guaranteeing high availability and partition tolerance."
     },
     {
         "id": 49,
-        "topic": "Normalization & Advanced FDs",
-        "difficulty": "hard",
-        "question": "Fourth Normal Form (4NF) specifically deals with the elimination of which type of dependency?",
+        "difficulty": "normal",
+        "question": "Which normal form addresses transitive dependencies?",
         "options": [
-            "a. Partial dependency",
-            "b. Transitive dependency",
-            "c. Functional dependency",
-            "d. Multi-valued dependency",
-            "e. Join dependency"
+            "1NF",
+            "2NF",
+            "3NF",
+            "BCNF",
+            "4NF"
         ],
-        "correct_answer": "d. Multi-valued dependency",
-        "explanation_ar": "الشكل الطبيعي الرابع (4NF) يذهب أبعد من التبعيات الوظيفية؛ فهو يركز على إزالة 'التبعية متعددة القيم' (Multi-valued dependency)، وهي تحدث عندما يكون للكيان عدة قيم مستقلة لا علاقة لها ببعضها البعض.",
-        "explanation_en": "Fourth Normal Form (4NF) addresses database design flaws caused by multi-valued dependencies (MVDs), which occur when one attribute independently determines multiple values of two other attributes."
+        "correct_answer": "3NF",
+        "explanation_ar": "الشكل الطبيعي الثالث (3NF) يركز بشكل كامل على إزالة التبعيات المتعدية (Transitive dependencies) بين الأعمدة غير المفتاحية.",
+        "explanation_en": "Third Normal Form (3NF) specifically targets and eliminates transitive dependencies among non-prime attributes in a relation."
     },
     {
         "id": 50,
-        "topic": "Emerging Database Technologies",
-        "difficulty": "normal",
-        "question": "In cloud databases, what does the term 'Elasticity' refer to?",
+        "difficulty": "hard",
+        "question": "Given relation R(A,B,C,D) with FDs: A→B, B→C, and A→D, which decomposition is appropriate to remove transitive dependency while preserving keys?",
         "options": [
-            "a. The ability to automatically scale compute and storage resources up or down based on demand.",
-            "b. The ability to switch between SQL and NoSQL dynamically.",
-            "c. The compression ratio of data.",
-            "d. The speed of query execution.",
-            "e. The security encryption strength."
+            "Keep R as is",
+            "Decompose into R1(A,B,D) and R2(B,C)",
+            "Decompose into R1(A,C) and R2(B,D)",
+            "Merge with unrelated relation",
+            "Decompose into single-attribute relations only"
         ],
-        "correct_answer": "a. The ability to automatically scale compute and storage resources up or down based on demand.",
-        "explanation_ar": "المرونة (Elasticity) في الحوسبة السحابية تعني أن قاعدة البيانات قادرة على زيادة مواردها (المعالجات والمساحة) تلقائياً عند زيادة الضغط، وتقليلها عند انخفاضه لتوفير التكاليف.",
-        "explanation_en": "Elasticity in cloud databases is the dynamic, automated provisioning and de-provisioning of computing and storage resources to seamlessly match fluctuating workload demands without manual intervention."
+        "correct_answer": "Decompose into R1(A,B,D) and R2(B,C)",
+        "explanation_ar": "بما أن A يحدد B، وB يحدد C، فهناك تبعية متعدية. التفكيك الصحيح لحل هذه المشكلة هو وضع A و B و D في جدول، و B و C في جدول آخر منفصل.",
+        "explanation_en": "To remove the transitive dependency (A -> C via B) while preserving functional dependencies and keys, decomposing into R1(A,B,D) and R2(B,C) is the correct lossless approach."
     }
 ]
