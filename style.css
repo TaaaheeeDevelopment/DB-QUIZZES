@@ -1,15 +1,31 @@
 :root {
     --bg-color: #050505;
-    --success-color: #00ff00;
-    --error-color: #ff0000;
-    --hard-color: #FF4500;
+    --success-color: #00FF00;
+    --error-color: #FF0000;
+    --hard-color: #FF8800;
     --text-main: #ffffff;
     --text-muted: #aaaaaa;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --font-ar: 'Cairo', sans-serif;
     --font-en: 'Poppins', sans-serif;
+    --dynamic-accent: #00E5FF;
+    /* Bright Neon Cyan/Blue */
 }
+
+/* Dynamic Accent Colors Based On State */
+body.state-correct {
+    --dynamic-accent: #00FF00;
+}
+
+body.state-incorrect {
+    --dynamic-accent: #FF0000;
+}
+
+body.state-hard {
+    --dynamic-accent: #FF8800;
+}
+
 
 * {
     box-sizing: border-box;
@@ -30,8 +46,9 @@ body {
 }
 
 /* Hard Question Vignette */
-body.vignette-active {
-    box-shadow: inset 0 0 150px var(--hard-color);
+body.vignette-active,
+body.academic-theme.vignette-active {
+    box-shadow: none !important;
 }
 
 /* Flash Glow Animations (1.5 seconds) */
@@ -44,19 +61,34 @@ body.vignette-active {
 }
 
 @keyframes flash-success-anim {
-    0% { box-shadow: inset 0 0 150px var(--success-color); }
-    100% { box-shadow: inset 0 0 0px var(--success-color); }
+    0% {
+        box-shadow: inset 0 0 150px var(--success-color);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0px var(--success-color);
+    }
 }
 
 @keyframes flash-error-anim {
-    0% { box-shadow: inset 0 0 150px var(--error-color); }
-    100% { box-shadow: inset 0 0 0px var(--error-color); }
+    0% {
+        box-shadow: inset 0 0 150px var(--error-color);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0px var(--error-color);
+    }
 }
 
 /* Rainbow Background Animation */
 @keyframes rainbow-bg {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .rainbow-particles {
@@ -80,13 +112,40 @@ body.vignette-active {
 
 /* Rainbow Text Glow Animation */
 @keyframes text-rainbow {
-    0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-    16% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
-    33% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
-    50% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
-    66% { color: #0000ff; text-shadow: 0 0 10px #0000ff; }
-    83% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
-    100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+    0% {
+        color: #ff0000;
+        text-shadow: 0 0 10px #ff0000;
+    }
+
+    16% {
+        color: #ffff00;
+        text-shadow: 0 0 10px #ffff00;
+    }
+
+    33% {
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00;
+    }
+
+    50% {
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff;
+    }
+
+    66% {
+        color: #0000ff;
+        text-shadow: 0 0 10px #0000ff;
+    }
+
+    83% {
+        color: #ff00ff;
+        text-shadow: 0 0 10px #ff00ff;
+    }
+
+    100% {
+        color: #ff0000;
+        text-shadow: 0 0 10px #ff0000;
+    }
 }
 
 /* Header */
@@ -95,16 +154,71 @@ body.vignette-active {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 10;
     border-bottom: 3px solid;
     border-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff) 1;
 }
 
-/* static 7-color gradient replaces the animated dynamic border to reduce sharp glowing */
+.mobile-only {
+    display: none;
+}
 
-.logo, .student-info {
+/* Theme Toggles */
+.theme-toggle-desktop {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    font-family: var(--font-en);
+    cursor: pointer;
+    z-index: 20;
+}
+
+#theme-academic,
+#theme-rgb {
+    display: inline-block;
+}
+
+.pill-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-main);
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-en);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.pill-btn.active {
+    background: var(--dynamic-accent);
+    color: white;
+    border-color: var(--dynamic-accent);
+    box-shadow: 0 0 10px var(--dynamic-accent);
+}
+
+#theme-academic.active {
+    background: #0D6EFD !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px #0D6EFD !important;
+    border-color: #0D6EFD !important;
+}
+
+.rgb-animated-btn {
+    animation: border-rainbow 6s linear infinite, text-rainbow 6s linear infinite !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid transparent !important;
+}
+
+.rgb-animated-btn:hover {
+    transform: scale(1.05);
+}
+
+.logo,
+.student-info {
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -134,30 +248,80 @@ body.vignette-active {
 
 /* Animation Keyframes */
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes pulse-hard {
-    0% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
-    50% { transform: scale(1.05); box-shadow: 0 0 30px var(--hard-color); opacity: 1; }
-    100% { transform: scale(1); box-shadow: 0 0 15px var(--hard-color); opacity: 0.8; }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px var(--hard-color);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px var(--hard-color);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px var(--hard-color);
+        opacity: 0.8;
+    }
 }
 
 /* Standard Rainbow Border for Glassmorphism Containers */
 @keyframes border-rainbow {
-    0% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000; }
-    16% { border-color: #ffff00; box-shadow: 0 0 15px #ffff00, inset 0 0 5px #ffff00; }
-    33% { border-color: #00ff00; box-shadow: 0 0 15px #00ff00, inset 0 0 5px #00ff00; }
-    50% { border-color: #00ffff; box-shadow: 0 0 15px #00ffff, inset 0 0 5px #00ffff; }
-    66% { border-color: #0000ff; box-shadow: 0 0 15px #0000ff, inset 0 0 5px #0000ff; }
-    83% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff, inset 0 0 5px #ff00ff; }
-    100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000; }
+    0% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000;
+    }
+
+    16% {
+        border-color: #ffff00;
+        box-shadow: 0 0 15px #ffff00, inset 0 0 5px #ffff00;
+    }
+
+    33% {
+        border-color: #00ff00;
+        box-shadow: 0 0 15px #00ff00, inset 0 0 5px #00ff00;
+    }
+
+    50% {
+        border-color: #00ffff;
+        box-shadow: 0 0 15px #00ffff, inset 0 0 5px #00ffff;
+    }
+
+    66% {
+        border-color: #0000ff;
+        box-shadow: 0 0 15px #0000ff, inset 0 0 5px #0000ff;
+    }
+
+    83% {
+        border-color: #ff00ff;
+        box-shadow: 0 0 15px #ff00ff, inset 0 0 5px #ff00ff;
+    }
+
+    100% {
+        border-color: #ff0000;
+        box-shadow: 0 0 15px #ff0000, inset 0 0 5px #ff0000;
+    }
 }
 
 /* Glassmorphism */
-.glass-panel, .quiz-card {
+.glass-panel,
+.quiz-card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -172,7 +336,8 @@ body.vignette-active {
 }
 
 /* Hovers */
-.glass-panel:hover, .quiz-card:hover {
+.glass-panel:hover,
+.quiz-card:hover {
     transform: translateY(-5px) scale(1.02);
     background: rgba(255, 255, 255, 0.1);
 }
@@ -198,8 +363,13 @@ body.vignette-active {
 }
 
 @keyframes pulse-orange {
-    0% { box-shadow: 0 0 10px #ff8c00; }
-    100% { box-shadow: 0 0 25px #ff4500, inset 0 0 15px #ff8c00; }
+    0% {
+        box-shadow: 0 0 10px #ff8c00;
+    }
+
+    100% {
+        box-shadow: 0 0 25px #ff4500, inset 0 0 15px #ff8c00;
+    }
 }
 
 .quiz-card-ai {
@@ -210,8 +380,15 @@ body.vignette-active {
 }
 
 @keyframes glass-ai {
-    0% { border-color: #00ff80; box-shadow: 0 0 15px #00ff80; }
-    100% { border-color: #00aaff; box-shadow: 0 0 15px #00aaff; }
+    0% {
+        border-color: #00ff80;
+        box-shadow: 0 0 15px #00ff80;
+    }
+
+    100% {
+        border-color: #00aaff;
+        box-shadow: 0 0 15px #00aaff;
+    }
 }
 
 /* Badges for Quiz Cards */
@@ -222,23 +399,25 @@ body.vignette-active {
     font-size: 1.1rem;
     padding: 0;
     margin-bottom: 10px;
-    animation: none; /* overrides badge default animation */
+    animation: none;
+    /* overrides badge default animation */
 }
 
 /* AI badge from Neon Green to Blue */
 .neon-badge-ai {
     color: #00FF00;
-    text-shadow: 
-        0 0 5px #00FF00, 
-        0 0 10px #00FF00, 
-        0 0 20px #00BFFF, 
+    text-shadow:
+        0 0 5px #00FF00,
+        0 0 10px #00FF00,
+        0 0 20px #00BFFF,
         0 0 30px #00BFFF;
     font-size: 1.2rem;
     font-weight: bold;
     padding: 0;
     margin-bottom: 15px;
     display: inline-block;
-    animation: none; /* overrides badge default animation */
+    animation: none;
+    /* overrides badge default animation */
 }
 
 /* Main Container */
@@ -254,16 +433,62 @@ body.vignette-active {
 
 .screen {
     display: none;
-    animation: fadeIn 0.5s ease;
+    animation: slideUpFade 0.6s ease forwards;
 }
 
 .screen.active-screen {
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Landing Screen Options */
+.landing-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 60vh;
+}
+
+.main-landing-btn {
+    width: 320px;
+    max-width: 90vw;
+    font-size: 1.2rem;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coming-soon {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    padding: 8px 20px;
 }
 
 /* Home Screen Options */
@@ -275,50 +500,50 @@ body.vignette-active {
     flex-wrap: wrap;
 }
 
-.radio-label {
+.checkbox-label {
     display: flex;
     align-items: center;
     cursor: pointer;
     background: var(--glass-bg);
     padding: 10px 20px;
     border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s;
+    font-family: var(--font-en);
 }
 
-.radio-label:hover {
-    background: rgba(255,255,255,0.15);
+.checkbox-label:hover {
+    background: rgba(255, 255, 255, 0.15);
     transform: scale(1.05);
 }
 
-.radio-label input {
+.checkbox-label input {
     display: none;
 }
 
-.custom-radio {
+.custom-checkbox {
     width: 20px;
     height: 20px;
     border: 2px solid #ccc;
-    border-radius: 50%;
+    border-radius: 4px;
     margin-left: 10px;
+    /* space since rtl */
     position: relative;
     transition: border-color 0.3s;
 }
 
-.radio-label input:checked + .custom-radio {
+.checkbox-label input:checked+.custom-checkbox {
     animation: border-rainbow 10s linear infinite;
 }
 
-.radio-label input:checked + .custom-radio::after {
-    content: '';
+.checkbox-label input:checked+.custom-checkbox::after {
+    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
 }
 
 /* Quizzes Grid */
@@ -342,12 +567,29 @@ body.vignette-active {
     animation: floating 4s infinite ease-in-out;
 }
 
-.quiz-card:nth-child(1) { animation-delay: 0s !important; }
-.quiz-card:nth-child(2) { animation-delay: -2s !important; }
-.quiz-card:nth-child(3) { animation-delay: -4s !important; }
-.quiz-card:nth-child(4) { animation-delay: -6s !important; }
-.quiz-card:nth-child(5) { animation-delay: -8s !important; }
-.quiz-card:nth-child(6) { animation-delay: -10s !important; }
+.quiz-card:nth-child(1) {
+    animation-delay: 0s !important;
+}
+
+.quiz-card:nth-child(2) {
+    animation-delay: -2s !important;
+}
+
+.quiz-card:nth-child(3) {
+    animation-delay: -4s !important;
+}
+
+.quiz-card:nth-child(4) {
+    animation-delay: -6s !important;
+}
+
+.quiz-card:nth-child(5) {
+    animation-delay: -8s !important;
+}
+
+.quiz-card:nth-child(6) {
+    animation-delay: -10s !important;
+}
 
 .quiz-desc {
     margin-bottom: 20px;
@@ -399,9 +641,12 @@ body.vignette-active {
     align-items: center;
     margin-bottom: 20px;
     font-size: 1.2rem;
-    font-weight: bold; 
+    font-weight: bold;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    flex-wrap: wrap;       
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--dynamic-accent);
+    padding-bottom: 10px;
+    transition: border-color 0.5s ease;
 }
 
 .stop-btn-container {
@@ -437,10 +682,8 @@ body.vignette-active {
 }
 
 .topic-badge {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: #1a1a1a;
+    border: 1px solid #444;
     color: #e0e0e0;
     padding: 4px 15px;
     border-radius: 12px;
@@ -493,7 +736,8 @@ body.vignette-active {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-en);
-    direction: ltr; /* usually options are English */
+    direction: ltr;
+    /* usually options are English */
 }
 
 /* Fallback rtl for arabic options if needed */
@@ -503,11 +747,35 @@ body.vignette-active {
     font-family: var(--font-ar);
 }
 
-.option-btn:nth-child(1) { animation-delay: -1s; }
-.option-btn:nth-child(2) { animation-delay: -4s; }
-.option-btn:nth-child(3) { animation-delay: -7s; }
-.option-btn:nth-child(4) { animation-delay: -10s; }
-.option-btn:nth-child(5) { animation-delay: -13s; }
+.opt-letter {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--dynamic-accent, #00E5FF);
+}
+
+body.academic-theme .opt-letter {
+    color: var(--ac-accent) !important;
+}
+
+.option-btn:nth-child(1) {
+    animation-delay: -1s;
+}
+
+.option-btn:nth-child(2) {
+    animation-delay: -4s;
+}
+
+.option-btn:nth-child(3) {
+    animation-delay: -7s;
+}
+
+.option-btn:nth-child(4) {
+    animation-delay: -10s;
+}
+
+.option-btn:nth-child(5) {
+    animation-delay: -13s;
+}
 
 .option-btn:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.2);
@@ -518,17 +786,19 @@ body.vignette-active {
 .option-btn.correct {
     background: rgba(0, 255, 0, 0.2) !important;
     border-color: var(--success-color) !important;
-    box-shadow: 0 0 15px var(--success-color) !important;
+    box-shadow: 0 0 8px var(--success-color), 0 0 20px var(--success-color) !important;
     animation: none;
     transform: scale(1.05);
+    border-width: 2px;
 }
 
 .option-btn.wrong {
     background: rgba(255, 0, 0, 0.2) !important;
     border-color: var(--error-color) !important;
-    box-shadow: 0 0 15px var(--error-color) !important;
+    box-shadow: 0 0 8px var(--error-color), 0 0 20px var(--error-color) !important;
     animation: none;
     transform: scale(0.95);
+    border-width: 2px;
 }
 
 .option-btn:disabled {
@@ -572,8 +842,23 @@ body.vignette-active {
 .result-container {
     padding: 40px 20px;
     text-align: center;
-    animation: border-rainbow 16s linear infinite;
-    animation-delay: -2s;
+    border: 2px solid #8b00ff !important;
+    box-shadow: 0 0 20px #8b00ff, inset 0 0 10px #8b00ff !important;
+    animation: none !important;
+}
+
+/* Explicit RGB Rainbow defaults */
+.question-container,
+.quiz-card,
+.explanation-box,
+.btn-glow {
+    animation: border-rainbow 12s linear infinite !important;
+}
+
+.question-container #question-text,
+.quiz-card .quiz-desc,
+.explanation-box h4 {
+    animation: text-rainbow 10s linear infinite !important;
 }
 
 #final-score-text {
@@ -594,7 +879,7 @@ body.vignette-active {
 }
 
 .wrong-item {
-    background: rgba(255,0,0,0.05);
+    background: rgba(255, 0, 0, 0.05);
     border-right: 4px solid var(--error-color);
     padding: 15px;
     margin-bottom: 15px;
@@ -604,7 +889,7 @@ body.vignette-active {
 
 .wrong-item:hover {
     transform: translateX(-10px) scale(1.02);
-    background: rgba(255,0,0,0.1);
+    background: rgba(255, 0, 0, 0.1);
 }
 
 .wrong-item .q-text {
@@ -633,10 +918,17 @@ body.vignette-active {
 }
 
 /* Modal Styling */
+#theme-modal {
+    z-index: 999999;
+}
+
 .modal {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -645,13 +937,21 @@ body.vignette-active {
 }
 
 .modal-content {
-    background: rgba(20, 20, 20, 0.9);
+    background: rgba(20, 20, 20, 0.95);
     padding: 40px;
     text-align: center;
     max-width: 500px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+}
+
+.theme-modal-content {
+    background: var(--bg-color);
+    color: var(--text-main);
+    border-radius: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
 
 .modal-content h2 {
@@ -670,38 +970,60 @@ body.vignette-active {
 }
 
 .confirm-btn {
-    background: rgba(255, 0, 0, 0.2);
-    border: 1px solid red;
-    color: white;
+    background-color: #dc3545 !important;
+    color: white !important;
+    border: none;
 }
 
 .confirm-btn:hover {
-    background: rgba(255, 0, 0, 0.5);
-    box-shadow: 0 0 15px red;
+    background-color: #c82333 !important;
+    box-shadow: 0 0 15px #dc3545;
 }
 
 .cancel-btn {
-    background: rgba(0, 255, 0, 0.2);
-    border: 1px solid lime;
+    background-color: #28a745 !important;
+    color: white !important;
+    border: none;
 }
 
 .cancel-btn:hover {
-    background: rgba(0, 255, 0, 0.4);
-    box-shadow: 0 0 15px lime;
+    background-color: #218838 !important;
+    box-shadow: 0 0 15px #28a745;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .app-header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
     }
-    
+
+    .theme-toggle-desktop {
+        transform: scale(0.7);
+        transform-origin: right center;
+        margin: 0;
+        gap: 5px;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .student-info {
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
     #question-text {
         font-size: 1.2rem;
     }
-    
+
     .btn {
         width: 100%;
     }
@@ -710,8 +1032,9 @@ body.vignette-active {
         display: block;
         margin: 0 auto 15px;
     }
-    
-    .wrong-item .user-ans, .wrong-item .corr-ans {
+
+    .wrong-item .user-ans,
+    .wrong-item .corr-ans {
         display: block;
         margin-top: 5px;
     }
@@ -719,4 +1042,1106 @@ body.vignette-active {
     .modal-actions {
         flex-direction: column;
     }
+}
+
+/* =========================================
+   Academic Theme Overrides
+   ========================================= */
+body.academic-theme {
+    --bg-color: #F8F9FA;
+    background: url('images/bodyimage.jfif') no-repeat center center fixed !important;
+    background-size: cover !important;
+    --text-main: #000000;
+    --text-muted: #000000 !important;
+    --ac-success: #28a745 !important;
+    /* Solid pleasant green */
+    --ac-error: #dc3545 !important;
+    /* Solid pleasant red */
+    --ac-hard: #f39c12;
+    /* Vibrant Orange */
+    --success-color: #28a745 !important;
+    --error-color: #dc3545 !important;
+    --hard-color: #fd7e14 !important;
+    --dynamic-accent: #0D6EFD;
+    --ac-accent: #0D6EFD;
+    -webkit-text-stroke: 0 !important;
+    color: #000000 !important;
+}
+
+body.academic-theme #particles-js {
+    -webkit-mask-image: linear-gradient(135deg, transparent 15%, black 35%, black 65%, transparent 85%);
+    mask-image: linear-gradient(135deg, transparent 15%, black 35%, black 65%, transparent 85%);
+}
+
+.academic-theme .neon-border {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    animation: floating 4s infinite ease-in-out !important;
+    border-color: var(--ac-accent) !important;
+}
+
+body.academic-theme.vignette-active {
+    box-shadow: none !important;
+}
+
+body.academic-theme.state-correct {
+    --dynamic-accent: var(--ac-success);
+    --ac-accent: var(--ac-success) !important;
+}
+
+body.academic-theme.state-incorrect {
+    --dynamic-accent: var(--ac-error);
+    --ac-accent: var(--ac-error) !important;
+}
+
+body.academic-theme.state-hard {
+    --dynamic-accent: var(--ac-hard);
+    --ac-accent: var(--ac-hard) !important;
+}
+
+/* Academic Mode: Dark Header */
+body.academic-theme .app-header {
+    background-color: #2c3e50 !important;
+    /* Dark Grey/Blue */
+    border-bottom: 2px solid #ffffff !important;
+    border-image: none !important;
+}
+
+/* Protect header texts from state colors and apply blue gradient */
+body.academic-theme .app-header .logo,
+body.academic-theme .app-header .student-info,
+body.academic-theme.state-correct .app-header .logo,
+body.academic-theme.state-incorrect .app-header .logo,
+body.academic-theme.state-hard .app-header .logo,
+body.academic-theme.state-correct .app-header .student-info,
+body.academic-theme.state-incorrect .app-header .student-info,
+body.academic-theme.state-hard .app-header .student-info {
+    background: linear-gradient(to right, #00C6FF, #0072FF) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation: none !important;
+    text-shadow: none !important;
+}
+
+/* ZERO TRANSPARENCY & BLUE BORDERS FOR CONTAINERS */
+body.academic-theme .glass-panel,
+body.academic-theme .quiz-card,
+body.academic-theme .modal-content,
+body.academic-theme .theme-modal-content,
+body.academic-theme .question-container,
+body.academic-theme .explanation-box,
+body.academic-theme .result-container {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 2px solid var(--ac-accent) !important;
+    box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2) !important;
+    color: #000000 !important;
+    animation: none !important;
+    opacity: 1 !important;
+}
+
+body.academic-theme .option-btn {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+}
+
+body.academic-theme .glass-panel,
+body.academic-theme .quiz-card {
+    animation: floating 4s infinite ease-in-out !important;
+}
+
+/* SOLID BUTTONS AND INPUTS */
+body.academic-theme .btn,
+body.academic-theme .btn-glow,
+body.academic-theme .option-btn,
+body.academic-theme .pill-btn,
+body.academic-theme .checkbox-label {
+    background-color: #FFFFFF !important;
+    border: 2px solid var(--ac-accent) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    color: #212529 !important;
+    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.1) !important;
+    animation: none !important;
+    text-shadow: none !important;
+}
+
+body.academic-theme .btn:hover,
+body.academic-theme .btn-glow:hover,
+body.academic-theme .option-btn:hover,
+body.academic-theme .pill-btn:hover,
+body.academic-theme .checkbox-label:hover {
+    background-color: #e9ecef !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* SPECIFIC BUTTON COLORS IN ACADEMIC MODE */
+body.academic-theme .stop-btn,
+body.academic-theme .cancel-btn {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.academic-theme .confirm-btn {
+    background-color: #198754 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.academic-theme #next-btn {
+    background-color: #0D6EFD !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.academic-theme .back-btn {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Unify Modal Buttons */
+body.academic-theme #modal-confirm {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.academic-theme #modal-cancel {
+    background-color: #198754 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.academic-theme #modal-theme-close {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Mobile Theme Button Glow (Academic Mode) */
+body.academic-theme #theme-toggle-mobile {
+    background-color: var(--ac-accent) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px var(--ac-accent) !important;
+    border-color: var(--ac-accent) !important;
+}
+
+/* Distinct Answer Highlighting */
+.academic-theme .option-btn.correct {
+    background-color: rgba(25, 135, 84, 0.15) !important;
+    color: #198754 !important;
+}
+
+.academic-theme .option-btn.wrong {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    color: #dc3545 !important;
+}
+
+/* Black borders for active buttons in academic mode */
+.academic-theme .option-btn.correct,
+.academic-theme .option-btn.wrong,
+.academic-theme .confirm-btn,
+.academic-theme .cancel-btn {
+    border: 2px solid #000000 !important;
+}
+
+body.academic-theme .checkbox-label input:checked+.custom-checkbox {
+    animation: none !important;
+    border-color: var(--ac-accent) !important;
+    background: var(--ac-accent) !important;
+}
+
+/* KILL RGB BUTTON IN ACADEMIC MODE */
+body.academic-theme .rgb-animated-btn {
+    animation: none !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid var(--ac-accent) !important;
+    color: #212529 !important;
+    -webkit-text-fill-color: #212529 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+    box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* TEXT STYLING (Gradient - Stroke Removed) */
+body.academic-theme h2,
+body.academic-theme h3,
+body.academic-theme h4,
+body.academic-theme .quiz-desc,
+body.academic-theme #final-score-text,
+body.academic-theme .logo,
+body.academic-theme .student-info,
+body.academic-theme .topic-badge,
+body.academic-theme .badge {
+    background: linear-gradient(to right, var(--ac-accent), var(--ac-accent)) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* ABSOLUTE STATE COLOR DOMINANCE (Academic Mode) */
+body.academic-theme.state-correct h2,
+body.academic-theme.state-incorrect h2,
+body.academic-theme.state-hard h2,
+body.academic-theme.state-correct h3,
+body.academic-theme.state-incorrect h3,
+body.academic-theme.state-hard h3,
+body.academic-theme.state-correct h4,
+body.academic-theme.state-incorrect h4,
+body.academic-theme.state-hard h4,
+body.academic-theme.state-correct .quiz-desc,
+body.academic-theme.state-incorrect .quiz-desc,
+body.academic-theme.state-hard .quiz-desc,
+body.academic-theme.state-correct #final-score-text,
+body.academic-theme.state-incorrect #final-score-text,
+body.academic-theme.state-hard #final-score-text,
+body.academic-theme.state-correct .logo,
+body.academic-theme.state-incorrect .logo,
+body.academic-theme.state-hard .logo,
+body.academic-theme.state-correct .student-info,
+body.academic-theme.state-incorrect .student-info,
+body.academic-theme.state-hard .student-info,
+body.academic-theme.state-correct .topic-badge,
+body.academic-theme.state-incorrect .topic-badge,
+body.academic-theme.state-hard .topic-badge,
+body.academic-theme.state-correct .badge,
+body.academic-theme.state-incorrect .badge,
+body.academic-theme.state-hard .badge,
+body.academic-theme.state-finished h2,
+body.academic-theme.state-finished h3,
+body.academic-theme.state-finished h4,
+body.academic-theme.state-finished .quiz-desc,
+body.academic-theme.state-finished #final-score-text,
+body.academic-theme.state-finished .logo,
+body.academic-theme.state-finished .student-info,
+body.academic-theme.state-finished .topic-badge,
+body.academic-theme.state-finished .badge {
+    background: none !important;
+    color: var(--dynamic-accent) !important;
+    -webkit-text-fill-color: var(--dynamic-accent) !important;
+}
+
+/* Mock Exam Container Styling in Academic Mode */
+body.academic-theme .quiz-card-special {
+    border: 2px solid #FF8800 !important;
+}
+
+body.academic-theme .quiz-card-special .topic-badge,
+body.academic-theme .quiz-card-special .quiz-desc {
+    background: none !important;
+    color: #FF8800 !important;
+    -webkit-text-fill-color: #FF8800 !important;
+}
+
+/* =========================================
+   Universal State Synchronization 
+   (Overrides for both modes)
+   ========================================= */
+
+body.state-correct .question-container,
+body.state-incorrect .question-container,
+body.state-hard .question-container,
+body.state-correct .explanation-box,
+body.state-incorrect .explanation-box,
+body.state-hard .explanation-box,
+body.state-correct .neon-border,
+body.state-incorrect .neon-border,
+body.state-hard .neon-border,
+body.state-correct .neon-badge-ai,
+body.state-incorrect .neon-badge-ai,
+body.state-hard .neon-badge-ai,
+body.state-finished .question-container,
+body.state-finished .explanation-box,
+body.state-finished .neon-border,
+body.state-finished .neon-badge-ai {
+    border-color: var(--dynamic-accent) !important;
+    box-shadow: 0 0 8px var(--dynamic-accent), 0 0 15px var(--dynamic-accent), inset 0 0 5px var(--dynamic-accent) !important;
+}
+
+body.state-correct #question-text,
+body.state-incorrect #question-text,
+body.state-hard #question-text,
+body.state-correct .explanation-box h4,
+body.state-incorrect .explanation-box h4,
+body.state-hard .explanation-box h4,
+body.state-finished #question-text,
+body.state-finished .explanation-box h4 {
+    animation: none !important;
+    color: var(--dynamic-accent) !important;
+    text-shadow: 0 0 8px var(--dynamic-accent), 0 0 15px var(--dynamic-accent), 0 0 25px var(--dynamic-accent) !important;
+}
+
+body.academic-theme.state-correct .question-container,
+body.academic-theme.state-incorrect .question-container,
+body.academic-theme.state-hard .question-container,
+body.academic-theme.state-correct .explanation-box,
+body.academic-theme.state-incorrect .explanation-box,
+body.academic-theme.state-hard .explanation-box,
+body.academic-theme.state-finished .question-container,
+body.academic-theme.state-finished .explanation-box {
+    border-color: var(--dynamic-accent) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    /* Keep shadows flat in academic */
+}
+
+body.academic-theme.state-correct #question-text,
+body.academic-theme.state-incorrect #question-text,
+body.academic-theme.state-hard #question-text,
+body.academic-theme.state-correct .explanation-box h4,
+body.academic-theme.state-incorrect .explanation-box h4,
+body.academic-theme.state-hard .explanation-box h4,
+body.academic-theme.state-finished #question-text,
+body.academic-theme.state-finished .explanation-box h4 {
+    text-shadow: none !important;
+}
+
+body.state-correct .option-btn:not(.correct):not(.wrong),
+body.state-incorrect .option-btn:not(.correct):not(.wrong),
+body.state-hard .option-btn:not(.correct):not(.wrong),
+body.state-finished .option-btn:not(.correct):not(.wrong) {
+    animation: none !important;
+    /* disable rgb hover border when answered */
+}
+
+/* Final State Purple Overrides */
+body.state-finished {
+    --dynamic-accent: #9b59b6;
+    --ac-accent: #6f42c1;
+}
+
+/* Particle Pulse override removed (now in JS) */
+
+/* =========================================
+   Theme Animations & Gamification Overlays
+   ========================================= */
+.theme-ripple {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #F8F9FA;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.theme-ripple.hidden {
+    display: none;
+}
+
+.theme-ripple.animate-to-academic {
+    animation: rippleAnim 0.8s ease-out forwards;
+}
+
+.theme-ripple.animate-to-rgb {
+    background: #050505;
+    animation: rippleAnim 0.8s ease-out forwards;
+}
+
+@keyframes rippleAnim {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translate(-50%, -50%) scale(400);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(400);
+        opacity: 0;
+    }
+}
+
+/* Center Overlay */
+.gamification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gamification-overlay.hidden {
+    display: none;
+}
+
+#gamification-content {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.giant-check {
+    font-size: 8rem;
+    color: #00ff00;
+    text-shadow: 0 0 30px #00ff00;
+}
+
+.giant-cross {
+    font-size: 8rem;
+    color: #ff0000;
+    text-shadow: 0 0 30px #ff0000;
+}
+
+.gamification-gif {
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Zero Score Landing */
+.zero-score-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s;
+}
+
+.zero-score-overlay.hidden {
+    display: none;
+}
+
+.zero-score-overlay.fade-out {
+    opacity: 0;
+}
+
+.patrick-gif {
+    width: 400px;
+    max-width: 90vw;
+    position: relative;
+    z-index: 10000;
+}
+
+.zero-text {
+    color: #ff0000;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000, 2px 2px 0px #000;
+    position: absolute;
+    top: 15%;
+    z-index: 10001;
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* Summary & Keys Highlights */
+.highlight-key {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+}
+
+body.academic-theme .highlight-key {
+    font-weight: bold;
+    background: linear-gradient(to right, var(--ac-accent), var(--ac-accent)) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Summary Content Specifics */
+.summary-panel p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.summary-hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+.tricks-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tricks-title {
+    color: var(--hard-color);
+}
+
+.tricks-list {
+    padding-right: 25px;
+    line-height: 1.8;
+}
+
+body.academic-theme .summary-hr {
+    border-top: 1px solid rgba(111, 66, 193, 0.2) !important;
+}
+
+body.academic-theme .tricks-box {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(111, 66, 193, 0.3) !important;
+}
+
+body.academic-theme .tricks-title {
+    color: #6f42c1 !important;
+    text-shadow: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #6f42c1 !important;
+    -webkit-text-stroke: 0 !important;
+}
+
+body.academic-theme .summary-panel {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Bulletproof Z-Index & Display Rules */
+body.academic-theme .hidden {
+    display: none !important;
+}
+
+.gamification-overlay {
+    pointer-events: none !important;
+}
+
+.theme-ripple {
+    pointer-events: none !important;
+    display: block;
+}
+
+.theme-ripple.hidden {
+    display: none !important;
+}
+
+/* RGB Mode: Purple text for result screen elements */
+body:not(.academic-theme).state-finished #final-score-text,
+body:not(.academic-theme).state-finished .wrong-answers-list p {
+    color: #9b59b6 !important;
+    text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6 !important;
+    animation: none !important;
+    /* Stop rainbow animation */
+}
+
+/* RGB Mode: Dynamic State Colors for Texts */
+body:not(.academic-theme).state-correct #question-text,
+body:not(.academic-theme).state-correct .explanation-box h4,
+body:not(.academic-theme).state-correct .opt-letter {
+    color: var(--success-color) !important;
+    -webkit-text-fill-color: var(--success-color) !important;
+    text-shadow: 0 0 10px var(--success-color) !important;
+    animation: none !important;
+}
+
+body:not(.academic-theme).state-incorrect #question-text,
+body:not(.academic-theme).state-incorrect .explanation-box h4,
+body:not(.academic-theme).state-incorrect .opt-letter {
+    color: var(--error-color) !important;
+    -webkit-text-fill-color: var(--error-color) !important;
+    text-shadow: 0 0 10px var(--error-color) !important;
+    animation: none !important;
+}
+
+body:not(.academic-theme).state-hard #question-text,
+body:not(.academic-theme).state-hard .explanation-box h4,
+body:not(.academic-theme).state-hard .opt-letter {
+    color: var(--hard-color) !important;
+    -webkit-text-fill-color: var(--hard-color) !important;
+    text-shadow: 0 0 10px var(--hard-color) !important;
+    animation: none !important;
+}
+
+/* Academic Mode: Specific Gradients for Cards */
+body.academic-theme .quiz-card {
+    background: linear-gradient(135deg, #152032, #507382) !important;
+    /* From user image */
+    color: #ffffff !important;
+    /* White text for contrast */
+}
+
+body.academic-theme .quiz-card .quiz-desc,
+body.academic-theme .quiz-card .topic-badge {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Ensure inner containers remain white */
+body.academic-theme .question-container,
+body.academic-theme .explanation-box,
+body.academic-theme .result-container {
+    background: #ffffff !important;
+}
+
+/* Ensure borders and texts sync with ac-accent */
+body.academic-theme .question-container,
+body.academic-theme .explanation-box,
+body.academic-theme .result-container,
+body.academic-theme .option-btn {
+    border-color: var(--ac-accent) !important;
+}
+
+body.academic-theme h2,
+body.academic-theme h3,
+body.academic-theme h4,
+body.academic-theme .opt-letter {
+    color: var(--ac-accent) !important;
+    -webkit-text-fill-color: var(--ac-accent) !important;
+}
+
+/* Specific Option Button Highlighting (Brighter) */
+body.academic-theme .option-btn.correct {
+    background-color: var(--ac-success) !important;
+    background: var(--ac-success) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: var(--ac-success) !important;
+}
+
+body.academic-theme .option-btn.wrong {
+    background-color: var(--ac-error) !important;
+    background: var(--ac-error) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: var(--ac-error) !important;
+}
+
+/* RGB Mode: Force Green/Red texts to override Hard (Orange) State */
+body:not(.academic-theme).state-hard.state-correct #question-text,
+body:not(.academic-theme).state-hard.state-correct .explanation-box h4,
+body:not(.academic-theme).state-hard.state-correct .opt-letter {
+    color: #00FF00 !important;
+    -webkit-text-fill-color: #00FF00 !important;
+    text-shadow: 0 0 10px #00FF00 !important;
+}
+
+body:not(.academic-theme).state-hard.state-incorrect #question-text,
+body:not(.academic-theme).state-hard.state-incorrect .explanation-box h4,
+body:not(.academic-theme).state-hard.state-incorrect .opt-letter {
+    color: #FF0000 !important;
+    -webkit-text-fill-color: #FF0000 !important;
+    text-shadow: 0 0 10px #FF0000 !important;
+}
+
+/* Protect Header Texts in Academic Mode from State Colors */
+body.academic-theme.state-finished .app-header .logo,
+body.academic-theme.state-finished .app-header .student-info,
+body.academic-theme.state-hard .app-header .logo,
+body.academic-theme.state-hard .app-header .student-info {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    /* Do not override the animation/gradient */
+}
+
+/* Academic Mode: Mock Exam Container to Blue */
+body.academic-theme .quiz-card-special {
+    border: 2px solid #0D6EFD !important;
+}
+
+body.academic-theme .quiz-card-special .topic-badge,
+body.academic-theme .quiz-card-special .quiz-desc {
+    color: #0D6EFD !important;
+    -webkit-text-fill-color: #0D6EFD !important;
+}
+
+/* RGB Mode: ONLY apply border-rainbow (NO floating) to Questions and Explanations */
+body:not(.academic-theme) .question-container,
+body:not(.academic-theme) .explanation-box {
+    animation: border-rainbow 12s linear infinite !important;
+    transform: none !important;
+}
+
+/* Academic Mode: Pure static (NO floating) for Questions and Explanations */
+body.academic-theme .question-container,
+body.academic-theme .explanation-box {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Ensure Main Menu Quiz Cards DO float in RGB mode */
+body:not(.academic-theme) .quiz-card {
+    animation: floating 4s infinite ease-in-out, border-rainbow 12s linear infinite !important;
+}
+
+/* RGB Mode: Force Green/Red to override Orange */
+body.state-hard.state-correct {
+    --dynamic-accent: #00FF00 !important;
+}
+
+body.state-hard.state-incorrect {
+    --dynamic-accent: #FF0000 !important;
+}
+
+/* Academic Mode: Force Green/Red to override Orange */
+body.academic-theme.state-hard.state-correct {
+    --ac-accent: var(--ac-success) !important;
+}
+
+body.academic-theme.state-hard.state-incorrect {
+    --ac-accent: var(--ac-error) !important;
+}
+
+/* Perfect Score Overlay (Aizen) */
+.perfect-score-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s;
+}
+
+.perfect-score-overlay.hidden {
+    display: none;
+}
+
+.perfect-score-overlay.fade-out {
+    opacity: 0;
+}
+
+.aizen-gif {
+    width: 400px;
+    max-width: 90vw;
+    position: relative;
+    z-index: 10000;
+}
+
+.perfect-text {
+    color: #9b59b6;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #9b59b6, 0 0 20px #8e44ad, 2px 2px 0px #000;
+    position: absolute;
+    top: 15%;
+    z-index: 10001;
+    animation: floating 3s infinite ease-in-out;
+    text-align: center;
+    direction: rtl;
+}
+
+/* Result Screen Aizen GIF */
+.result-aizen-gif {
+    display: block;
+    margin: 20px auto 0;
+    max-width: 300px;
+    width: 100%;
+    border: 3px solid #9b59b6;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #9b59b6, inset 0 0 10px #9b59b6;
+}
+
+/* 1A. Academic Mode: Blue Gradient Header (Immune to states) */
+body.academic-theme .app-header .logo,
+body.academic-theme .app-header .student-info,
+body.academic-theme.state-correct .app-header .logo,
+body.academic-theme.state-incorrect .app-header .logo,
+body.academic-theme.state-hard .app-header .logo,
+body.academic-theme.state-finished .app-header .logo,
+body.academic-theme.state-correct .app-header .student-info,
+body.academic-theme.state-incorrect .app-header .student-info,
+body.academic-theme.state-hard .app-header .student-info,
+body.academic-theme.state-finished .app-header .student-info {
+    background: linear-gradient(to right, #00C6FF, #0072FF) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* 1B. RGB Mode: Restore Animated Rainbow Header (Immune to states) */
+body:not(.academic-theme) .app-header .logo,
+body:not(.academic-theme).state-correct .app-header .logo,
+body:not(.academic-theme).state-incorrect .app-header .logo,
+body:not(.academic-theme).state-hard .app-header .logo,
+body:not(.academic-theme).state-finished .app-header .logo {
+    background: none !important;
+    -webkit-text-fill-color: currentcolor !important;
+    color: #ffffff;
+    text-shadow: none !important;
+    animation: text-rainbow 10s linear infinite !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+body:not(.academic-theme) .app-header .student-info,
+body:not(.academic-theme).state-correct .app-header .student-info,
+body:not(.academic-theme).state-incorrect .app-header .student-info,
+body:not(.academic-theme).state-hard .app-header .student-info,
+body:not(.academic-theme).state-finished .app-header .student-info {
+    background: none !important;
+    -webkit-text-fill-color: currentcolor !important;
+    color: #ffffff;
+    text-shadow: none !important;
+    animation: text-rainbow 10s linear infinite !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Enlarge Aizen GIF */
+.aizen-gif {
+    width: 600px !important;
+    max-width: 95vw !important;
+    border: 3px solid #9b59b6 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 15px #9b59b6, inset 0 0 10px #9b59b6 !important;
+}
+
+/* Force Perfect Text to Purple */
+.perfect-text {
+    color: #b82bf2 !important;
+    /* Vibrant Purple */
+    -webkit-text-fill-color: #b82bf2 !important;
+    background: none !important;
+    /* Disable any inherited gradients */
+    text-shadow: 0 0 10px #b82bf2, 0 0 20px #8e44ad, 2px 2px 0px #000 !important;
+}
+
+/* RGB Mode: Mock Exam Container explicitly Orange */
+body:not(.academic-theme) .quiz-card-special {
+    border-color: #FFA500 !important;
+    box-shadow: 0 0 15px #FFA500, inset 0 0 10px #FFA500 !important;
+    animation: floating 4s infinite ease-in-out, pulse-orange 3s infinite alternate !important;
+}
+
+body:not(.academic-theme) .quiz-card-special .topic-badge,
+body:not(.academic-theme) .quiz-card-special .quiz-desc {
+    color: #FF4500 !important;
+    -webkit-text-fill-color: #FF4500 !important;
+    background: none !important;
+    text-shadow: 0 0 8px #ff4500 !important;
+}
+
+/* RGB Mode: Staggered Rainbow Animations for Quiz Cards */
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(1),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(1) .btn-glow {
+    animation-delay: 0s !important;
+}
+
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(2),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(2) .btn-glow {
+    animation-delay: -2s !important;
+}
+
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(3),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(3) .btn-glow {
+    animation-delay: -4s !important;
+}
+
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(4),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(4) .btn-glow {
+    animation-delay: -6s !important;
+}
+
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(5),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(5) .btn-glow {
+    animation-delay: -8s !important;
+}
+
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(6),
+body:not(.academic-theme) .quizzes-grid .quiz-card:nth-child(6) .btn-glow {
+    animation-delay: -10s !important;
+}
+
+/* Force "عاش" text to Purple on the Finished Screen */
+body.academic-theme.state-finished .wrong-answers-list p {
+    color: #6f42c1 !important;
+    /* Academic Purple */
+    -webkit-text-fill-color: #6f42c1 !important;
+    background: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+body:not(.academic-theme).state-finished .wrong-answers-list p {
+    color: #9b59b6 !important;
+    /* RGB Purple */
+    -webkit-text-fill-color: #9b59b6 !important;
+    background: none !important;
+    text-shadow: 0 0 10px #9b59b6 !important;
+    animation: none !important;
+}
+
+/* Academic Mode: Staggered Floating Delays for Cards */
+body.academic-theme .quizzes-grid .quiz-card {
+    animation: floating 4s infinite ease-in-out !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(1) {
+    animation-delay: 0s !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(2) {
+    animation-delay: -0.6s !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(3) {
+    animation-delay: -1.2s !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(4) {
+    animation-delay: -1.8s !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(5) {
+    animation-delay: -2.4s !important;
+}
+
+body.academic-theme .quizzes-grid .quiz-card:nth-child(6) {
+    animation-delay: -3.0s !important;
+}
+
+/* RGB Mode: Option Letters Rainbow */
+body:not(.academic-theme) .opt-letter {
+    animation: text-rainbow 10s linear infinite !important;
+}
+
+/* RGB Mode: App Header Border Rainbow */
+body:not(.academic-theme) .app-header {
+    border-image: none !important;
+    animation: border-rainbow 12s linear infinite !important;
+}
+
+/* =========================================
+   Summary Page Exact Purple Overrides
+   ========================================= */
+
+/* 1. Change ONLY the blue borders surrounding the summary cards and panels to purple */
+body.academic-theme #summary-categories-container .quiz-card,
+body.academic-theme #summary-content-container .summary-panel {
+    border-color: #6f42c1 !important;
+}
+
+/* 2. Change ONLY the blue texts inside the summary panels to purple */
+body.academic-theme #summary-categories-container .quiz-card .quiz-desc,
+body.academic-theme #summary-content-container .summary-panel h3,
+body.academic-theme #summary-content-container .summary-panel .highlight-key {
+    background: linear-gradient(to right, #6f42c1, #6f42c1) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* =========================================
+   AI Disclaimer Box Styles
+   ========================================= */
+
+/* Default: RGB Mode (Neon) */
+.ai-disclaimer-box {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0 auto 25px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 0 15px var(--dynamic-accent), inset 0 0 10px var(--dynamic-accent);
+    border: 2px solid var(--dynamic-accent);
+    text-shadow: 0 0 5px var(--dynamic-accent);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    animation: neon-pulse 2s infinite alternate;
+}
+
+/* Academic Mode */
+body.academic-theme .ai-disclaimer-box {
+    background: linear-gradient(135deg, #0d6efd, #6f42c1);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(111, 66, 193, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    animation: none;
+}
+
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 10px var(--dynamic-accent), inset 0 0 5px var(--dynamic-accent);
+    }
+    100% {
+        box-shadow: 0 0 20px var(--dynamic-accent), inset 0 0 15px var(--dynamic-accent);
+    }
+}
+
+/* =========================================
+   Performance & GPU Acceleration Overrides
+   ========================================= */
+.screen, .quiz-card, .btn-glow, .rgb-animated-btn, .floating-card, #particles-js {
+    transform: translateZ(0); /* Hardware acceleration */
+}
+
+.screen {
+    will-change: opacity, transform;
+}
+
+.quiz-card {
+    will-change: transform, box-shadow;
+}
+
+.btn-glow {
+    will-change: transform, box-shadow, text-shadow;
+}
+
+.rgb-animated-btn {
+    will-change: background-position;
+}
+
+.floating-card {
+    will-change: transform;
+}
+
+#particles-js {
+    will-change: opacity;
 }

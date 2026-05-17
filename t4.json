@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "According to the Three-Schema Architecture framework, what are its two primary objectives?",
+        "options": [
+            "To maximize physical data redundancy and automatically compress internal files",
+            "To automatically translate relational algebra into physical storage blocks",
+            "To force all user groups to interact with a single, unified external view",
+            "To support Program-Data Independence and Multiple User Views",
+            "To eliminate the need for a Conceptual Schema in legacy databases"
+        ],
+        "answer": "To support Program-Data Independence and Multiple User Views",
+        "explanation": "حسب النص البرمجي المقدم، الهدفان الأساسيان لمعمارية الثلاث مخططات هما دعم 'استقلالية البرامج عن البيانات' (Program-Data Independence) لعزل التطبيقات عن التغييرات الهيكلية، ودعم 'وجهات نظر متعددة للمستخدمين' (Multiple User Views) ليتمكن كل مستخدم من رؤية الجزء المخصص له فقط. الخيارات الأخرى هي ادعاءات تقنية لا أساس لها في هذا الإطار.\n\nAccording to the provided framework, the primary objectives of the Three-Schema Architecture are to support Program-Data Independence (insulating applications from structural changes) and Multiple User Views (allowing different groups to see specific slices of the database). The other options misrepresent the fundamental purpose of this architecture.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "Which level of the Three-Schema Architecture is strictly responsible for representing individual, customized perspectives of the data while completely hiding the remaining parts of the database?",
+        "options": [
+            "The External Level",
+            "The Conceptual Level",
+            "The Internal Level",
+            "The Physical Storage Level",
+            "The Global Community Level"
+        ],
+        "answer": "The External Level",
+        "explanation": "المستوى الخارجي (External Level) هو المستوى الوحيد المصمم لتقديم وجهات نظر مخصصة (Customized perspectives) للمستخدمين، حيث يخفي التعقيدات المنطقية والفيزيائية وباقي أجزاء قاعدة البيانات التي لا تهم المستخدم. المستوى المفاهيمي يصف القاعدة بأكملها، والمستوى الداخلي يصف التخزين.\n\nThe External Level (External Schema / User Views) describes the part of the database that a particular user group is interested in. It represents individual customized perspectives and intentionally hides the rest of the database along with the underlying logical and physical complexities.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "What is the primary role of the Conceptual Schema within the Three-Schema Architecture?",
+        "options": [
+            "It dictates the file structures, data compression, and disk space allocation",
+            "It isolates the operating system from the database management system",
+            "It represents the individual views specifically tailored for end-user applications",
+            "It creates physical indexes to speed up data retrieval operations",
+            "It describes the overall logical structure of the entire database for the community of users"
+        ],
+        "answer": "It describes the overall logical structure of the entire database for the community of users",
+        "explanation": "المخطط المفاهيمي (Conceptual Schema) وظيفته الحصرية هي وصف الهيكل المنطقي الشامل لقاعدة البيانات لجميع المستخدمين (المجتمع). وهو يحدد الكيانات، السمات، العلاقات، والقيود، ويخفي تماماً تفاصيل التخزين الفيزيائي التي تُترك للمستوى الداخلي.\n\nThe primary role of the Conceptual Schema is to describe the overall logical structure of the entire database for the community of users. It focuses on entities, attributes, relationships, and constraints, actively hiding any physical storage details.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "Which level of the Three-Schema Architecture specifies how data is actually stored on computer storage media, including indexing mechanisms and access paths?",
+        "options": [
+            "The Conceptual Level",
+            "The Internal Level",
+            "The External Level",
+            "The User View Level",
+            "The Logical Level"
+        ],
+        "answer": "The Internal Level",
+        "explanation": "المستوى الداخلي (Internal Level) هو النموذج الفيزيائي منخفض المستوى الذي يتعامل مع الأجهزة، مسارات الوصول (Access paths)، ضغط البيانات، والفهارس (Indexing). باقي المستويات (الخارجي والمفاهيمي) تتعامل مع المنطق والعرض وتتجاهل التخزين الفعلي تماماً.\n\nThe Internal Level (Internal Schema) is the low-level data model that explicitly describes the physical storage structure. It specifies how data is actually stored on computer media, including file structures, data compression, disk space allocation, and indexing mechanisms.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "A Database Administrator adds a new entity type and rearranges data relationships in the global structure of the database. However, the existing user applications remain completely unaffected. This is a direct application of:",
+        "options": [
+            "Physical Data Independence",
+            "Entity Integrity",
+            "Logical Data Independence",
+            "Referential Integrity",
+            "Domain Constraint Validation"
+        ],
+        "answer": "Logical Data Independence",
+        "explanation": "القدرة على تغيير المخطط المفاهيمي (مثل إضافة كيان جديد أو تعديل علاقة) دون أن تضطر لتغيير المخططات الخارجية أو برامج التطبيقات تُعرف حصراً بـ 'استقلالية البيانات المنطقية' (Logical Data Independence). الاستقلالية الفيزيائية تتعلق بتغيير الأقراص والفهارس، وليس الهيكل المنطقي.\n\nThis is the exact definition of Logical Data Independence: the capacity to change the conceptual schema (modifying the global logical structure, adding entities, or changing relationships) without having to change the external schemas or the existing application programs.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 6,
+        "question": "Which of the following actions strictly demonstrates 'Physical Data Independence'?",
+        "options": [
+            "Adding a new attribute to an existing logical table",
+            "Creating new indexes to speed up retrieval or moving data to a different disk without rewriting application programs",
+            "Changing the mapping between the external views and the conceptual schema",
+            "Providing customized perspectives of data for different user groups",
+            "Enforcing a new referential integrity constraint between two entities"
+        ],
+        "answer": "Creating new indexes to speed up retrieval or moving data to a different disk without rewriting application programs",
+        "explanation": "استقلالية البيانات الفيزيائية (Physical Data Independence) تعني تعديل الجوانب الفيزيائية في المستوى الداخلي (Internal Schema)، مثل إنشاء فهارس جديدة أو نقل البيانات إلى قرص تخزين مختلف، مع بقاء المخطط المفاهيمي وتطبيقات المستخدم تعمل دون أي حاجة لإعادة كتابة الكود.\n\nPhysical Data Independence is the capacity to change the physical storage structure or internal schema without affecting the conceptual schema or application programs. Actions like creating new indexes, changing access paths, or moving data to a different storage media perfectly demonstrate this concept.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 7,
+        "question": "In the context of the Relational Model introduced by Edgar F. Codd, what does the term 'Tuple' strictly represent?",
+        "options": [
+            "The set of allowable values for a column",
+            "A rule preventing duplicate data entry",
+            "The total number of rows in a relation",
+            "A column containing specific attribute values",
+            "A single row in a table representing an entity instance"
+        ],
+        "answer": "A single row in a table representing an entity instance",
+        "explanation": "في مصطلحات النموذج العلائقي الرياضية، كلمة 'Tuple' تشير بشكل قاطع إلى 'الصف' (Row) الواحد داخل العلاقة (الجدول). هذا الصف يمثل حالة واحدة فعلية (Instance) للكيان. الخيارات الأخرى تصف المجال (Domain)، العمود (Attribute)، أو العددية (Cardinality).\n\nIn Codd's Relational Model, a 'Tuple' strictly refers to a single row within a relation (table). It contains a set of related attribute values that collectively represent a specific, single instance of an entity.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "Which of the following is a fundamental mathematical property of a pure relation in the Relational Data Model?",
+        "options": [
+            "Duplicate identical rows are permitted as long as they have different primary keys",
+            "A single intersection of a row and column can hold an array of multiple values",
+            "It requires data to be structured hierarchically with a strict single parent",
+            "The order of rows and columns is mathematically irrelevant",
+            "Rows must be physically sorted by the primary key at all times"
+        ],
+        "answer": "The order of rows and columns is mathematically irrelevant",
+        "explanation": "النموذج العلائقي مبني على نظرية المجموعات (Set Theory). في المجموعات الرياضية، الترتيب لا يهم. لذلك، ترتيب الصفوف أو الأعمدة في الجدول العلائقي يعتبر غير مهم رياضياً. كما أن الجدول لا يقبل الصفوف المكررة إطلاقاً، ولا يقبل القيم المتعددة في خلية واحدة (يجب أن تكون ذرية).\n\nA core mathematical property of a relation in the Relational Data Model (based on set theory) is that sets are unordered. Therefore, the order of tuples (rows) and the order of attributes (columns) are mathematically irrelevant. Furthermore, duplicate tuples and multi-valued attributes are strictly prohibited.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 9,
+        "question": "What does the term 'Domain' mean when defining attributes in a relational database?",
+        "options": [
+            "The physical disk space allocated for a specific column",
+            "A unique identifier automatically assigned to a new tuple",
+            "The total number of columns present in a specific relation",
+            "The set of allowable, valid values for one or more attributes",
+            "The mapping mechanism between the internal and conceptual schemas"
+        ],
+        "answer": "The set of allowable, valid values for one or more attributes",
+        "explanation": "المجال (Domain) هو النطاق المحدد أو مجموعة القيم المسموح بها والمقبولة لسمة معينة. على سبيل المثال، مجال سمة 'الراتب' يجب أن يكون أرقاماً، ومجال 'الجنس' يجب أن يكون قيماً محددة مسبقاً. أي قيمة خارج هذا المجال تُعتبر غير صالحة.\n\nIn relational database design, a 'Domain' explicitly defines the set of all allowable and valid values for a particular attribute. It dictates the logical data type, format, and acceptable range of data that can be inserted into that specific column.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "What is the defining mathematical characteristic that distinguishes a 'Candidate Key' from a general 'Superkey'?",
+        "options": [
+            "A Candidate Key can contain NULL values, whereas a Superkey cannot",
+            "A Candidate Key is physically indexed, while a Superkey is merely a logical concept",
+            "A Candidate Key is a minimal superkey, meaning it does not contain any unnecessary attributes for unique identification",
+            "A Candidate Key must always consist of exactly one single attribute",
+            "A Superkey is used exclusively at the internal level, while a Candidate Key is external"
+        ],
+        "answer": "A Candidate Key is a minimal superkey, meaning it does not contain any unnecessary attributes for unique identification",
+        "explanation": "الفرق التقني الصارم هو خاصية 'الأصغرية' (Minimality). المفتاح الفائق (Superkey) يحدد الصف فريداً ولكنه قد يحتوي على سمات إضافية لا حاجة لها. المفتاح المرشح (Candidate Key) هو مفتاح فائق أصغري؛ أي إذا حذفت منه سمة واحدة، يفقد قدرته على تمييز الصف.\n\nThe strict mathematical distinction is minimality. A Superkey uniquely identifies a tuple but may contain redundant attributes. A Candidate Key is defined as a 'minimal superkey'; it contains only the absolute minimum set of attributes necessary to uniquely identify a tuple, with no unnecessary extras.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 11,
+        "question": "Which specific integrity constraint explicitly ensures that no component of a Primary Key attribute can contain a NULL value?",
+        "options": [
+            "Domain Constraint",
+            "Referential Integrity",
+            "Key Independence",
+            "Entity Integrity",
+            "Structural Integrity"
+        ],
+        "answer": "Entity Integrity",
+        "explanation": "قاعدة 'سلامة الكيان' (Entity Integrity) هي قاعدة صارمة تنص على أنه لا يمكن لأي جزء من المفتاح الأساسي أن يكون فارغاً (NULL). لأن المفتاح الأساسي يُستخدم لتعريف وتمييز السجل بشكل فريد، ووجود قيمة 'فارغة' (أي غير معروفة) يجعله عاجزاً عن أداء وظيفته.\n\nThe Entity Integrity constraint is a strict rule stating that no attribute participating in the primary key of a relation can contain a NULL value. Since primary keys are tasked with uniquely identifying tuples, a NULL (unknown) value would inherently prevent unique identification.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "Which structural rule dictates that a Foreign Key must either be completely NULL or accurately match an existing Primary Key value in the referenced parent table?",
+        "options": [
+            "Entity Integrity",
+            "Referential Integrity",
+            "Tuple Minimality",
+            "Schema Independence",
+            "Domain Integrity"
+        ],
+        "answer": "Referential Integrity",
+        "explanation": "النزاهة المرجعية (Referential Integrity) هي القاعدة التي تحكم العلاقات بين الجداول (عن طريق المفاتيح الأجنبية). وتضمن أنك لا تستطيع الإشارة إلى سجل غير موجود. يجب أن تتطابق قيمة المفتاح الأجنبي مع مفتاح أساسي حقيقي في الجدول الآخر، أو تُترك فارغة إذا لم يكن هناك ارتباط.\n\nReferential Integrity is the vital constraint governing relationships between tables. It guarantees that any Foreign Key value in a dependent table must strictly point to a valid, existing Primary Key value in the referenced parent table, or the Foreign Key must be entirely NULL.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "In the Three-Schema Architecture, who is responsible for defining the Conceptual Schema using Data Definition Language (DDL)?",
+        "options": [
+            "The end-users formulating External Schemas",
+            "The Database Administrator (DBA) and database designers",
+            "The operating system file manager",
+            "The application programmers writing the user views",
+            "The network engineers handling physical storage"
+        ],
+        "answer": "The Database Administrator (DBA) and database designers",
+        "explanation": "وفقاً للتعريفات الهيكلية، المخطط المفاهيمي (الذي يصف الهيكل المنطقي لقاعدة البيانات بأكملها من كيانات وسمات وقيود) يتم تصميمه وتعريفه باستخدام لغة DDL حصرياً من قبل مدير قاعدة البيانات (DBA) ومصممي قواعد البيانات، وليس من قبل المستخدمين أو أنظمة التشغيل.\n\nAccording to the framework details, the Conceptual Schema (which defines all entities, attributes, relationships, and constraints) is defined using DDL specifically by the Database Administrator (DBA) and professional database designers, as it requires a global understanding of the system.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "What determines the 'Degree' (also known as arity) of a relation in relational schema design?",
+        "options": [
+            "The total number of rows (tuples) in the relation",
+            "The total number of columns (attributes) in the relation",
+            "The minimum number of characters allowed in a domain",
+            "The total amount of physical disk space allocated to the table",
+            "The number of candidate keys identified in the schema"
+        ],
+        "answer": "The total number of columns (attributes) in the relation",
+        "explanation": "في تصميم المخططات العلائقية، يُطلق مصطلح 'درجة العلاقة' (Degree أو Arity) على إجمالي عدد الأعمدة (السمات) التي يتكون منها الجدول. بينما يطلق مصطلح (Cardinality) على عدد الصفوف.\n\nIn relational schema terminology, the 'Degree' (or arity) of a relation is strictly defined as the total number of columns (attributes) it contains. Conversely, the total number of rows (tuples) is referred to as the relation's Cardinality.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "If a column in the 'ORDERS' table is used to securely connect to the Primary Key of the 'CUSTOMERS' table to establish a relationship, what is the formal classification of that column in the 'ORDERS' table?",
+        "options": [
+            "Candidate Key",
+            "Superkey",
+            "Primary Key",
+            "Discriminator Key",
+            "Foreign Key"
+        ],
+        "answer": "Foreign Key",
+        "explanation": "المفتاح الأجنبي (Foreign Key) هو السمة (أو مجموعة السمات) في جدول معين (مثل ORDERS) التي ترتبط وتعتمد على المفتاح الأساسي في جدول آخر (مثل CUSTOMERS). هذه هي الآلية الوحيدة في النموذج العلائقي لإنشاء علاقات فعلية بين الجداول المنفصلة.\n\nA Foreign Key is explicitly defined as an attribute or set of attributes in one relation (ORDERS) that references the Primary Key of another relation (CUSTOMERS). This is the structural mechanism required in the relational model to establish valid relationships between entities.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "When an application program accesses a specific, restricted view of the database rather than the entire structure, which level of the three-schema architecture is it directly interacting with?",
+        "options": [
+            "The Internal Level",
+            "The Conceptual Level",
+            "The External Level",
+            "The Physical Hardware Level",
+            "The Network Storage Level"
+        ],
+        "answer": "The External Level",
+        "explanation": "المستوى الخارجي (External Level) هو المستوى الذي تتفاعل معه البرامج التطبيقية مباشرة، حيث يوفر لها مخططات فرعية (Views) مخصصة تلبي احتياجاتها فقط وتخفي باقي التفاصيل المنطقية والفيزيائية للقاعدة.\n\nThe External Level is the layer that application programs interact with directly. It provides customized subschemas (views) tailored to specific user groups, strictly hiding the rest of the logical and physical database complexities.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "If a new department is established in a company and requires access to a specialized, limited subset of the existing database, what must the Database Administrator (DBA) create according to the three-schema framework?",
+        "options": [
+            "A new Internal Schema",
+            "A new Conceptual Schema",
+            "A new Physical Data Path",
+            "A new External Schema (User View)",
+            "A new Primary Key Constraint"
+        ],
+        "answer": "A new External Schema (User View)",
+        "explanation": "للسماح لقسم جديد برؤية جزء محدد فقط من قاعدة البيانات، يجب على مدير القاعدة (DBA) إنشاء 'مخطط خارجي' (External Schema أو View) جديد خاص بهم، دون المساس بالمخطط المفاهيمي العام للشركة.\n\nTo allow a new department to access a specific, limited subset of the data, the DBA must create a new External Schema (User View). This provides the required customized perspective without altering the global Conceptual Schema.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "Under the rules of Referential Integrity in the relational model, which of the following is a permissible state for a Foreign Key?",
+        "options": [
+            "It must always be unique across all rows in the table",
+            "It can contain a completely NULL value if the relationship is optional",
+            "It can contain a value that does not exist in the referenced primary key",
+            "It must match a derived attribute in the parent table",
+            "It cannot be used as part of a composite primary key under any circumstances"
+        ],
+        "answer": "It can contain a completely NULL value if the relationship is optional",
+        "explanation": "قاعدة النزاهة المرجعية (Referential Integrity) تشترط أن قيمة المفتاح الأجنبي يجب أن تتطابق مع مفتاح أساسي موجود، أو أن تكون 'فارغة' (NULL) إذا لم يكن السجل مرتبطاً بأي كيان آخر (علاقة اختيارية)، بشرط ألا يكون المفتاح الأجنبي جزءاً من المفتاح الأساسي لجدوله.\n\nUnder Referential Integrity rules, a Foreign Key must either perfectly match an existing Primary Key value in the referenced table, or it can be completely NULL (if the relationship is optional and the foreign key is not part of the table's own primary key).",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "Constraints that cannot be expressed directly by the structural relational data model (such as 'A manager’s salary must be higher than their employees') and must be enforced by application programs or triggers are known as:",
+        "options": [
+            "Implicit structural constraints",
+            "Entity integrity constraints",
+            "Semantic constraints (Business rules)",
+            "Domain limitations",
+            "Schema format constraints"
+        ],
+        "answer": "Semantic constraints (Business rules)",
+        "explanation": "القيود الدلالية أو قواعد العمل (Semantic constraints / Business rules) هي شروط معقدة نابعة من سياسة المؤسسة لا يمكن تمثيلها بمجرد تحديد مفتاح أساسي أو نوع بيانات، بل تتطلب برمجتها داخل التطبيق أو كـ Triggers في قاعدة البيانات.\n\nSemantic constraints (also known as Business rules or application-based constraints) are complex organizational rules that cannot be inherently expressed by standard relational model structures (like primary keys or domains). They must be enforced through application logic or database triggers.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 20,
+        "question": "In the process of ER-to-Relational mapping, what is the most common and optimal approach to map a One-to-One (1:1) relationship between two strong entities?",
+        "options": [
+            "Merge both entities into a single column array",
+            "Create a new third table containing both primary keys",
+            "Choose one of the tables and include the primary key of the other as a foreign key",
+            "Create a multivalued attribute in both tables",
+            "Leave them unlinked and enforce the relationship manually via application code"
+        ],
+        "answer": "Choose one of the tables and include the primary key of the other as a foreign key",
+        "explanation": "في تحويل علاقة 1:1، الطريقة الأفضل (طريقة المفتاح الأجنبي) هي اختيار أحد الجدولين (يفضل الجدول الذي يمتلك مشاركة كلية Total participation) ووضع المفتاح الأساسي للجدول الآخر داخله كـ 'مفتاح أجنبي'.\n\nWhen mapping a 1:1 relationship, the most common and optimal approach is the Foreign Key approach. You choose one of the relations (preferably the one with total participation) and include the primary key of the other relation as a foreign key inside it.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 21,
+        "question": "When mapping a One-to-Many (1:N) relationship from an ER diagram into a relational schema, where must the foreign key be structurally placed?",
+        "options": [
+            "In a newly created third associative table",
+            "In the relation on the '1' (One) side of the relationship",
+            "In the relation on the 'N' (Many) side of the relationship",
+            "It is placed as a composite attribute on both sides",
+            "It is replaced by a derived attribute in the master table"
+        ],
+        "answer": "In the relation on the 'N' (Many) side of the relationship",
+        "explanation": "القاعدة الذهبية في تحويل علاقة 1:N هي أخذ المفتاح الأساسي من جهة الـ 'واحد' ووضعه كـ 'مفتاح أجنبي' في الجدول الموجود في جهة الـ 'متعدد' (N). وضع المفتاح في جهة الواحد سيؤدي إلى تكرار البيانات أو الحاجة لقيم متعددة وهو أمر مرفوض.\n\nThe golden rule for mapping a 1:N relationship is to take the primary key from the '1' (One) side and place it as a foreign key inside the table on the 'N' (Many) side. Placing it on the '1' side would violate the atomic value rule by requiring multiple values in a single cell.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "How MUST a Many-to-Many (M:N) relationship be resolved when transforming an ER model into a strictly relational database schema?",
+        "options": [
+            "By placing the primary key of the first table into the second table",
+            "By creating a new relationship table (associative entity) containing the primary keys of both participating tables as foreign keys",
+            "By placing the primary key of the second table into the first table",
+            "By merging both tables into one massive unnormalized table structure",
+            "By dropping the relationship and relying on independent semantic constraints"
+        ],
+        "answer": "By creating a new relationship table (associative entity) containing the primary keys of both participating tables as foreign keys",
+        "explanation": "قواعد البيانات العلائقية لا تدعم علاقات (متعدد إلى متعدد) بشكل مباشر. يجب 'كسر' هذه العلاقة عن طريق إنشاء جدول ثالث جديد (يسمى جدول الوصل أو Associative table) يحتوي على المفاتيح الأساسية للجدولين كـ 'مفاتيح أجنبية'، والتي تشكل معاً المفتاح الأساسي للجدول الجديد.\n\nRelational databases cannot natively handle M:N relationships. They MUST be resolved by creating a new, third table (an associative entity or junction table). This new table contains the primary keys from both original tables as foreign keys, which together typically form the composite primary key of the new table.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 23,
+        "question": "During schema mapping, how is a Multivalued Attribute (such as a person having multiple 'Phone Numbers') correctly and structurally represented in the relational model?",
+        "options": [
+            "By creating a single column with comma-separated values",
+            "By creating multiple hardcoded columns in the same table (e.g., Phone1, Phone2, Phone3)",
+            "By creating a new separate table containing the attribute value and the primary key of the parent entity",
+            "By ignoring the attribute and handling it purely in the external schema view",
+            "By converting it into a derived attribute"
+        ],
+        "answer": "By creating a new separate table containing the attribute value and the primary key of the parent entity",
+        "explanation": "النموذج العلائقي يرفض الخلايا التي تحتوي أكثر من قيمة. لذلك، السمة المتعددة القيم تُحل بإنشاء 'جدول جديد مستقل'. هذا الجدول يحتوي على عمود لقيمة السمة، وعمود للمفتاح الأجنبي الذي يربطها بالجدول الأصلي.\n\nThe relational model requires atomic values (First Normal Form). Therefore, a Multivalued Attribute is strictly mapped by creating a completely new, separate table. This table contains a column for the attribute's values and a foreign key referencing the primary key of the original parent table.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 24,
+        "question": "When mapping a Composite Attribute (such as an 'Address' comprising Street, City, and Zip Code) to a relational table, the standard structural procedure is to:",
+        "options": [
+            "Create a new separate table for the Address with a foreign key",
+            "Store the entire address as a single unstructured string in one column",
+            "Include only the simple component attributes as separate individual columns in the main table",
+            "Ignore the sub-attributes entirely and only store the primary entity name",
+            "Convert the composite attribute into a foreign key referencing a generic dictionary"
+        ],
+        "answer": "Include only the simple component attributes as separate individual columns in the main table",
+        "explanation": "السمة المركبة (مثل العنوان) يتم التعامل معها عن طريق تجاهل السمة الرئيسية (العنوان)، وإنشاء أعمدة مستقلة لكل مكون بسيط من مكوناتها (شارع، مدينة، رمز بريدي) داخل نفس الجدول لتسهيل البحث.\n\nWhen mapping a Composite Attribute, the standard procedure is to 'flatten' it. You ignore the main composite attribute's name and directly include its simple component attributes (Street, City, Zip Code) as separate, individual columns within the main relational table.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "How is the Primary Key of a Weak Entity logically formed when mapped into a relational schema?",
+        "options": [
+            "By generating a random surrogate key automatically at the internal level",
+            "By combining the primary key of the identifying strong entity with the weak entity's partial key (discriminator)",
+            "By strictly using only its own partial key without any external references",
+            "By using the foreign key of a completely unrelated conceptual table",
+            "By defining it as a completely NULL value to indicate its weakness"
+        ],
+        "answer": "By combining the primary key of the identifying strong entity with the weak entity's partial key (discriminator)",
+        "explanation": "الكيان الضعيف لا يمتلك مفتاحاً أساسياً كاملاً. عند تحويله إلى جدول، يكون مفتاحه الأساسي عبارة عن مفتاح مركب (Composite Key) يتكون من: المفتاح الأجنبي القادم من الكيان القوي المرتبط به، مضافاً إليه المفتاح الجزئي (المميز) الخاص بالكيان الضعيف.\n\nA weak entity inherently lacks a full primary key. When mapped into a relational schema, its primary key is structurally formed as a composite key: combining the foreign key (which is the primary key of its identifying strong entity) with the weak entity's own partial key (discriminator).",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 26,
+        "question": "A formal 'Relational Database Schema' is mathematically and logically defined as:",
+        "options": [
+            "A set of relation states captured at a given moment in time",
+            "A set of relation schemas and a set of integrity constraints",
+            "A physical file system layout explicitly defined on a hard disk",
+            "A conceptual visual diagram using rectangles, ellipses, and diamonds",
+            "A collection of unstructured text files linked by external pointers"
+        ],
+        "answer": "A set of relation schemas and a set of integrity constraints",
+        "explanation": "المخطط العلائقي لقاعدة البيانات (Relational Database Schema) لا يتكون فقط من الجداول وأسمائها. التعريف الرياضي الصارم له هو: مجموعة من مخططات العلاقات (وصف الجداول والأعمدة) بالإضافة إلى مجموعة من قيود السلامة (Integrity Constraints) التي تحكم هذه البيانات.\n\nFormally, a 'Relational Database Schema' is not just a list of tables. It is mathematically defined as a set of relation schemas (the logical definitions of the tables and their attributes) coupled with a set of integrity constraints (rules like primary/foreign keys) that govern the entire database.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "If a column named 'Employee_Status' is structurally restricted to only contain the specific text values 'Active', 'On Leave', or 'Terminated', this restriction is a direct implementation of a:",
+        "options": [
+            "Key constraint",
+            "Referential constraint",
+            "Domain constraint",
+            "Derived mathematical rule",
+            "Physical storage anomaly"
+        ],
+        "answer": "Domain constraint",
+        "explanation": "قيد المجال (Domain constraint) هو القيد الذي يحدد نوع البيانات المسموح إدخالها في العمود والنطاق أو القيم المحددة المقبولة (مثل حصر الحالة بثلاث خيارات فقط). أي قيمة خارج هذا النطاق تُرفض من قبل النظام.\n\nA Domain constraint specifies the allowable and valid set of values for an attribute. Restricting a column to only accept a specific list of strings ('Active', 'On Leave', 'Terminated') is a direct implementation of a domain constraint, ensuring data accuracy.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "In a relational schema, an 'Employee' table has an 'Emp_ID' primary key and a 'Manager_ID' foreign key that directly references the 'Emp_ID' column within the exact same table. What type of relationship does this map?",
+        "options": [
+            "A many-to-many binary relationship",
+            "A weak identifying relationship",
+            "A recursive (unary) relationship",
+            "A composite multivalued relationship",
+            "A three-schema internal relationship"
+        ],
+        "answer": "A recursive (unary) relationship",
+        "explanation": "عندما يشير المفتاح الأجنبي إلى المفتاح الأساسي في نفس الجدول (مثل الموظف مديره موظف آخر في نفس الجدول)، فإن هذا يمثل علاقة العودية أو العلاقة الأحادية (Recursive/Unary Relationship) حيث يرتبط الكيان بنفسه.\n\nWhen a foreign key references the primary key of the exact same table (e.g., an employee's manager is also an employee found in the same table), it structurally maps a recursive (or unary) relationship, where an entity set is related to itself.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "If a DBA changes the internal file organization of a heavily accessed table from sequential to a B-tree indexed structure to drastically improve query speed, which specific concept guarantees that the existing SQL application queries do not need to be rewritten?",
+        "options": [
+            "Logical Data Independence",
+            "Conceptual Abstraction",
+            "Referential Independence",
+            "Physical Data Independence",
+            "Entity Mapping Integrity"
+        ],
+        "answer": "Physical Data Independence",
+        "explanation": "الاستقلالية الفيزيائية للبيانات (Physical Data Independence) هي القاعدة التي تنص على أن تغيير كيفية التخزين أو الفهرسة (لتسريع الأداء) في المستوى الداخلي يجب ألا يؤثر أبداً على التطبيقات والمخططات المفاهيمية.\n\nPhysical Data Independence explicitly guarantees that changes made to the internal schema or physical storage structures (like changing file organizations or adding B-tree indexes to improve performance) will not require any changes or rewrites to the conceptual schema or the external application queries.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "When mapping an Identifying Relationship (the relationship connecting a strong entity to its dependent weak entity), what is the mandatory structural action required in the relational model?",
+        "options": [
+            "Create a new associative junction table for the identifying relationship",
+            "Ensure the primary key of the strong entity is included as a foreign key in the weak entity's table",
+            "Convert the weak entity completely into a derived attribute of the strong entity",
+            "Merge the strong and weak entities into a single unnormalized tuple",
+            "Ignore the relationship as the relational model cannot handle weak entities"
+        ],
+        "answer": "Ensure the primary key of the strong entity is included as a foreign key in the weak entity's table",
+        "explanation": "لتحويل علاقة التعريف (التي تربط كياناً ضعيفاً بقوي)، لا ننشئ جدولاً جديداً. بل نأخذ المفتاح الأساسي للكيان القوي ونضعه كـ 'مفتاح أجنبي' داخل جدول الكيان الضعيف، لكي يتمكن الكيان الضعيف من تكوين مفتاحه الأساسي وتحديد سجلاته.\n\nTo map an identifying relationship, you do not create a new table. The mandatory structural action is to take the primary key of the strong entity and include it as a foreign key within the weak entity's relational table. This foreign key also becomes part of the weak entity's composite primary key.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 31,
+        "question": "What is the fundamental requirement for a relational table to be in First Normal Form (1NF)?",
+        "options": [
+            "No transitive dependencies can exist",
+            "No partial dependencies can exist",
+            "All attributes must be atomic and have no repeating groups",
+            "It must have a composite primary key",
+            "It must have at least one foreign key defined"
+        ],
+        "answer": "All attributes must be atomic and have no repeating groups",
+        "explanation": "الشرط الأساسي للنموذج العادي الأول (1NF) هو أن تكون جميع القيم داخل خلايا الجدول 'ذرية' (Atomic)، أي لا يمكن تجزئتها، وأن لا يحتوي الجدول على مجموعات متكررة (Repeating groups) أو مصفوفات في حقل واحد.\n\nThe fundamental rule for First Normal Form (1NF) is that every attribute in a relation must contain only atomic (indivisible) values, and there must be no repeating groups or arrays within a single column.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "If an employee's department name is stored redundantly in every employee record, and changing the department name requires updating multiple rows to prevent mismatched data, this is a direct example of:",
+        "options": [
+            "Deletion anomaly",
+            "Insertion anomaly",
+            "Update anomaly",
+            "Transitive anomaly",
+            "Structural anomaly"
+        ],
+        "answer": "Update anomaly",
+        "explanation": "شذوذ التحديث (Update anomaly) يحدث بسبب تكرار البيانات. عندما يكون اسم القسم مكرراً في عدة سجلات للموظفين، فإن تعديل اسم هذا القسم يتطلب تحديث جميع تلك السجلات في نفس الوقت. إذا نُسي أحد السجلات، ستتضارب البيانات وتفقد مصداقيتها.\n\nAn Update Anomaly occurs strictly due to data redundancy. When a single piece of fact (like a department name) is duplicated across multiple rows, changing that fact requires updating every single instance. Failing to update even one row leads to an inconsistent database state.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "In relational database theory, if a functional dependency X -> Y exists, what mathematical rule strictly applies?",
+        "options": [
+            "For every unique value of Y, there must be exactly one unique value of X",
+            "If two tuples have the same value for X, they must absolutely have the same value for Y",
+            "X must always be a numeric data type while Y is a string",
+            "X and Y must be located in completely different relational tables",
+            "If X is NULL, Y must also be NULL"
+        ],
+        "answer": "If two tuples have the same value for X, they must absolutely have the same value for Y",
+        "explanation": "الاعتمادية الوظيفية (Functional Dependency X -> Y) تعني أن قيمة X تحدد قيمة Y. رياضياً، إذا كان لدينا صفان (Tuples) يمتلكان نفس القيمة لـ X، فمن الضروري والمؤكد أن يمتلكان نفس القيمة لـ Y، وإلا فإن الاعتمادية باطلة.\n\nA Functional Dependency (X -> Y) mathematically dictates that the value of X uniquely determines the value of Y. Therefore, if any two tuples (rows) in the relation agree on their value for X, they must absolutely agree on their value for Y.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 34,
+        "question": "A relational table is confirmed to be in First Normal Form (1NF). What additional condition must it meet to qualify for Second Normal Form (2NF)?",
+        "options": [
+            "It must completely eliminate all foreign keys",
+            "Every non-prime attribute must be fully functionally dependent on the entire primary key",
+            "It must remove all transitive dependencies between non-prime attributes",
+            "It must merge with another table to remove redundancies",
+            "It must contain only one single row of data"
+        ],
+        "answer": "Every non-prime attribute must be fully functionally dependent on the entire primary key",
+        "explanation": "للوصول إلى النموذج العادي الثاني (2NF)، يجب أن يكون الجدول في 1NF، ويجب القضاء على 'الاعتماديات الجزئية' (Partial Dependencies). أي أن كل سمة غير رئيسية يجب أن تعتمد على المفتاح الأساسي المركب بالكامل، وليس على جزء منه فقط.\n\nTo qualify for Second Normal Form (2NF), a relation must already be in 1NF and it must have no partial dependencies. This means every non-prime attribute must be fully functionally dependent on the entire primary key, not just a part of a composite key.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "In the context of database normalization, what precisely defines a 'Prime Attribute'?",
+        "options": [
+            "An attribute that is part of any candidate key",
+            "The single attribute that acts as the primary key",
+            "An attribute that contains only numeric prime numbers",
+            "Any attribute that has a transitive dependency",
+            "An attribute that is completely independent of the primary key"
+        ],
+        "answer": "An attribute that is part of any candidate key",
+        "explanation": "السمة الرئيسية (Prime Attribute) هي أي سمة (عمود) تشكل جزءاً من أي 'مفتاح مرشح' (Candidate Key) في الجدول. السمة غير الرئيسية (Non-prime) هي السمة التي لا تنتمي لأي مفتاح مرشح.\n\nA Prime Attribute is formally defined as an attribute that is a member of any candidate key within the relation. If an attribute does not participate in any candidate key, it is strictly classified as a non-prime attribute.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "A table is in Second Normal Form (2NF) but contains a non-prime attribute that functionally determines another non-prime attribute. Which normal form does this specific structure violate?",
+        "options": [
+            "First Normal Form (1NF)",
+            "Second Normal Form (2NF)",
+            "Third Normal Form (3NF)",
+            "Boyce-Codd Normal Form (BCNF)",
+            "Fourth Normal Form (4NF)"
+        ],
+        "answer": "Third Normal Form (3NF)",
+        "explanation": "عندما تعتمد سمة غير رئيسية على سمة أخرى غير رئيسية (A -> B -> C)، فإن هذا يسمى 'اعتمادية متعدية' (Transitive Dependency). وجود هذا النوع من الاعتماديات يمثل انتهاكاً مباشراً لقواعد النموذج العادي الثالث (3NF).\n\nWhen a non-prime attribute functionally determines another non-prime attribute, it creates a Transitive Dependency. The strict elimination of all transitive dependencies is the exact requirement to transition a table from 2NF to Third Normal Form (3NF).",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "You have a table with primary key A, and non-prime attributes B and C. If A -> B and B -> C, what specific normalization violation is inherently present?",
+        "options": [
+            "Partial dependency",
+            "Multivalued dependency",
+            "Transitive dependency",
+            "Atomic violation",
+            "Key integrity violation"
+        ],
+        "answer": "Transitive dependency",
+        "explanation": "بما أن A هو المفتاح الأساسي الذي يحدد B، وبما أن B (سمة غير رئيسية) تحدد C، فهذا يعني أن C يعتمد على A عبر B. هذه الحالة المعقدة هي التعريف الرياضي الدقيق لـ 'الاعتمادية المتعدية' (Transitive dependency).\n\nSince A is the primary key determining B, and B (a non-prime attribute) determines C, C is transitively dependent on A through B. This indirect reliance perfectly illustrates a Transitive Dependency, which must be resolved to achieve 3NF.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 38,
+        "question": "What is the primary structural objective of applying the normalization process to a relational database schema?",
+        "options": [
+            "To combine all small tables into one large unnormalized table",
+            "To minimize data redundancy and eliminate insertion, update, and deletion anomalies",
+            "To encrypt the physical data stored on the hard drive",
+            "To force the database into a 1-Tier offline architecture",
+            "To automatically generate ER diagrams from existing raw data"
+        ],
+        "answer": "To minimize data redundancy and eliminate insertion, update, and deletion anomalies",
+        "explanation": "التطبيع (Normalization) هو عملية منهجية لتحليل وتقسيم الجداول بهدف 'تقليل تكرار البيانات' (Data redundancy) إلى أدنى حد، والقضاء على شذوذ الإدراج والتحديث والحذف (Anomalies) لضمان استقرار وقوة قاعدة البيانات.\n\nNormalization is a systematic structural process applied to database schema. Its primary objective is to decompose tables to minimize data redundancy and strictly eliminate structural flaws known as insertion, update, and deletion anomalies, ensuring data integrity.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 39,
+        "question": "In a poorly designed database, deleting the record of the only employee who works in the 'Marketing' department accidentally causes the entire record of the 'Marketing' department to be permanently lost. This catastrophic flaw is called:",
+        "options": [
+            "Insertion anomaly",
+            "Update anomaly",
+            "Deletion anomaly",
+            "Normalization anomaly",
+            "Referential anomaly"
+        ],
+        "answer": "Deletion anomaly",
+        "explanation": "شذوذ الحذف (Deletion anomaly) يحدث عندما يؤدي حذف سجل معين (كالموظف) إلى فقدان بيانات أخرى غير مرتبطة به مباشرة ولكنها مدمجة معه في نفس الجدول بشكل خاطئ (كمعلومات القسم).\n\nA Deletion Anomaly occurs when the deletion of a specific record unintentionally results in the permanent loss of other, distinct facts (like department details) because they were improperly grouped into the same unnormalized table.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 40,
+        "question": "A table uses a composite primary key consisting of (StudentID, CourseID). It also contains an attribute 'StudentName'. Since 'StudentName' depends only on 'StudentID' and not on the whole composite key, what is this specific dependency called?",
+        "options": [
+            "Transitive dependency",
+            "Complete dependency",
+            "Partial dependency",
+            "Multivalued dependency",
+            "Derived dependency"
+        ],
+        "answer": "Partial dependency",
+        "explanation": "عندما يعتمد حقل غير رئيسي (اسم الطالب) على 'جزء' فقط من المفتاح الأساسي المركب (رقم الطالب) وليس على المفتاح بالكامل (رقم الطالب + رقم الكورس)، تُسمى هذه الحالة 'اعتمادية جزئية' (Partial Dependency)، وهي تمنع الجدول من أن يكون في 2NF.\n\nWhen a non-prime attribute (StudentName) is functionally dependent on only a portion of a composite primary key (StudentID) rather than the entire key, it is formally known as a Partial Dependency. This structurally violates Second Normal Form (2NF).",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "How is a partial dependency structurally resolved to bring a table into Second Normal Form (2NF)?",
+        "options": [
+            "By deleting the partially dependent attributes permanently",
+            "By splitting the table and moving the partially dependent attribute to a new table along with the part of the key it depends on",
+            "By adding a new surrogate primary key to the existing table",
+            "By merging it with a table that has a transitive dependency",
+            "By forcing the attribute to become a foreign key in the same table"
+        ],
+        "answer": "By splitting the table and moving the partially dependent attribute to a new table along with the part of the key it depends on",
+        "explanation": "لحل مشكلة الاعتمادية الجزئية، نقوم 'بتقسيم الجدول'. السمة التي تعتمد على جزء من المفتاح يتم نقلها إلى جدول جديد مستقل، ويكون هذا 'الجزء من المفتاح' هو المفتاح الأساسي للجدول الجديد.\n\nTo resolve a partial dependency, the unnormalized table must be decomposed (split). The partially dependent attribute is moved into a newly created table, and the specific part of the composite key it depends on is copied over to serve as the primary key for this new table.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "According to the Three-Schema Architecture, what specifically ensures that adding a new table or altering a relationship at the conceptual level does not break existing user views?",
+        "options": [
+            "Physical Data Independence",
+            "Entity Integrity",
+            "Logical Data Independence",
+            "Normalization up to 3NF",
+            "Transitive Independence"
+        ],
+        "answer": "Logical Data Independence",
+        "explanation": "استقلالية البيانات المنطقية (Logical Data Independence) هي الآلية في معمارية الثلاث طبقات التي تسمح للمدير بتغيير الهيكل المنطقي العام (إضافة كيانات أو تعديل علاقات في المخطط المفاهيمي) دون إحداث أي ضرر بتطبيقات المستخدمين أو مخططاتهم الخارجية.\n\nLogical Data Independence specifically guarantees that the global conceptual schema (entities, relationships) can be structurally modified without forcing any changes to the external schemas (user views) or breaking the application programs relying on them.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "If a 'Customer' table contains a column for 'Phone_Numbers' that allows entering a list of comma-separated numbers (e.g., \"12345, 67890\"), which normalization rule is immediately violated?",
+        "options": [
+            "First Normal Form (1NF)",
+            "Second Normal Form (2NF)",
+            "Third Normal Form (3NF)",
+            "Domain Constraint",
+            "Referential Integrity"
+        ],
+        "answer": "First Normal Form (1NF)",
+        "explanation": "النموذج العادي الأول (1NF) يمنع تماماً وجود قيم متعددة (Multivalued attributes) داخل حقل واحد. وضع أرقام هواتف مفصولة بفاصلة في نفس الخلية يكسر قاعدة 'القيم الذرية' ويعد انتهاكاً صريحاً لـ 1NF.\n\nFirst Normal Form (1NF) explicitly forbids multivalued attributes or repeating groups within a single column. Storing a comma-separated list of phone numbers inside one cell violates the core 1NF requirement that all column values must be strictly atomic.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "When transforming a Many-to-Many (M:N) relationship from an ER model into relational tables, an associative entity (junction table) is created. What typically constitutes the primary key of this new associative table?",
+        "options": [
+            "A newly generated random sequence number",
+            "The combination of the foreign keys referencing the primary keys of the two original tables",
+            "The primary key of the table with the largest number of rows",
+            "A derived attribute calculated from both tables",
+            "A single foreign key from the strongest entity"
+        ],
+        "answer": "The combination of the foreign keys referencing the primary keys of the two original tables",
+        "explanation": "لحل علاقة M:N، يتم إنشاء جدول وسيط (Associative table). المفتاح الأساسي لهذا الجدول الجديد يتكون عادةً من دمج 'المفاتيح الأجنبية' التي تشير إلى المفاتيح الأساسية للجدولين الأصليين (Composite Primary Key).\n\nWhen resolving an M:N relationship, a new associative (junction) table is created. The Primary Key of this new table is typically a composite key formed by combining the foreign keys that reference the primary keys of the two participating original tables.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 45,
+        "question": "A new university department has been created, but it cannot be added to the 'Faculty' table because the table requires a 'ProfessorID' for every row, and no professors have been hired for this department yet. This issue is known as:",
+        "options": [
+            "Update anomaly",
+            "Deletion anomaly",
+            "Partial dependency",
+            "Insertion anomaly",
+            "Transitive anomaly"
+        ],
+        "answer": "Insertion anomaly",
+        "explanation": "شذوذ الإدراج (Insertion anomaly) يحدث عندما لا تتمكن من إضافة بيانات شرعية وجديدة للنظام (كالقسم الجديد) لأن هيكل الجدول المعيب يجبرك على إدخال بيانات أخرى غير متوفرة بعد (كمعرف الأستاذ).\n\nAn Insertion Anomaly occurs when you are prevented from inserting a new, legitimate fact into the database (the new department) because the poorly structured schema mandates the simultaneous insertion of another, currently unavailable fact (a ProfessorID).",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 46,
+        "question": "To reach Third Normal Form (3NF), a table must already be in 2NF and MUST completely eliminate which of the following?",
+        "options": [
+            "All foreign keys",
+            "Composite primary keys",
+            "Partial dependencies",
+            "Transitive dependencies",
+            "Atomic attributes"
+        ],
+        "answer": "Transitive dependencies",
+        "explanation": "الشرط الأساسي للوصول للنموذج العادي الثالث (3NF) هو إزالة كافة 'الاعتماديات المتعدية' (Transitive dependencies)، حيث يجب ألا يعتمد أي حقل غير رئيسي على حقل آخر غير رئيسي.\n\nTo achieve Third Normal Form (3NF), a relation must already satisfy 2NF, and it must completely eliminate all Transitive Dependencies. This ensures that non-prime attributes are functionally dependent only on the candidate keys, not on other non-prime attributes.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "In the formal mathematical notation of functional dependencies, if 'A -> B', what is 'A' formally called?",
+        "options": [
+            "The determinant",
+            "The dependent",
+            "The transitive element",
+            "The foreign key",
+            "The anomaly"
+        ],
+        "answer": "The determinant",
+        "explanation": "في قاعدة الاعتماد الوظيفي (A -> B)، الجانب الأيسر 'A' يُطلق عليه رياضياً اسم 'المُحدِّد' (Determinant) لأنه هو الذي يحدد بدقة قيمة الجانب الأيمن 'B' (الذي يسمى التابع أو Dependent).\n\nIn the functional dependency notation A -> B, the attribute (or set of attributes) on the left side 'A' is formally called the 'Determinant', because its value strictly determines the value of the attribute on the right side 'B' (the dependent).",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "In the Three-Schema Architecture, which level explicitly defines the customized perspectives of data specifically tailored to hide unnecessary complexity from individual user groups?",
+        "options": [
+            "The Conceptual Schema",
+            "The Internal Schema",
+            "The Physical Schema",
+            "The External Schema (User Views)",
+            "The Global Schema"
+        ],
+        "answer": "The External Schema (User Views)",
+        "explanation": "المستوى الخارجي (External Schema / User Views) هو المستوى المخصص لتوفير واجهات ورؤى مخصصة لكل مجموعة مستخدمين، بحيث يتم إخفاء كل التعقيدات والبيانات التي لا تعنيهم عنهم تماماً.\n\nThe External Schema (or User Views level) explicitly defines customized perspectives. It is designed to provide specific user groups with only the data they need, purposefully hiding the global database structure and underlying physical complexities.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 49,
+        "question": "A table contains attributes (Order_ID, Customer_ID, Customer_City). The primary key is Order_ID. We know Order_ID -> Customer_ID, and Customer_ID -> Customer_City. To normalize this table to 3NF, what exact structural change is required?",
+        "options": [
+            "Remove Customer_City from the order table and place it in a separate Customer table where Customer_ID is the primary key",
+            "Combine Customer_ID and Customer_City to form a new composite primary key",
+            "Delete Customer_ID and link Order_ID directly to Customer_City",
+            "Add a new column to store the transitive distance",
+            "Leave it as is because it is already in 3NF"
+        ],
+        "answer": "Remove Customer_City from the order table and place it in a separate Customer table where Customer_ID is the primary key",
+        "explanation": "بسبب وجود اعتمادية متعدية (Customer_City يعتمد على Customer_ID الذي بدوره يعتمد على Order_ID)، الحل للوصول إلى 3NF هو فصل الجدول. نقوم بإزالة Customer_City من جدول الطلبات ونضعه في جدول جديد خاص بالعملاء، حيث يكون Customer_ID هو المفتاح الأساسي للجدول الجديد.\n\nDue to the transitive dependency (Customer_City depends on Customer_ID, which is not a candidate key), the table violates 3NF. To resolve this, you must decompose the table by removing the transitively dependent attribute (Customer_City) and placing it into a new table where its determinant (Customer_ID) becomes the primary key.",
+        "topic": "relational model and schema design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 50,
+        "question": "Which informal rule best summarizes the ultimate goal of normalizing a table up to the Third Normal Form (3NF)?",
+        "options": [
+            "Every non-prime attribute must depend on the key, the whole key, and nothing but the key",
+            "Every table must contain exactly one primary key and one foreign key",
+            "All columns must be compressed to save physical disk space",
+            "All tables must be merged to eliminate foreign key lookups",
+            "Every attribute must be capable of storing multiple values"
+        ],
+        "answer": "Every non-prime attribute must depend on the key, the whole key, and nothing but the key",
+        "explanation": "القاعدة الذهبية لتلخيص 3NF هي: 'كل سمة غير رئيسية يجب أن تعتمد على المفتاح الأساسي (1NF)، والمفتاح بالكامل (2NF)، ولا شيء غير المفتاح (3NF)'. أي خرق لهذه الجملة يعني أن الجدول ليس مطبعاً بالكامل.\n\nThe classic informal rule summarizing up to 3NF is: 'Every non-prime attribute must provide a fact about the key (1NF), the whole key (resolving 2NF partial dependencies), and nothing but the key (resolving 3NF transitive dependencies)'.",
+        "topic": "relational model and schema design",
+        "difficulty": "normal"
+    }
+]

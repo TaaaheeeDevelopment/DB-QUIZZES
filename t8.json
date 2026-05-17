@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "What is the primary characteristic of a Distributed Database Management System (DDBMS)?",
+        "options": [
+            "It physically stores all data on a single centralized server for security",
+            "It stores and manages data across multiple physically separate locations while appearing as a single unified database",
+            "It restricts data access to only local workstations without network requirements",
+            "It converts relational data into NoSQL document formats",
+            "It completely eliminates the need for transaction processing"
+        ],
+        "answer": "It stores and manages data across multiple physically separate locations while appearing as a single unified database",
+        "explanation": "السمة الأساسية لنظام إدارة قواعد البيانات الموزعة (DDBMS) هي أنه يخزن ويدير البيانات عبر مواقع مادية متعددة ومنفصلة (عبر شبكة)، ولكنه في نفس الوقت يظهر للمستخدم أو التطبيق وكأنه قاعدة بيانات واحدة موحدة ومنطقية.\n\nThe primary characteristic of a Distributed Database Management System (DDBMS) is that it stores and manages data across multiple physically separate locations connected by a network. However, it provides location transparency, meaning users interact with it as if it were a single, unified logical database.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "According to the CAP Theorem for distributed systems, a database can only guarantee two out of three specific properties at the same time. Which of the following correctly lists these three properties?",
+        "options": [
+            "Centralization, Authorization, Partition Tolerance",
+            "Consistency, Availability, Partition Tolerance",
+            "Concurrency, Atomicity, Performance",
+            "Confidentiality, Availability, Processing Speed",
+            "Consistency, Allocation, Performance Tuning"
+        ],
+        "answer": "Consistency, Availability, Partition Tolerance",
+        "explanation": "نظرية CAP (CAP Theorem) تنص على أن أي نظام موزع لا يمكنه ضمان سوى اثنتين من ثلاث خصائص في نفس الوقت: الاتساق (Consistency)، التوافر (Availability)، والتسامح مع التجزئة (Partition Tolerance).\n\nThe CAP Theorem states that a distributed database system can strictly guarantee only two out of three properties simultaneously: Consistency (all nodes see the same data), Availability (every request receives a response), and Partition Tolerance (the system continues to operate despite network failures).",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "Despite its benefits in scalability and reliability, what is a major disadvantage of implementing a DDBMS?",
+        "options": [
+            "Increased processing overhead and management complexity to maintain data synchronization",
+            "Total inability to use standard SQL query languages",
+            "Complete loss of data transparency for the end-users",
+            "Restriction to a single concurrent user at any given time",
+            "Inability to perform data replication across nodes"
+        ],
+        "answer": "Increased processing overhead and management complexity to maintain data synchronization",
+        "explanation": "رغم فوائد النظام الموزع، إلا أن عيبه الأكبر هو 'التعقيد' (Complexity) والعبء الإضافي في المعالجة. يجب على النظام مزامنة البيانات عبر عدة مواقع، وإدارة المعاملات الموزعة، مما يزيد من صعوبة الإدارة والصيانة.\n\nWhile a DDBMS offers high scalability and reliability, a major disadvantage is its inherent complexity. It introduces significant processing overhead required to manage distributed transactions, synchronize replicated data, and maintain consistency across network nodes.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "In a DDBMS architecture, what is the primary role of the Transaction Processor (TP)?",
+        "options": [
+            "It stores and retrieves data from the physical storage disks",
+            "It generates the conceptual entity-relationship diagrams",
+            "It encrypts the data before it is transmitted over the network",
+            "It receives and routes database requests to the appropriate data processors",
+            "It strictly manages the physical network cables and routers"
+        ],
+        "answer": "It receives and routes database requests to the appropriate data processors",
+        "explanation": "في معمارية قاعدة البيانات الموزعة، 'معالج المعاملات' (Transaction Processor أو TP) هو المكون البرمجي المسؤول عن استقبال طلبات المستخدمين (الاستعلامات) وتوجيهها إلى 'معالجات البيانات' (DPs) المناسبة لتنفيذها.\n\nIn a DDBMS, the Transaction Processor (TP) is the software component that receives application or user requests and dynamically routes them to the appropriate Data Processors (DPs) across the network for execution.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "Which type of data fragmentation involves dividing a relation into subsets of tuples (rows) and storing them at different sites?",
+        "options": [
+            "Vertical fragmentation",
+            "Mixed fragmentation",
+            "Horizontal fragmentation",
+            "Replicated fragmentation",
+            "Centralized fragmentation"
+        ],
+        "answer": "Horizontal fragmentation",
+        "explanation": "التجزئة الأفقية (Horizontal fragmentation) تقوم بتقسيم الجدول إلى مجموعات من 'الصفوف' (Tuples) وتخزين كل مجموعة في موقع مختلف (مثلاً: تخزين بيانات موظفي فرع بغداد في سيرفر بغداد، وموظفي البصرة في سيرفر البصرة).\n\nHorizontal fragmentation involves dividing a relation into subsets of tuples (rows) based on specific conditions, and storing these row subsets at different physical sites. It essentially cuts the table horizontally.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 6,
+        "question": "A company decides to store the 'Employee Name' and 'Address' columns at the headquarters, while storing the 'Salary' and 'Tax' columns at the payroll department. What type of fragmentation is this?",
+        "options": [
+            "Horizontal fragmentation",
+            "Mixed fragmentation",
+            "Replicated fragmentation",
+            "Vertical fragmentation",
+            "Tuple-based fragmentation"
+        ],
+        "answer": "Vertical fragmentation",
+        "explanation": "هذا مثال على التجزئة العمودية (Vertical fragmentation)، حيث يتم تقسيم الجدول عبر 'الأعمدة' (Columns)، بحيث تُخزن سمات محددة في موقع معين وسمات أخرى في موقع آخر، بناءً على احتياجات كل قسم.\n\nThis is a classic example of Vertical fragmentation. The relation is divided by its attributes (columns), meaning specific columns are stored at one site (headquarters) while other columns from the same table are stored at a different site (payroll department).",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 7,
+        "question": "What is the main operational trade-off when a distributed database uses a \"Fully Replicated\" data storage scenario?",
+        "options": [
+            "It maximizes read performance and reliability but severely increases write synchronization overhead",
+            "It drastically reduces storage space requirements across the network",
+            "It guarantees instantaneous write speeds at the cost of slower read speeds",
+            "It forces the database to rely on a single transaction processor",
+            "It prevents the system from using the Two-Phase Commit protocol"
+        ],
+        "answer": "It maximizes read performance and reliability but severely increases write synchronization overhead",
+        "explanation": "تكرار البيانات بالكامل (Fully Replicated) يعني وجود نسخة من قاعدة البيانات في كل موقع. هذا يجعل القراءة سريعة جداً والنظام مقاوماً للأعطال، لكنه يجعل عمليات 'الكتابة والتحديث' بطيئة جداً ومكلفة لأن كل تحديث يجب أن يُزامن على جميع النسخ في نفس الوقت.\n\nIn a Fully Replicated scenario, identical copies of the database exist at every site. While this dramatically maximizes local read performance and fault tolerance (reliability), it introduces severe write synchronization overhead, as every INSERT, UPDATE, or DELETE must be successfully propagated to all nodes.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "What is the purpose of the Two-Phase Commit (2PC) protocol in a distributed database?",
+        "options": [
+            "To split a massive table into two separate physical fragments",
+            "To separate the Data Processor (DP) from the Transaction Processor (TP)",
+            "To ensure that read operations are executed twice for better accuracy",
+            "To guarantee that if a distributed transaction cannot be committed at all participating sites, it is aborted at all sites",
+            "To allow some nodes to commit a transaction even if other nodes fail to do so"
+        ],
+        "answer": "To guarantee that if a distributed transaction cannot be committed at all participating sites, it is aborted at all sites",
+        "explanation": "بروتوكول 'الالتزام ذو المرحلتين' (Two-Phase Commit أو 2PC) يضمن أن المعاملة الموزعة على عدة مواقع إما أن تنجح بالكامل في جميع المواقع معاً، أو يتم إلغاؤها (Abort) في جميع المواقع، مما يحافظ على التناسق التام للبيانات.\n\nThe Two-Phase Commit (2PC) protocol is designed to ensure strict atomicity in distributed transactions. It guarantees the 'all-or-nothing' rule across a network: if the transaction cannot be successfully committed at every single participating node, it is aborted globally.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 9,
+        "question": "A user queries the database for 'Sales Data' without needing to know whether the data is physically stored in London, Tokyo, or New York. This system feature is formally known as:",
+        "options": [
+            "Replication transparency",
+            "Fragmentation transparency",
+            "Location transparency",
+            "Failure transparency",
+            "Network encryption transparency"
+        ],
+        "answer": "Location transparency",
+        "explanation": "الشفافية المكانية (Location Transparency) تعني أن المستخدم أو التطبيق يمكنه استرجاع البيانات ومعالجتها دون الحاجة لمعرفة الموقع الجغرافي أو المادي الفعلي الذي تُخزن فيه هذه البيانات.\n\nLocation transparency is a DDBMS feature that allows users to query and manipulate data without needing to know the exact physical or geographical site where the data is stored. The system automatically locates and retrieves the requested information.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "Within a DDBMS, which component is specifically responsible for managing the local data, storing it, and retrieving it from the physical storage media?",
+        "options": [
+            "Transaction Processor (TP)",
+            "Communications media",
+            "Data Processor (DP)",
+            "Client Application",
+            "Network Gateway"
+        ],
+        "answer": "Data Processor (DP)",
+        "explanation": "معالج البيانات (Data Processor أو DP) هو المكون البرمجي في النظام الموزع المسؤول عن التفاعل المباشر مع الأقراص الصلبة، فهو يقوم بتخزين البيانات محلياً واسترجاعها استجابةً لطلبات معالج المعاملات (TP).\n\nWithin a Distributed Database Management System, the Data Processor (DP) is the software component specifically responsible for managing the local data. It handles the actual physical storage, retrieval, and updates on the storage media at its specific site.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 11,
+        "question": "Which type of fragmentation is achieved by combining both row-level and column-level division of a single table across multiple sites?",
+        "options": [
+            "Fully Replicated fragmentation",
+            "Mixed fragmentation",
+            "Vertical fragmentation",
+            "Horizontal fragmentation",
+            "Unreplicated fragmentation"
+        ],
+        "answer": "Mixed fragmentation",
+        "explanation": "التجزئة المختلطة (Mixed fragmentation) هي استراتيجية تجمع بين التجزئة الأفقية (تقسيم الصفوف) والتجزئة العمودية (تقسيم الأعمدة) لتوزيع بيانات الجدول الواحد بمرونة عالية جداً عبر عدة مواقع.\n\nMixed fragmentation is a data distribution strategy that effectively combines both horizontal (row-level) and vertical (column-level) fragmentation to distribute subsets of a single relation across multiple network nodes.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "If a network partition occurs in a distributed database governed by the CAP theorem, the system must make a strict choice between which two properties?",
+        "options": [
+            "Consistency and Allocation",
+            "Availability and Performance",
+            "Consistency and Availability",
+            "Scalability and Partition Tolerance",
+            "Atomicity and Durability"
+        ],
+        "answer": "Consistency and Availability",
+        "explanation": "في نظرية CAP، التسامح مع التجزئة (Partition Tolerance) هو أمر حتمي عند انقطاع الشبكة. لذلك، يُجبر النظام الموزع على الاختيار بين 'الاتساق' (Consistency - إيقاف النظام لتجنب بيانات خاطئة) أو 'التوافر' (Availability - الاستمرار في العمل ولكن قد تكون البيانات غير محدثة).\n\nAccording to the CAP theorem, when a network partition (P) inevitably occurs, the distributed system is forced to make a strict operational tradeoff between Consistency (C) and Availability (A). It cannot provide both simultaneously during a network failure.",
+        "topic": "Distributed Database Management Systems (DDBMS)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 13,
+        "question": "What is Open Database Connectivity (ODBC)?",
+        "options": [
+            "A proprietary API used exclusively for Microsoft Access databases",
+            "A Java-based interface for connecting to NoSQL document databases",
+            "A widely used, standard API that allows applications to access different relational database management systems",
+            "A network hardware protocol for connecting distributed servers",
+            "A user interface tool for creating Entity-Relationship diagrams"
+        ],
+        "answer": "A widely used, standard API that allows applications to access different relational database management systems",
+        "explanation": "اتصال قواعد البيانات المفتوحة (ODBC) هو واجهة برمجة تطبيقات (API) قياسية واسعة الاستخدام تُمكن التطبيقات من الاتصال بقواعد بيانات علائقية (RDBMS) مختلفة (مثل SQL Server، Oracle، MySQL) دون الاعتماد على شركة محددة.\n\nOpen Database Connectivity (ODBC) is a widely used, standardized Application Programming Interface (API) that enables applications to connect to and access data from a variety of different Relational Database Management Systems (RDBMS) independent of the vendor.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "Which database connectivity framework was developed by Microsoft as part of the .NET framework to provide data access services?",
+        "options": [
+            "JDBC",
+            "DAO",
+            "ADO.NET",
+            "RDO",
+            "Native SQL"
+        ],
+        "answer": "ADO.NET",
+        "explanation": "إطار عمل ADO.NET (ActiveX Data Objects .NET) هو تقنية طورتها شركة مايكروسوفت لتوفير خدمات الاتصال والوصول إلى البيانات للتطبيقات المبنية باستخدام بيئة .NET.\n\nADO.NET is a comprehensive data access framework developed by Microsoft. It is integrated deeply within the .NET framework and provides a set of classes that expose data access services for .NET programmers.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "Which connectivity interface is specifically designed for Java programs to interact with various data sources?",
+        "options": [
+            "OLE-DB",
+            "ADO.NET",
+            "ODBC",
+            "JDBC",
+            "DAO"
+        ],
+        "answer": "JDBC",
+        "explanation": "اتصال قواعد البيانات في جافا (JDBC) هي واجهة برمجة التطبيقات (API) القياسية المصممة خصيصاً للغة جافا، والتي تتيح للبرامج المكتوبة بجافا الاتصال بقواعد البيانات والتفاعل معها.\n\nJava Database Connectivity (JDBC) is an API specifically designed for the Java programming language. It defines how a client may access a database, providing methods to query and update data within relational databases from Java applications.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "What is a significant operational disadvantage of relying exclusively on 'Native SQL' connectivity interfaces provided directly by a specific database vendor?",
+        "options": [
+            "It requires a Java virtual machine to compile the connections",
+            "It is generally much slower than standard API connections like ODBC",
+            "It causes strict vendor lock-in, making future database migration very difficult",
+            "It cannot execute DML statements and is restricted to DDL",
+            "It automatically exposes the database to unpreventable SQL injection attacks"
+        ],
+        "answer": "It causes strict vendor lock-in, making future database migration very difficult",
+        "explanation": "الاتصال الأصلي (Native SQL connectivity) يوفر أداءً عالياً لأنه مصمم خصيصاً من قبل الشركة المصنعة (مثل أوراكل أو مايكروسوفت) للتعامل مع محركها الخاص. لكن العيب الأكبر والقاتل هو 'التقييد بالمورد' (Vendor lock-in). إذا قررت الشركة لاحقاً تغيير نوع قاعدة البيانات، فسيتعين عليها إعادة كتابة الكثير من أكواد الاتصال في التطبيق، وهو أمر مكلف. الخيارات الأخرى خاطئة لأن الاتصال الأصلي سريع جداً ويدعم جميع أنواع الأوامر.\n\nNative SQL connectivity provides high performance as it is heavily optimized for a specific vendor's DBMS. However, its significant operational disadvantage is strict 'vendor lock-in'. Applications built exclusively on native interfaces are tightly coupled to that specific database, making future migrations to a different DBMS vendor extremely difficult and costly to rewrite.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "Which data access API was specifically developed as a higher-level, object-oriented wrapper over ODBC to provide developers with a simpler interface for remote database access?",
+        "options": [
+            "JDBC (Java Database Connectivity)",
+            "RDO (Remote Data Objects)",
+            "DAO (Data Access Objects)",
+            "ADO.NET",
+            "OLE-DB"
+        ],
+        "answer": "RDO (Remote Data Objects)",
+        "explanation": "كائنات البيانات البعيدة (RDO) تم تطويرها من قبل مايكروسوفت لتكون طبقة تغليف (Wrapper) عالية المستوى وموجهة للكائنات فوق واجهة ODBC. الغرض منها كان تبسيط وصول المطورين إلى قواعد البيانات البعيدة عبر الشبكة، لأن التعامل المباشر مع واجهة برمجة تطبيقات ODBC كان معقداً برمجياً. DAO مخصص لقواعد البيانات المحلية، و JDBC مخصص لجافا.\n\nRemote Data Objects (RDO) was developed as a higher-level, object-oriented wrapper over the complex ODBC API. It was specifically designed to provide developers with a simpler, more intuitive interface for accessing remote relational databases over a network, abstracting away the low-level complexities of raw ODBC calls.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "Which data access technology provides an object-oriented API that is primarily optimized for accessing local, desktop-level databases like Microsoft Access?",
+        "options": [
+            "Native SQL",
+            "JDBC",
+            "RDO",
+            "DAO (Data Access Objects)",
+            "ADO.NET"
+        ],
+        "answer": "DAO (Data Access Objects)",
+        "explanation": "كائنات الوصول إلى البيانات (DAO) هي واجهة برمجة تطبيقات (API) موجهة للكائنات تم تحسينها وتصميمها بشكل أساسي للوصول إلى قواعد البيانات المحلية أو المكتبية (Local desktop databases)، مثل محرك Microsoft Jet المستخدم في برنامج Microsoft Access. لا تُستخدم للاتصالات البعيدة المعقدة.\n\nData Access Objects (DAO) is an object-oriented API that is primarily optimized for accessing local, desktop-level databases. It was heavily used to interface with the Microsoft Jet database engine (the engine behind Microsoft Access), distinguishing it from technologies designed for enterprise remote access.",
+        "topic": "Database Connectivity",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "In modern application development, why is using 'Prepared Statements' (Parameterized Queries) via JDBC or ADO.NET highly demanded over executing dynamically concatenated raw SQL strings?",
+        "options": [
+            "They automatically normalize the database tables up to the third normal form",
+            "They pre-compile the SQL query and strictly separate data parameters from executable code, neutralizing SQL injection",
+            "They allow the application to bypass network firewalls securely",
+            "They automatically translate relational database structures into NoSQL document formats",
+            "They convert standard SQL commands into native Java bytecode for faster execution"
+        ],
+        "answer": "They pre-compile the SQL query and strictly separate data parameters from executable code, neutralizing SQL injection",
+        "explanation": "العبارات المجهزة (Prepared Statements / Parameterized Queries) تُعتبر ضرورة أمنية وأدائية. فهي تقوم بتجميع (Compile) هيكل استعلام SQL مسبقاً في قاعدة البيانات، وتفصل البيانات المدخلة عن الكود التنفيذي. هذا يمنع المحرك من تنفيذ أي كود خبيث يتم إدخاله من قبل المستخدم، مما يحبط هجمات 'حقن إس كيو إل' (SQL Injection) بالكامل، بالإضافة إلى تحسين سرعة التنفيذ للاستعلامات المتكررة.\n\nPrepared Statements (Parameterized Queries) are heavily demanded for security and performance. They force the database to pre-compile the SQL statement template. When user input is supplied, it is treated strictly as literal parameter data and never as executable code. This strict separation completely neutralizes classic SQL injection vulnerabilities and optimizes repeated query execution.",
+        "topic": "Database Connectivity",
+        "difficulty": "hard"
+    },
+    {
+        "id": 20,
+        "question": "What was the primary driving force behind the creation and widespread adoption of NoSQL databases in the modern tech industry?",
+        "options": [
+            "The need to enforce stricter ACID properties for highly sensitive banking systems",
+            "The need to manage massive volumes of unstructured data, achieve horizontal scalability, and support agile development",
+            "The desire to return to the legacy hierarchical and network data models of the 1960s",
+            "The strict requirement to run enterprise databases entirely on single desktop computers",
+            "The need for a standardized query language exactly identical to SQL for all systems"
+        ],
+        "answer": "The need to manage massive volumes of unstructured data, achieve horizontal scalability, and support agile development",
+        "explanation": "الدافع الرئيسي لظهور قواعد بيانات NoSQL لم يكن تحسين قواعد البيانات العلائقية، بل عجز الأخيرة عن تلبية متطلبات العصر الحديث. احتاجت الشركات الكبرى (مثل جوجل وأمازون) إلى أنظمة قادرة على التعامل مع أحجام هائلة من البيانات غير المهيكلة (Unstructured data)، والتوسع الأفقي (Horizontal scalability) عبر آلاف الخوادم الرخيصة، وتوفير مرونة لدعم التطوير السريع (Agile). أنظمة NoSQL لا تدعم ACID بشكل صارم مثل العلائقية.\n\nThe primary driving force behind NoSQL was the explosive growth of Big Data and Web 2.0. Traditional RDBMS struggled with massive volumes of unstructured/semi-structured data and scaling horizontally across commodity servers. NoSQL emerged to solve these issues, offering extreme horizontal scalability, flexible schemas for agile development, and high availability, often at the expense of strict ACID compliance.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 21,
+        "question": "A basic NoSQL data model can be used to store user session tokens, where each token is simply linked to a block of user data without complex relations. This data model is known as:",
+        "options": [
+            "Document database",
+            "Graph database",
+            "Column-family database",
+            "Key-value (KV) database",
+            "Relational database"
+        ],
+        "answer": "Key-value (KV) database",
+        "explanation": "قاعدة بيانات 'القيمة والمفتاح' (Key-value KV) هي أبسط نماذج NoSQL. تخزن البيانات كزوج من (مفتاح فريد) و(قيمة مرتبطة به). وهي مثالية لتخزين بيانات بسيطة وسريعة الاسترجاع مثل 'رموز الجلسات' (Session tokens) وعربات التسوق. هذا النموذج لا يمتلك جداول أو علاقات معقدة.\n\nThe Key-Value (KV) database is the simplest NoSQL data model. It operates like a massive dictionary where every data block (value) is retrieved using a unique identifier (key). It is highly optimized for scenarios like storing user session tokens, caching, and shopping carts where rapid, simple lookups are required without complex querying or relationships.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "Which type of NoSQL database inherently stores data in semi-structured formats like JSON or BSON, making it highly suitable for Content Management Systems (CMS) and flexible user profiles?",
+        "options": [
+            "Key-Value database",
+            "Document database",
+            "Graph database",
+            "Column-family database",
+            "NewSQL database"
+        ],
+        "answer": "Document database",
+        "explanation": "قاعدة البيانات المستندية (Document database) مثل MongoDB، تُخزن البيانات داخل 'مستندات' (Documents) بصيغة شبه مهيكلة مثل JSON أو BSON. كل مستند يمكن أن يحتوي على هيكل مختلف عن الآخر، مما يعطي مرونة هائلة تناسب إدارة المحتوى (CMS) والتطبيقات التي تتغير هياكل بياناتها باستمرار.\n\nA Document database stores data in semi-structured document formats such as JSON, BSON, or XML. Unlike rigid relational rows, each document can have a completely different internal structure. This flexibility makes document databases exceptionally well-suited for Content Management Systems (CMS), catalogs, and dynamic user profiles.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 23,
+        "question": "If a software company is building a complex recommendation engine and a fraud detection system that heavily relies on analyzing the relationships and connections between users, which NoSQL database is the optimal choice?",
+        "options": [
+            "Document database",
+            "Key-value database",
+            "Graph database",
+            "Column-family database",
+            "Standard relational database"
+        ],
+        "answer": "Graph database",
+        "explanation": "قاعدة البيانات الرسومية (Graph database) مصممة خصيصاً ومحسنة للتعامل مع البيانات عالية الترابط. هي لا تعتمد على الجداول، بل تستخدم 'العقد' (Nodes) لتمثيل الكيانات و'الحواف' (Edges) لتمثيل العلاقات بينها. هذا يجعلها الأداة المثالية لتحليل الشبكات الاجتماعية، محركات التوصية، واكتشاف أنماط الاحتيال المعقدة التي يصعب على قواعد البيانات العلائقية معالجتها.\n\nGraph databases are fundamentally optimized for highly interconnected data. They represent entities as 'Nodes' and relationships as 'Edges', treating the connections between data points as equally important as the data itself. This architectural design makes them the optimal choice for recommendation engines, fraud detection, and social network analysis where relationship traversal speed is critical.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 24,
+        "question": "Which NoSQL data model is specifically optimized to handle massive amounts of sparse data and time-series data, making it ideal for Internet of Things (IoT) telemetry and high-throughput logging?",
+        "options": [
+            "Graph database",
+            "Column-family database",
+            "Relational database",
+            "Key-value database",
+            "Document database"
+        ],
+        "answer": "Column-family database",
+        "explanation": "قواعد بيانات 'عائلة الأعمدة' (Column-family databases) مثل Apache Cassandra و HBase، تخزن البيانات مجمعة حسب الأعمدة وليس الصفوف. هذا التصميم ممتاز جداً لتخزين البيانات المتفرقة (Sparse data) حيث تحتوي الكثير من الحقول على قيم فارغة دون إهدار المساحة، وهو مثالي للتعامل مع تدفق البيانات الهائل من أجهزة إنترنت الأشياء (IoT) والسلاسل الزمنية (Time-series).\n\nColumn-family databases (like Cassandra) store data physically grouped by columns rather than rows. This architecture is heavily optimized for fast read/write operations on massive datasets, specifically handling sparse data efficiently. It is the premier choice for time-series data, IoT telemetry, and high-throughput event logging across distributed clusters.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "What is a fundamental structural difference between a Document NoSQL database and a traditional Relational database?",
+        "options": [
+            "Document databases do not support any form of unique identification keys",
+            "Document databases force all incoming data into a strict two-dimensional array",
+            "Document databases are schema-less (or have flexible schemas), whereas relational databases require a rigid, predefined schema",
+            "Relational databases natively use JSON arrays, while Document databases strictly use SQL",
+            "Document databases can only be queried mathematically using relational algebra"
+        ],
+        "answer": "Document databases are schema-less (or have flexible schemas), whereas relational databases require a rigid, predefined schema",
+        "explanation": "الفرق الهيكلي الجوهري هو أن قواعد بيانات المستندات (Document DBs) تتميز بالمرونة العالية؛ فهي لا تتطلب مخططاً ثابتاً مسبقاً (Schema-less)، مما يسمح بإدراج مستندات بهياكل مختلفة في نفس المجموعة. في المقابل، قواعد البيانات العلائقية (Relational) تتطلب تحديد المخطط (Schema) والجداول والأعمدة وأنواع البيانات بصرامة تامة قبل إدخال أي بيانات.\n\nThe most fundamental structural difference lies in schema enforcement. Relational databases enforce a rigid, predefined schema; every row in a table must conform to the exact same column structure. Document databases are schema-less (flexible); they allow individual documents within the same collection to have entirely different structures, attributes, and data types without structural conflict.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "In a Graph Database model, how are the entities and their interconnecting relationships formally represented and stored?",
+        "options": [
+            "Entities are stored as JSON documents and relationships as nested array properties",
+            "Entities are stored as primary keys and relationships are strictly represented by foreign keys",
+            "Entities are represented as 'Nodes' and their relationships are represented as 'Edges'",
+            "Entities are grouped into wide column families and relationships are stored in simple key-value pairs",
+            "Entities are stored in flat tables and relationships are entirely handled by the application layer logic"
+        ],
+        "answer": "Entities are represented as 'Nodes' and their relationships are represented as 'Edges'",
+        "explanation": "في قواعد البيانات الرسومية (Graph Databases)، لا توجد جداول أو مفاتيح أجنبية لتمثيل العلاقات. بدلاً من ذلك، تُخزن الكيانات (مثل الأشخاص، الشركات) كـ 'عقد' (Nodes)، وتُخزن العلاقات التي تربط بين هذه الكيانات بشكل مباشر وصريح كـ 'حواف' (Edges)، وكل حافة تحتوي على اتجاه ومعلومات تصف نوع العلاقة.\n\nIn a Graph Database architecture, data is not stored in tables. Entities (like people or places) are formally represented and stored as 'Nodes'. The connections between these entities are explicitly stored as 'Edges' (relationships). Edges have directions and properties, allowing for ultra-fast, direct traversal of complex relationship networks without the overhead of JOIN operations.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "While NoSQL databases typically relax ACID properties to achieve extreme horizontal scalability (often aiming for 'Eventual Consistency'), which emerging class of databases attempts to combine the strict ACID guarantees of relational databases with the horizontal scalability of NoSQL?",
+        "options": [
+            "Graph databases",
+            "NewSQL databases",
+            "Legacy hierarchical databases",
+            "Offline key-value stores",
+            "Document-only databases"
+        ],
+        "answer": "NewSQL databases",
+        "explanation": "قواعد بيانات (NewSQL) هي فئة حديثة من قواعد البيانات العلاقية صُممت لتقديم أداء وتوسع أفقي (Horizontal scalability) يضاهي أنظمة NoSQL الحديثة، ولكن مع الاحتفاظ بالضمانات الصارمة لمعاملات ACID (الذرية، الاتساق، العزل، المتانة) التي تميز الأنظمة العلاقية الكلاسيكية. فهي تمثل حلاً وسطاً يجمع بين أفضل ميزات كلا المعسكرين.\n\nNewSQL is an emerging class of relational database management systems. They are specifically engineered to provide the same extreme horizontal scalability and high performance associated with NoSQL systems, while strictly maintaining the robust ACID transactional guarantees and standard SQL interfaces of traditional legacy relational databases.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "Which of the following best describes the principle of 'Eventual Consistency' often adopted by distributed NoSQL database systems?",
+        "options": [
+            "The database will immediately reject any write operation across the network if a single node is down",
+            "If no new updates are made to a given data item, eventually all accesses to that item will return the last updated value across all nodes",
+            "The database guarantees mathematically that all nodes will perfectly synchronize within exactly one millisecond of a write",
+            "The data will eventually be deleted automatically to save physical storage space",
+            "Only the primary master node is allowed to read the consistent data; replica nodes are permanently inconsistent"
+        ],
+        "answer": "If no new updates are made to a given data item, eventually all accesses to that item will return the last updated value across all nodes",
+        "explanation": "بسبب التضحية بالاتساق الصارم (Strict Consistency) لصالح التوافر (Availability) في الأنظمة الموزعة حسب نظرية CAP، تعتمد NoSQL على 'الاتساق النهائي' (Eventual Consistency). هذا يعني أنه إذا قمت بتحديث بيانات، فقد لا تراها جميع الخوادم فوراً، ولكن النظام يضمن أنه 'في النهاية' ستتزامن جميع العقد لتعكس القيمة المحدثة إذا لم تحدث تحديثات جديدة.\n\nEventual Consistency is a theoretical guarantee in distributed systems. It dictates that in a highly available, replicated database, if no new updates are made to a specific data item, eventually all nodes in the distributed network will synchronize. Ultimately, all subsequent accesses to that item will reliably return the last updated value, trading immediate strict consistency for high availability.",
+        "topic": "NoSQL Databases",
+        "difficulty": "hard"
+    },
+    {
+        "id": 29,
+        "question": "For an application that purely requires ultra high-speed caching, storing simple configuration settings, and managing user shopping carts without any need for complex querying, which database type is the most efficient?",
+        "options": [
+            "Graph database",
+            "Key-Value database",
+            "Relational database",
+            "Column-family database",
+            "NewSQL database"
+        ],
+        "answer": "Key-Value database",
+        "explanation": "قواعد بيانات 'القيمة والمفتاح' (Key-Value) هي الأسرع والأكثر كفاءة للعمليات البسيطة جداً مثل التخزين المؤقت (Caching) في الذاكرة. نظراً لأن البيانات تُخزن وتُسترجع مباشرة باستخدام 'مفتاح' وحيد دون الحاجة لأي عمليات بحث معقدة أو ربط، فإن أداءها يتفوق على جميع أنواع قواعد البيانات الأخرى في هذه السيناريوهات المحددة.\n\nKey-Value databases (like Redis or Memcached) are the most efficient choice for these specific scenarios. Because they map a single, unique key directly to a blob of data, they perform read and write operations at blistering speeds. They are ideal for high-speed caching and shopping carts where complex querying, filtering, or relationship joins are completely unnecessary.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "The acronym 'NoSQL' is widely accepted in the modern database community to mean:",
+        "options": [
+            "Non-Standard Query Language",
+            "Nothing Outstanding Save Query Logic",
+            "Not Only SQL",
+            "No System Query Language",
+            "Network Oriented SQL"
+        ],
+        "answer": "Not Only SQL",
+        "explanation": "مصطلح 'NoSQL' لا يعني الرفض القاطع للغة SQL أو قواعد البيانات العلائقية (لا لـ SQL). بل يُفسر في المجتمع التقني على أنه (Not Only SQL) أي 'ليس SQL فقط'. هذا يشير إلى أن هذه الأنظمة تقدم بدائل إضافية ومرنة للنموذج العلائقي، ويمكنها التعايش والعمل جنباً إلى جنب مع قواعد البيانات العلائقية التقليدية في نفس المؤسسة.\n\nThe acronym 'NoSQL' is widely understood and accepted in the tech community to mean 'Not Only SQL'. It emphasizes that while traditional relational SQL databases are still highly valuable for transactional data, they are not the only solution. NoSQL provides alternative, specialized data models (like Graph, Document, or Key-Value) to handle specific modern challenges like massive scalability and unstructured data.",
+        "topic": "NoSQL Databases",
+        "difficulty": "normal"
+    },
+    {
+        "id": 31,
+        "question": "What is the primary objective of applying Normalization in database schema design?",
+        "options": [
+            "To automatically generate primary and foreign keys for all tables",
+            "To minimize data redundancy and eliminate insertion, update, and deletion anomalies",
+            "To combine multiple smaller tables into one large centralized table for faster access",
+            "To convert relational algebra operations into physical NoSQL storage paths",
+            "To encrypt sensitive attributes and enforce mandatory access control"
+        ],
+        "answer": "To minimize data redundancy and eliminate insertion, update, and deletion anomalies",
+        "explanation": "التطبيع (Normalization) هو عملية هيكلية تهدف إلى تحليل وتفكيك الجداول لتقليل تكرار البيانات (Redundancy) إلى أدنى حد ممكن، والقضاء على المشاكل أو الشذوذ (Anomalies) التي تحدث عند إضافة، تعديل، أو حذف البيانات.\n\nThe primary objective of Normalization is to systematically decompose tables to minimize data redundancy and strictly eliminate structural flaws known as insertion, update, and deletion anomalies, thereby ensuring long-term data integrity.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "In the context of database normalization, how is a Functional Dependency (X -> Y) formally defined?",
+        "options": [
+            "X and Y must physically reside in two completely different relational tables",
+            "X must always be a numeric data type, whereas Y must be a string",
+            "If two tuples agree on their value for attribute X, they must also agree on their value for attribute Y",
+            "For every unique value of Y, there must be a mathematically infinite set of X values",
+            "If X is updated, Y must automatically be deleted from the system"
+        ],
+        "answer": "If two tuples agree on their value for attribute X, they must also agree on their value for attribute Y",
+        "explanation": "الاعتمادية الوظيفية (Functional Dependency) تعني أن السمة X تُحدد السمة Y. رياضياً، إذا كان هناك صفان يمتلكان نفس القيمة في العمود X، فإنهما يجب أن يمتلكا نفس القيمة في العمود Y حتماً.\n\nA Functional Dependency (X -> Y) dictates that the value of X uniquely determines the value of Y. Formally, if any two tuples (rows) in the relation have the exact same value for attribute X, they must absolutely have the same value for attribute Y.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "Which of the following is the fundamental requirement for a table to satisfy the First Normal Form (1NF)?",
+        "options": [
+            "It must completely eliminate all transitive dependencies",
+            "It must ensure every non-prime attribute is fully functionally dependent on the primary key",
+            "It must have all atomic attributes and no multi-valued attributes or repeating groups",
+            "It must utilize a composite primary key rather than a single-attribute key",
+            "It must be structurally split into at least three different normalized tables"
+        ],
+        "answer": "It must have all atomic attributes and no multi-valued attributes or repeating groups",
+        "explanation": "القاعدة الأساسية للنموذج العادي الأول (1NF) هي أن تحتوي جميع الحقول على قيم 'ذرية' (Atomic) لا يمكن تجزئتها، ويجب ألا يحتوي الجدول على مجموعات متكررة أو قيم متعددة في الخلية الواحدة.\n\nThe fundamental rule for First Normal Form (1NF) is that every attribute must contain only atomic (indivisible) values. It strictly forbids multi-valued attributes, arrays, or repeating groups within a single column.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 34,
+        "question": "To achieve Second Normal Form (2NF), a relation must already be in 1NF and must additionally eliminate which specific structural flaw?",
+        "options": [
+            "Transitive dependencies",
+            "Multi-valued dependencies",
+            "Overlapping candidate keys",
+            "Partial dependencies",
+            "Surrogate keys"
+        ],
+        "answer": "Partial dependencies",
+        "explanation": "للوصول إلى النموذج العادي الثاني (2NF)، يجب القضاء تماماً على 'الاعتماديات الجزئية' (Partial dependencies). هذا يعني أن كل سمة غير رئيسية يجب أن تعتمد على المفتاح الأساسي بالكامل، وليس على جزء منه فقط (في حال كان المفتاح مركباً).\n\nTo achieve Second Normal Form (2NF), a relation must satisfy 1NF and completely eliminate Partial Dependencies. This ensures that every non-prime attribute is fully functionally dependent on the entire composite primary key, not just a portion of it.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "What defines a 'Transitive Dependency', which must be removed to transition a database schema from 2NF to 3NF?",
+        "options": [
+            "A condition where a non-prime attribute functionally determines another non-prime attribute",
+            "A condition where a prime attribute functionally depends on a non-prime attribute",
+            "A condition where a multi-valued attribute depends on a composite key",
+            "A condition where a foreign key is used as the sole primary key",
+            "A condition where an attribute depends on a part of the primary key"
+        ],
+        "answer": "A condition where a non-prime attribute functionally determines another non-prime attribute",
+        "explanation": "الاعتمادية المتعدية (Transitive Dependency) تحدث عندما يعتمد حقل غير رئيسي (Non-prime) على حقل آخر غير رئيسي لتحديد قيمته، بدلاً من الاعتماد المباشر على المفتاح الأساسي. إزالة هذه الاعتمادية هو شرط النموذج العادي الثالث (3NF).\n\nA Transitive Dependency occurs when a non-prime attribute functionally determines another non-prime attribute (e.g., A -> B and B -> C). Eliminating these indirect dependencies is the strict requirement to move a schema from 2NF into Third Normal Form (3NF).",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "According to database normalization rules, how is a 'Prime Attribute' formally defined?",
+        "options": [
+            "It is an attribute that contains only numeric, auto-incrementing values",
+            "It is any attribute that successfully resolves a transitive dependency",
+            "It is an attribute that belongs to any candidate key of the relation",
+            "It is an attribute that is explicitly excluded from the primary key",
+            "It is an attribute that serves exclusively as a foreign key"
+        ],
+        "answer": "It is an attribute that belongs to any candidate key of the relation",
+        "explanation": "السمة الرئيسية (Prime Attribute) هي أي سمة تشكل جزءاً من أي 'مفتاح مرشح' (Candidate key) في الجدول. السمة التي لا تنتمي لأي مفتاح مرشح تُسمى سمة غير رئيسية (Non-prime attribute).\n\nIn normalization terminology, a 'Prime Attribute' is formally defined as an attribute that is a component of any candidate key within the relation. If an attribute does not participate in any candidate key, it is classified as a non-prime attribute.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "A database schema forces a user to update an employee's department location in multiple different rows. If the user misses one row, the database will have conflicting data. What is this phenomenon called?",
+        "options": [
+            "Deletion anomaly",
+            "Insertion anomaly",
+            "Update anomaly",
+            "Concurrency anomaly",
+            "Distributed partition anomaly"
+        ],
+        "answer": "Update anomaly",
+        "explanation": "شذوذ التحديث (Update Anomaly) يحدث بسبب تكرار البيانات الخاطئ. عندما يتطلب تغيير حقيقة واحدة (مثل موقع القسم) تحديث سجلات متعددة، فإن نسيان تحديث إحداها يؤدي إلى تضارب البيانات وفقدان اتساقها.\n\nThis is the classic definition of an Update Anomaly. It is a direct result of unnormalized data redundancy. Modifying a single logical fact requires updating multiple physical rows, and failing to update them all simultaneously creates an inconsistent and corrupted database state.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 38,
+        "question": "What is the primary difference that makes Boyce-Codd Normal Form (BCNF) a stronger, stricter version of 3NF?",
+        "options": [
+            "BCNF requires all foreign keys to be completely removed from the database",
+            "BCNF explicitly allows multi-valued dependencies which 3NF forbids",
+            "BCNF dictates that for every non-trivial functional dependency X -> Y, X must be a superkey",
+            "BCNF merges multiple relational tables into a single document database schema",
+            "BCNF is only applicable if the table relies on a single-attribute primary key"
+        ],
+        "answer": "BCNF dictates that for every non-trivial functional dependency X -> Y, X must be a superkey",
+        "explanation": "نموذج BCNF أقوى من 3NF لأنه لا يسمح بأي استثناءات. القاعدة الصارمة في BCNF هي أن أي محدد (Determinant) في الجدول يجب أن يكون 'مفتاحاً فائقاً' (Superkey). في 3NF، يُسمح أحياناً للسمات غير الرئيسية بتحديد سمات رئيسية، لكن BCNF يمنع ذلك تماماً.\n\nBCNF is structurally stricter than 3NF. It mandates that for every non-trivial functional dependency (X -> Y) in the relation, the determinant (X) must be a superkey. BCNF explicitly disallows scenarios where a prime attribute depends on a non-superkey attribute, a flaw occasionally permitted in 3NF.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 39,
+        "question": "Consider a university schema with the functional dependencies: {Student, Course} -> Instructor, and Instructor -> Course. Assuming {Student, Course} is the primary key, which normal form does this table violate?",
+        "options": [
+            "First Normal Form (1NF)",
+            "Second Normal Form (2NF)",
+            "Third Normal Form (3NF)",
+            "Boyce-Codd Normal Form (BCNF)",
+            "Fourth Normal Form (4NF)"
+        ],
+        "answer": "Boyce-Codd Normal Form (BCNF)",
+        "explanation": "الجدول يحقق 3NF، ولكن نظراً لأن 'المدرب' (Instructor) يحدد 'المقرر' (Course)، والمدرب ليس مفتاحاً فائقاً (Superkey)، فإن هذا يمثل انتهاكاً صريحاً لنموذج BCNF الذي يظهر عادة عند وجود مفاتيح مرشحة متداخلة (Overlapping candidate keys).\n\nThis is the classic BCNF violation scenario. The relation satisfies 3NF because 'Course' is a prime attribute. However, 'Instructor' determines 'Course' (Instructor -> Course), but 'Instructor' is not a superkey. Since BCNF requires every determinant to be a superkey, the table violates BCNF.",
+        "topic": "Normalization",
+        "difficulty": "hard"
+    },
+    {
+        "id": 40,
+        "question": "To systematically fix a partial dependency (e.g., A, B -> C, and B -> D) during the decomposition process, what is the correct architectural action?",
+        "options": [
+            "Convert attribute D into a multi-valued nested array",
+            "Delete attribute B entirely to force D to depend on A",
+            "Decompose the table by removing D and creating a new table with B and D, where B is the primary key",
+            "Merge the table with another table that already has C as a primary key",
+            "Rename B and D to bypass the functional dependency rules"
+        ],
+        "answer": "Decompose the table by removing D and creating a new table with B and D, where B is the primary key",
+        "explanation": "لحل الاعتمادية الجزئية (حيث يعتمد D على B فقط وليس على المفتاح المركب بالكامل)، نقوم بتقسيم الجدول. نأخذ السمة D ونضعها في جدول جديد مستقل، ونجعل السمة التي تعتمد عليها (B) هي المفتاح الأساسي للجدول الجديد.\n\nTo resolve a partial dependency, you must decompose the original unnormalized table. The partially dependent attribute (D) is extracted and placed into a newly created table alongside its specific determinant (B), which is designated as the primary key of the new table.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "When an unnormalized database design requires you to enter artificial or dummy data for a parent entity just to be able to save a child entity's record, what is this anomaly called?",
+        "options": [
+            "Transitive anomaly",
+            "Update anomaly",
+            "Deletion anomaly",
+            "Insertion anomaly",
+            "Distributed anomaly"
+        ],
+        "answer": "Insertion anomaly",
+        "explanation": "شذوذ الإدراج (Insertion anomaly) يحدث عندما يمنعك هيكل الجدول من إضافة بيانات جديدة شرعية ومطلوبة إلا إذا قمت بإدخال بيانات وهمية أو غير مرتبطة في أعمدة أخرى لتلبية قيود الجدول المعيب.\n\nAn Insertion Anomaly structurally prevents you from adding a new, valid record into the database unless you simultaneously input artificial or unrelated data to satisfy the flawed schema's constraints (e.g., needing a dummy department just to hire an employee).",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "In real-world database implementations, why might a database architect deliberately choose to 'Denormalize' specific analytical tables?",
+        "options": [
+            "To completely eliminate the possibility of any update anomalies",
+            "To selectively improve read-heavy OLAP analytics by reducing the number of complex, computationally expensive joins",
+            "To enforce stricter entity integrity across distributed NoSQL networks",
+            "To guarantee that the database reaches the stringent Fourth Normal Form (4NF)",
+            "To compress the physical storage footprint of the hard drives"
+        ],
+        "answer": "To selectively improve read-heavy OLAP analytics by reducing the number of complex, computationally expensive joins",
+        "explanation": "عكس التطبيع (Denormalization) هو كسر قواعد التطبيع عمداً. يُستخدم هذا الإجراء في الأنظمة التحليلية (OLAP) التي تعتمد بشكل كبير على القراءة السريعة. دمج الجداول يقلل من عمليات الربط المعقدة (Joins)، مما يسرع الاستعلامات التحليلية على حساب زيادة طفيفة في التكرار.\n\nDenormalization is the deliberate introduction of redundancy. Architects use it selectively in Online Analytical Processing (OLAP) environments because flattening the schema reduces the number of complex, expensive table joins required, thereby drastically improving read-heavy query performance.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "Which specific tool or technique is highly recommended to simplify database design and avoid the complexities associated with overlapping composite primary keys?",
+        "options": [
+            "Implementing multi-valued JSON properties",
+            "Using Surrogate keys (e.g., auto-increment IDs)",
+            "Dropping the 3NF constraint permanently",
+            "Using Natural Joins exclusively",
+            "Converting the database to a Column-Family NoSQL model"
+        ],
+        "answer": "Using Surrogate keys (e.g., auto-increment IDs)",
+        "explanation": "المفاتيح البديلة (Surrogate keys) مثل الأرقام التسلسلية التلقائية (Auto-increment IDs) تُستخدم بكثرة لتبسيط تصميم قواعد البيانات. فهي تحل محل المفاتيح الأساسية المركبة والمعقدة، وتوفر معرّفاً فريداً بسيطاً لكل سجل يسهل استخدامه كمفتاح أجنبي.\n\nSurrogate keys (such as auto-incrementing integer IDs) are highly recommended practical tools. They artificially provide a simple, unique identifier for each tuple, eliminating the severe structural complexities and functional dependency issues typically associated with bulky, overlapping composite primary keys.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "To properly decompose a table exhibiting a Transitive Dependency (A -> B, B -> C) into 3NF, what structural modification is executed?",
+        "options": [
+            "Attribute C is deleted from the database schema entirely",
+            "A and C are combined to form a new composite primary key",
+            "Attribute C is removed from the main table and placed into a new table where attribute B serves as the primary key",
+            "All three attributes are merged into a single multi-valued column",
+            "Attribute B is converted into a derived attribute of A"
+        ],
+        "answer": "Attribute C is removed from the main table and placed into a new table where attribute B serves as the primary key",
+        "explanation": "لحل الاعتمادية المتعدية (C تعتمد على B)، يتم استخراج السمة التابعة (C) ووضعها في جدول جديد، ويكون المحدد الخاص بها (B) هو المفتاح الأساسي للجدول الجديد، مع الإبقاء على (B) كمفتاح أجنبي في الجدول الأصلي.\n\nTo resolve a transitive dependency, the relation is decomposed. The transitively dependent attribute (C) is removed from the main table and placed into a newly created table. Its immediate determinant (B) is also placed in this new table to serve as its primary key, while remaining in the original table as a foreign key.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "Which normal form specifically addresses and removes 'Multi-valued Dependencies' (MVDs) beyond candidate keys, although it is rarely needed in practical business schemas?",
+        "options": [
+            "First Normal Form (1NF)",
+            "Second Normal Form (2NF)",
+            "Third Normal Form (3NF)",
+            "Boyce-Codd Normal Form (BCNF)",
+            "Fourth Normal Form (4NF)"
+        ],
+        "answer": "Fourth Normal Form (4NF)",
+        "explanation": "النموذج العادي الرابع (4NF) هو مستوى متقدم جداً يهدف إلى معالجة وإزالة 'الاعتماديات متعددة القيم' المستقلة في الجدول. وفي الواقع العملي التجاري، نادراً ما تصل الجداول إلى مرحلة تتطلب تطبيق 4NF، إذ يُكتفى بـ 3NF أو BCNF.\n\nFourth Normal Form (4NF) specifically targets the removal of independent multi-valued dependencies (MVDs) within a relation. However, because these complex overlapping arrays rarely occur in well-thought-out initial designs, achieving 4NF is rarely necessary in practical, day-to-day business schemas.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 46,
+        "question": "What is considered a best practice action to perform BEFORE physically designing and writing the DDL code for normalized tables?",
+        "options": [
+            "Purchase the highest-tier distributed DBMS hardware",
+            "Identify all Functional Dependencies and draw a complete FD diagram",
+            "Write all the Java JDBC connection strings",
+            "Encrypt all external schemas and user views",
+            "Convert all data attributes into simple string datatypes"
+        ],
+        "answer": "Identify all Functional Dependencies and draw a complete FD diagram",
+        "explanation": "قبل البدء في كتابة أوامر DDL وتصميم الجداول فعلياً، من أفضل الممارسات الهندسية تحديد جميع الاعتماديات الوظيفية (Functional Dependencies) ورسم 'مخطط الاعتمادية' (FD diagram) لضمان عدم وجود أخطاء في التصميم.\n\nAs a structural best practice, before writing DDL code or committing to a schema design, developers should explicitly identify all Functional Dependencies (FDs) and draw a comprehensive FD diagram. This visual representation exposes partial and transitive dependencies, ensuring proper normalization strategy.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "Which of the following is NOT a consequence of poor schema normalization?",
+        "options": [
+            "Data anomalies during updates",
+            "Wasted physical storage space due to redundancy",
+            "High probability of data inconsistencies",
+            "Guaranteed location transparency across nodes",
+            "Complex and error-prone DML maintenance queries"
+        ],
+        "answer": "Guaranteed location transparency across nodes",
+        "explanation": "الشفافية المكانية (Location transparency) هي ميزة تخص أنظمة قواعد البيانات الموزعة (DDBMS) ولا علاقة لها مطلقاً بالتطبيع (Normalization). أما باقي الخيارات (شذوذ التحديث، هدر المساحة، والتناقضات) فهي نتائج كارثية لعدم تطبيق التطبيع.\n\nGuaranteed location transparency is a feature explicitly related to Distributed Database Management Systems (DDBMS) networks, completely unrelated to schema normalization. The other options (anomalies, wasted space, inconsistencies, and complex maintenance) are all direct negative consequences of poor, unnormalized schema design.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "A table named 'Project' has attributes (Proj_ID, Emp_ID, Emp_Name, Proj_Name). The Primary Key is the composite of (Proj_ID, Emp_ID). We know that Proj_ID -> Proj_Name and Emp_ID -> Emp_Name. Mathematically, this table violates which normal form rule?",
+        "options": [
+            "It violates 1NF because it contains multi-valued arrays",
+            "It violates 2NF due to the presence of partial dependencies",
+            "It violates 3NF due to the presence of transitive dependencies",
+            "It violates BCNF because the determinants are all candidate keys",
+            "It violates 4NF due to multi-valued dependencies"
+        ],
+        "answer": "It violates 2NF due to the presence of partial dependencies",
+        "explanation": "بما أن اسم الموظف (Emp_Name) يعتمد فقط على (Emp_ID)، واسم المشروع (Proj_Name) يعتمد فقط على (Proj_ID)، فهذا يعني أن السمات غير الرئيسية تعتمد على 'جزء' من المفتاح الأساسي المركب. هذه 'الاعتمادية الجزئية' تكسر قواعد النموذج العادي الثاني (2NF).\n\nThe non-prime attributes 'Proj_Name' and 'Emp_Name' are dependent only on portions of the composite primary key (Proj_ID and Emp_ID respectively), rather than the whole key. This explicitly defines a Partial Dependency, which mathematically violates the rules of Second Normal Form (2NF).",
+        "topic": "Normalization",
+        "difficulty": "hard"
+    },
+    {
+        "id": 49,
+        "question": "What is the structural role of 'Database Constraints' (like UNIQUE and FOREIGN KEY) in relation to a normalized schema?",
+        "options": [
+            "They automatically reverse the normalization process to improve read speeds",
+            "They dynamically compress the string data types into integers",
+            "They are utilized to mathematically enforce the normalized invariants and prevent anomalous data entry",
+            "They convert the database from a relational model to a NoSQL graph model",
+            "They temporarily disable the primary keys during heavy data loading"
+        ],
+        "answer": "They are utilized to mathematically enforce the normalized invariants and prevent anomalous data entry",
+        "explanation": "بعد تطبيع الجداول وفصلها، تُستخدم قيود قاعدة البيانات (مثل UNIQUE و FOREIGN KEY) لضمان حماية هذه الهيكلية. هذه القيود تُجبر النظام رياضياً على تطبيق قواعد النزاهة وتمنع المستخدمين من إدخال بيانات تسبب الشذوذ (Anomalies).\n\nOnce a schema is normalized, 'Database Constraints' (such as UNIQUE constraints and FOREIGN KEY referential integrity) act as the physical enforcers. They mathematically enforce the normalized invariants, strictly preventing users or applications from entering anomalous, orphaned, or duplicated data that would corrupt the design.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "A developer successfully normalizes an entire relational database to the Third Normal Form (3NF). According to practical schema improvement guidelines, what should the developer do regarding the normalization decisions made?",
+        "options": [
+            "Delete all documentation since 3NF schemas are self-explanatory",
+            "Document the normalization decisions meticulously so future developers understand the structural logic and constraints",
+            "Immediately proceed to enforce Fourth Normal Form (4NF) across all tables",
+            "Revert the schema back to 1NF to support NoSQL compatibility",
+            "Upload the raw ER diagrams directly to the production server cache"
+        ],
+        "answer": "Document the normalization decisions meticulously so future developers understand the structural logic and constraints",
+        "explanation": "من أهم الإرشادات العملية (Practical Schema Tips) بعد تصميم وتطبيع قاعدة البيانات هو 'توثيق' (Document) هذه القرارات الهندسية. هذا التوثيق الدقيق يساعد المطورين في المستقبل على فهم سبب تقسيم الجداول بهذه الطريقة، وكيفية التعامل مع القيود بشكل صحيح.\n\nAccording to practical schema improvement guidelines, it is crucial to document all normalization decisions meticulously. This explicit documentation ensures that future developers and DBAs understand the complex structural logic, functional dependencies, and constraints behind the table decompositions, preventing accidental architectural degradation over time.",
+        "topic": "Normalization",
+        "difficulty": "normal"
+    }
+]

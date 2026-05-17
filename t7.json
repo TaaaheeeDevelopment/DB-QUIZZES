@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "Which type of SQL JOIN returns all rows from the left table and only the matched rows from the right table, filling non-matching right table columns with NULL?",
+        "options": [
+            "INNER JOIN",
+            "LEFT JOIN",
+            "RIGHT JOIN",
+            "FULL OUTER JOIN",
+            "CROSS JOIN"
+        ],
+        "answer": "LEFT JOIN",
+        "explanation": "الربط الأيسر (LEFT JOIN) يقوم بإرجاع جميع السجلات الموجودة في الجدول الأيسر بالكامل، بالإضافة إلى السجلات المتطابقة من الجدول الأيمن. وإذا لم يكن هناك تطابق في الجدول الأيمن، يتم ملء تلك الحقول بقيم فارغة (NULL).\n\nA LEFT JOIN returns all rows from the left table, plus the matched rows from the right table. If there is no match found in the right table, the result will contain NULL values for the right table's columns.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "In SQL, which operation generates a Cartesian product by combining every row from the first table with every row from the second table without any specific condition?",
+        "options": [
+            "FULL OUTER JOIN",
+            "SELF JOIN",
+            "INNER JOIN",
+            "CROSS JOIN",
+            "LEFT JOIN"
+        ],
+        "answer": "CROSS JOIN",
+        "explanation": "الربط التقاطعي (CROSS JOIN) لا يحتاج إلى شرط ربط، بل يقوم بدمج كل صف من الجدول الأول مع كل صف من الجدول الثاني لإنشاء ما يُعرف رياضياً بـ 'الضرب الديكارتي' (Cartesian product).\n\nA CROSS JOIN produces a Cartesian product. It systematically combines every single row in the left table with every single row in the right table, multiplying the row counts without filtering by any matching condition.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "What is the primary characteristic of a Correlated Subquery that distinguishes it from an Independent (Non-correlated) Subquery?",
+        "options": [
+            "It executes exactly once for the entire query regardless of the outer rows",
+            "It depends on values from the outer query and executes once for each row processed by the outer query",
+            "It cannot be used inside a WHERE clause under any circumstances",
+            "It automatically creates a physical temporary table on the disk",
+            "It only works with aggregate functions like SUM and AVG"
+        ],
+        "answer": "It depends on values from the outer query and executes once for each row processed by the outer query",
+        "explanation": "الاستعلام الفرعي المترابط (Correlated Subquery) يعتمد على بيانات من الاستعلام الخارجي لكي يعمل. هذا يعني أنه لا يُنفذ مرة واحدة، بل يتم تنفيذه بشكل متكرر لكل صف (حلقة تكرار) تتم معالجته بواسطة الاستعلام الخارجي، مما يجعله بطيئاً جداً.\n\nA Correlated Subquery is dependent on the outer query because it references columns from it. Therefore, it cannot be evaluated independently; it must be executed repeatedly, once for every single row processed by the outer query, causing significant performance overhead.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "hard"
+    },
+    {
+        "id": 4,
+        "question": "An independent (non-correlated) subquery is best described as a nested query that:",
+        "options": [
+            "Depends entirely on the outer query for its execution logic",
+            "Executes once for every row of the outer query sequentially",
+            "Executes only once and passes its final result to the outer query",
+            "Can only return a single numeric value and no strings",
+            "Permanently modifies the database structural schema"
+        ],
+        "answer": "Executes only once and passes its final result to the outer query",
+        "explanation": "الاستعلام الفرعي المستقل (Non-correlated Subquery) لا يعتمد على الاستعلام الخارجي. لذلك، يقوم المحرك بتنفيذه مرة واحدة فقط في البداية، ويأخذ نتيجته الجاهزة ويمررها إلى الاستعلام الخارجي لاستخدامها في المقارنة.\n\nAn independent or non-correlated subquery does not rely on any values from the outer query. Consequently, the database engine executes it exactly once, computes the final result, and securely passes that result to the outer query for evaluation.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "What is a Database View in SQL?",
+        "options": [
+            "A physical table that stores duplicate data for emergency backups",
+            "A graphical user interface application used exclusively by database administrators",
+            "A virtual table based on the result-set of an SQL statement that contains no data of its own",
+            "A type of clustered index used to sort data physically on the hard drive",
+            "A temporary variable stored solely in the client's network cache"
+        ],
+        "answer": "A virtual table based on the result-set of an SQL statement that contains no data of its own",
+        "explanation": "العرض (View) هو 'جدول افتراضي'. لا يمتلك بيانات فعلية مخزنة على القرص، بل هو عبارة عن استعلام SQL محفوظ. في كل مرة تستدعي فيها الـ View، يقوم بجلب البيانات ديناميكياً من الجداول الأساسية (Base tables).\n\nA View is defined as a virtual table. It physically stores no data of its own; rather, it is a saved SQL query that dynamically pulls and displays data from underlying base tables whenever the view is queried.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 6,
+        "question": "How does using Views enhance database security effectively?",
+        "options": [
+            "By encrypting the network traffic between the client and the database server",
+            "By completely preventing SQL injection attacks autonomously",
+            "By restricting user access to specific columns or rows instead of exposing the entire underlying tables",
+            "By enforcing physical data independence directly on the hard drive",
+            "By creating a daily backup copy of the data automatically"
+        ],
+        "answer": "By restricting user access to specific columns or rows instead of exposing the entire underlying tables",
+        "explanation": "واحدة من أهم فوائد الـ View هي الأمان. بدلاً من إعطاء المستخدم صلاحية للوصول إلى جدول الموظفين بالكامل (والذي قد يحتوي على الرواتب)، يمكنك إنشاء View يعرض الأسماء والأقسام فقط، وإعطاء الصلاحية على هذا العرض فقط.\n\nViews significantly enhance security by acting as an access control mechanism. They allow administrators to expose only specific, safe columns or filtered rows to users, completely hiding sensitive data present in the underlying base tables without requiring complex table-level permissions.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 7,
+        "question": "A Clustered Index is a critical database performance tool primarily because:",
+        "options": [
+            "It creates a separate physical structure without altering the table data format",
+            "It is utilized exclusively to encrypt highly sensitive columns",
+            "It determines the exact physical sorting order of data rows within the table on the disk",
+            "A table can mathematically have an unlimited number of clustered indexes",
+            "It automatically converts all numeric data into indexed strings"
+        ],
+        "answer": "It determines the exact physical sorting order of data rows within the table on the disk",
+        "explanation": "الفهرس العنقودي (Clustered Index) يقوم بإعادة ترتيب البيانات نفسها فيزيائياً على القرص الصلب وتخزينها بترتيب معين (غالباً بناءً على المفتاح الأساسي)، مما يجعله سريعاً جداً في عمليات البحث واسترجاع النطاقات (Ranges).\n\nA Clustered Index is critical because it dictates the actual physical storage order of the rows in the data pages on the disk. Because the data itself is sorted and stored according to the index key, retrieving sequential ranges of data is exceptionally fast.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "Why can a relational database table logically possess one and only one Clustered Index?",
+        "options": [
+            "Because database engines intentionally restrict memory allocation for multiple clusters",
+            "Because the SQL standard strictly prohibits tables from having multiple primary keys",
+            "Because data rows can only be physically sorted on the disk in one specific order at a time",
+            "Because additional clustered indexes would automatically convert into logical views",
+            "Because it encrypts the entire table which can mathematically only be done once"
+        ],
+        "answer": "Because data rows can only be physically sorted on the disk in one specific order at a time",
+        "explanation": "بما أن الفهرس العنقودي (Clustered Index) يقوم بترتيب البيانات نفسها فعلياً (فيزيائياً) على القرص، فمن المستحيل منطقياً ترتيب نفس البيانات المادية بأكثر من تسلسل واحد في نفس الوقت. لذلك، يُسمح بواحد فقط لكل جدول.\n\nThe sole reason a table is restricted to one clustered index is structural physics: a clustered index defines the actual physical sorting order of the data on the disk. Data rows can only exist in one physical sequence at any given time, making multiple clustered indexes a physical impossibility.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 9,
+        "question": "How does a Non-Clustered Index operate internally to speed up data retrieval?",
+        "options": [
+            "It physically sorts and shuffles the table data based on the indexed column values",
+            "It creates a completely independent virtual view of the table in the CPU cache",
+            "It explicitly duplicates the entire database on a secondary drive for parallel processing",
+            "It maintains a separate structure containing keys and pointers that logically link to the actual physical rows in the base table",
+            "It mathematically groups rows together exclusively based on aggregate functions like MAX or MIN"
+        ],
+        "answer": "It maintains a separate structure containing keys and pointers that logically link to the actual physical rows in the base table",
+        "explanation": "الفهرس غير العنقودي (Non-Clustered Index) يشبه فهرس الكتاب. فهو لا يغير ترتيب البيانات الأصلية، بل ينشئ هيكلاً مستقلاً يحتوي على قيم العمود المفهرس، وإلى جانبها 'مؤشرات' (Pointers) تدل على موقع السجل الأصلي في الجدول لاسترجاعه بسرعة.\n\nA Non-Clustered Index operates much like an index at the back of a textbook. It creates a completely separate structural hierarchy (usually a B-Tree) that stores the indexed column values alongside pointers (row locators). These pointers seamlessly direct the engine to the actual physical row in the unsorted base table.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "While indexes vastly improve the speed of SELECT queries, what is their primary operational disadvantage in a high-volume production environment?",
+        "options": [
+            "They completely prevent database users from creating Views on the indexed tables",
+            "They slow down DML operations like INSERT, UPDATE, and DELETE because the index structure must be continuously updated to match",
+            "They strictly limit the maximum number of rows a relational table is permitted to hold",
+            "They automatically convert all numeric data types into string formats to enable sorting",
+            "They periodically delete older, unaccessed records automatically to conserve disk space"
+        ],
+        "answer": "They slow down DML operations like INSERT, UPDATE, and DELETE because the index structure must be continuously updated to match",
+        "explanation": "المشكلة الكبرى في الفهارس (Indexes) هي 'التكلفة الإضافية' (Overhead) عند التعديل. كلما قمت بإدراج، حذف، أو تحديث بيانات في الجدول، يجب على محرك قاعدة البيانات أيضاً تحديث شجرة الفهرس لتعكس هذه التغييرات، مما يبطئ عمليات DML.\n\nWhile indexes are excellent for read performance (SELECT), they introduce significant write overhead. Every time a DML operation (INSERT, UPDATE, DELETE) modifies the table data, the database engine must also perform additional writes to update all associated index structures, noticeably slowing down write performance in high-transaction environments.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "hard"
+    },
+    {
+        "id": 11,
+        "question": "What is the specific definition of a 'Composite Index' in database terminology?",
+        "options": [
+            "An index that spans across multiple different databases simultaneously via a network",
+            "An index that uniquely combines both clustered and non-clustered properties into one file",
+            "An index built combining multiple columns within the same table to optimize specific multi-column searches",
+            "An index used exclusively for advanced string manipulation and full-text searching",
+            "A secondary backup mechanism that completely restores deleted rows"
+        ],
+        "answer": "An index built combining multiple columns within the same table to optimize specific multi-column searches",
+        "explanation": "الفهرس المركب (Composite Index) هو ببساطة فهرس يتم إنشاؤه على 'عمودين أو أكثر' معاً داخل نفس الجدول (مثلاً: فهرسة الاسم الأول والاسم الأخير معاً). وهو مفيد جداً عندما تبحث الاستعلامات عن هذه الأعمدة مجتمعة بشكل متكرر.\n\nA Composite Index (or multi-column index) is an index structurally built on two or more columns from the exact same table. It is highly effective for optimizing queries that frequently filter or sort based on that specific combination of columns (e.g., searching by Last Name and First Name simultaneously).",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "If you want to join a table with itself to compare rows within the same table (such as finding employees and their managers residing in the same Employee table), which join technique MUST you employ?",
+        "options": [
+            "CROSS JOIN",
+            "FULL OUTER JOIN",
+            "SELF JOIN using table aliases",
+            "NATURAL JOIN",
+            "UNION SET OPERATION"
+        ],
+        "answer": "SELF JOIN using table aliases",
+        "explanation": "لربط الجدول بنفسه، نستخدم الربط الذاتي (SELF JOIN). ولأننا نستخدم نفس الجدول مرتين في الاستعلام، من الضروري والمحتم استخدام 'أسماء مستعارة' (Table aliases مثل e1 و e2) للتمييز بين النسختين أثناء المقارنة.\n\nA SELF JOIN is required when a table needs to be joined with itself to establish relationships between rows within the same structure. Because the table name is identical, you MUST employ table aliases (e.g., FROM Employee e1, Employee e2) to explicitly differentiate between the two instances during the logical comparison.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "Which SQL JOIN operation returns all rows from both participating tables, ensuring no data is excluded, and displaying NULL values where no logical match exists between them?",
+        "options": [
+            "INNER JOIN",
+            "FULL OUTER JOIN",
+            "RIGHT JOIN",
+            "LEFT JOIN",
+            "THETA JOIN"
+        ],
+        "answer": "FULL OUTER JOIN",
+        "explanation": "الربط الخارجي الكامل (FULL OUTER JOIN) يجمع كل شيء. فهو يعرض السجلات المتطابقة بين الجدولين، بالإضافة إلى جميع السجلات من الجدول الأيسر التي لم تتطابق، وجميع السجلات من الجدول الأيمن التي لم تتطابق، مع وضع (NULL) في الخانات المفقودة.\n\nThe FULL OUTER JOIN combines the effects of both Left and Right Outer Joins. It is designed to return every single row from both the left and right tables. Where a matching condition is met, the rows are combined; where no match exists, the missing side's attributes are populated strictly with NULL values.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "When an application queries a 'View' instead of the underlying base tables, and the DBA fundamentally restructures those base tables without altering the view's logical output, what architectural concept is being achieved?",
+        "options": [
+            "Physical Data Independence",
+            "Logical Data Independence",
+            "Referential Integrity",
+            "Data Redundancy Optimization",
+            "Atomicity execution"
+        ],
+        "answer": "Logical Data Independence",
+        "explanation": "استخدام الـ Views يوفر 'استقلالية البيانات المنطقية' (Logical Data Independence). فهذا يسمح لمدير القاعدة بتغيير هياكل الجداول الأصلية (المخطط المفاهيمي) دون أن تنكسر أو تتعطل التطبيقات التي تعتمد فقط على الـ View كواجهة خارجية لها.\n\nQuerying a View achieves Logical Data Independence. The external application depends solely on the View's interface. Therefore, the DBA can safely refactor, split, or modify the underlying conceptual base tables. As long as the View's SQL definition is updated to output the same logical format, the external applications remain completely unaffected.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "A developer writes a query using the clause: `WHERE Salary > (SELECT AVG(Salary) FROM Employees)`. What specific type of subquery is demonstrated here?",
+        "options": [
+            "Correlated subquery",
+            "Independent (Non-correlated) subquery",
+            "Self Join recursive subquery",
+            "Virtual View clustered subquery",
+            "Composite index subquery"
+        ],
+        "answer": "Independent (Non-correlated) subquery",
+        "explanation": "هذا الاستعلام الداخلي (حساب متوسط الرواتب) لا يحتاج إلى أي معلومة من الاستعلام الخارجي لكي يعمل. يمكن تشغيله لوحده كاستعلام مستقل ليُنتج رقماً واحداً. لذلك هو استعلام فرعي مستقل أو غير مترابط (Non-correlated).\n\nThis is a classic example of an Independent (Non-correlated) subquery. The inner query `(SELECT AVG(Salary) FROM Employees)` does not reference any outer query columns. It stands alone, is executed by the engine exactly once to compute the average, and then securely passes that static scalar value to the outer query for comparison.",
+        "topic": "SQL joins, subquery, view, index",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "What is the primary difference between the Systems Development Life Cycle (SDLC) and the Database Life Cycle (DBLC)?",
+        "options": [
+            "SDLC exclusively manages the hardware components, while DBLC manages the software applications",
+            "SDLC traces the history of the entire software system, while DBLC traces the history of the database within that system",
+            "SDLC is a phase within the DBLC used for database loading",
+            "SDLC is only used for physical design, while DBLC is used for conceptual design",
+            "SDLC completely ignores data storage, whereas DBLC ignores user interfaces"
+        ],
+        "answer": "SDLC traces the history of the entire software system, while DBLC traces the history of the database within that system",
+        "explanation": "دورة حياة تطوير النظام (SDLC) تهتم بتتبع التاريخ الكامل للنظام البرمجي منذ نشأته حتى تقاعده. أما دورة حياة قاعدة البيانات (DBLC) فهي تركز حصرياً على تتبع وتطوير جزء 'قاعدة البيانات' داخل هذا النظام الأوسع.\n\nThe Systems Development Life Cycle (SDLC) traces the history and development of the entire software system from inception to obsolescence. In contrast, the Database Life Cycle (DBLC) specifically traces the history of the database component within that broader information system.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "In the context of an organization's IT infrastructure, what is the fundamental purpose of an Information System (IS)?",
+        "options": [
+            "To provide for data collection, storage, and retrieval to facilitate data transformation into information",
+            "To exclusively manage the physical network cables and routers",
+            "To act as a compiler that translates source code into machine language",
+            "To automatically generate graphical user interfaces for desktop applications",
+            "To strictly serve as an offline backup for legacy file systems"
+        ],
+        "answer": "To provide for data collection, storage, and retrieval to facilitate data transformation into information",
+        "explanation": "الغرض الأساسي لأي نظام معلومات (Information System) هو توفير الآليات اللازمة لجمع البيانات، تخزينها، واسترجاعها، لتسهيل عملية تحويل هذه البيانات الخام إلى 'معلومات' مفيدة تدعم اتخاذ القرار.\n\nThe fundamental purpose of an Information System (IS) is to provide the necessary mechanisms for data collection, storage, and retrieval. This organized infrastructure facilitates the crucial transformation of raw data into meaningful, actionable information.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "According to the formal Database Life Cycle (DBLC), which phase is explicitly responsible for establishing the scope and boundaries of the proposed database?",
+        "options": [
+            "Testing and evaluation",
+            "Database initial study",
+            "Implementation and loading",
+            "Logical design",
+            "Maintenance and evolution"
+        ],
+        "answer": "Database initial study",
+        "explanation": "مرحلة 'الدراسة الأولية لقاعدة البيانات' (Database Initial Study) هي المرحلة الأولى التي يتم فيها تحليل وضع الشركة، وتحديد المشاكل، ووضع الأهداف، والأهم من ذلك 'تحديد النطاق والحدود' (Scope and boundaries) للمشروع.\n\nAccording to the DBLC, the 'Database initial study' phase is where the company's situation is analyzed, problems and constraints are defined, objectives are set, and the specific scope and boundaries of the proposed database system are explicitly established.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "What is the primary goal of the \"Systems Analysis\" process when developing a new Information System?",
+        "options": [
+            "To physically install the Database Management System (DBMS) on the server",
+            "To establish the need for an Information System and explicitly determine its extent and requirements",
+            "To write the SQL DML commands for data insertion",
+            "To optimize the hardware storage blocks for faster access times",
+            "To normalize the physical tables to the third normal form"
+        ],
+        "answer": "To establish the need for an Information System and explicitly determine its extent and requirements",
+        "explanation": "عملية 'تحليل النظم' (Systems Analysis) تهدف إلى إثبات الحاجة لوجود نظام معلومات جديد في المؤسسة، وتحديد مدى اتساع هذا النظام وما هي المتطلبات الدقيقة التي يجب أن يلبيها.\n\nThe primary goal of the 'Systems Analysis' process is to establish the clear business need for an Information System and to explicitly determine its extent, scope, and operational requirements before any design or development begins.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 20,
+        "question": "The \"Database Design\" phase in the DBLC is typically divided into three distinct stages. What are they?",
+        "options": [
+            "Planning, Analysis, and Detailed Design",
+            "Conceptual Design, Logical Design, and Physical Design",
+            "Data Loading, System Testing, and Operation",
+            "Hardware Selection, DBMS Selection, and Network Setup",
+            "Entity Identification, Authorization, and Encryption"
+        ],
+        "answer": "Conceptual Design, Logical Design, and Physical Design",
+        "explanation": "مرحلة 'تصميم قاعدة البيانات' تنقسم دائماً إلى ثلاث مراحل متسلسلة: التصميم المفاهيمي (Conceptual) لفهم الكيانات والعلاقات، التصميم المنطقي (Logical) لتحويلها إلى جداول، والتصميم الفيزيائي (Physical) لتحديد طرق التخزين الفعلي.\n\nThe 'Database Design' phase is systematically divided into three distinct stages: Conceptual Design (high-level ER modeling), Logical Design (mapping to relational tables), and Physical Design (defining storage and hardware specifics).",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 21,
+        "question": "During the Conceptual Design stage, why is \"Data Model Verification\" a critical milestone before moving to Logical Design?",
+        "options": [
+            "It physically creates the tables in the chosen DBMS to ensure they compile",
+            "It automatically assigns appropriate physical data types like VARCHAR and INT",
+            "It guarantees that the ER model accurately and completely reflects all defined business rules and data requirements",
+            "It enforces database security policies and generates user roles",
+            "It partitions the data into distributed fragments across multiple cloud servers"
+        ],
+        "answer": "It guarantees that the ER model accurately and completely reflects all defined business rules and data requirements",
+        "explanation": "التحقق من نموذج البيانات (Data Model Verification) هو خطوة حاسمة للتأكد من أن المخطط المفاهيمي (مثل ERD) يمثل قواعد العمل الفعلي (Business rules) ومتطلبات البيانات بشكل صحيح وكامل قبل الانتقال إلى مرحلة الجداول المنطقية التي يصعب تعديلها لاحقاً.\n\n'Data Model Verification' is a critical conceptual design milestone. It ensures and guarantees that the developed Entity-Relationship (ER) model accurately, logically, and completely reflects all the established business rules and end-user data requirements before moving to the rigid Logical Design phase.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 22,
+        "question": "In the Database Life Cycle (DBLC), which phase involves the actual installation of the DBMS software and the physical creation of the database?",
+        "options": [
+            "Database initial study",
+            "Conceptual design",
+            "Maintenance and evolution",
+            "Implementation and loading",
+            "Systems analysis"
+        ],
+        "answer": "Implementation and loading",
+        "explanation": "مرحلة 'التنفيذ والتحميل' (Implementation and loading) هي المرحلة التي يتم فيها تحويل التصميم إلى واقع، حيث يُثبت نظام إدارة قواعد البيانات (DBMS)، وتُنشأ الجداول، وتُحمل البيانات الأولية أو بيانات الأنظمة القديمة إلى القاعدة الجديدة.\n\nIn the DBLC, the 'Implementation and loading' phase is where theoretical design meets practical application. It involves the actual installation of the DBMS software, the execution of DDL commands to create the physical database schema, and loading the initial dataset.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 23,
+        "question": "When creating a new Information System, how do the SDLC and DBLC interact?",
+        "options": [
+            "The DBLC must be completely finished before the SDLC can begin its planning phase",
+            "The SDLC and DBLC are completely isolated frameworks that never overlap in modern development",
+            "They are executed concurrently, with the DBLC serving as a specialized parallel framework focused strictly on the data component",
+            "The SDLC is only used for legacy systems, while the DBLC is used for modern cloud systems",
+            "The DBLC replaces the SDLC entirely in organizations that use Relational Databases"
+        ],
+        "answer": "They are executed concurrently, with the DBLC serving as a specialized parallel framework focused strictly on the data component",
+        "explanation": "دورة حياة تطوير النظام (SDLC) ودورة حياة قاعدة البيانات (DBLC) تعملان جنباً إلى جنب (بشكل متزامن). الـ DBLC هي بمثابة إطار عمل موازٍ متخصص يركز حصرياً على تصميم وتنفيذ جزء 'البيانات' داخل المشروع البرمجي الشامل.\n\nWhen developing a new Information System, the SDLC and DBLC do not happen in isolation. They are executed concurrently. The DBLC operates as a highly specialized parallel framework that focuses strictly on designing, implementing, and maintaining the data component of the broader system.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 24,
+        "question": "What marks the transition from the \"Testing and Evaluation\" phase to the \"Operation\" phase in the Database Life Cycle?",
+        "options": [
+            "The system is deemed acceptable, passes all tests, and is officially deployed for daily user activity",
+            "The database administrator writes the first conceptual ER diagram",
+            "The decision to select a specific DBMS vendor is finalized",
+            "The legacy data is exported to flat text files for the first time",
+            "The initial problem statement is formally defined"
+        ],
+        "answer": "The system is deemed acceptable, passes all tests, and is officially deployed for daily user activity",
+        "explanation": "بمجرد أن تجتاز قاعدة البيانات مرحلة 'الاختبار والتقييم' (Testing and evaluation) وتُعتبر مقبولة وخالية من الأخطاء الحرجة، تنتقل فوراً إلى مرحلة 'التشغيل' (Operation)، حيث يبدأ المستخدمون النهائيون في استخدامها في أعمالهم اليومية.\n\nThe transition into the 'Operation' phase occurs immediately after the 'Testing and Evaluation' phase is completed successfully. It marks the moment the database system is deemed acceptable, passes structural and functional tests, and is officially deployed for live, daily user activity.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "What is a key activity performed during the \"Maintenance and Evolution\" phase of the DBLC?",
+        "options": [
+            "Defining the initial company objectives and constraints",
+            "Designing the logical ER model for the very first time",
+            "Adapting the database to changes in business requirements, upgrading the DBMS, and optimizing performance over time",
+            "Choosing whether to use a Relational or NoSQL database model",
+            "Gathering the preliminary data requirements from the end-users"
+        ],
+        "answer": "Adapting the database to changes in business requirements, upgrading the DBMS, and optimizing performance over time",
+        "explanation": "مرحلة 'الصيانة والتطور' (Maintenance and Evolution) هي المرحلة الأطول، وتتضمن تكييف قاعدة البيانات مع متطلبات العمل الجديدة، ترقية برمجيات DBMS، وعمل النسخ الاحتياطية، وتحسين الأداء (Optimization) مع نمو حجم البيانات.\n\nA key activity during the 'Maintenance and Evolution' phase is ensuring the database remains relevant and efficient. This involves adapting the database schema to reflect changing business requirements, continuously optimizing queries for performance, and upgrading the DBMS software over time.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "Which of the following best describes the concept of \"Scope and Boundaries\" defined during the Database Initial Study?",
+        "options": [
+            "The mathematical limit of tuples a physical disk can hold",
+            "The explicit recognition of what the new system will accomplish and what is deliberately excluded from the system",
+            "The minimum and maximum cardinality of a specific entity relationship",
+            "The geographical distance between distributed database servers",
+            "The physical boundaries of the network cables connecting the clients"
+        ],
+        "answer": "The explicit recognition of what the new system will accomplish and what is deliberately excluded from the system",
+        "explanation": "تحديد 'النطاق والحدود' (Scope and Boundaries) يعني الفهم الدقيق والاتفاق على ما سيقوم النظام بفعله وتغطيته (النطاق)، وما هي الميزات أو الأقسام التي لن يشملها النظام ولن يتم تطويرها (الحدود) لتجنب توسع المشروع بشكل غير منضبط.\n\nDefining the 'Scope and Boundaries' during the Initial Study is the explicit recognition of exactly what the new database system will accomplish (its scope) and, equally importantly, defining what features or domains are deliberately excluded from the system (its boundaries) to prevent scope creep.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "What is typically required during the \"Implementation and Loading\" phase if the organization is transitioning from an old legacy system to a new database?",
+        "options": [
+            "Generating the very first conceptual design blueprint",
+            "Defining the business rules for the first time",
+            "Data conversion from the old file formats into the new database structures",
+            "Skipping the physical design phase entirely to save time",
+            "Ignoring all historical data to start with a completely empty database"
+        ],
+        "answer": "Data conversion from the old file formats into the new database structures",
+        "explanation": "أثناء مرحلة التنفيذ والتحميل، إذا كانت الشركة تستخدم نظاماً قديماً (Legacy system)، فإن التحدي الأكبر هو 'تحويل البيانات' (Data conversion) من صيغ الملفات القديمة المعزولة إلى هيكل الجداول العلائقية الجديد لضمان عدم فقدان السجلات التاريخية.\n\nDuring the 'Implementation and Loading' phase, transitioning from a legacy system invariably requires 'Data Conversion'. This complex process involves extracting historical data from old, often incompatible file formats, transforming it, and loading it correctly into the newly defined database structures.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "A complete Information System (IS) is composed of interacting parts. Which of the following accurately lists these fundamental components?",
+        "options": [
+            "Servers, switches, routers, firewalls, and modems",
+            "Primary keys, foreign keys, constraints, triggers, and views",
+            "Tables, rows, columns, data types, and indexes",
+            "Hardware, software, persons, procedures, and data",
+            "DDL, DML, DCL, TCL, and SQL"
+        ],
+        "answer": "Hardware, software, persons, procedures, and data",
+        "explanation": "أي نظام معلومات (Information System) ناجح لا يعتمد على البرمجيات فقط، بل هو مزيج متكامل من خمسة مكونات أساسية تتفاعل معاً: الأجهزة (Hardware)، البرمجيات (Software)، الأشخاص (Persons)، الإجراءات (Procedures)، والبيانات (Data).\n\nA complete Information System (IS) is more than just computers. It is formally defined as a system composed of five interacting, fundamental components: Hardware, Software (including the DBMS), Persons (users and administrators), Procedures (business rules), and the Data itself.",
+        "topic": "database design(lifecycle)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "What is the primary goal of Logical Design in the database development process?",
+        "options": [
+            "Determining the exact disk storage locations for tables",
+            "Translating the conceptual design into the internal model for a selected DBMS",
+            "Gathering initial business requirements from non-technical stakeholders",
+            "Installing the DBMS software on the physical servers",
+            "Establishing the scope and boundaries of the information system"
+        ],
+        "answer": "Translating the conceptual design into the internal model for a selected DBMS",
+        "explanation": "التصميم المنطقي (Logical Design) يهدف بشكل أساسي إلى تحويل النموذج المفاهيمي (مثل ERD) إلى نموذج داخلي يتوافق بشكل مباشر مع نظام إدارة قواعد بيانات (DBMS) محدد، كتحويله إلى جداول علائقية.\n\nThe primary goal of Logical Design is translating the software-independent conceptual design into an internal model tailored for a selected Database Management System (DBMS), such as mapping an ER model into relational tables.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "Which specific step is a mandatory part of validating the Logical Design?",
+        "options": [
+            "Configuring the firewall rules for the database network",
+            "Validating the logical model using normalization techniques",
+            "Writing the application front-end source code",
+            "Purchasing and formatting physical hard drives",
+            "Creating aesthetic user interface wireframes"
+        ],
+        "answer": "Validating the logical model using normalization techniques",
+        "explanation": "أثناء مرحلة التصميم المنطقي، من الإلزامي التحقق من صحة النموذج الناتج باستخدام تقنيات 'التطبيع' (Normalization) لضمان التخلص من التكرار غير المبرر وشذوذ البيانات قبل البدء بالتصميم الفيزيائي.\n\nDuring Logical Design, it is a mandatory step to validate the logical model using normalization techniques. This ensures that the mapped relational tables are free from structural anomalies and unnecessary data redundancy before physical implementation begins.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 31,
+        "question": "What is the main focus of the Physical Design phase in the database life cycle?",
+        "options": [
+            "Mapping the ER model to logical relational tables",
+            "Discovering new business rules and requirements",
+            "Determining the data storage organization and data access characteristics",
+            "Choosing between a relational or a NoSQL database paradigm",
+            "Drawing the initial high-level entity-relationship diagrams"
+        ],
+        "answer": "Determining the data storage organization and data access characteristics",
+        "explanation": "التصميم الفيزيائي (Physical Design) يركز حصرياً على الجوانب المادية، أي تحديد كيفية تنظيم تخزين البيانات فعلياً على الأقراص (Storage organization) وتحديد خصائص وطرق الوصول إليها (Access characteristics) مثل الفهارس.\n\nThe Physical Design phase explicitly focuses on the technical specifications of the database. It involves determining the physical data storage organization on the hardware and defining the data access characteristics, such as indexing strategies and storage blocks.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "Which of the following is considered a primary performance measure evaluated during Physical Design?",
+        "options": [
+            "The total number of conceptual entities in the schema",
+            "The aesthetic layout of the end-user application interface",
+            "Minimal response time and high transaction speed",
+            "The degree of the relationships mapped in the ER model",
+            "The strict normalization of data up to Boyce-Codd Normal Form"
+        ],
+        "answer": "Minimal response time and high transaction speed",
+        "explanation": "مقاييس الأداء الأساسية التي يجب تحقيقها أثناء التصميم الفيزيائي تشمل تقليل 'وقت الاستجابة' (Response time) إلى أدنى حد ممكن، وزيادة 'سرعة تنفيذ المعاملات' (Transaction speed) لضمان كفاءة النظام تحت الضغط.\n\nPrimary performance measures evaluated during Physical Design include minimal response time and high transaction execution speed. The physical storage structure must be optimized to handle the expected workload efficiently and reliably.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "During physical design, what storage technique is used to store related rows from two tables in adjacent data blocks on a disk to dramatically reduce access time?",
+        "options": [
+            "Normalization",
+            "Fragmentation",
+            "Clustered tables",
+            "Virtualization",
+            "Subquery nesting"
+        ],
+        "answer": "Clustered tables",
+        "explanation": "الجداول المجمعة (Clustered tables) هي تقنية تخزين فيزيائية متقدمة تُستخدم لجمع الصفوف المرتبطة منطقياً من جدولين أو أكثر وتخزينها في كتل بيانات متجاورة فعلياً (Adjacent data blocks) على القرص، مما يقلل من وقت القراءة بشكل كبير.\n\nClustered tables are a physical storage technique where related rows from two or more tables are deliberately stored in adjacent data blocks on the disk. This physical proximity drastically reduces disk I/O and access time when retrieving joined data.",
+        "topic": "logical & physical design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 34,
+        "question": "In the context of database architecture strategies, what is a primary advantage of a Centralized Database Design?",
+        "options": [
+            "It eliminates all single points of failure inherently",
+            "It provides the fastest possible local access for globally distributed branches",
+            "It automatically partitions data across multiple geographic locations",
+            "It is simpler to design and yields lower security and maintenance costs",
+            "It guarantees that network latency will never affect application performance"
+        ],
+        "answer": "It is simpler to design and yields lower security and maintenance costs",
+        "explanation": "التصميم المركزي (Centralized Database) يتميز بكونه أبسط في الإدارة والتطوير، وبما أن جميع البيانات موجودة في موقع واحد، فإن تكاليف الأمان والصيانة تكون أقل مقارنة بالأنظمة الموزعة.\n\nA primary advantage of a Centralized Database Design is its simplicity. Because all data resides in a single location, it is significantly simpler to design, administer, and secure, generally yielding lower overall maintenance and security costs compared to complex distributed systems.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "What is a significant operational trade-off or disadvantage when implementing a Distributed Database Design?",
+        "options": [
+            "It strictly limits the database to a single concurrent user at any given time",
+            "It completely eliminates the ability to use relational algebra",
+            "The system becomes highly complex to manage regarding data synchronization and distributed transactions",
+            "It forces the database administrator to abandon the logical design phase",
+            "It requires all data to be stored on a single physical hard drive"
+        ],
+        "answer": "The system becomes highly complex to manage regarding data synchronization and distributed transactions",
+        "explanation": "رغم أن التصميم الموزع (Distributed Database) يحسن الموثوقية وسرعة القراءة المحلية، إلا أنه يفرض تعقيداً تشغيلياً هائلاً. المشكلة الأكبر تكمن في الحفاظ على 'مزامنة البيانات' (Data synchronization) وضمان اتساق المعاملات الموزعة عبر عدة مواقع.\n\nA major operational trade-off of a Distributed Database Design is immense complexity. Managing data synchronization, ensuring consistency across replicated nodes, and coordinating distributed transactions across networks becomes highly challenging and resource-intensive.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "Which physical design performance tuning strategy involves dividing a massively large table into smaller, more manageable pieces that can be accessed or stored independently?",
+        "options": [
+            "Normalization",
+            "Indexing",
+            "Partitioning",
+            "Clustering",
+            "Entity Mapping"
+        ],
+        "answer": "Partitioning",
+        "explanation": "التجزئة (Partitioning) هي تقنية فيزيائية تقوم بتقسيم الجدول الضخم جداً إلى أجزاء أصغر يمكن إدارتها وتخزينها بشكل منفصل (مثلاً تجزئة البيانات حسب السنة)، مما يرفع من كفاءة الاستعلامات ويسرع الصيانة.\n\nPartitioning is a physical design performance tuning strategy that divides a very large table into smaller, more manageable segments (partitions). These partitions can be accessed, managed, and stored independently, dramatically improving query performance and maintenance operations.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "What conceptually defines the transition from Logical Design to Physical Design in the Database Life Cycle?",
+        "options": [
+            "Moving from physical storage blocks back to high-level ER diagrams",
+            "Shifting the focus from primary keys strictly to business rules",
+            "Moving from software-independent relational schemas to software and hardware-specific storage definitions",
+            "Transitioning from DBA administration tasks to casual end-user data entry",
+            "Changing the database programming language from SQL to Java"
+        ],
+        "answer": "Moving from software-independent relational schemas to software and hardware-specific storage definitions",
+        "explanation": "الانتقال للتصميم الفيزيائي يعني الانتهاء من المخططات المنطقية (التي لا تهتم بنوع الهاردوير) والبدء في تحديد تفاصيل التخزين الدقيقة المرتبطة بالبرمجيات (مثل نوع DBMS) والأجهزة (Hardware) المستخدمة فعلياً.\n\nThe transition conceptually marks the shift from Logical Design (which produces a software-independent relational schema) to Physical Design (which translates that schema into rigid, software and hardware-specific storage definitions tailored for a chosen DBMS).",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 38,
+        "question": "Which of the following is NOT a typical goal explicitly targeted during the Physical Design phase?",
+        "options": [
+            "Ensuring physical data integrity",
+            "Optimizing database system performance",
+            "Implementing physical data security measures",
+            "Establishing the initial business scope and conceptual user requirements",
+            "Determining the optimal block sizes and access paths for storage"
+        ],
+        "answer": "Establishing the initial business scope and conceptual user requirements",
+        "explanation": "تحديد 'نطاق العمل' (Business scope) ومتطلبات المستخدمين هي أهداف تخص المراحل الأولى جداً (مثل مرحلة الدراسة الأولية والتصميم المفاهيمي)، وليس لها علاقة بمرحلة التصميم الفيزيائي التي تُعنى بالهاردوير وضبط الأداء.\n\nEstablishing the initial business scope and gathering conceptual user requirements are goals explicitly targeted during the 'Database Initial Study' and 'Conceptual Design' phases, not the late-stage Physical Design phase which deals strictly with hardware and performance tuning.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 39,
+        "question": "Why is it absolutely critical to thoroughly validate the logical model before commencing the physical design phase?",
+        "options": [
+            "Because the physical design phase automatically deletes the logical schema upon start",
+            "Because fixing structural logical errors after physical storage structures and indexes are built is exceedingly difficult and expensive",
+            "Because physical design inherently cannot support primary and foreign keys",
+            "Because the logical model must be converted into a non-relational NoSQL format first",
+            "Because the DBMS installation protocol requires a finalized graphical user interface"
+        ],
+        "answer": "Because fixing structural logical errors after physical storage structures and indexes are built is exceedingly difficult and expensive",
+        "explanation": "من الضروري والمحتم التحقق من المخطط المنطقي قبل البدء بالتصميم الفيزيائي؛ لأن اكتشاف أي خطأ هيكلي (مثل نقص في العلاقات أو الجداول) بعد تخصيص التخزين الفعلي وبناء الفهارس سيستلزم هدماً وإعادة بناء مكلفة جداً للوقت والجهد.\n\nIt is critical because structural flaws in the logical model are foundational. Attempting to fix logical errors (like missing relationships or severe unnormalized redundancy) after the physical storage blocks, partitions, and indexes are already built is technically exceedingly difficult and financially expensive.",
+        "topic": "logical & physical design",
+        "difficulty": "hard"
+    },
+    {
+        "id": 40,
+        "question": "Which of the following sets of mechanisms is commonly evaluated and selected specifically during the Performance Tuning aspect of Physical Design?",
+        "options": [
+            "Conceptual, External, and Internal views",
+            "First, Second, and Third Normal Forms",
+            "B-tree, Bitmap, and Hash indexing",
+            "DDL, DML, and DCL commands",
+            "Entity, Attribute, and Relationship types"
+        ],
+        "answer": "B-tree, Bitmap, and Hash indexing",
+        "explanation": "أثناء ضبط الأداء (Performance Tuning) في مرحلة التصميم الفيزيائي، يتم تقييم واختيار هياكل التخزين والفهارس الأنسب للبيانات، وتتضمن هذه الهياكل الفهارس من نوع الشجرة (B-tree)، والصور النقطية (Bitmap)، والتقطيع (Hash indexing).\n\nDuring the Performance Tuning aspect of Physical Design, database architects evaluate and select optimal access paths. This explicitly involves choosing appropriate indexing mechanisms such as B-tree, Bitmap, and Hash indexing to significantly accelerate data retrieval speeds.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "In a decentralized (distributed) database strategy, what is the primary operational consequence when data is aggressively replicated across multiple network nodes?",
+        "options": [
+            "The database automatically downgrades to a centralized conceptual model",
+            "Reliability and read performance increase, but write synchronization overhead becomes a major challenge",
+            "All semantic relationships are permanently converted to strictly one-to-one",
+            "The data is physically moved to an offline backup tape automatically",
+            "Logical data independence is entirely lost across the entire system"
+        ],
+        "answer": "Reliability and read performance increase, but write synchronization overhead becomes a major challenge",
+        "explanation": "في النظام الموزع، تكرار البيانات (Replication) في عدة مواقع يرفع من مستوى الموثوقية (إذا تعطل موقع، فالبيانات موجودة في آخر) ويسرع عمليات القراءة. لكن العيب القاتل هو 'تكلفة مزامنة الكتابة'، حيث يجب تحديث كل النسخ في نفس الوقت لتجنب التناقض.\n\nWhen data is replicated across multiple nodes in a distributed strategy, system reliability and local read performance drastically increase. However, the primary operational consequence is that write synchronization overhead becomes a major challenge, as all copies must be consistently updated to prevent data anomalies.",
+        "topic": "logical & physical design",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "Which SQL command is explicitly used by a database administrator to remove or withdraw previously granted permissions from a user or a role?",
+        "options": [
+            "DROP",
+            "DELETE",
+            "DENY",
+            "WITHDRAW",
+            "REVOKE"
+        ],
+        "answer": "REVOKE",
+        "explanation": "أمر الإلغاء (REVOKE) هو أمر تحكم في البيانات (DCL) يُستخدم خصيصاً لسحب أو إزالة الصلاحيات والامتيازات (Permissions) التي تم منحها مسبقاً لمستخدم أو دور معين باستخدام أمر (GRANT).\n\nThe REVOKE command is a Data Control Language (DCL) statement used specifically to remove or withdraw database privileges and permissions that were previously granted to a user or a role using the GRANT command.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "In database security models, how does Role-Based Access Control (RBAC) primarily assign privileges to users?",
+        "options": [
+            "By assigning clearance levels like 'Top Secret' to each individual data row",
+            "By assigning permissions to specific organizational roles and adding users to those roles",
+            "By granting all privileges to the creator of the database object by default",
+            "By requiring physical biometric authentication for every DML query",
+            "By using views to hide all primary keys from standard users"
+        ],
+        "answer": "By assigning permissions to specific organizational roles and adding users to those roles",
+        "explanation": "في نموذج التحكم في الوصول القائم على الأدوار (RBAC)، لا تُمنح الصلاحيات للمستخدمين مباشرة. بدلاً من ذلك، تُمنح الصلاحيات 'للأدوار' (Roles) التي تمثل وظائف داخل المؤسسة (مثل 'مدير'، 'موظف مبيعات')، ثم يتم إضافة المستخدمين إلى هذه الأدوار ليكتسبوا صلاحياتها تلقائياً.\n\nIn Role-Based Access Control (RBAC), privileges are not assigned directly to individual users. Instead, permissions are assigned to specific organizational roles (e.g., 'Manager', 'Clerk'). Users are then added to these roles, thereby inheriting the associated permissions, which vastly simplifies security administration.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "Which type of database backup specifically captures only the data that has changed since the very last FULL backup was performed?",
+        "options": [
+            "Incremental backup",
+            "Transaction Log backup",
+            "Full backup",
+            "Differential backup",
+            "Snapshot backup"
+        ],
+        "answer": "Differential backup",
+        "explanation": "النسخ الاحتياطي التفاضلي (Differential backup) يقوم بنسخ البيانات التي تغيرت فقط منذ آخر عملية 'نسخ احتياطي كامل' (Full backup). هذا يجعله أسرع من النسخ الكامل ويوفر مساحة تخزينية، كما أنه أسرع في الاستعادة من النسخ التزايدي (Incremental).\n\nA Differential backup explicitly captures only the data extents that have been modified since the last successful FULL backup. It is faster to execute than a full backup and generally faster to restore from than a chain of incremental backups.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "In disaster recovery planning, what does the Recovery Point Objective (RPO) specifically define?",
+        "options": [
+            "The maximum acceptable amount of system downtime before business operations fail",
+            "The exact physical location of the off-site backup servers",
+            "The maximum acceptable amount of data loss measured in time",
+            "The total monetary cost required to restore the database",
+            "The time it takes to execute a full transaction log backup"
+        ],
+        "answer": "The maximum acceptable amount of data loss measured in time",
+        "explanation": "هدف نقطة الاسترداد (RPO) يحدد 'الحد الأقصى لفقدان البيانات المقبول' مقاساً بالوقت. على سبيل المثال، إذا كان الـ RPO هو ساعة واحدة، فهذا يعني أن الشركة يمكنها تحمل فقدان بيانات آخر ساعة كحد أقصى في حال حدوث كارثة، مما يفرض إجراء نسخ احتياطي كل ساعة على الأقل.\n\nThe Recovery Point Objective (RPO) specifically defines the maximum acceptable amount of data loss, measured in time. It dictates how far back in time data can be lost in the event of a disaster before business operations are critically impacted, essentially determining the required backup frequency.",
+        "topic": "database security and authorization",
+        "difficulty": "hard"
+    },
+    {
+        "id": 46,
+        "question": "Which property of an ACID transaction guarantees that multiple transactions executing concurrently will yield the exact same results as if they were executed sequentially one after another?",
+        "options": [
+            "Atomicity",
+            "Consistency",
+            "Durability",
+            "Integrity",
+            "Isolation"
+        ],
+        "answer": "Isolation",
+        "explanation": "خاصية العزل (Isolation) تضمن أن المعاملات المتزامنة (التي تحدث في نفس الوقت) لا تتداخل مع بعضها البعض. كل معاملة يجب أن تعمل وكأنها المعاملة الوحيدة في النظام، مما يضمن أن النتيجة النهائية مطابقة لما لو تم تنفيذها بشكل متسلسل.\n\nThe 'Isolation' property ensures that concurrent execution of transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially. It prevents transactions from interfering with or reading intermediate data from other unfinished transactions.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "What is considered the single most effective coding defense mechanism for preventing SQL Injection attacks in applications?",
+        "options": [
+            "Encrypting the entire database schema using AES-256",
+            "Implementing Parameterized Queries (Prepared Statements)",
+            "Disabling all DDL commands for the database administrator",
+            "Using the TRUNCATE command instead of DELETE",
+            "Hiding the physical server IP address behind a firewall"
+        ],
+        "answer": "Implementing Parameterized Queries (Prepared Statements)",
+        "explanation": "الاستعلامات ذات المعلمات (Parameterized Queries) هي خط الدفاع الأول والأكثر فعالية ضد حقن SQL. فهي تفصل بين هيكل استعلام SQL وبين البيانات المدخلة من قبل المستخدم، حيث تُعامل المدخلات على أنها 'بيانات' بحتة ولا يتم تنفيذها أبداً كأوامر برمجية.\n\nImplementing Parameterized Queries (or Prepared Statements) is the single most effective defense against SQL injection. They force the database engine to treat user input strictly as literal data parameters, completely preventing the input from being interpreted or executed as malicious SQL code.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "When securing a database environment, what does the \"Principle of Least Privilege\" dictate?",
+        "options": [
+            "The database administrator should use the shortest possible passwords to avoid lockouts",
+            "All external applications should be restricted to querying only a single table",
+            "DDL operations should only be executed during low-traffic night hours",
+            "A user or application should be granted only the absolute minimum permissions necessary to perform their required tasks",
+            "Every user must share a single read-only account to prevent data modification"
+        ],
+        "answer": "A user or application should be granted only the absolute minimum permissions necessary to perform their required tasks",
+        "explanation": "مبدأ 'أقل الامتيازات' (Least Privilege) هو قاعدة أمنية ذهبية تنص على منح المستخدم أو التطبيق الصلاحيات الدنيا والضرورية جداً لإنجاز عمله فقط، وعدم إعطائه أي صلاحيات إضافية (مثل السماح له بحذف الجداول أو تعديلها إذا كان يحتاج فقط للقراءة) لتقليل حجم الضرر المحتمل.\n\nThe Principle of Least Privilege is a fundamental security concept dictating that a user, application, or service should be granted only the absolute minimum level of access rights and permissions explicitly necessary to perform their legitimate, authorized tasks, thereby drastically minimizing potential attack vectors.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 49,
+        "question": "Which access control model explicitly relies on assigning strict security clearance labels (such as 'Top Secret', 'Secret', or 'Confidential') to both the users and the database objects?",
+        "options": [
+            "Role-Based Access Control (RBAC)",
+            "Discretionary Access Control (DAC)",
+            "Mandatory Access Control (MAC)",
+            "Identity-Based Access Control (IBAC)",
+            "Network Access Control (NAC)"
+        ],
+        "answer": "Mandatory Access Control (MAC)",
+        "explanation": "التحكم الإلزامي في الوصول (MAC) هو النموذج الأكثر صرامة، ويُستخدم عادة في البيئات العسكرية أو الحكومية. في هذا النموذج، يتم تصنيف البيانات بمستويات سرية (مثل 'سري للغاية')، ويُمنح المستخدمون تصريحات أمنية. النظام هو الذي يفرض القواعد ولا يمكن للمستخدم تغييرها.\n\nMandatory Access Control (MAC) is a highly rigid access control model (often used in military environments) that relies on assigning strict security labels or classifications (e.g., Top Secret) to both subjects (users) and objects (data). Access is strictly enforced by the system based on matching these clearance levels.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "If a database server abruptly crashes due to a power failure mere milliseconds after a transaction is successfully committed, which ACID property guarantees that the committed data will not be lost upon system restart?",
+        "options": [
+            "Atomicity",
+            "Consistency",
+            "Isolation",
+            "Redundancy",
+            "Durability"
+        ],
+        "answer": "Durability",
+        "explanation": "خاصية المتانة أو البقاء (Durability) تضمن أنه بمجرد الإعلان عن نجاح المعاملة (Commit)، فإن التغييرات التي أحدثتها تصبح دائمة ومحفوظة فعلياً في التخزين المادي، ولن تضيع أو تُلغى حتى لو انهار النظام فوراً بسبب انقطاع الكهرباء.\n\nThe 'Durability' property of an ACID transaction guarantees that once a transaction has been successfully committed, its changes are permanently recorded in the non-volatile storage (like a hard drive). Even in the event of an immediate catastrophic power failure or system crash, the committed data will definitively survive and remain intact upon restart.",
+        "topic": "database security and authorization",
+        "difficulty": "normal"
+    }
+]

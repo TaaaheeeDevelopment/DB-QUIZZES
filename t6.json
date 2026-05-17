@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "What is the primary purpose of Data Definition Language (DDL) in a database system?",
+        "options": [
+            "To manipulate and edit data within existing tables",
+            "To query and retrieve data for generating reports",
+            "To define the schema and structure of the database",
+            "To secure the database against SQL injection attacks",
+            "To map relational algebra queries into procedural logic"
+        ],
+        "answer": "To define the schema and structure of the database",
+        "explanation": "لغة تعريف البيانات (DDL) تُستخدم بشكل أساسي لتعريف الهيكل المعماري (Schema) لقاعدة البيانات وتعديله. إنها مسؤولة عن إنشاء الجداول (CREATE)، تعديلها (ALTER)، وحذفها بالكامل (DROP)، ولا تتعامل مع البيانات المخزنة بداخلها.\n\nData Definition Language (DDL) is primarily used to define the schema and structure of the database. It manages the creation, modification, and deletion of tables, indexes, and constraints, dealing with metadata rather than the actual data rows.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "Which of the following statements accurately describes Data Manipulation Language (DML)?",
+        "options": [
+            "It is used to define the metadata and structural indexes of the database",
+            "It is used to create, modify, and delete table structures permanently",
+            "It operates on the actual data within existing database structures",
+            "It typically involves structural commands that auto-commit immediately",
+            "It strictly manages database access permissions and user roles"
+        ],
+        "answer": "It operates on the actual data within existing database structures",
+        "explanation": "لغة معالجة البيانات (DML) هي المسؤولة عن التعامل المباشر مع محتوى قاعدة البيانات (البيانات نفسها) داخل الهياكل الموجودة. تشمل عمليات إدراج البيانات (INSERT)، تحديثها (UPDATE)، حذفها (DELETE)، واسترجاعها (SELECT).\n\nData Manipulation Language (DML) specifically operates on the data contained within existing database structures. It allows users to insert, update, delete, and retrieve data without altering the actual schema or metadata of the database tables.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "According to the SQL Operations Taxonomy, which of the following commands is strictly classified as a DML operation?",
+        "options": [
+            "CREATE",
+            "ALTER",
+            "TRUNCATE",
+            "UPDATE",
+            "DROP"
+        ],
+        "answer": "UPDATE",
+        "explanation": "أمر التحديث (UPDATE) يُصنف كعملية DML لأنه يُستخدم لتعديل قيم بيانات معينة داخل سجلات موجودة مسبقاً، بينما الأوامر الأخرى (CREATE, ALTER, TRUNCATE, DROP) تُصنف كعمليات DDL لأنها تتعامل مع هيكل الجدول.\n\nThe UPDATE command is strictly classified as a Data Manipulation Language (DML) operation because it changes specific record values within a table. In contrast, CREATE, ALTER, TRUNCATE, and DROP are Data Definition Language (DDL) commands used to modify the table's structure.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "Which of the following SQL commands belongs to the Data Definition Language (DDL) category?",
+        "options": [
+            "SELECT",
+            "INSERT",
+            "DELETE",
+            "ALTER",
+            "UPDATE"
+        ],
+        "answer": "ALTER",
+        "explanation": "أمر التعديل (ALTER) هو أمر DDL يُستخدم لتغيير بنية أو هيكل الجدول الموجود (مثل إضافة عمود جديد أو حذف عمود)، ولا يؤثر بشكل مباشر على صفوف البيانات الفردية مثل أوامر DML.\n\nThe ALTER command belongs to the Data Definition Language (DDL) category. It is used to modify the existing structure of a database object (like adding or dropping a column in a table), unlike SELECT, INSERT, UPDATE, and DELETE which are DML commands.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "What is a critical operational difference between the TRUNCATE and DELETE commands?",
+        "options": [
+            "DELETE removes the table structure entirely, while TRUNCATE only removes rows",
+            "TRUNCATE is a DML command, while DELETE is a DDL command",
+            "TRUNCATE removes all rows and resets identity, whereas DELETE removes specific rows based on criteria",
+            "DELETE automatically auto-commits without a transaction, whereas TRUNCATE requires a manual commit",
+            "TRUNCATE allows the use of a WHERE clause for filtering, while DELETE does not"
+        ],
+        "answer": "TRUNCATE removes all rows and resets identity, whereas DELETE removes specific rows based on criteria",
+        "explanation": "الفرق الجوهري هو أن (TRUNCATE) هو أمر DDL يقوم بمسح جميع الصفوف دفعة واحدة وتصفير العداد (Identity)، ولا يقبل شرط (WHERE). أما (DELETE) فهو أمر DML يقوم بحذف صفوف محددة بناءً على شرط (WHERE) ويُسجل كل عملية حذف في السجل (Log).\n\nA critical difference is that TRUNCATE is a DDL command that efficiently removes all rows from a table and resets its identity counter, but retains the structure. DELETE is a DML command that removes specific rows based on a WHERE clause criteria and evaluates each row transactionally.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 6,
+        "question": "A database developer needs to add a new column named 'email' to an existing 'users' table. Which specific SQL syntax should be executed?",
+        "options": [
+            "UPDATE users SET COLUMN email;",
+            "INSERT INTO users ADD email VARCHAR(150);",
+            "ALTER TABLE users ADD COLUMN email VARCHAR(150);",
+            "CREATE COLUMN email IN TABLE users;",
+            "MODIFY TABLE users INSERT email VARCHAR(150);"
+        ],
+        "answer": "ALTER TABLE users ADD COLUMN email VARCHAR(150);",
+        "explanation": "لإضافة عمود جديد إلى جدول موجود بالفعل، يجب استخدام أمر تعديل الهيكل (ALTER TABLE) متبوعاً باسم الجدول، ثم أمر الإضافة (ADD COLUMN) واسم العمود ونوع البيانات الخاص به.\n\nTo modify an existing table's structure by adding a new column, the correct DDL syntax is 'ALTER TABLE table_name ADD COLUMN column_name datatype;'. The other options represent incorrect syntax or misuse DML commands for structural changes.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 7,
+        "question": "What is the complete effect of executing the 'DROP TABLE customers;' command?",
+        "options": [
+            "It removes all data from the table but safely keeps the table schema intact for future use",
+            "It removes the table structure, its stored data, and all related metadata permanently",
+            "It temporarily disables the table from user access for maintenance purposes",
+            "It removes specific corrupted columns from the customers table",
+            "It resets the identity counter of the table back to zero"
+        ],
+        "answer": "It removes the table structure, its stored data, and all related metadata permanently",
+        "explanation": "أمر الإسقاط (DROP TABLE) هو أمر DDL مدمر. فهو لا يقوم بمسح البيانات فحسب، بل يقوم بحذف هيكل الجدول نفسه وجميع القيود (Constraints) والبيانات الوصفية (Metadata) المرتبطة به بشكل نهائي من قاعدة البيانات.\n\nThe DROP TABLE command is a destructive DDL operation. It completely removes the entire table structure, all the data within it, and all associated metadata and constraints permanently from the database. It does not leave an empty table behind.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "Which specific DML command is utilized to add new rows of data into an existing database table?",
+        "options": [
+            "ADD RECORD",
+            "UPDATE SET",
+            "CREATE ROW",
+            "INSERT INTO",
+            "ALTER DATA"
+        ],
+        "answer": "INSERT INTO",
+        "explanation": "أمر الإدراج (INSERT INTO) هو الأمر القياسي في لغة DML المستخدم لإضافة صفوف (سجلات) جديدة من البيانات داخل جدول موجود مسبقاً في قاعدة البيانات.\n\nThe 'INSERT INTO' command is the standard Data Manipulation Language (DML) statement used specifically to add new rows (records) of data into an existing database table.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 9,
+        "question": "To retrieve data from a table based on a specific filtering condition (e.g., retrieving only users whose age is greater than 30), which SQL clause must be appended to the SELECT statement?",
+        "options": [
+            "FROM",
+            "WHERE",
+            "GROUP BY",
+            "ORDER BY",
+            "HAVING"
+        ],
+        "answer": "WHERE",
+        "explanation": "لتصفية السجلات واسترجاع الصفوف التي تطابق شرطاً معيناً فقط (مثل العمر > 30)، نستخدم جملة (WHERE) مع أمر (SELECT). الجمل الأخرى مثل GROUP BY تستخدم للتجميع، و ORDER BY للترتيب.\n\nTo filter records and retrieve only the rows that satisfy a specific condition during a SELECT operation (such as age > 30), the 'WHERE' clause is required. It evaluates each row against the specified criteria.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "An administrator needs to change the email address of a specific user with ID=1. Which SQL command correctly performs this exact operation?",
+        "options": [
+            "ALTER TABLE users SET email = 'newemail@example.com' WHERE id=1;",
+            "MODIFY users CHANGE email = 'newemail@example.com' WHERE id=1;",
+            "UPDATE users SET email = 'newemail@example.com' WHERE id=1;",
+            "INSERT email = 'newemail@example.com' INTO users WHERE id=1;",
+            "REPLACE email WITH 'newemail@example.com' IN users WHERE id=1;"
+        ],
+        "answer": "UPDATE users SET email = 'newemail@example.com' WHERE id=1;",
+        "explanation": "لتعديل قيمة موجودة بالفعل داخل سجل محدد، نستخدم أمر التحديث (UPDATE) متبوعاً باسم الجدول، ثم أمر الإعداد (SET) للعمود الجديد، ويجب استخدام شرط (WHERE) لضمان تعديل السجل المطلوب فقط (ID=1).\n\nTo change existing data within a specific row, the correct DML syntax is 'UPDATE table_name SET column_name = value WHERE condition;'. Using ALTER or MODIFY is incorrect as they relate to structural schema changes, not data content.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 11,
+        "question": "Which category of SQL operations typically auto-commits immediately upon execution, permanently changing the metadata without needing an explicit transaction commit?",
+        "options": [
+            "DML operations",
+            "DCL operations",
+            "DDL operations",
+            "TCL operations",
+            "DQL operations"
+        ],
+        "answer": "DDL operations",
+        "explanation": "عمليات DDL (مثل CREATE و DROP و ALTER) تنفذ التزاماً تلقائياً (Auto-commit) بمجرد تشغيلها في معظم أنظمة قواعد البيانات. هذا يعني أن تغييرات الهيكل تُحفظ فوراً ولا يمكن التراجع عنها باستخدام (Rollback) في الظروف العادية، على عكس عمليات DML.\n\nData Definition Language (DDL) operations (like CREATE, ALTER, DROP, TRUNCATE) often auto-commit immediately upon execution. This means changes to the database schema and metadata are permanent and typically cannot be rolled back like transactional DML operations.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "How is the 'TRUNCATE TABLE' command best defined within the context of database operations?",
+        "options": [
+            "A DML command that removes rows selectively based on a specific boolean condition",
+            "A DDL command that removes all rows, resets the identity counter, but retains the table structure",
+            "A DDL command that deletes the entire table including its underlying schema and indexes",
+            "A DML command that updates the structure of the table to remove null values",
+            "A security command that locks the table structure to prevent unauthorized DML inserts"
+        ],
+        "answer": "A DDL command that removes all rows, resets the identity counter, but retains the table structure",
+        "explanation": "أمر القطع (TRUNCATE) هو أمر DDL سريع جداً يُستخدم لتفريغ الجدول بالكامل من جميع البيانات وتصفير العداد التلقائي (Identity)، لكنه يترك هيكل الجدول (الأعمدة والأنواع) سليماً وجاهزاً لاستقبال بيانات جديدة.\n\nThe TRUNCATE TABLE command is formally a DDL command. It is used to quickly remove all rows from a table and reset its identity column, while leaving the table structure (schema) perfectly intact for future data insertion.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "To ensure strict professional security practices and prevent dangerous vulnerabilities like SQL injection, what must application developers rigorously implement?",
+        "options": [
+            "Direct string concatenation in all dynamic SQL queries",
+            "Parameterized queries, least privilege access, and data type sanitization",
+            "The exclusive use of DDL commands instead of DML operations in the frontend",
+            "The use of the TRUNCATE command globally instead of the DELETE command",
+            "Unsanitized input fields combined with administrative database privileges"
+        ],
+        "answer": "Parameterized queries, least privilege access, and data type sanitization",
+        "explanation": "لحماية قاعدة البيانات من ثغرات (SQL Injection)، يجب على المطورين استخدام 'الاستعلامات ذات المعلمات' (Parameterized queries) لمنع حقن الأكواد الخبيثة، وتطبيق مبدأ 'أقل الامتيازات' (Least privilege) للمستخدمين، وتنظيف وفحص أنواع البيانات المدخلة.\n\nProfessional SQL demands strict security practices to thwart attacks like SQL injection. Developers must implement parameterized queries (which treat input as safe data rather than executable code), enforce least privilege access control, and utilize robust data type sanitization.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "According to the terminology mapping between theoretical Relational Algebra and practical SQL, what does the algebraic concept of a 'Tuple' directly correspond to?",
+        "options": [
+            "Table",
+            "Column",
+            "Row",
+            "INNER JOIN",
+            "SELECT clause"
+        ],
+        "answer": "Row",
+        "explanation": "في المطابقة بين المصطلحات النظرية للجبر العلائقي والمصطلحات العملية للغة SQL، فإن مصطلح 'العلاقة' (Relation) يقابل 'الجدول' (Table)، ومصطلح 'التسجيلة' (Tuple) يقابل 'الصف' (Row).\n\nIn the terminology mapping between theoretical Relational Algebra and practical SQL, the algebraic concept of a 'Relation' maps to a 'Table', and a 'Tuple' directly corresponds to a 'Row' within that table.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "Based on the mapping between SQL Fundamentals and Relational Algebra, the theoretical algebraic operations of Projection (π) and Selection (σ) directly dictate the behavior of which specific SQL clauses respectively?",
+        "options": [
+            "FROM and JOIN",
+            "SELECT and WHERE",
+            "WHERE and SELECT",
+            "GROUP BY and ORDER BY",
+            "INSERT and UPDATE"
+        ],
+        "answer": "SELECT and WHERE",
+        "explanation": "في الجبر العلائقي، عملية 'الإسقاط' (Projection π) تُستخدم لاختيار الأعمدة، وهو ما يقابل جملة (SELECT) في SQL. أما عملية 'التحديد' (Selection σ) فتُستخدم لتصفية الصفوف بناءً على شرط، وهو ما يقابل جملة (WHERE).\n\nIn Relational Algebra, the Projection (π) operator chooses specific columns, which dictates the behavior of the SQL 'SELECT' clause. The Selection (σ) operator filters specific rows based on a logical condition, which directly dictates the behavior of the SQL 'WHERE' clause.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 16,
+        "question": "According to the terminology mapping between Relational Algebra and SQL, the theoretical concept of an 'Attribute' corresponds to which SQL structural element?",
+        "options": [
+            "Table",
+            "Row",
+            "Column",
+            "View",
+            "Index"
+        ],
+        "answer": "Column",
+        "explanation": "في المطابقة بين المصطلحات النظرية للجبر العلائقي والتطبيق العملي في لغة SQL، مصطلح 'السمة' (Attribute) الذي يصف خصائص الكيان، يُقابله هيكلياً مصطلح 'العمود' (Column) في جداول قاعدة البيانات.\n\nIn the formal terminology mapping between theoretical Relational Algebra and practical SQL Database Management Systems, the concept of an 'Attribute' (which describes a property of a relation) directly corresponds to a 'Column' within a database table.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "In high-volume production environments, what is a crucial transactional behavior of Data Definition Language (DDL) commands (like CREATE or ALTER) that developers must be cautious of?",
+        "options": [
+            "They require manual COMMIT statements to save",
+            "They auto-commit immediately and cannot be easily rolled back",
+            "They automatically encrypt data during execution",
+            "They execute asynchronously in the background",
+            "They permanently lock the database from all DML operations"
+        ],
+        "answer": "They auto-commit immediately and cannot be easily rolled back",
+        "explanation": "من أهم الخصائص التشغيلية لعمليات DDL (مثل إنشاء أو تعديل الجداول) أنها تقوم بـ 'التزام تلقائي' (Auto-commit) فور تنفيذها. هذا يعني أن التغييرات الهيكلية تُحفظ بشكل دائم ولا يمكن التراجع عنها (Rollback) بسهولة كما يحدث مع عمليات DML.\n\nA crucial operational behavior of Data Definition Language (DDL) operations is that they typically auto-commit immediately upon execution. This means structural changes to the database schema are permanent and cannot be casually rolled back within a standard transaction block, unlike DML operations.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "When discussing safe database use and security, what is the primary purpose of employing 'Data type sanitization' and 'Parameterized queries'?",
+        "options": [
+            "To compress the database files on the disk",
+            "To bypass the need for a database administrator",
+            "To prevent malicious SQL injection attacks",
+            "To automatically convert unstructured data to SQL",
+            "To speed up TRUNCATE operations"
+        ],
+        "answer": "To prevent malicious SQL injection attacks",
+        "explanation": "الممارسات الأمنية الصارمة مثل 'تنظيف أنواع البيانات' (Data type sanitization) و'الاستعلامات ذات المعلمات' (Parameterized queries) تُستخدم بشكل أساسي لمنع هجمات (SQL Injection)، حيث تمنع المهاجم من حقن أوامر SQL خبيثة داخل مدخلات المستخدم.\n\nStrict security practices such as data type sanitization and parameterized queries are primarily implemented to prevent SQL injection attacks. Parameterized queries treat user input strictly as data, not executable code, effectively neutralizing malicious SQL commands injected by attackers.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "While both DELETE and TRUNCATE can remove all rows from a table, TRUNCATE is significantly faster. From an architectural standpoint, why is this the case?",
+        "options": [
+            "TRUNCATE completely ignores foreign key constraints globally",
+            "DELETE uses the network while TRUNCATE executes locally",
+            "DELETE removes the table schema which takes time",
+            "TRUNCATE removes data by deallocating data pages with minimal logging, whereas DELETE logs each row deletion individually",
+            "TRUNCATE is a DML operation that bypasses the transaction log entirely"
+        ],
+        "answer": "TRUNCATE removes data by deallocating data pages with minimal logging, whereas DELETE logs each row deletion individually",
+        "explanation": "أمر TRUNCATE أسرع بكثير لأنه يقوم بإلغاء تخصيص صفحات البيانات (Data pages) بالكامل ويسجل عملية الإلغاء فقط (Minimal logging). بينما أمر DELETE يقوم بمسح صفاً تلو الآخر، ويسجل عملية الحذف لكل صف على حدة في سجل المعاملات (Transaction log)، مما يستهلك وقتاً وموارد ضخمة.\n\nFrom an architectural standpoint, TRUNCATE is faster because it removes data by deallocating the data pages used to store the table data and records only the page deallocations in the transaction log (minimal logging). Conversely, DELETE scans and removes rows one at a time, fully logging each individual row deletion.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 20,
+        "question": "According to the SQL Operations Taxonomy, how is the 'DELETE' command strictly defined?",
+        "options": [
+            "Modifies the table structure",
+            "Removes specific rows based on criteria",
+            "Defines the database schema",
+            "Resets the identity counter",
+            "Changes specific record values"
+        ],
+        "answer": "Removes specific rows based on criteria",
+        "explanation": "في تصنيف عمليات SQL، يُعرف أمر (DELETE) بأنه أمر لمعالجة البيانات (DML) وظيفته 'إزالة صفوف محددة بناءً على معايير' (أي باستخدام شرط WHERE). هو لا يعدل الهيكل ولا يصفر العدادات.\n\nAccording to the SQL Operations Taxonomy, the 'DELETE' command is formally defined as a DML operation that removes specific rows based on given criteria (using the WHERE clause), differentiating it from TRUNCATE which unconditionally removes all rows.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 21,
+        "question": "Which SQL keyword must be paired with the UPDATE command to specify the exact new values that will be assigned to the columns?",
+        "options": [
+            "VALUES",
+            "MODIFY",
+            "SET",
+            "ASSIGN",
+            "INTO"
+        ],
+        "answer": "SET",
+        "explanation": "في جملة (UPDATE)، الكلمة المحجوزة التي تُستخدم لتحديد وتعيين القيم الجديدة للأعمدة هي (SET). الصيغة القياسية هي: UPDATE table_name SET column1 = value1.\n\nIn standard SQL syntax, the 'SET' keyword must be paired directly with the UPDATE command. It is used to specify the exact columns to be modified and the new values that will be assigned to them (e.g., UPDATE users SET email = '...').",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "Based on the terminology mapping provided in the SQL fundamentals, the Relational Algebra 'Natural Join' concept corresponds to which SQL clause?",
+        "options": [
+            "WHERE",
+            "SELECT",
+            "INNER JOIN",
+            "GROUP BY",
+            "ORDER BY"
+        ],
+        "answer": "INNER JOIN",
+        "explanation": "حسب جداول المطابقة بين الجبر العلائقي ولغة SQL، عملية 'الربط الطبيعي' (Natural Join) يقابلها عملياً استخدام جملة (INNER JOIN) في استعلامات SQL لدمج الجداول بناءً على الأعمدة المشتركة.\n\nBased on the mapping between theoretical algebraic operations and practical SQL queries, the Relational Algebra 'Natural Join' (which equates attributes with the same name and merges relations) corresponds practically to the SQL 'INNER JOIN' operation.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 23,
+        "question": "Which of the following tasks falls exclusively under the responsibility of Data Definition Language (DDL)?",
+        "options": [
+            "Inserting new user records into the system",
+            "Managing data within existing tables",
+            "Retrieving filtered rows for a business report",
+            "Defining database schemas and creating objects",
+            "Updating the email address of a specific customer"
+        ],
+        "answer": "Defining database schemas and creating objects",
+        "explanation": "لغة تعريف البيانات (DDL) مسؤولة حصرياً عن إنشاء وتعديل هياكل قاعدة البيانات (مثل تعريف المخططات، إنشاء الجداول، وحذفها). المهام الأخرى المذكورة هي عمليات معالجة بيانات (DML) تتعلق بالمحتوى.\n\nData Definition Language (DDL) is exclusively responsible for defining database schemas, creating, altering, and dropping database objects (like tables and views). It manages structural metadata, not the actual row-level data manipulation.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 24,
+        "question": "Unlike DDL commands, Data Manipulation Language (DML) operations (such as INSERT, UPDATE, DELETE) adhere to which fundamental transaction properties to ensure data reliability?",
+        "options": [
+            "Implicit Commit properties",
+            "ACID properties",
+            "Metadata Persistence properties",
+            "Structural Rigidity properties",
+            "Polymorphic properties"
+        ],
+        "answer": "ACID properties",
+        "explanation": "عمليات DML (مثل الإدراج والتحديث والحذف) يتم تنفيذها ضمن 'معاملات' (Transactions) تلتزم بخصائص ACID (الذرية، الاتساق، العزل، المتانة) لضمان عدم ضياع البيانات أو تلفها في حالة حدوث أخطاء.\n\nUnlike DDL commands which often auto-commit, DML operations (INSERT, UPDATE, DELETE) are executed within transactions that strictly adhere to ACID (Atomicity, Consistency, Isolation, Durability) properties to guarantee data reliability and safe rollback capabilities in case of errors.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "When executing an 'INSERT INTO' statement, why is it considered a best practice to explicitly list the target column names before the VALUES keyword?",
+        "options": [
+            "It automatically encrypts the inserted values",
+            "It ensures values are correctly mapped to their respective columns even if the table structure changes later",
+            "It converts the DML command into a DDL command",
+            "It bypasses all referential integrity constraints",
+            "It prevents the table from being truncated in the future"
+        ],
+        "answer": "It ensures values are correctly mapped to their respective columns even if the table structure changes later",
+        "explanation": "من أفضل الممارسات كتابة أسماء الأعمدة صراحة في جملة الإدراج (INSERT INTO table_name (col1, col2) VALUES (...)). هذا يضمن أن البيانات ستُدرج في الأعمدة الصحيحة تماماً، حتى لو تم تعديل هيكل الجدول لاحقاً (مثل إضافة عمود جديد).\n\nExplicitly declaring the target column names in an INSERT statement ensures that the provided values are mapped exactly to the correct columns, regardless of the physical order of columns in the table or if new columns are added via ALTER TABLE in the future.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "A developer writes the following query: 'SELECT * FROM users WHERE age > 30;'. What does the asterisk (*) symbol denote in this context?",
+        "options": [
+            "It multiplies the age by 30",
+            "It selects all rows regardless of the WHERE clause",
+            "It projects (selects) all available columns from the specified table",
+            "It creates a new table with all columns",
+            "It drops all columns except the age column"
+        ],
+        "answer": "It projects (selects) all available columns from the specified table",
+        "explanation": "الرمز النجمي (*) في جملة SELECT يعني جلب (إسقاط) 'جميع الأعمدة' الموجودة في الجدول المذكور دون الحاجة لكتابة أسمائها واحداً تلو الآخر.\n\nIn SQL, the asterisk (*) symbol used within a SELECT clause serves as a wildcard representing all attributes. It instructs the database engine to project (retrieve) all available columns from the tables specified in the FROM clause.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "A junior DBA wants to clear all historical data from the 'logs' table but needs to keep the table structure intact so the application can continue writing new logs. They execute 'DROP TABLE logs;'. What is the catastrophic result of this action?",
+        "options": [
+            "The data is deleted, but the structure remains intact",
+            "The identity counter is reset, but the data remains",
+            "The table structure and all its metadata are permanently deleted, breaking the application",
+            "The table is locked for updates but data is not removed",
+            "Only rows older than 30 days are removed"
+        ],
+        "answer": "The table structure and all its metadata are permanently deleted, breaking the application",
+        "explanation": "استخدام أمر (DROP TABLE) هو خطأ فادح هنا. هذا الأمر لا يمسح البيانات فقط، بل يحذف الجدول بالكامل وهيكله وكل ما يتعلق به من قاعدة البيانات نهائياً. الأداة الصحيحة لهذا الغرض كانت TRUNCATE.\n\nThe junior DBA made a catastrophic error. The DROP TABLE command is a destructive DDL operation that permanently deletes not only the data but the entire table structure and its associated metadata from the schema. This will instantly break any application trying to write to the 'logs' table.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 28,
+        "question": "In the mapping between mathematical foundations and practical SQL, the 'SELECT' keyword in SQL is the direct equivalent of which Relational Algebra operation?",
+        "options": [
+            "Selection (σ)",
+            "Projection (π)",
+            "Cartesian Product (×)",
+            "Natural Join (⋈)",
+            "Set Difference (-)"
+        ],
+        "answer": "Projection (π)",
+        "explanation": "رغم تشابه الأسماء الذي يسبب ارتباكاً، فإن كلمة (SELECT) في لغة SQL تُستخدم لتحديد الأعمدة، وهو ما يقابل تماماً عملية 'الإسقاط' (Projection π) في الجبر العلائقي. أما عملية 'التحديد' (Selection σ) في الجبر العلائقي فيقابلها جملة (WHERE) في SQL.\n\nDespite the potentially confusing naming convention, the 'SELECT' keyword in SQL dictates which columns to retrieve, mapping perfectly to the Projection (π) operator in Relational Algebra. The algebraic Selection (σ) operator, which filters rows, maps to the SQL 'WHERE' clause.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "To mitigate database security risks, assigning users only the permissions they absolutely need to perform their tasks (e.g., granting SELECT access but denying DROP or DELETE) is known as the principle of:",
+        "options": [
+            "Data type sanitization",
+            "Parameterized querying",
+            "Least privilege",
+            "Implicit committing",
+            "ACID transaction"
+        ],
+        "answer": "Least privilege",
+        "explanation": "مبدأ 'أقل الامتيازات' (Least Privilege) هو ممارسة أمنية أساسية تعني إعطاء المستخدم أو التطبيق الصلاحيات الدنيا المطلوبة فقط لإنجاز عمله. فإذا كان يحتاج فقط لقراءة البيانات، يُمنح صلاحية SELECT فقط ويُمنع من الحذف أو التعديل لحماية القاعدة.\n\nIn database security, the principle of 'Least Privilege' dictates that users, applications, or services should be granted only the absolute minimum level of access and permissions required to perform their legitimate functions, preventing unauthorized DDL or destructive DML operations.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "The command 'ALTER TABLE users ADD COLUMN email VARCHAR(150);' is executed. What is the immediate effect on the database schema?",
+        "options": [
+            "It inserts a new user record with the email VARCHAR(150)",
+            "It deletes the existing email column from the users table",
+            "It modifies the table structure by permanently adding a new attribute (column) named 'email'",
+            "It truncates the users table and creates an email table",
+            "It updates all existing rows to have the value 'VARCHAR(150)' in the email column"
+        ],
+        "answer": "It modifies the table structure by permanently adding a new attribute (column) named 'email'",
+        "explanation": "الأمر (ALTER TABLE ... ADD COLUMN) هو عملية DDL تقوم بتعديل هيكل الجدول (Schema). التأثير المباشر هو إضافة حقل (عمود) جديد فارغ باسم 'email' جاهز لاستقبال بيانات نصية بحد أقصى 150 حرفاً لجميع السجلات الحالية والمستقبلية.\n\nThis specific DDL command modifies the existing schema. Its immediate structural effect is permanently adding a new attribute (column) named 'email' with a datatype of VARCHAR(150) to the 'users' table structure. It does not manipulate existing data rows.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 31,
+        "question": "What is the mandatory requirement when executing an 'INSERT INTO' statement without explicitly listing the target column names?",
+        "options": [
+            "The statement must include a WHERE clause to specify the insertion point",
+            "The inserted values must exactly match the number and sequential order of the columns as defined in the table schema",
+            "The database will automatically assign NULL to all unlisted attributes",
+            "The INSERT command will automatically convert into an UPDATE command",
+            "The user must possess Database Administrator (DBA) privileges"
+        ],
+        "answer": "The inserted values must exactly match the number and sequential order of the columns as defined in the table schema",
+        "explanation": "عند تنفيذ أمر الإدراج (INSERT INTO) دون تحديد أسماء الأعمدة صراحة، يُلزمك محرك قاعدة البيانات بتوفير قيمة لكل عمود موجود في الجدول، ويجب أن تكون هذه القيم بنفس الترتيب التسلسلي الدقيق الذي تم تعريف الأعمدة به في المخطط (Schema).\n\nWhen executing an 'INSERT INTO' statement without explicitly listing the target columns, the database engine mandates that the provided values must exactly match the total number of columns and follow their exact sequential order as defined in the table's structural schema.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "If a developer executes an 'UPDATE' statement but forgets to include the 'WHERE' clause, what is the immediate consequence on the table data?",
+        "options": [
+            "The database engine throws a syntax error and halts execution",
+            "It updates only the first row physically stored in the database disk",
+            "It deletes all rows and replaces them with a single updated row",
+            "It applies the specified modifications to every single row present in the table",
+            "It locks the table permanently and requires a DDL command to unlock"
+        ],
+        "answer": "It applies the specified modifications to every single row present in the table",
+        "explanation": "هذا أحد أخطر الأخطاء في لغة SQL. إذا تم تنفيذ أمر التحديث (UPDATE) بدون جملة (WHERE) لتحديد السجلات المستهدفة، سيقوم المحرك بتطبيق التعديلات المطلوبة على جميع السجلات (الصفوف) الموجودة في الجدول بلا استثناء.\n\nThis is a critical SQL error. If an 'UPDATE' statement is executed without a 'WHERE' clause to filter the target tuples, the database engine will unconditionally apply the specified column modifications to every single row currently existing in the table.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "Which DDL command is used to change the data type of an existing column within a relational table?",
+        "options": [
+            "UPDATE TABLE",
+            "MODIFY DATA",
+            "ALTER TABLE",
+            "CHANGE COLUMN",
+            "REVISE SCHEMA"
+        ],
+        "answer": "ALTER TABLE",
+        "explanation": "لتغيير نوع البيانات لعمود موجود (مثل تحويله من INT إلى VARCHAR)، يُستخدم أمر (ALTER TABLE) الخاص بلغة DDL. هذا الأمر يُستخدم لإجراء أي تعديل هيكلي على الجدول، سواء بالإضافة، الحذف، أو التعديل على الأعمدة.\n\nTo change the data type of an existing column, the DDL command 'ALTER TABLE' is used (often combined with clauses like MODIFY or ALTER COLUMN depending on the DBMS). It is the standard command for executing any structural schema modifications on existing tables.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 34,
+        "question": "When considering the removal of data, what happens to the associated table indexes and triggers when a 'DROP TABLE' command is executed compared to a 'DELETE' command?",
+        "options": [
+            "Both commands leave indexes and triggers intact for future use",
+            "DELETE permanently removes indexes, while DROP TABLE retains them",
+            "DROP TABLE permanently removes all indexes and triggers associated with the table, whereas DELETE keeps them completely intact",
+            "Both commands automatically reassign the triggers to a temporary backup table",
+            "DROP TABLE only removes the triggers but leaves the indexes intact"
+        ],
+        "answer": "DROP TABLE permanently removes all indexes and triggers associated with the table, whereas DELETE keeps them completely intact",
+        "explanation": "أمر الإسقاط (DROP TABLE) هو أمر مهلك يقوم بمسح الجدول وبياناته وجميع الكائنات المرتبطة به كلياً (مثل الفهارس Indexes والمشغلات Triggers). أما أمر (DELETE) فهو يمسح صفوف البيانات فقط ويترك الهيكل والفهارس والمشغلات سليمة تماماً.\n\nDROP TABLE is a destructive DDL operation that permanently eliminates the table schema, its data, and all its directly associated objects, including indexes and triggers. Conversely, DELETE is a DML operation that only removes data rows, leaving the schema, indexes, and triggers completely intact.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "How does a classic SQL Injection attack exploit a dynamically built DML query?",
+        "options": [
+            "By physically destroying the database server hard drive sectors",
+            "By guessing the Database Administrator's login credentials via brute force",
+            "By manipulating the user input strings to alter the logical structure and execution intent of the SQL statement",
+            "By intercepting the network traffic between the client and the server",
+            "By using DDL commands to encrypt the internal database schema"
+        ],
+        "answer": "By manipulating the user input strings to alter the logical structure and execution intent of the SQL statement",
+        "explanation": "هجوم حقن (SQL Injection) يحدث عندما يستغل المهاجم غياب التعقيم للمدخلات، ويقوم بإدخال نصوص خبيثة (مثل علامات الاقتباس وشروط منطقية) تؤدي إلى تغيير الهيكل المنطقي لاستعلام DML (مثل تغيير شرط WHERE ليكون صحيحاً دائماً)، مما يجعله ينفذ أوامر لم يبرمجها المطور.\n\nA classic SQL Injection attack exploits dynamically constructed queries by manipulating user input strings (e.g., injecting quotes and logical operators). This structurally alters the intended logic and execution intent of the DML statement, tricking the engine into executing unauthorized commands.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "In accordance with the closure property of relational algebra mapped to SQL, what is the structural format of the result set generated by any standard SELECT query?",
+        "options": [
+            "A structured physical file on the disk",
+            "A flat text document",
+            "A single atomic scalar value",
+            "A new relational table",
+            "A modified external view"
+        ],
+        "answer": "A new relational table",
+        "explanation": "خاصية الانغلاق (Closure Property) في الجبر العلائقي تضمن أن ناتج أي عملية (مثل SELECT في SQL) هو دائماً 'علاقة' (جدول) جديد. هذا الجدول الناتج يمتلك صفوفاً وأعمدة ويمكن استخدامه كمدخل لاستعلامات أخرى.\n\nIn accordance with the closure property of relational algebra, the structural format of the result set generated by any standard SQL SELECT query is inherently a new relational table (a relation). It possesses rows and columns and can be mathematically operated upon by further queries.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "Why are DML operations (INSERT, UPDATE, DELETE) generally considered safer to execute in a production environment compared to DDL operations?",
+        "options": [
+            "They automatically create secure backups of the physical server",
+            "They are executed within transactions and can be safely rolled back if an error occurs",
+            "They completely ignore referential integrity constraints",
+            "They cannot modify any data that belongs to a user view",
+            "They execute extremely fast by bypassing the transaction log"
+        ],
+        "answer": "They are executed within transactions and can be safely rolled back if an error occurs",
+        "explanation": "عمليات DML تُعتبر أكثر أماناً للتنفيذ التجريبي لأنها تُنفذ ضمن 'معاملات' (Transactions). إذا حدث خطأ، يمكنك ببساطة استخدام أمر (ROLLBACK) للتراجع عن التغييرات. بينما عمليات DDL في معظم الأنظمة تُنفذ التزاماً تلقائياً (Auto-commit) ولا يمكن التراجع عنها بسهولة.\n\nDML operations are generally safer because they are transaction-based. If an error or logic flaw occurs during an INSERT, UPDATE, or DELETE, the operation can be safely rolled back to its original state. In contrast, DDL operations typically auto-commit immediately, making structural mistakes much harder to undo.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 38,
+        "question": "A user wants to erase the data from a single specific column ('Salary') for a specific employee, leaving the rest of the employee's data intact. Why is the 'DELETE' command strictly inappropriate for this task?",
+        "options": [
+            "Because DELETE is a DDL command that targets schema elements only",
+            "Because DELETE removes entire rows (tuples); it is structurally incapable of removing individual column values",
+            "Because DELETE only works on tables that do not have a primary key",
+            "Because the Salary column requires a TRUNCATE command",
+            "Because DELETE automatically auto-commits and cannot target specific IDs"
+        ],
+        "answer": "Because DELETE removes entire rows (tuples); it is structurally incapable of removing individual column values",
+        "explanation": "أمر (DELETE) يعمل فقط على مستوى 'الصفوف' (Tuples). فهو يحذف السجل بالكامل بجميع أعمدته. لإزالة قيمة عمود واحد فقط (مثل الراتب)، يجب استخدام أمر (UPDATE) لتعيين قيمة هذا العمود إلى (NULL) أو صفر.\n\nThe 'DELETE' command is fundamentally a row-level operation. It removes entire tuples from a relation and is structurally incapable of targeting or erasing individual column values. To remove a value from a single column, an 'UPDATE' statement must be used to set that specific attribute to NULL.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 39,
+        "question": "Applying the 'Principle of Least Privilege' to a web application's database user strictly means:",
+        "options": [
+            "Granting the application full administrative rights for troubleshooting",
+            "Granting the application only the specific DML permissions needed to function, while strictly denying any DDL permissions",
+            "Allowing the application to execute DROP and TRUNCATE commands but denying INSERT commands",
+            "Sharing the database administrator password exclusively with the lead developer",
+            "Disabling all transactions to speed up application queries"
+        ],
+        "answer": "Granting the application only the specific DML permissions needed to function, while strictly denying any DDL permissions",
+        "explanation": "تطبيق مبدأ 'أقل الامتيازات' يعني أن تطبيق الويب يجب أن يحصل فقط على الصلاحيات التي يحتاجها للعمل (عادة عمليات DML مثل SELECT و INSERT). ويجب منعه تماماً من الحصول على صلاحيات DDL (مثل DROP أو ALTER) لمنع أي هجوم من تدمير الهيكل.\n\nApplying the Principle of Least Privilege means an application's database user account should only be granted the minimum permissions necessary for its daily operations (typically specific DML commands like SELECT, INSERT, UPDATE). It should be strictly denied DDL privileges to prevent structural damage in the event of a compromise.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 40,
+        "question": "Standard SQL does not automatically eliminate duplicate rows in a result set. To strictly mimic the mathematical set theory behavior of the Relational Algebra 'Projection' (π) operator, which SQL keyword must be used?",
+        "options": [
+            "UNIQUE",
+            "DISTINCT",
+            "EXCEPT",
+            "PRIMARY",
+            "SINGLE"
+        ],
+        "answer": "DISTINCT",
+        "explanation": "عملية الإسقاط (Projection) في الرياضيات تحذف التكرار تلقائياً للحفاظ على خصائص المجموعات. في لغة SQL، تعليمة SELECT ترجع جميع الصفوف بما فيها المكررة. لمحاكاة الإسقاط الرياضي بدقة، يجب إضافة كلمة (DISTINCT) لإزالة التكرار.\n\nMathematically, the Projection (π) operator produces a set and therefore strictly eliminates duplicate tuples. Because standard SQL SELECT statements retain duplicates (acting as a multiset), the 'DISTINCT' keyword must be explicitly utilized to mimic this core mathematical behavior and remove redundant rows.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "When executing a 'CREATE TABLE' DDL statement, what are the absolute minimum structural components that must be explicitly defined?",
+        "options": [
+            "The table name and at least one foreign key constraint",
+            "The table name, the column names, and their respective data types",
+            "The table name and a minimum of five generic columns",
+            "The database name and the user view mapping",
+            "The table name and an implicit DML insert query"
+        ],
+        "answer": "The table name, the column names, and their respective data types",
+        "explanation": "لكي تتمكن من إنشاء جدول باستخدام أمر (CREATE TABLE)، الحد الأدنى المطلوب هو تحديد 'اسم الجدول'، 'أسماء الأعمدة' التي يحتويها، و'أنواع البيانات' لكل عمود (مثل INT أو VARCHAR). القيود (Constraints) مثل المفتاح الأساسي تعتبر مهمة ولكنها ليست مطلوبة للإنشاء الأولي.\n\nTo successfully execute a 'CREATE TABLE' DDL statement, the absolute minimum structural components required are the table's name, the names of its intended columns, and the specific data types associated with each of those columns. Constraints (like primary keys) are highly recommended but structurally optional.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "Why is 'TRUNCATE TABLE' classified as a DDL operation in many major Database Management Systems rather than a DML operation?",
+        "options": [
+            "Because it manipulates the values inside the columns using logical conditions",
+            "Because it operates by dropping and recreating the table or deallocating data pages, rather than scanning and logging individual row deletions",
+            "Because it automatically triggers all DML constraints associated with the schema",
+            "Because it can only be executed on views and not on physical tables",
+            "Because it requires a WHERE clause to structurally define the truncation point"
+        ],
+        "answer": "Because it operates by dropping and recreating the table or deallocating data pages, rather than scanning and logging individual row deletions",
+        "explanation": "يُصنف أمر TRUNCATE كأمر DDL (وليس DML مثل DELETE) لأنه لا يتعامل مع البيانات صفاً بصف. بدلاً من ذلك، يتعامل مع قاعدة البيانات على المستوى الهيكلي؛ حيث يقوم بإلغاء تخصيص صفحات تخزين البيانات (أو إسقاط الجدول وإعادة إنشائه فارغاً)، مما يجعله فائق السرعة ولا يمكن التراجع عنه بسهولة.\n\n'TRUNCATE TABLE' is classified as a DDL operation in many systems because of how it functions internally. Instead of scanning and logging individual row deletions (like DML operations), it operates structurally by deallocating the data pages holding the table's data or dropping and recreating the table entirely, resulting in superior performance.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "hard"
+    },
+    {
+        "id": 43,
+        "question": "DML operations strictly adhere to ACID properties. What does the 'Atomicity' property guarantee when executing a complex UPDATE statement affecting 10,000 rows?",
+        "options": [
+            "The update will complete in less than one second",
+            "The update will only affect rows that are not currently being read",
+            "Either all 10,000 rows are successfully updated, or if an error occurs midway, none of the rows are updated",
+            "The update will automatically split into smaller chunks of 1,000 rows",
+            "The update will permanently change the data types of the affected columns"
+        ],
+        "answer": "Either all 10,000 rows are successfully updated, or if an error occurs midway, none of the rows are updated",
+        "explanation": "خاصية الذرية (Atomicity) في المعاملات تعني (الكل أو اللاشيء). إذا كنت تقوم بتحديث 10 آلاف صف، وحدث خطأ عند الصف رقم 9999، فإن المحرك سيتراجع (Rollback) عن جميع التحديثات السابقة، ولن يتم تعديل أي صف لضمان عدم وجود بيانات غير مكتملة.\n\nThe 'Atomicity' property of an ACID transaction is the 'all-or-nothing' rule. It guarantees that a complex DML operation (like updating 10,000 rows) is treated as a single, indivisible unit of work. If an error occurs at any point, the entire transaction is rolled back, ensuring no partial updates remain.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "How do parameterized queries effectively neutralize SQL injection vulnerabilities during DML operations?",
+        "options": [
+            "By forcing the database engine to treat user input strictly as literal parameter values, preventing it from being interpreted as executable SQL code",
+            "By encrypting the entire database schema using AES-256",
+            "By automatically deleting all DML commands submitted by standard users",
+            "By stripping out all numeric characters from the input string",
+            "By executing the query twice to ensure consistency"
+        ],
+        "answer": "By forcing the database engine to treat user input strictly as literal parameter values, preventing it from being interpreted as executable SQL code",
+        "explanation": "الاستعلامات ذات المعلمات (Parameterized queries) تفصل بين هيكل الكود وبين البيانات المدخلة. عندما يُرسل الإدخال إلى قاعدة البيانات، يتم التعامل معه كقيمة نصية (أو رقمية) فقط، ولا يسمح المحرك مطلقاً بتنفيذه كأوامر SQL، مما يبطل مفعول هجمات الحقن تماماً.\n\nParameterized queries effectively neutralize SQL injection by strictly separating the executable SQL logic from the user-provided data. The database engine treats the input exclusively as literal values (parameters) bound to the query, preventing any malicious string from being interpreted and executed as dynamic SQL code.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "Within the SQL standard, the 'SET' keyword is structurally exclusive to which specific DML command?",
+        "options": [
+            "INSERT",
+            "SELECT",
+            "UPDATE",
+            "DELETE",
+            "MERGE"
+        ],
+        "answer": "UPDATE",
+        "explanation": "الكلمة المحجوزة (SET) هي جزء هيكلي خاص بأمر التحديث (UPDATE) فقط في لغة SQL. وهي تُستخدم للإعلان عن الأعمدة المراد تغييرها والقيم الجديدة التي ستُعين لها.\n\nWithin standard SQL syntax, the 'SET' keyword is structurally exclusive to the 'UPDATE' DML command. It is used to explicitly declare which attributes (columns) are to be modified and the corresponding new values that will be assigned to them.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 46,
+        "question": "What is the exact outcome of executing 'DELETE FROM Employees;' without specifying a WHERE clause?",
+        "options": [
+            "The Employees table structure is permanently dropped from the database",
+            "A syntax error is thrown requiring the user to define a predicate",
+            "All rows are removed from the Employees table one by one, logging each deletion, but the table structure remains completely intact",
+            "Only the rows containing NULL values are removed",
+            "The command behaves exactly like a TRUNCATE and deallocates data pages"
+        ],
+        "answer": "All rows are removed from the Employees table one by one, logging each deletion, but the table structure remains completely intact",
+        "explanation": "تنفيذ أمر (DELETE) بدون شرط (WHERE) سيؤدي إلى حذف جميع صفوف البيانات الموجودة في الجدول، ولكنه يمسحها صفاً بصف ويسجلها في السجل (Transaction log). في النهاية سيصبح الجدول فارغاً ولكن الهيكل (Schema) سيبقى سليماً.\n\nExecuting 'DELETE FROM Employees;' without a WHERE clause results in the removal of every single tuple from the relation. Because it is a DML command, it scans and logs each individual deletion. The table structure (schema) itself remains completely intact and available for future inserts.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "In the context of Relational Algebra mapping, the SQL 'WHERE' clause represents the Selection (σ) operator. What specific mathematical component of the algebra does the WHERE clause contain?",
+        "options": [
+            "The cross-product scalar",
+            "The logical condition or predicate used to filter the tuples",
+            "The specific list of columns to project",
+            "The renaming alias structure",
+            "The domain constraint definitions"
+        ],
+        "answer": "The logical condition or predicate used to filter the tuples",
+        "explanation": "عملية التحديد (Selection σ) في الجبر العلائقي تتطلب 'شرطاً' منطقياً (Predicate). في لغة SQL، هذا الشرط المنطقي الذي تُقارن وتُصفى على أساسه الصفوف هو ما يتم كتابته داخل جملة (WHERE).\n\nThe SQL 'WHERE' clause directly houses the logical condition, also known mathematically as the predicate. This predicate evaluates to True, False, or Unknown for each tuple, effectively mirroring the filtering logic of the algebraic Selection (σ) operator.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "When a DDL command like 'ALTER TABLE' is successfully executed, where does the Database Management System permanently record these structural changes?",
+        "options": [
+            "In a temporary memory cache designated for user sessions",
+            "In the database's metadata repository or system catalog",
+            "Inside the physical data pages alongside the application data",
+            "Within the DML execution plan logs",
+            "In an external flat file stored on the client machine"
+        ],
+        "answer": "In the database's metadata repository or system catalog",
+        "explanation": "أوامر DDL لا تتعامل مع البيانات العادية، بل تتعامل مع 'بيانات حول البيانات' (Metadata). عندما تقوم بتعديل هيكل جدول باستخدام ALTER TABLE، يتم حفظ هذه التغييرات الهيكلية في مستودع خاص داخل قاعدة البيانات يُسمى 'فهرس النظام' أو 'قاموس البيانات' (System catalog / Metadata repository).\n\nDDL commands manipulate structural definitions rather than row-level data. When a command like 'ALTER TABLE' is executed, the DBMS permanently records these structural changes in its metadata repository, commonly referred to as the system catalog or data dictionary.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 49,
+        "question": "In a standard DML 'INSERT' statement, what is the specific role of the 'VALUES' keyword?",
+        "options": [
+            "It specifies the logical conditions required for insertion",
+            "It introduces the exact set of scalar data elements that will construct the new tuple to be stored",
+            "It defines the data types for the newly created schema",
+            "It mathematically joins the inserted row with existing primary keys",
+            "It executes a subquery to aggregate existing data"
+        ],
+        "answer": "It introduces the exact set of scalar data elements that will construct the new tuple to be stored",
+        "explanation": "الكلمة المحجوزة (VALUES) في أمر الإدراج (INSERT INTO) وظيفتها الأساسية هي بدء قائمة البيانات أو القيم الدقيقة التي ستُشكل السجل (الصف) الجديد الذي سيتم حفظه في الجدول.\n\nIn a standard DML 'INSERT' statement, the specific role of the 'VALUES' keyword is to introduce the exact, ordered set of scalar data elements that will construct the new tuple (row) destined for storage within the relation.",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "Ultimately, what is the primary architectural reason for distinguishing DDL from DML in database management?",
+        "options": [
+            "To force users to purchase separate licenses for design and data entry",
+            "To clearly separate the management of the structural metadata (schema) from the operational manipulation of the actual stored data",
+            "To ensure that relational algebra operations cannot be mapped correctly",
+            "To restrict the database to a 1-Tier offline architecture",
+            "To eliminate the need for referential integrity across networks"
+        ],
+        "answer": "To clearly separate the management of the structural metadata (schema) from the operational manipulation of the actual stored data",
+        "explanation": "السبب المعماري الأساسي للفصل بين DDL و DML هو تنظيم وإدارة قواعد البيانات بفعالية. DDL تهتم بتصميم 'الهيكل' والبيانات الوصفية (المخطط) والذي يتم تغييره نادراً، بينما DML تهتم بالتلاعب بالبيانات التشغيلية اليومية التي تتغير باستمرار. هذا الفصل يسمح بإدارة الأمان والصلاحيات والأداء بشكل ممتاز.\n\nThe primary architectural reason for differentiating DDL from DML is to establish a clear separation of concerns. It distinctly separates the administration and management of structural metadata (the schema, which changes infrequently) from the day-to-day operational manipulation and processing of the actual stored data (which changes constantly).",
+        "topic": "SQL Basics (DDL & DML)",
+        "difficulty": "normal"
+    }
+]

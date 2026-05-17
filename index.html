@@ -1,84 +1,245 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DB Quizzes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="academic-theme">
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
     <!-- Header & Disclaimer -->
     <header class="app-header">
+        <div class="theme-toggle-desktop">
+            <button id="theme-academic" class="pill-btn active">Academic</button> <button id="theme-rgb"
+                class="pill-btn rgb-animated-btn">RGB</button>
+        </div>
         <div class="logo">DB QUIZES</div>
         <div class="student-info">اعداد الطالب: طه احمد غازي</div>
     </header>
     <div class="disclaimer">
-        اجوبة هذه الاسئلة تمت بواسطة الذكاء الاصطناعي و الموقع تم صنعه بواسطة الذكاء الاصطناعي لذلك قد توجد بعض الاخطاء اخلي مسؤوليتي عنها
+        اجوبة هذه الاسئلة تمت بواسطة الذكاء الاصطناعي و الموقع تم صنعه بواسطة الذكاء الاصطناعي لذلك قد توجد بعض الاخطاء
+        اخلي مسؤوليتي عنها
     </div>
 
     <!-- Screens -->
     <main id="app-container">
-        
-        <!-- Splash / Home Screen -->
-        <section id="home-screen" class="screen active-screen">
+
+        <!-- Landing Screen -->
+        <section id="landing-screen" class="screen active-screen">
+            <div class="landing-options">
+                <button id="btn-goto-mock" class="btn btn-glow main-landing-btn">الامتحان الوزاري التجريبي</button>
+                <button id="btn-goto-new-quizzes" class="btn btn-glow main-landing-btn">اختبارات المادة
+                    (للتدريب)</button>
+                <button id="btn-goto-quizzes" class="btn btn-glow main-landing-btn">الاختبارات القديمة</button>
+            </div>
+        </section>
+
+        <!-- Mock Exam Selection Screen -->
+        <section id="mock-selection-screen" class="screen">
+            <div class="top-nav">
+                <button id="btn-back-to-landing-mock" class="btn btn-glow back-btn">العودة للرئيسية / Back</button>
+            </div>
+
             <div class="options-container">
-                <label class="radio-label">
-                    <input type="radio" name="order" value="normal" checked>
-                    <span class="custom-radio"></span>
-                    ترتيب طبيعي
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-mock-random">
+                    <span class="custom-checkbox"></span>
+                    ترتيب الأسئلة عشوائياً
                 </label>
-                <label class="radio-label">
-                    <input type="radio" name="order" value="random">
-                    <span class="custom-radio"></span>
-                    ترتيب عشوائي بدون تكرار
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-mock-shuffle">
+                    <span class="custom-checkbox"></span>
+                    بعثرة الخيارات
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-mock-sounds" checked>
+                    <span class="custom-checkbox"></span>
+                    تفعيل الأصوات
+                </label>
+            </div>
+
+            <div class="quizzes-grid">
+                <div class="quiz-card floating-card neon-border quiz-card-special">
+                    <div class="topic-badge" style="margin-bottom:10px;">(بدء الامتحان الوزاري التجريبي)</div>
+                    <p class="quiz-desc">اختبار شامل للأسئلة الوزارية المهمة جداً</p>
+                    <button class="btn btn-glow btn-start-mock" data-quiz="superimportantexam.json">ابدأ
+                        الاختبار</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Quiz Selection Screen -->
+        <section id="new-quizzes-screen" class="screen">
+            <div class="top-nav">
+                <button id="btn-back-to-landing-new" class="btn btn-glow back-btn">العودة للرئيسية / Back</button>
+            </div>
+
+            <div class="ai-disclaimer-box">
+                ⚠️ ملاحظة هامة: هذه الاختبارات والأسئلة غير رسمية ومعدة بواسطة الذكاء الاصطناعي، وهي مخصصة للتدريب فقط. ⚠️
+            </div>
+
+            <div class="options-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-new-random">
+                    <span class="custom-checkbox"></span>
+                    ترتيب الأسئلة عشوائياً
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-new-shuffle">
+                    <span class="custom-checkbox"></span>
+                    بعثرة الخيارات
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-new-sounds" checked>
+                    <span class="custom-checkbox"></span>
+                    تفعيل الأصوات
+                </label>
+            </div>
+
+            <div class="quizzes-grid">
+                <!-- t1 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">Introduction to Databases and DBMS <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t1.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t2 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">Database Architecture & Data Models <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t2.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t3 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">ER Modelling <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t3.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t4 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">Relational Model & Schema Design <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t4.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t5 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">Relational Algebra & Query Fundamentals <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t5.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t6 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">SQL Basics (DDL & DML) <span class="topic-badge"
+                            style="display:inline-block; margin-top:5px; margin-bottom:5px;">10%</span><br><span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span></p>
+                    <button class="btn btn-glow" data-quiz="t6.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t7 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc" style="font-size:0.9em; line-height:1.6; text-align: left; direction: ltr;">
+                        SQL Joins, Subqueries, Views, Indexing <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">9%</span><br>
+                        Database Design (Lifecycle) <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">8%</span><br>
+                        Logical & Physical Design <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">8%</span><br>
+                        Database Security & Authorization <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">3%</span><br>
+                        <span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span>
+                    </p>
+                    <button class="btn btn-glow" data-quiz="t7.json">ابدأ الاختبار</button>
+                </div>
+
+                <!-- t8 -->
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc" style="font-size:0.9em; line-height:1.6; text-align: left; direction: ltr;">
+                        Distributed DBMS <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">3%</span><br>
+                        Database Connectivity <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">3%</span><br>
+                        NoSQL & Emerging DB Technologies <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">3%</span><br>
+                        Normalization & Functional Dependencies <span class="topic-badge"
+                            style="display:inline-block; margin:2px;">3%</span><br>
+                        <span style="display:block; margin-top:8px; font-size:0.9em; color:#aaaaaa; direction:rtl; text-align:center;">اختبار مكون من 50 سؤال</span>
+                    </p>
+                    <button class="btn btn-glow" data-quiz="t8.json">ابدأ الاختبار</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Selection Screen -->
+        <section id="home-screen" class="screen">
+            <div class="top-nav">
+                <button id="btn-back-to-landing" class="btn btn-glow back-btn">العودة للرئيسية / Back</button>
+            </div>
+
+            <div class="options-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-random-questions">
+                    <span class="custom-checkbox"></span>
+                    ترتيب الأسئلة عشوائياً
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-shuffle-options">
+                    <span class="custom-checkbox"></span>
+                    بعثرة الخيارات
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="chk-enable-sounds" checked>
+                    <span class="custom-checkbox"></span>
+                    تفعيل الأصوات
                 </label>
             </div>
 
             <div class="quizzes-grid">
                 <!-- Quiz 5 (Al-Nahrain Part 1) -->
-                <div class="quiz-card quiz-card-special floating-card">
-                    <div class="badge neon-badge-special">(اختبار مهم جداً‼️)</div>
-                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الاول مكون من 50 سؤال (مهمة جدا جدا) (تحتوي 10% اسئلة صعبة)</p>
-                    <button class="btn btn-special" data-quiz="quiz5.json">ابدأ الاختبار</button>
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الاول مكون من 50 سؤال (تحتوي 10% اسئلة
+                        صعبة)</p>
+                    <button class="btn btn-glow" data-quiz="quiz5.json">ابدأ الاختبار</button>
                 </div>
-                
+
                 <!-- Quiz 6 (Al-Nahrain Part 2) -->
-                <div class="quiz-card quiz-card-special floating-card">
-                    <div class="badge neon-badge-special">(اختبار مهم جداً‼️)</div>
-                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الثاني مكون من 50 سؤال (مهمة جدا جدا) (تحتوي 10% اسئلة صعبة)</p>
-                    <button class="btn btn-special" data-quiz="quiz6.json">ابدأ الاختبار</button>
+                <div class="quiz-card floating-card neon-border">
+                    <p class="quiz-desc">هذا اختبار اسئلة جامعة النهرين الجزء الثاني مكون من 50 سؤال (تحتوي 10% اسئلة
+                        صعبة)</p>
+                    <button class="btn btn-glow" data-quiz="quiz6.json">ابدأ الاختبار</button>
                 </div>
 
                 <!-- Quiz 1 -->
                 <div class="quiz-card floating-card neon-border">
-                    <p class="quiz-desc">هذا اختبار بالاسئلة الموضعة بواسطه دكتور عز الدين اول 56 سؤال رسمي من المادة</p>
+                    <p class="quiz-desc">هذا اختبار بالاسئلة الموضعة بواسطه دكتور عز الدين اول 56 سؤال رسمي من المادة
+                    </p>
                     <button class="btn btn-glow" data-quiz="quiz1.json">ابدأ الاختبار</button>
                 </div>
-                
+
                 <!-- Quiz 2 -->
                 <div class="quiz-card floating-card neon-border">
                     <p class="quiz-desc">هذا اختبار ال50 سؤال الاولى المقدمة من جامعة الزهراء (group A)</p>
                     <button class="btn btn-glow" data-quiz="quiz2.json">ابدأ الاختبار</button>
                 </div>
-                
+
                 <!-- Quiz 3 -->
                 <div class="quiz-card floating-card neon-border">
                     <p class="quiz-desc">هذا الاختبار ال50 سؤال الثانية المقدمة من قبل جامعة الزهراء (group B)</p>
                     <button class="btn btn-glow" data-quiz="quiz3.json">ابدأ الاختبار</button>
                 </div>
 
-                <!-- Quiz 4 (AI Quiz) -->
-                <div class="quiz-card quiz-card-ai floating-card">
-                    <div class="neon-badge-ai">(اسئلة زائدة غير رسمية)</div>
-                    <p class="quiz-desc">هذا اختبار مكون من 150 سؤال تم انشاؤها بواسطة الذكاء الاصطناعي AI. (يحتوي على 10% أسئلة صعبة جداً)</p>
-                    <button class="btn btn-glow" data-quiz="quiz4.json">ابدأ الاختبار</button>
-                </div>
             </div>
         </section>
 
@@ -91,7 +252,7 @@
                 </div>
                 <div id="score-display">النتيجة: 0</div>
             </div>
-            
+
             <div id="topic-badge" class="topic-badge hidden">الموضوع</div>
             <div id="hard-badge" class="badge hidden">HARD QUESTION</div>
 
@@ -116,7 +277,7 @@
         <section id="result-screen" class="screen">
             <div class="result-container glass-panel">
                 <h2 id="final-score-text">النتيجة النهائية: 135 من 150</h2>
-                
+
                 <div id="wrong-answers-container" class="wrong-answers-list">
                     <h3>الأسئلة التي تم الإجابة عليها بشكل خاطئ:</h3>
                     <div id="wrong-answers-list">
@@ -141,8 +302,31 @@
         </div>
     </div>
 
+
+
+    <!-- Theme Ripple Effect -->
+    <div id="theme-ripple" class="theme-ripple hidden"></div>
+
+    <!-- Gamification Center Overlay -->
+    <div id="gamification-overlay" class="gamification-overlay hidden">
+        <div id="gamification-content"></div>
+    </div>
+
+    <!-- Zero Score Ending Overlay -->
+    <div id="zero-score-overlay" class="zero-score-overlay hidden">
+        <h1 class="zero-text">نتيجتك صفر!</h1>
+        <img src="assets/patrick-spongebob.gif" alt="Patrick" class="patrick-gif" loading="lazy">
+    </div>
+
+    <!-- Perfect Score Ending Overlay -->
+    <div id="perfect-score-overlay" class="perfect-score-overlay hidden">
+        <h1 id="perfect-text" class="perfect-text"></h1>
+        <img src="assets/aizen-aizen-sosuke.gif" alt="Aizen" class="aizen-gif" loading="lazy">
+    </div>
+
     <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>

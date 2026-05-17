@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "What does the ER Model primarily represent in the context of database design?",
+        "options": [
+            "Physical storage hardware specifications",
+            "Unstructured data arrays",
+            "Application program interfaces",
+            "Relational calculus equations",
+            "Real-world entities and the relationships between them"
+        ],
+        "answer": "Real-world entities and the relationships between them",
+        "explanation": "نموذج الكيانات والعلاقات (ER Model) هو نموذج مفاهيمي عالي المستوى يهدف إلى تمثيل كيانات 'العالم الحقيقي' (الأشياء والأشخاص والأحداث) والعلاقات المنطقية التي تربط بينها لتصميم قاعدة البيانات بشكل سليم قبل تنفيذها فعلياً.\n\nThe Entity-Relationship (ER) Model is a high-level conceptual data model diagram. Its primary purpose is to systematically analyze and represent real-world entities and the logical relationships between them, serving as a blueprint before actual database implementation.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "Which graphical symbol is strictly used to represent an 'Entity' in a standard Entity-Relationship Diagram?",
+        "options": [
+            "Diamond",
+            "Ellipse",
+            "Rectangle",
+            "Double Diamond",
+            "Dashed Ellipse"
+        ],
+        "answer": "Rectangle",
+        "explanation": "في مخططات الكيانات والعلاقات (ERD)، يتم استخدام رمز المستطيل (Rectangle) حصراً لتمثيل الكيانات (Entities). بينما تُستخدم الأشكال البيضاوية للسمات، والمعين للعلاقات.\n\nIn standard Entity-Relationship Diagram (ERD) notations, a Rectangle symbol is strictly used to represent entity types. Ellipses represent attributes, and diamonds represent relationships.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "An attribute that can be further divided into smaller, meaningful subparts (such as a full name into first, middle, and last names) is known as a:",
+        "options": [
+            "Derived attribute",
+            "Simple atomic attribute",
+            "Multivalued attribute",
+            "Composite attribute",
+            "Primary key attribute"
+        ],
+        "answer": "Composite attribute",
+        "explanation": "السمة المركبة (Composite attribute) هي السمة التي يمكن تقسيمها إلى أجزاء فرعية أصغر وذات معنى مستقل. على سبيل المثال، سمة 'الاسم الكامل' يمكن تقسيمها إلى 'الاسم الأول' و'الاسم الأخير'، بخلاف السمة البسيطة (Simple) التي لا يمكن تقسيمها.\n\nA Composite attribute is one that can be logically broken down or divided into smaller, more basic meaningful components. For instance, a student's full name can be broken down into first name, middle name, and last name.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "In an ER Diagram, how is a 'Primary Key' visually distinguished from other regular attributes?",
+        "options": [
+            "It is enclosed in a double ellipse",
+            "It is represented by a dashed underline beneath the text",
+            "It is represented by a solid underline beneath the text",
+            "It is placed inside a diamond symbol",
+            "It is colored red to highlight its importance"
+        ],
+        "answer": "It is represented by a solid underline beneath the text",
+        "explanation": "لتمييز المفتاح الأساسي (Primary Key) في مخطط ER، يتم وضع خط متصل (Solid underline) تحت اسم السمة داخل الشكل البيضاوي، مما يدل على أن هذه السمة تُستخدم كمعرف فريد للكيان.\n\nTo visually distinguish a Primary Key attribute in an ER diagram, the name of the attribute inside its ellipse is written with a solid underline. This indicates its unique identifying role within the entity set.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "A 'Weak Entity' cannot be uniquely identified by its own attributes alone. How is a Weak Entity visually represented in an ER diagram?",
+        "options": [
+            "A single rectangle with dashed borders",
+            "A double diamond",
+            "A double rectangle",
+            "A single ellipse with an underline",
+            "A triangle connected to a strong entity"
+        ],
+        "answer": "A double rectangle",
+        "explanation": "الكيان الضعيف (Weak Entity) هو الذي لا يمتلك مفتاحاً أساسياً خاصاً به، ويعتمد في وجوده على كيان قوي. في المخططات، يُمثل الكيان الضعيف بمستطيل مزدوج الخطوط (Double rectangle).\n\nA Weak Entity is an entity type that does not have enough attributes to build its own independent primary key and depends on a strong entity. In ERD notations, it is explicitly represented by a double rectangle symbol.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 6,
+        "question": "Which type of attribute is NOT physically stored in the database but rather calculated dynamically from other existing attributes when needed?",
+        "options": [
+            "Multivalued attribute",
+            "Composite attribute",
+            "Derived attribute",
+            "Partial key attribute",
+            "Simple attribute"
+        ],
+        "answer": "Derived attribute",
+        "explanation": "السمة المشتقة (Derived attribute) هي السمة التي لا تُخزن قيمتها فعلياً في قاعدة البيانات، بل يتم حسابها أو اشتقاقها من سمات أخرى موجودة. المثال الكلاسيكي هو 'العمر' الذي يُشتق من 'تاريخ الميلاد'.\n\nA Derived attribute is an attribute whose value is not permanently stored in the physical database. Instead, its value is dynamically calculated or derived from other related attributes (e.g., calculating 'Age' directly from a stored 'Date of Birth').",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 7,
+        "question": "If a student can possess multiple mobile phone numbers or email addresses, what type of attribute should be used, and how is it drawn in the ERD?",
+        "options": [
+            "Derived attribute; drawn as a dashed ellipse",
+            "Composite attribute; drawn as connected multiple ellipses",
+            "Multivalued attribute; drawn as a double ellipse",
+            "Simple attribute; drawn as a single rectangle",
+            "Weak attribute; drawn as a double diamond"
+        ],
+        "answer": "Multivalued attribute; drawn as a double ellipse",
+        "explanation": "عندما تمتلك السمة أكثر من قيمة واحدة لنفس الكيان (مثل عدة أرقام هواتف للطالب الواحد)، تُسمى سمة متعددة القيم (Multivalued attribute). وفي مخطط ER، تُرسم على شكل شكل بيضاوي مزدوج (Double ellipse).\n\nWhen an attribute can hold multiple values for a single entity instance (like a student having multiple contact numbers), it is classified as a Multivalued attribute. In ER notations, it is visually represented by a double ellipse.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 8,
+        "question": "In the context of a Weak Entity set, what is the specific term used for the attribute (or combination of attributes) that helps uniquely identify the entity when combined with the strong entity's primary key?",
+        "options": [
+            "Foreign Key",
+            "Super Key",
+            "Partial Key (Discriminator)",
+            "Composite Key",
+            "Derived Key"
+        ],
+        "answer": "Partial Key (Discriminator)",
+        "explanation": "الكيان الضعيف لا يملك مفتاحاً أساسياً كاملاً، بل يملك ما يسمى بـ 'المفتاح الجزئي' أو 'المميز' (Partial Key / Discriminator). هذا المفتاح (الذي يوضع تحته خط متقطع) يُستخدم بالاشتراك مع المفتاح الأساسي للكيان القوي لتحديد سجلات الكيان الضعيف بشكل فريد.\n\nA weak entity does not possess a full primary key. Instead, it uses a 'Partial Key' (also known as a Discriminator) combined with the primary key of its identifying strong entity to uniquely identify its instances. It is typically represented by a dashed underline.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 9,
+        "question": "What symbol is used to represent the relationship that exclusively connects a Weak Entity to its identifying Strong Entity?",
+        "options": [
+            "Single Diamond",
+            "Double Rectangle",
+            "Double Diamond",
+            "Dashed Line",
+            "Single Ellipse"
+        ],
+        "answer": "Double Diamond",
+        "explanation": "العلاقة التي تربط بين كيان ضعيف والكيان القوي الذي يعتمد عليه تُسمى 'علاقة تعريف' (Identifying relationship). في مخططات ER، يتم رسم هذه العلاقة المحددة باستخدام رمز المعين المزدوج (Double Diamond).\n\nThe relationship between one strong entity and its dependent weak entity set is called an identifying relationship. To distinguish it from regular relationships, it is visually represented using a double diamond symbol.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "During the ERD creation process, if you find an attribute that logically seems to belong to more than one entity, what is the recommended best practice?",
+        "options": [
+            "Connect the single attribute to all entities simultaneously using lines",
+            "Discard the attribute entirely to maintain normalization",
+            "Convert the attribute into a weak relationship",
+            "Use a modifier to make the attribute name unique and pair it with exactly one entity",
+            "Change the attribute into a derived attribute"
+        ],
+        "answer": "Use a modifier to make the attribute name unique and pair it with exactly one entity",
+        "explanation": "كقاعدة عامة في تصميم مخططات ER، يجب أن ترتبط السمة بكيان واحد فقط. إذا بدت السمة وكأنها تنتمي لكيانين، يجب تعديل اسمها (استخدام Modifier) لجعلها فريدة وربطها بكيان واحد بوضوح لتجنب اللبس الهيكلي.\n\nA best practice in ER diagram creation states that an attribute must be paired with exactly one entity. If an attribute seems to apply to multiple entities, you should use a modifier (e.g., changing 'Name' to 'Student_Name' and 'Professor_Name') to make it unique and assign it properly.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 11,
+        "question": "Which of the following best defines a 'Relationship' in an ER Model?",
+        "options": [
+            "A physical constraint applied to a primary key",
+            "A single-valued property of an entity",
+            "An association among two or more entities, often identified by verbs",
+            "A grouping of similar kind of entities",
+            "A set of allowed values for a specific column"
+        ],
+        "answer": "An association among two or more entities, often identified by verbs",
+        "explanation": "العلاقة (Relationship) في نموذج ER هي ارتباط أو ترابط بين كيانين أو أكثر. عادة ما يتم التعبير عن العلاقات باستخدام أفعال (مثل: الطالب 'يدرس' المقرر، أو الموظف 'يدير' القسم).\n\nA relationship is fundamentally an association between two or more entities. In data modeling, relationships represent how different entities interact with one another and are most often identified by verbs or verb phrases (e.g., an employee 'manages' a store).",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "According to the systematic steps to create an ER Diagram, which action must absolutely be performed first before identifying relationships or attributes?",
+        "options": [
+            "Cardinality Identification",
+            "Identifying the Primary Keys",
+            "Identifying the Attributes",
+            "Entity Identification",
+            "Creating the ERD layout"
+        ],
+        "answer": "Entity Identification",
+        "explanation": "الخطوة الأولى والأساسية في بناء أي مخطط ER هي 'تحديد الكيانات' (Entity Identification). لا يمكنك إنشاء علاقات أو تعيين سمات قبل أن تعرف ما هي الأشياء الرئيسية (الكيانات) التي تريد تخزين البيانات عنها.\n\nAccording to the systematic steps of ERD creation, 'Entity Identification' is Step 1. You must first identify the core subjects or objects (entities) of the business problem before you can establish how they relate to each other or what attributes describe them.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "Which type of relationship describes a scenario where 'One class consists of multiple students, and a student belongs to at least one class'?",
+        "options": [
+            "One-to-One (1:1)",
+            "One-to-Many (1:M)",
+            "Many-to-Many (M:N)",
+            "Many-to-One (M:1)",
+            "Recursive Relationship"
+        ],
+        "answer": "One-to-Many (1:M)",
+        "explanation": "هذه الحالة تصف علاقة 'واحد إلى متعدد' (One-to-Many). كيان واحد من نوع 'الصف' (Class) يرتبط بعدة كيانات من نوع 'الطالب' (Students)، بينما الطالب ينتمي لصف واحد. هذا هو النمط الأكثر شيوعاً في قواعد البيانات.\n\nThis scenario describes a One-to-Many (1:M) relationship. One instance of the first entity (Class) is associated with multiple instances of the second entity (Students), while an instance of the second entity is associated with only one instance of the first.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "A Weak Entity is fundamentally different from a Strong Entity because:",
+        "options": [
+            "It requires a complex composite attribute to function",
+            "It cannot have any relationships with other entities",
+            "It does not have enough attributes to build its own independent primary key",
+            "It only exists in the physical data model, not the logical model",
+            "It represents an event rather than a physical object"
+        ],
+        "answer": "It does not have enough attributes to build its own independent primary key",
+        "explanation": "الفرق الجوهري هو أن الكيان القوي (Strong Entity) يمتلك سمات كافية لتشكيل 'مفتاح أساسي' مستقل، بينما الكيان الضعيف (Weak Entity) يفتقر لهذه السمات، ولذلك يحتاج للارتباط بكيان قوي لتمييز سجلاته.\n\nThe fundamental difference is that a Strong Entity set always possesses enough unique attributes to form an independent Primary Key. A Weak Entity set, however, lacks the attributes necessary to build its own primary key and thus depends entirely on an identifying strong entity.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "When defining terms related to ER modeling, an 'Entity Set' is best described as:",
+        "options": [
+            "A unique identifier for a row in a table",
+            "A visual blueprint of the database",
+            "A group of similar kind of entities that may share attributes with similar values",
+            "The mathematical difference between two strong entities",
+            "A verb phrase connecting two attributes"
+        ],
+        "answer": "A group of similar kind of entities that may share attributes with similar values",
+        "explanation": "مجموعة الكيانات (Entity Set) هي تجميع لمجموعة من الكيانات المتشابهة من نفس النوع (على سبيل المثال، مجموعة جميع 'الطلاب' تشكل Entity Set). هذه الكيانات تتشارك في نفس السمات حتى لو اختلفت قيم تلك السمات.\n\nAn Entity Set is defined as a collection or group of similar kind of entities. For example, all specific student instances combined form the 'Student' entity set. Entities within a set share the same properties or attributes, though the specific values for those attributes will differ.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "How is a 'Composite Attribute' typically represented in an Entity-Relationship Diagram?",
+        "options": [
+            "As a single dashed ellipse connected directly to the entity",
+            "As a double ellipse containing the main attribute name",
+            "As an ellipse connected to the entity, with smaller ellipses representing sub-attributes connected to it",
+            "As a rectangle with rounded corners attached to the primary key",
+            "As a diamond symbol connected to a weak entity"
+        ],
+        "answer": "As an ellipse connected to the entity, with smaller ellipses representing sub-attributes connected to it",
+        "explanation": "السمة المركبة (Composite Attribute) هي السمة التي تتكون من عدة أجزاء فرعية. في مخططات ER، تُرسم كشكل بيضاوي رئيسي متصل بالكيان، وتتفرع منه أشكال بيضاوية أصغر تمثل الأجزاء المكونة له (مثل تفرع الاسم الأول والأخير من سمة الاسم). الأشكال الأخرى تمثل سمات مشتقة، متعددة القيم، أو علاقات.\n\nA Composite Attribute is one that can be divided into subparts. In an ER diagram, it is visually represented by an ellipse connected to the entity, with additional smaller ellipses (the sub-attributes) branching out and connected to the main attribute ellipse.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "According to the systematic process of creating an ER Diagram, what is the immediate next step after 'Entity Identification'?",
+        "options": [
+            "Identifying the primary keys for each entity",
+            "Relationship Identification",
+            "Cardinality Identification",
+            "Drawing the final physical layout",
+            "Mapping the entities to relational tables"
+        ],
+        "answer": "Relationship Identification",
+        "explanation": "بمجرد تحديد الكيانات (الخطوة الأولى)، الخطوة المنطقية التالية هي تحديد العلاقات (Relationship Identification) التي تربط بين هذه الكيانات. بعد معرفة العلاقات، يتم تحديد نوعها (Cardinality) ثم تحديد السمات.\n\nAccording to the standard ERD creation steps, once the entities have been identified (Step 1), the immediate next step is 'Relationship Identification' (Step 2), which determines how those entities interact with one another before moving on to cardinality and attributes.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "Which of the following statements best defines a 'Strong Entity' in an ER model?",
+        "options": [
+            "An entity that relies entirely on another entity for its logical existence",
+            "An entity that only contains derived and multivalued attributes",
+            "An entity that exists independently and possesses enough attributes to form a primary key",
+            "An entity that is represented graphically by a double rectangle",
+            "An entity that acts as an associative table in a many-to-many relationship"
+        ],
+        "answer": "An entity that exists independently and possesses enough attributes to form a primary key",
+        "explanation": "الكيان القوي (Strong Entity) هو الكيان الذي يمكن أن يوجد بشكل مستقل في قاعدة البيانات ولديه سمات كافية لإنشاء مفتاح أساسي (Primary Key) خاص به لتمييز سجلاته. هذا على عكس الكيان الضعيف الذي يعتمد على كيان آخر ولا يملك مفتاحاً كاملاً.\n\nA Strong Entity is defined as an entity that can exist independently of other entities in the database and inherently possesses enough attributes to form its own unique Primary Key. It does not depend on an identifying relationship, unlike a weak entity.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "In an Entity-Relationship Diagram, what does the 'Diamond' shape strictly represent?",
+        "options": [
+            "A primary key attribute",
+            "An identifying weak entity",
+            "A derived physical property",
+            "An association or relationship between two or more entities",
+            "A multivalued composite attribute"
+        ],
+        "answer": "An association or relationship between two or more entities",
+        "explanation": "في مخططات ER، يُستخدم الشكل المعين (Diamond) حصرياً لتمثيل 'العلاقة' (Relationship) أو الارتباط المنطقي بين كيانين أو أكثر. المستطيل يمثل الكيان، والشكل البيضاوي يمثل السمة.\n\nIn an ER diagram, the Diamond symbol is strictly used to denote a Relationship, which is an association between two or more entities. It visually connects the rectangles (entities) to show how they interact.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 20,
+        "question": "A corporate database models 'Employees' and their 'Dependents' (children/spouses). A dependent cannot exist in the database without being linked to an employee. In ER modeling, the 'Dependent' is mathematically classified as a:",
+        "options": [
+            "Strong Entity",
+            "Derived Attribute",
+            "Weak Entity",
+            "Composite Key",
+            "Recursive Association"
+        ],
+        "answer": "Weak Entity",
+        "explanation": "في هذا السيناريو، المعالون (Dependents) لا يمكنهم التواجد في النظام بدون وجود الموظف، ولا يملكون معرفاً فريداً مستقلاً تماماً (الاعتمادية الوجودية). لذلك يُصنف 'المعال' كـ 'كيان ضعيف' (Weak Entity).\n\nIn this scenario, 'Dependents' exhibit existence dependency; they cannot logically exist in the database without an associating Employee. Furthermore, they typically lack a fully independent primary key. Therefore, they are classified mathematically and structurally as a Weak Entity.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 21,
+        "question": "What is the specific graphical representation of a 'Derived Attribute' in a standard ER diagram?",
+        "options": [
+            "A double solid ellipse",
+            "An ellipse with a solid underline",
+            "An ellipse with a dashed borderline",
+            "A diamond with a dashed outline",
+            "A rectangle connected by a dotted line"
+        ],
+        "answer": "An ellipse with a dashed borderline",
+        "explanation": "السمة المشتقة (Derived Attribute)، وهي السمة التي تُحسب ولا تُخزن فعلياً (مثل العمر)، تُرسم في مخطط ER باستخدام شكل بيضاوي ذو حدود متقطعة (Dashed borderline/ellipse) لتمييزها عن السمات المخزنة.\n\nA Derived Attribute (an attribute calculated from other attributes and not physically stored) is specifically represented in a standard ER diagram by an ellipse with a dashed borderline (dashed ellipse).",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "If a relationship is described as 'An employee manages one store, and each store is managed by exactly one employee', what is the cardinality of this relationship?",
+        "options": [
+            "Many-to-Many (M:N)",
+            "One-to-Many (1:M)",
+            "Many-to-One (M:1)",
+            "One-to-One (1:1)",
+            "Zero-to-Many (0:M)"
+        ],
+        "answer": "One-to-One (1:1)",
+        "explanation": "بما أن الموظف الواحد يدير متجراً واحداً فقط، والمتجر الواحد يُدار من قبل موظف واحد فقط، فإن الارتباط حصري من كلا الجانبين. هذا هو التعريف الدقيق لعلاقة 'واحد إلى واحد' (1:1).\n\nSince one specific employee manages exactly one specific store, and that store is managed by exactly one employee, the association is exclusive on both ends. This precisely defines a One-to-One (1:1) relationship cardinality.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 23,
+        "question": "Which of the following defines the core purpose of ER diagrams during the Database Life Cycle?",
+        "options": [
+            "They act as the physical hardware blueprint for server installation",
+            "They are a visual tool acting as a blueprint of the database to systematically analyze data requirements",
+            "They execute data manipulation queries directly against the physical storage",
+            "They automatically normalize tables up to the third normal form",
+            "They encrypt the semantic meaning of the entities to secure the network"
+        ],
+        "answer": "They are a visual tool acting as a blueprint of the database to systematically analyze data requirements",
+        "explanation": "مخطط ER هو أداة مرئية تعمل بمثابة 'مخطط هندسي' (Blueprint) لقاعدة البيانات. الغرض الأساسي منه هو تحليل متطلبات البيانات بشكل منهجي لإنتاج تصميم سليم قبل البدء في التنفيذ الفعلي والبرمجة.\n\nER diagrams are fundamentally a visual tool that acts as a conceptual blueprint of a database. Their core purpose is to help designers systematically analyze data requirements and relationships to produce a well-designed database before physical implementation begins.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 24,
+        "question": "How do you graphically denote a 'Partial Key' (Discriminator) within a Weak Entity in an ER diagram?",
+        "options": [
+            "By placing a solid underline beneath the attribute name",
+            "By drawing a double ellipse around the attribute name",
+            "By placing a dashed underline beneath the attribute name",
+            "By placing the attribute inside a double diamond",
+            "By completely omitting the attribute from the diagram"
+        ],
+        "answer": "By placing a dashed underline beneath the attribute name",
+        "explanation": "المفتاح الجزئي (Partial Key) أو المميز الخاص بالكيان الضعيف، لا يشكل مفتاحاً أساسياً كاملاً بمفرده. لتمييزه في المخطط، يتم وضع 'خط متقطع' (Dashed underline) تحت اسم السمة، على عكس المفتاح الأساسي الذي يحصل على خط متصل.\n\nA Partial Key (or discriminator) of a weak entity is an attribute that, when combined with the strong entity's key, uniquely identifies a weak entity instance. Graphically, it is denoted by placing a dashed underline beneath the attribute's name within its ellipse.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 25,
+        "question": "What is considered a 'best practice' rule regarding the completion of ER modeling?",
+        "options": [
+            "It should be completed only after the physical tables are built",
+            "It must be done concurrently with writing DML queries",
+            "It is considered a best practice to complete ER modelling before implementing your database",
+            "It should be ignored if a NoSQL database is being developed",
+            "It must strictly avoid using derived attributes to save diagram space"
+        ],
+        "answer": "It is considered a best practice to complete ER modelling before implementing your database",
+        "explanation": "تعتبر أفضل الممارسات في تصميم قواعد البيانات هي الانتهاء من بناء 'نموذج الكيانات والعلاقات' (ER modelling) بالكامل والتحقق منه قبل كتابة أي كود أو البدء في بناء الجداول الفعلية (Implementation).\n\nIn database design, it is a strictly established best practice to completely finalize the ER modeling phase before moving on to physically implementing the database. This ensures all requirements, entities, and relationships are logically sound before resources are spent on physical creation.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "According to the summary of ER concepts, how is an 'Attribute' formally defined?",
+        "options": [
+            "It is an action performed by a user on the database server",
+            "It is a single-valued property of either an entity type or a relationship type",
+            "It is a collection of similar entities stored in a hierarchical tree",
+            "It is the structural line connecting a weak entity to a strong entity",
+            "It is a strict constraint preventing data duplication"
+        ],
+        "answer": "It is a single-valued property of either an entity type or a relationship type",
+        "explanation": "السمة (Attribute) تُعرف بأنها خاصية تصف الكيان أو تصف العلاقة. كل كيان يمتلك مجموعة من السمات التي تحمل قيماً تعبر عن تفاصيله (مثل الاسم، العمر، اللون).\n\nAccording to the formal definitions in ER modeling, an attribute is defined as a single-valued property or characteristic that describes either an entity type or, in some cases, a relationship type (e.g., the 'Date' a student enrolled in a class).",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "When drawing an ER diagram, what is a critical requirement for visual clarity and correctness regarding the components?",
+        "options": [
+            "All weak entities must be colored differently",
+            "You need to make sure all your entities and relationships are properly labeled",
+            "Primary keys must be hidden from business stakeholders",
+            "Relationships must never cross lines visually",
+            "Multivalued attributes must be converted to physical tables immediately"
+        ],
+        "answer": "You need to make sure all your entities and relationships are properly labeled",
+        "explanation": "أثناء رسم المخطط، من القواعد الأساسية لضمان الوضوح وصحة التوثيق التأكد من أن جميع الكيانات والعلاقات 'مسماة بشكل صحيح' (Properly labeled). عدم وضع تسميات صحيحة يؤدي إلى سوء فهم الهيكل المنطقي لقاعدة البيانات.\n\nA critical requirement when drawing ER diagrams is to ensure visual clarity and logical correctness. Therefore, you must make absolutely sure that all your entities, attributes, and relationships are properly labeled with clear, meaningful names.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "What is the primary function of an 'Identifying Relationship' in an ER Model?",
+        "options": [
+            "To link two strong entities in a many-to-many relationship",
+            "To associate a weak entity with the strong entity it depends on for its existence and identification",
+            "To convert a derived attribute into a primary key",
+            "To automatically calculate the cardinality between physical tables",
+            "To identify the database administrator responsible for the schema"
+        ],
+        "answer": "To associate a weak entity with the strong entity it depends on for its existence and identification",
+        "explanation": "علاقة التعريف (Identifying Relationship) وظيفتها الأساسية والوحيدة هي ربط الكيان الضعيف بالكيان القوي الذي يعتمد عليه. بدون هذه العلاقة، لا يمكن للكيان الضعيف أن يوجد أو يتم تمييز سجلاته.\n\nThe primary function of an Identifying Relationship (represented by a double diamond) is to logically associate a Weak Entity with its parent Strong Entity. This relationship is crucial because the weak entity depends entirely on the strong entity for both its existence and its unique identification.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "Which of the following is NOT considered one of the three basic foundational concepts of the ER Model?",
+        "options": [
+            "Entities",
+            "Attributes",
+            "Relationships",
+            "Relational Calculus",
+            "None of the above; all are foundational concepts"
+        ],
+        "answer": "Relational Calculus",
+        "explanation": "نموذج ER يعتمد على ثلاثة مفاهيم أساسية فقط: الكيانات (Entities)، السمات (Attributes)، والعلاقات (Relationships). التفاضل العلائقي (Relational Calculus) هو مفهوم رياضي يخص النموذج العلائقي (Relational Model) وليس جزءاً من بناء مخططات ER.\n\nThe ER Model is built entirely upon three basic foundational concepts: Entities (the objects), Attributes (the properties of those objects), and Relationships (how those objects interact). Relational Calculus is a mathematical query concept tied to the Relational Model, not a building block of the conceptual ER Model.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "If a university database tracks a student's 'Enrollment Date' into a specific course, to which structural component does this attribute most logically belong?",
+        "options": [
+            "The 'Student' strong entity alone",
+            "The 'Course' strong entity alone",
+            "The many-to-many 'Enrolls_In' relationship between Student and Course",
+            "A derived multivalued attribute on the Course",
+            "A weak entity representing the Professor"
+        ],
+        "answer": "The many-to-many 'Enrolls_In' relationship between Student and Course",
+        "explanation": "تاريخ التسجيل (Enrollment Date) لا يصف الطالب وحده (لأنه يسجل في عدة كورسات في تواريخ مختلفة) ولا يصف الكورس وحده. هذا التاريخ يصف حدث 'التسجيل' نفسه، وبالتالي هو سمة تنتمي للعلاقة (Relationship) التي تربط الطالب بالكورس.\n\nAn 'Enrollment Date' describes the specific event of a student joining a course. It cannot belong solely to the Student (who has many enrollments) or the Course (which has many students). Therefore, it logically belongs as an attribute directly on the many-to-many 'Enrolls_In' relationship associating the two entities.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 31,
+        "question": "In a standard Entity-Relationship Diagram, which graphical shape is primarily used to represent an 'Attribute'?",
+        "options": [
+            "Rectangle",
+            "Diamond",
+            "Ellipse",
+            "Triangle",
+            "Cylinder"
+        ],
+        "answer": "Ellipse",
+        "explanation": "في مخططات الكيانات والعلاقات (ERD)، يُستخدم الشكل البيضاوي (Ellipse) حصرياً لتمثيل السمات (Attributes) التي تصف الكيانات، بينما يمثل المستطيل الكيانات، ويمثل المعين العلاقات.\n\nIn standard Entity-Relationship Diagrams (ERD), the Ellipse shape is exclusively used to represent Attributes that describe entities. Rectangles are used for entities, and diamonds are used for relationships.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "One of the prime reasons for using ER Diagrams is that they act as a bridge to physical implementation because:",
+        "options": [
+            "They can be directly executed as SQL queries on the server",
+            "They are easily translatable into relational tables",
+            "They automatically encrypt data to ensure security",
+            "They completely replace the need for physical storage devices",
+            "They prevent end-users from accessing the database structure"
+        ],
+        "answer": "They are easily translatable into relational tables",
+        "explanation": "من أهم الأسباب لاستخدام مخططات ER هي أنها تعمل كخريطة واضحة يمكن 'ترجمتها بسهولة إلى جداول علائقية' (Translatable into relational tables)، مما يسهل على المبرمجين بناء قاعدة البيانات الفيزيائية بشكل دقيق وسريع.\n\nA primary reason for utilizing ER Diagrams is that they provide a clear, logical structure that is easily translatable into relational tables. This seamless translation allows database developers to build the physical database quickly and accurately based on the conceptual blueprint.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "An employee's 'Address' consists of Street, City, and Zip Code, while their 'Degree' can be BSc, MSc, and PhD simultaneously. How should these two attributes be respectively modeled in an ER diagram?",
+        "options": [
+            "Both as Derived attributes",
+            "Address as Multivalued and Degree as Composite",
+            "Address as Composite and Degree as Multivalued",
+            "Both as Simple atomic attributes",
+            "Address as a Weak Entity and Degree as a Strong Entity"
+        ],
+        "answer": "Address as Composite and Degree as Multivalued",
+        "explanation": "العنوان (Address) يمكن تقسيمه إلى أجزاء أصغر (شارع، مدينة)، لذا هو سمة 'مركبة' (Composite). أما الشهادة (Degree) فيمكن أن يمتلك الموظف أكثر من شهادة واحدة في نفس الوقت، لذا هي سمة 'متعددة القيم' (Multivalued).\n\nThe 'Address' can be logically divided into smaller, meaningful subparts (Street, City, Zip), making it a Composite attribute. The 'Degree' can hold multiple distinct values concurrently for a single employee (BSc, MSc, PhD), making it a Multivalued attribute.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 34,
+        "question": "In an ER model, an entity is not limited to physical objects like a 'Car' or 'Person'. Which of the following is also a valid example of an entity?",
+        "options": [
+            "A specific data type like Integer",
+            "A primary key constraint rule",
+            "An event such as a 'Sale' or 'Registration'",
+            "A relational algebra operation",
+            "A dashed line connecting two visual shapes"
+        ],
+        "answer": "An event such as a 'Sale' or 'Registration'",
+        "explanation": "الكيان (Entity) في قواعد البيانات لا يقتصر على الأشياء المادية، بل يمكن أن يكون مكاناً، شخصاً، كائناً، مفهوماً، أو حتى 'حدثاً' (Event) مثل 'عملية بيع' أو 'تسجيل' يتم جمع وتخزين بيانات عنه.\n\nAn entity in data modeling is not strictly limited to physical objects. It can be a place, person, object, concept, or an event (such as a 'Sale', 'Registration', or 'Flight Booking') for which data is collected and stored in the database.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "According to the ERD creation process, after identifying the entities and their relationships, what is the next logical step before defining the attributes?",
+        "options": [
+            "Writing the physical SQL server code",
+            "Identifying the Cardinality (numerical attributes of relationships)",
+            "Deleting redundant weak entities",
+            "Creating the application user interface",
+            "Assigning physical data types to the primary keys"
+        ],
+        "answer": "Identifying the Cardinality (numerical attributes of relationships)",
+        "explanation": "حسب الخطوات المنهجية لإنشاء مخطط ER: 1. تحديد الكيانات، 2. تحديد العلاقات، 3. تحديد 'العددية' أو نوع العلاقة (Cardinality) مثل 1:1 أو 1:M، 4. تحديد السمات للكيانات.\n\nAccording to the systematic process of ERD creation, the sequence is: 1. Entity Identification, 2. Relationship Identification, 3. Cardinality Identification (defining the numerical minimums and maximums of the relationships), and finally 4. Attribute Identification.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "If a 'Doctor' can treat multiple 'Patients', and a 'Patient' can be treated by multiple 'Doctors', what is the cardinality of this relationship?",
+        "options": [
+            "One-to-One (1:1)",
+            "One-to-Many (1:M)",
+            "Many-to-One (M:1)",
+            "Many-to-Many (M:N)",
+            "Associative-to-Weak"
+        ],
+        "answer": "Many-to-Many (M:N)",
+        "explanation": "بما أن الطبيب الواحد يعالج عدة مرضى (متعدد)، والمريض الواحد يمكن أن يعالجه عدة أطباء (متعدد)، فإن العلاقة من كلا الجانبين هي علاقة 'متعدد إلى متعدد' (Many-to-Many أو M:N).\n\nSince one Doctor can treat multiple Patients, and one Patient can simultaneously be treated by multiple Doctors, the association is 'many' on both sides. This explicitly defines a Many-to-Many (M:N) relationship cardinality.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "What does the acronym 'ER' specifically stand for in the context of database design?",
+        "options": [
+            "Entity-Record",
+            "Enterprise-Resource",
+            "Entity-Relationship",
+            "Extended-Relational",
+            "Exact-Representation"
+        ],
+        "answer": "Entity-Relationship",
+        "explanation": "الاختصار ER في قواعد البيانات يرمز إلى 'Entity-Relationship' (الكيانات والعلاقات). وهو يمثل النموذج المفاهيمي الذي يصف كيف ترتبط الكيانات ببعضها البعض.\n\nIn the context of database design and management, the acronym 'ER' specifically stands for 'Entity-Relationship'. It refers to the Entity-Relationship Model, a conceptual blueprint used to analyze and diagram data requirements.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 38,
+        "question": "A 'Room' is a weak entity that depends on a 'Hotel' strong entity. If the Room has a 'Room_Number' attribute, why is it considered a Partial Key (Discriminator) rather than a true Primary Key?",
+        "options": [
+            "Because room numbers are always derived from the floor number",
+            "Because the room number alone cannot uniquely identify a room globally without knowing which hotel it belongs to",
+            "Because weak entities are inherently not allowed to possess any attributes",
+            "Because the room number is a composite attribute that must be broken down",
+            "Because its value changes dynamically every single day"
+        ],
+        "answer": "Because the room number alone cannot uniquely identify a room globally without knowing which hotel it belongs to",
+        "explanation": "المفتاح الجزئي (Partial Key) للكيان الضعيف لا يكفي بمفرده لتحديد السجل عالمياً. رقم الغرفة (مثل الغرفة 101) موجود في كل فندق، لذلك لا يمكنك تحديد الغرفة بدقة إلا إذا ربطت 'رقم الغرفة' بـ 'معرف الفندق' (المفتاح الأساسي للكيان القوي).\n\nA Partial Key (Discriminator) is not a true primary key because it cannot uniquely identify the entity globally on its own. A 'Room_Number' (e.g., Room 101) exists in almost every hotel. To uniquely identify a specific room, the partial key must be combined with the primary key of its identifying strong entity (the Hotel).",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 39,
+        "question": "An attribute that cannot be logically divided into smaller subparts without completely losing its semantic meaning is called a:",
+        "options": [
+            "Composite attribute",
+            "Multivalued attribute",
+            "Simple (atomic) attribute",
+            "Derived attribute",
+            "Weak attribute"
+        ],
+        "answer": "Simple (atomic) attribute",
+        "explanation": "السمة البسيطة (Simple) أو الذرية (Atomic) هي السمة التي لا يمكن تجزئتها إلى أقسام أصغر. على سبيل المثال، سمة 'الجنس' (ذكر/أنثى) لا يمكن تقسيمها أكثر من ذلك دون أن تفقد معناها، على عكس السمة المركبة كالاسم.\n\nA Simple (or atomic) attribute is defined as an attribute that cannot be logically broken down or divided into smaller, meaningful subparts. Trying to divide it further would result in a loss of semantic meaning (e.g., 'Gender' or 'Age').",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 40,
+        "question": "In ER modelling, what specific purpose does 'Cardinality' serve?",
+        "options": [
+            "It defines the numerical attributes (minimum and maximum occurrences) of the relationship between entities",
+            "It mathematically encrypts the data stored within the physical relationship",
+            "It converts an existing strong entity into a composite attribute",
+            "It dictates the physical storage size in bytes of a relational table",
+            "It determines the graphical color scheme of the final ER diagram"
+        ],
+        "answer": "It defines the numerical attributes (minimum and maximum occurrences) of the relationship between entities",
+        "explanation": "العددية (Cardinality) في مخططات ER تُستخدم لتحديد الخصائص العددية للعلاقة بين الكيانات، أي تحديد الحد الأدنى والحد الأقصى لعدد السجلات في الكيان الأول التي يمكن أن ترتبط بسجلات في الكيان الثاني (مثل 1:1 أو 1:M).\n\nIn ER modeling, Cardinality serves a very specific purpose: it defines the numerical attributes or constraints of a relationship. It specifies the minimum and maximum number of relationship occurrences (instances) an entity can participate in (e.g., exactly one, or zero to many).",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "Why is an ER Diagram often referred to as the 'blueprint' of a database?",
+        "options": [
+            "Because it is traditionally printed exclusively on blue architectural paper",
+            "Because it provides a visual preview of how tables will connect and what fields are needed before physical creation",
+            "Because it strictly represents the exact physical memory locations on the hard disk",
+            "Because it automatically generates the frontend application code for the user interface",
+            "Because it is a conceptual model used only in 1-Tier offline architectures"
+        ],
+        "answer": "Because it provides a visual preview of how tables will connect and what fields are needed before physical creation",
+        "explanation": "يُسمى مخطط ER بـ 'المخطط الهندسي' (Blueprint) لأنه يوفر رؤية بصرية مسبقة وتصميماً منطقياً يوضح كيف سترتبط الجداول ببعضها وما هي الحقول (السمات) المطلوبة، وذلك لتجنب الأخطاء قبل البدء في البرمجة الفعلية لقاعدة البيانات.\n\nAn ER Diagram is considered the 'blueprint' of a database because, much like an architectural blueprint for a building, it provides a comprehensive visual preview. It details exactly how entities (tables) will connect and what attributes (fields) are required, allowing designers to resolve logical issues before costly physical implementation.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "Since a Weak Entity lacks a complete primary key, how is its unique identity structurally formed in a relational implementation?",
+        "options": [
+            "By generating a random derived attribute dynamically",
+            "By using its Partial Key combined with the Primary Key of its identifying Strong Entity",
+            "By borrowing all available attributes from other unrelated weak entities",
+            "By deliberately leaving the records unidentified to save storage",
+            "By strictly assigning it a single multivalued attribute"
+        ],
+        "answer": "By using its Partial Key combined with the Primary Key of its identifying Strong Entity",
+        "explanation": "بما أن الكيان الضعيف لا يمتلك مفتاحاً أساسياً كاملاً، يتم تمييز سجلاته بشكل فريد عن طريق دمج 'مفتاحه الجزئي' (Partial Key) مع 'المفتاح الأساسي' (Primary Key) الخاص بالكيان القوي الذي يرتبط به (عبر علاقة التعريف).\n\nBecause a Weak Entity lacks enough attributes to form an independent primary key, its unique identity is structurally formed by concatenating (combining) its own Partial Key (Discriminator) with the Primary Key of the Strong Entity upon which it depends.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "If a 'Dependent' weak entity is linked to an 'Employee' strong entity via an identifying relationship, what happens to the Dependent if the specific Employee record is deleted?",
+        "options": [
+            "The Dependent automatically becomes a Strong Entity",
+            "The Dependent is reassigned randomly to another existing Employee",
+            "The Dependent record is typically deleted as well due to existence dependency",
+            "The Dependent transforms into a Derived Attribute",
+            "The Dependent loses its Partial Key but remains permanently in the database"
+        ],
+        "answer": "The Dependent record is typically deleted as well due to existence dependency",
+        "explanation": "الكيان الضعيف يعتمد في وجوده (Existence dependency) كلياً على الكيان القوي. إذا تم حذف الموظف (الكيان القوي) من قاعدة البيانات، فسيتم تلقائياً حذف سجلات المعالين (الكيان الضعيف) المرتبطة به لأنه لا معنى لوجودهم بدونه (ما يُعرف بالـ Cascade Delete).\n\nA Weak Entity inherently exhibits 'existence dependency' on its identifying Strong Entity. Therefore, if the specific parent Employee record is deleted from the database, the associated Dependent records are typically deleted as well (a cascade delete), because they cannot logically exist without their parent.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 44,
+        "question": "In a visual ER Diagram, what specific combination of symbols accurately depicts a Strong Entity connected to a Weak Entity?",
+        "options": [
+            "Two single rectangles connected by a single diamond",
+            "A single rectangle connected to a double rectangle via a single diamond",
+            "A single rectangle connected to a double rectangle via a double diamond",
+            "Two double rectangles connected by a dashed line",
+            "An ellipse connected to a double rectangle via a triangle symbol"
+        ],
+        "answer": "A single rectangle connected to a double rectangle via a double diamond",
+        "explanation": "لتمثيل هذا الارتباط، يُرسم الكيان القوي كـ 'مستطيل مفرد'، والكيان الضعيف كـ 'مستطيل مزدوج'. ويتم ربطهما باستخدام 'معين مزدوج' (Double diamond) والذي يعبر عن علاقة التعريف (Identifying relationship) الخاصة بالكيانات الضعيفة.\n\nIn standard ERD notation, a Strong Entity (single rectangle) is visually connected to a Weak Entity (double rectangle) strictly through an Identifying Relationship, which is exclusively represented by a double diamond symbol.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "Which of the following is the most classic example of a 'Derived Attribute' in database modeling?",
+        "options": [
+            "A person's unique Social Security Number",
+            "A student's First Name",
+            "An employee's Date of Birth",
+            "A person's Age calculated from their Date of Birth",
+            "A customer's physical Home Address"
+        ],
+        "answer": "A person's Age calculated from their Date of Birth",
+        "explanation": "العمر هو السمة المشتقة (Derived Attribute) الكلاسيكية والأشهر. بدلاً من تخزين العمر كرقم ثابت يتغير كل عام، يتم تخزين 'تاريخ الميلاد' (سمة مخزنة)، ويقوم النظام باشتقاق أو حساب 'العمر' ديناميكياً كلما دعت الحاجة.\n\nThe most classic example of a Derived Attribute is a person's 'Age'. Instead of permanently storing a static age that becomes incorrect every year, the database stores the 'Date of Birth' (a stored attribute) and dynamically calculates the 'Age' whenever it is queried.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 46,
+        "question": "After successfully identifying entities, relationships, and their cardinalities, what is the final primary step in systematically creating an ER diagram?",
+        "options": [
+            "Deploying the database directly to a live cloud server",
+            "Identifying and assigning the attributes to their respective entities",
+            "Creating the physical subschema views for the frontend application",
+            "Encrypting the ER diagram to ensure corporate security",
+            "Defining the float data arrays for legacy compatibility"
+        ],
+        "answer": "Identifying and assigning the attributes to their respective entities",
+        "explanation": "بعد تحديد الكيانات، العلاقات، والعددية، تأتي الخطوة الرابعة والأخيرة في بناء المخطط المفاهيمي وهي 'تحديد السمات' (Identifying Attributes) وربطها بالكيانات الخاصة بها لوصف التفاصيل.\n\nFollowing the logical sequence of ERD creation (1. Entities, 2. Relationships, 3. Cardinality), the final primary step in building the conceptual model is 'Attribute Identification'—determining what specific properties or details need to be assigned to each entity to describe it accurately.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "In the conceptual ER model phase, can a Many-to-Many (M:N) relationship exist directly between two entities?",
+        "options": [
+            "Yes, the conceptual ER model easily represents M:N relationships directly using a diamond symbol",
+            "No, the ER diagram strictly forbids any M:N relationships structurally",
+            "No, an intermediary associative table must always be drawn in the conceptual phase",
+            "Yes, but only if both participants are classified as weak entities",
+            "No, M:N relationships are only possible within the legacy hierarchical data model"
+        ],
+        "answer": "Yes, the conceptual ER model easily represents M:N relationships directly using a diamond symbol",
+        "explanation": "في النموذج المفاهيمي (Conceptual ER Model)، يتم رسم علاقة متعدد-إلى-متعدد (M:N) بشكل مباشر وطبيعي بين كيانين باستخدام شكل المعين. تحويل هذه العلاقة إلى كيان وسيط (Associative entity/table) يحدث لاحقاً عند الانتقال إلى التصميم المنطقي أو الجداول العلائقية.\n\nIn the high-level Conceptual ER Model phase, Many-to-Many (M:N) relationships are perfectly valid and are drawn directly between two entities using a simple diamond symbol. Resolving them into intermediary associative tables only becomes necessary later during the logical and physical relational implementation.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "In ER modeling, is it conceptually possible for a 'Relationship' to possess its own attributes?",
+        "options": [
+            "No, attributes are strictly reserved for Entities only",
+            "Yes, but only derived attributes can be assigned to relationships",
+            "Yes, relationships can have descriptive attributes (like an 'Enrollment Date' for a student enrolling in a course)",
+            "No, relationships are only represented by blank lines without any properties",
+            "Yes, but only when deploying a 1-Tier architecture model"
+        ],
+        "answer": "Yes, relationships can have descriptive attributes (like an 'Enrollment Date' for a student enrolling in a course)",
+        "explanation": "نعم، يمكن أن تمتلك العلاقة سمات خاصة بها تصف الحدث نفسه. على سبيل المثال، في علاقة 'التسجيل' بين 'الطالب' و'الكورس'، فإن سمة 'تاريخ التسجيل' لا تنتمي للطالب وحده ولا للكورس وحده، بل تنتمي منطقياً لعلاقة التسجيل التي تربط بينهما.\n\nYes, it is conceptually valid and common for relationships to have their own attributes. These are properties that describe the association itself. For example, in an M:N 'Enrolls_In' relationship between Student and Course, the 'Enrollment Date' or 'Grade' describes that specific enrollment event, not just the student or the course.",
+        "topic": "ER modelling",
+        "difficulty": "hard"
+    },
+    {
+        "id": 49,
+        "question": "What is the primary difference between an 'Entity Type' (or Set) and an 'Entity Instance'?",
+        "options": [
+            "They are completely identical terms used interchangeably in ER modeling",
+            "An Entity Type is the blueprint (e.g., 'Student'), while an Entity Instance is a specific occurrence (e.g., 'John Doe')",
+            "An Entity Type refers strictly to physical hardware, while an Entity Instance is a conceptual software query",
+            "An Entity Type inherently has no attributes, while an Entity Instance contains derived attributes only",
+            "An Entity Type represents a relationship, while an Entity Instance represents an attribute"
+        ],
+        "answer": "An Entity Type is the blueprint (e.g., 'Student'), while an Entity Instance is a specific occurrence (e.g., 'John Doe')",
+        "explanation": "نوع الكيان (Entity Type) هو القالب أو الفئة العامة التي نصممها في المخطط (مثل كيان 'الطالب'). أما حالة الكيان أو السجل (Entity Instance) فهو تواجد فعلي وبيانات محددة داخل هذه الفئة (مثل الطالب 'أحمد محمد' برقمه الجامعي).\n\nAn 'Entity Type' (or Entity Set) defines the overall structure or blueprint of the objects being modeled (e.g., the concept of a 'Student'). An 'Entity Instance' (or occurrence) is one specific, individual row or record of data that fits that blueprint (e.g., a specific student named 'John Doe' with ID 12345).",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "Before transitioning a finalized ER diagram into physical relational tables, what must a database designer verify regarding the strong entities?",
+        "options": [
+            "That every strong entity possesses a properly identified primary key (denoted by an underlined attribute)",
+            "That primary keys are completely removed to ensure maximum structural flexibility",
+            "That all primary keys have been converted into derived attributes",
+            "That primary keys are represented graphically by a double diamond symbol",
+            "That weak entities contain copies of the primary keys of all other unrelated entities"
+        ],
+        "answer": "That every strong entity possesses a properly identified primary key (denoted by an underlined attribute)",
+        "explanation": "قبل التحويل إلى جداول فعلية، من الضروري جداً التأكد من أن كل كيان قوي (Strong Entity) في المخطط قد تم تعيين 'مفتاح أساسي' (Primary Key) له لتمييز سجلاته، ويجب أن يكون هذا المفتاح واضحاً ومميزاً بوضع خط تحته في الرسم.\n\nBefore implementing the database, a designer must rigorously verify that every Strong Entity within the ER diagram possesses a clearly defined and logically sound Primary Key (visually denoted by a solid underline beneath the attribute name). Without primary keys, relational tables cannot uniquely identify records or establish relationships.",
+        "topic": "ER modelling",
+        "difficulty": "normal"
+    }
+]

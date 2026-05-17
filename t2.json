@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "Which of the following best defines the primary purpose of a data model in the database design phase?",
+        "options": [
+            "To specify the exact hardware constraints of the server",
+            "To create a graphic representation of complex real-world data structures",
+            "To establish a direct physical connection between the client and the database",
+            "To automatically generate SQL queries for end-users",
+            "To eliminate the need for constraints and relationships"
+        ],
+        "answer": "To create a graphic representation of complex real-world data structures",
+        "explanation": "نموذج البيانات (Data model) هو تمثيل، غالباً ما يكون رسومياً، لهياكل البيانات المعقدة في العالم الحقيقي. يُستخدم هذا النموذج في مرحلة تصميم قاعدة البيانات لتوضيح كيف سيتم تنظيم البيانات وربطها قبل البدء في التنفيذ الفعلي، وليس له علاقة مباشرة بمواصفات الأجهزة أو إنشاء الاستعلامات التلقائية.\n\nA data model is a representation, usually graphic, of a complex 'real-world' data structure. It is used in the database design phase to summarize the description of the database and provide a transparent picture of the data, rather than defining physical hardware constraints or automating SQL queries.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "In the context of data modeling, if 'Student' is considered an entity, what would 'Student_GPA' be considered?",
+        "options": [
+            "A relationship",
+            "A constraint",
+            "An attribute",
+            "A schema",
+            "A primary key"
+        ],
+        "answer": "An attribute",
+        "explanation": "الكيان (Entity) يمثل الشيء أو الشخص الذي نجمع البيانات عنه (مثل الطالب). أما السمة (Attribute) فهي خاصية أو ميزة تصف هذا الكيان (مثل المعدل التراكمي للطالب أو اسمه). القيود والعلاقات لها تعريفات مختلفة تماماً في قواعد البيانات.\n\nAn entity is a person, place, or thing about which data is collected (e.g., Student). An attribute is a characteristic or property of that entity (e.g., Student_GPA). Constraints are rules, and relationships are associations between different entities.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "A database rule states that an employee's salary cannot be a negative number. This is an example of a(n):",
+        "options": [
+            "Entity",
+            "Attribute",
+            "Subschema",
+            "Constraint",
+            "Directional association"
+        ],
+        "answer": "Constraint",
+        "explanation": "القيد (Constraint) هو قيد أو شرط يوضع على البيانات في شكل قواعد لضمان سلامة البيانات (Data Integrity). منع إدخال راتب بالسالب هو قاعدة تمنع الأخطاء المنطقية وتضمن دقة البيانات المُدخلة.\n\nA constraint is a restriction placed on data, usually expressed in the form of rules (like salary > 0). Constraints are crucial because they help ensure data integrity by preventing the entry of invalid or illogical data into the system.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "Why is a 1-Tier database architecture generally considered unsuitable for a collaborative enterprise environment?",
+        "options": [
+            "It requires an expensive intermediate application server",
+            "It restricts the database to purely unstructured data models",
+            "It forces multiple users to share a single keyboard and monitor",
+            "It lacks centralized control, making data sharing and backup extremely difficult",
+            "It tightly couples the conceptual schema with the network model"
+        ],
+        "answer": "It lacks centralized control, making data sharing and backup extremely difficult",
+        "explanation": "في معمارية الطبقة الواحدة (1-Tier)، توجد قاعدة البيانات والتطبيق على نفس الجهاز المحلي الخاص بالمستخدم. هذا يجعله غير مناسب للشركات لأنه يفتقر إلى التحكم المركزي، مما يجعل مشاركة البيانات بين عدة مستخدمين أو أخذ نسخ احتياطية شاملة أمراً بالغ الصعوبة.\n\nIn a 1-Tier Architecture, the application, client, and database reside on a single local machine. This inherent design lacks centralized control, making it extremely difficult to share data among multiple users or manage reliable, network-wide backups.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "In a 2-Tier architecture, how does the client application typically interact directly with the database on the server side?",
+        "options": [
+            "By using physical data models to bypass the DBMS entirely",
+            "By employing an intermediate application server to process queries",
+            "By utilizing standard connectivity APIs such as ODBC or JDBC",
+            "By storing all data locally in a decentralized float data model",
+            "By converting relational algebra into object-oriented concepts"
+        ],
+        "answer": "By utilizing standard connectivity APIs such as ODBC or JDBC",
+        "explanation": "في نظام الطبقتين (2-Tier)، يتصل تطبيق العميل بقاعدة البيانات الموجودة على الخادم بشكل مباشر دون وجود خادم تطبيقات وسيط. يتم هذا الاتصال المباشر باستخدام واجهات برمجة التطبيقات (APIs) المعيارية مثل ODBC أو JDBC.\n\nIn a 2-Tier Architecture, the client application communicates directly with the database server without an intermediate application server. This direct interaction is typically facilitated by standard connectivity APIs such as Open Database Connectivity (ODBC) or Java Database Connectivity (JDBC).",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 6,
+        "question": "A major flaw in the 2-Tier Architecture is 'Tight Coupling'. In practice, what does this mean for software maintenance?",
+        "options": [
+            "The server hardware must perfectly match the client hardware specifications",
+            "Changes made to the database schema often necessitate simultaneous updates to the client application",
+            "The network connection is permanently locked, preventing concurrent users",
+            "The conceptual data model cannot be separated from the context data model",
+            "The application server becomes a bottleneck for transaction management"
+        ],
+        "answer": "Changes made to the database schema often necessitate simultaneous updates to the client application",
+        "explanation": "الاقتران الوثيق (Tight Coupling) يعني أن التطبيق الموجود لدى العميل مرتبط بشدة بهيكلية قاعدة البيانات. العيب العملي هنا هو أن أي تعديل في قاعدة البيانات (مثل تغيير اسم جدول أو حقل) سيؤدي إلى كسر التطبيق، مما يتطلب تحديث تطبيق العميل على جميع الأجهزة بشكل متزامن.\n\n'Tight Coupling' in a 2-Tier system means the client application and the database server are closely linked. Therefore, if the database schema undergoes changes, the client application logic often breaks and requires immediate, simultaneous software updates to remain functional.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 7,
+        "question": "The introduction of an intermediate application server in a 3-Tier Architecture primarily improves which of the following system characteristics?",
+        "options": [
+            "Local storage capacity on the client device",
+            "The ability to represent 1:1 relationships natively",
+            "Scalability and data security",
+            "The execution speed of simple local desktop applications",
+            "The generation of conceptual entity-relationship diagrams"
+        ],
+        "answer": "Scalability and data security",
+        "explanation": "إضافة 'خادم التطبيقات' (Application Server) كطبقة وسطى في معمارية الـ 3-Tier يعزز بشكل كبير من قدرة النظام على التوسع (Scalability) لأنه يخفف الضغط عن قاعدة البيانات. كما يرفع من مستوى الأمان (Security) لأنه يمنع وصول العميل المباشر للبيانات.\n\nThe 3-Tier Architecture introduces an intermediate application server. This middle layer significantly enhances scalability (by managing connections and processing logic, reducing the load on the database) and improves security (by preventing direct client interaction with the database).",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "Despite its robust security and scalability, what is a common trade-off when implementing a 3-Tier Architecture instead of a 2-Tier Architecture?",
+        "options": [
+            "It completely eliminates the ability to use relational data models",
+            "It introduces a slower response time due to the data passing through an extra processing layer",
+            "It permanently locks the database to a single concurrent user",
+            "It removes the ability to define functional data constraints",
+            "It forces all data to be stored on the client's local machine"
+        ],
+        "answer": "It introduces a slower response time due to the data passing through an extra processing layer",
+        "explanation": "أحد أبرز عيوب معمارية الثلاث طبقات (3-Tier) هو البطء النسبي في وقت الاستجابة. لأن كل طلب يجب أن ينتقل من العميل إلى خادم التطبيقات لمعالجته، ثم من خادم التطبيقات إلى قاعدة البيانات، ثم يعود بنفس المسار، مما يضيف وقتاً إضافياً مقارنة بالاتصال المباشر.\n\nA primary disadvantage of the 3-Tier Architecture is a potentially slower response time. Because every request must traverse an extra network hop and be processed by the intermediate application server before reaching the database, it inherently introduces latency compared to direct 2-Tier connections.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 9,
+        "question": "During the database requirement-gathering process, a designer creates a domain model that establishes a common vocabulary for business stakeholders. This model completely ignores hardware and DBMS specifications. Which model is this?",
+        "options": [
+            "Representational Data Model",
+            "Physical Data Model",
+            "Network Data Model",
+            "Conceptual Data Model",
+            "Hierarchical Data Model"
+        ],
+        "answer": "Conceptual Data Model",
+        "explanation": "النموذج المفاهيمي (Conceptual Data Model) يتم إنشاؤه في البداية لفهم متطلبات العمل. وهو يتجاهل تماماً التفاصيل التقنية مثل نوع نظام الـ DBMS أو خصائص الهاردوير، ويركز فقط على بناء مفردات مشتركة وتوضيح الكيانات بمنظور 'العالم الحقيقي' ليفهمها أصحاب العمل.\n\nThe Conceptual Data Model describes the database at a very high level to understand business needs. It is developed entirely independent of hardware specifications or specific DBMS technology, focusing instead on creating a common vocabulary and organizing business concepts.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "Which data model focuses primarily on the logical structure of the database, using tables to represent data and relationships without delving into physical storage details?",
+        "options": [
+            "Context Data Model",
+            "Representational Data Model",
+            "Physical Data Model",
+            "Float Data Model",
+            "Conceptual Data Model"
+        ],
+        "answer": "Representational Data Model",
+        "explanation": "النموذج التمثيلي أو المنطقي (Representational Data Model) يمثل الجانب المنطقي فقط لقاعدة البيانات. على سبيل المثال، النموذج العلائقي (Relational model) يستخدم الجداول لتمثيل البيانات، لكنه يترك تفاصيل التخزين الفيزيائي الفعلي على الأقراص للنموذج الفيزيائي.\n\nThe Representational Data Model is used to represent only the logical part of the database (e.g., using the Relational Model with tables and relationships) and does not represent or define the physical hardware structure or storage mechanisms of the database.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 11,
+        "question": "You are assigning exact datatypes, field lengths, default values, and defining primary keys for SQL Server 2019. Which data model are you currently working on?",
+        "options": [
+            "Conceptual Data Model",
+            "Representational Data Model",
+            "Physical Data Model",
+            "Semi-Structured Data Model",
+            "Object-Oriented Data Model"
+        ],
+        "answer": "Physical Data Model",
+        "explanation": "تحديد التفاصيل الدقيقة مثل أنواع البيانات (Datatypes)، أطوال الحقول، القيم الافتراضية، ومطابقتها مع نظام DBMS محدد (مثل SQL Server) هو صميم عمل النموذج الفيزيائي (Physical Data Model)، الذي يُترجم التصميم المنطقي إلى واقع تقني.\n\nThe Physical Data Model dictates the exact technical implementation details. This includes assigning specific datatypes, exact field lengths, primary/foreign keys, and indexes that are heavily dependent on the specific DBMS technology being used (like SQL Server).",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "In an older database system developed in the 1950s, data is organized in a strict tree-like structure where each child record is restricted to having exactly one parent record. This describes the:",
+        "options": [
+            "Network Model",
+            "Relational Model",
+            "Object-Oriented Model",
+            "Hierarchical Model",
+            "Context Model"
+        ],
+        "answer": "Hierarchical Model",
+        "explanation": "النموذج الهرمي (Hierarchical Model) هو أقدم النماذج، ويقوم على ترتيب البيانات في شكل شجرة مقلوبة. أهم قيد في هذا النموذج هو أن السجل 'الابن' لا يمكن أن يكون له سوى سجل 'أب' واحد فقط، مما يعيق تمثيل العلاقات المعقدة.\n\nDeveloped in the 1950s, the Hierarchical Model organizes data into a tree-like structure. Its defining characteristic and restriction is that each child record can consist of one and only one parent record, making many-to-many relationships difficult to model naturally.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "How did the Network Model fundamentally improve upon the limitations of the Hierarchical Model in the 1960s?",
+        "options": [
+            "By encapsulating both data and behavior into single objects",
+            "By converting the tree structure into a series of decentralized flat files",
+            "By allowing a child segment to possess multiple parent segments, facilitating many-to-many associations",
+            "By introducing the concept of relational algebra and calculus for query processing",
+            "By eliminating directional associations entirely from the logical schema"
+        ],
+        "answer": "By allowing a child segment to possess multiple parent segments, facilitating many-to-many associations",
+        "explanation": "جاء النموذج الشبكي (Network Model) لحل المشكلة الكبرى في النموذج الهرمي، وهي عدم القدرة على تمثيل العلاقات المعقدة. لقد سمح النموذج الشبكي لسجل الابن بأن يكون له عدة آباء، مما مهد الطريق لتمثيل علاقات 'متعدد إلى متعدد' (Many-to-many) بكفاءة.\n\nThe Network Model emerged as a generalization of the hierarchical model. Its fundamental improvement was allowing a single child segment to possess multiple parent segments. This crucial structural change allowed developers to logically and efficiently represent complex many-to-many relationships.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 14,
+        "question": "A database developer decides to use a model where real-world entities, their attributes, and their multiple relationships are encapsulated into a single unified structure. Which model is being used?",
+        "options": [
+            "Float Data Model",
+            "Relational Data Model",
+            "Object-Oriented Data Model",
+            "Semi-Structured Data Model",
+            "Hierarchical Data Model"
+        ],
+        "answer": "Object-Oriented Data Model",
+        "explanation": "نموذج البيانات كائني التوجه (Object-Oriented Data Model) يقوم بدمج البيانات (الخصائص) والعلاقات التي تربطها داخل هيكل برمجي واحد يُعرف بـ 'الكائن' (Object)، مستعيراً مبادئ البرمجة كائنية التوجه وتطبيقها على قواعد البيانات.\n\nIn the Object-Oriented Data Model, real-world problems are represented as objects. This model encapsulates both the data (attributes) and the multiple relationships between entities into a single, cohesive structure, merging database concepts with object-oriented programming principles.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 15,
+        "question": "The Float Data Model utilizes a two-dimensional array that rejects duplicate elements. What is the critical drawback that makes it impractical for modern enterprise use?",
+        "options": [
+            "It requires a 3-Tier architecture to function properly",
+            "It is entirely unable to process semi-structured data tags",
+            "It cannot store a large amount of data or handle large-sized tables effectively",
+            "It forces all records to adhere to a strict single-parent hierarchical structure",
+            "It mandates the use of complex relational calculus for simple data retrieval"
+        ],
+        "answer": "It cannot store a large amount of data or handle large-sized tables effectively",
+        "explanation": "نموذج البيانات العائم (Float Data Model) يعتمد على مصفوفات ثنائية الأبعاد لا تقبل التكرار. المشكلة القاتلة في هذا النموذج هي عدم قدرته على التعامل مع وتخزين كميات ضخمة من البيانات، مما يجعله غير عملي لبناء جداول كبيرة للمؤسسات.\n\nThe Float Data Model consists of a two-dimensional array that does not allow duplicate elements. Its critical drawback is scalability: it cannot efficiently store large amounts of data, meaning it is fundamentally incapable of handling large-sized tables required by modern enterprises.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "Which component is explicitly defined as the specific portion of the database that interacts directly with application programs?",
+        "options": [
+            "The physical data dictionary",
+            "The global conceptual schema",
+            "The Subschema",
+            "The contextual float array",
+            "The hardware storage sector"
+        ],
+        "answer": "The Subschema",
+        "explanation": "المخطط الفرعي (Subschema) هو الجزء المخصص من قاعدة البيانات الذي يتفاعل مباشرة مع البرامج التطبيقية، وهو يقدم عرضاً مخصصاً ومقيداً للبيانات التي يحتاجها هذا التطبيق بالتحديد، على عكس المخطط الكلي (Schema) الذي يمثل قاعدة البيانات بأكملها.\n\nThe Subschema is explicitly defined as the specific portion of the database that interacts with application programs. It provides a restricted, tailored view of the data for specific user groups or applications, unlike the overall schema which describes the entire database structure.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 17,
+        "question": "What is the primary function of the Data Manipulation Language (DML) within a Database Management System?",
+        "options": [
+            "It dictates the physical hardware storage characteristics on disks",
+            "It converts 1-Tier architectures into highly scalable 3-Tier architectures",
+            "It provides the set of commands that allows an end user to retrieve, insert, update, and delete data",
+            "It restricts users from creating relational algebra calculations",
+            "It establishes the organization-wide common vocabulary for business stakeholders"
+        ],
+        "answer": "It provides the set of commands that allows an end user to retrieve, insert, update, and delete data",
+        "explanation": "لغة معالجة البيانات (DML) هي مجموعة من الأوامر والتعليمات (مثل SELECT, INSERT, UPDATE, DELETE) التي تُمكّن المستخدمين النهائيين والتطبيقات من التفاعل مع البيانات المخزنة ومعالجتها وتعديلها.\n\nThe Data Manipulation Language (DML) is the specific set of commands (such as SELECT, INSERT, UPDATE, DELETE, COMMIT, and ROLLBACK) that empowers end users and applications to interact with, manipulate, and retrieve the actual data stored within the database.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "Which of the following is a recognized advantage of creating Data Models during the database design phase?",
+        "options": [
+            "They help in identifying missing data and minimizing data redundancy",
+            "They eliminate the need for any physical storage hardware",
+            "They completely hide the logical schema from the database administrators",
+            "They automatically convert unstructured data into a float data model",
+            "They force the database to operate efficiently in a 1-Tier architecture"
+        ],
+        "answer": "They help in identifying missing data and minimizing data redundancy",
+        "explanation": "من أهم مزايا نماذج البيانات (Data Models) أنها توفر تمثيلاً دقيقاً للبيانات يساعد المصممين على اكتشاف أي بيانات مفقودة مبكراً، كما تساهم في تنظيم البيانات بطريقة تقلل من التكرار (Data Redundancy) وتمنع التناقض.\n\nA recognized advantage of Data Models is that they represent data accurately, which proactively helps designers in finding missing data requirements and organizing structures to minimize data redundancy before the actual physical implementation begins.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "Despite their utility, what is a significant technical disadvantage of using physical data models?",
+        "options": [
+            "They inherently restrict the database from handling concurrent users",
+            "They demand that the user has proper knowledge of SQL and physical storage characteristics",
+            "They force the adoption of an object-oriented conceptual approach",
+            "They randomly delete historical records to save storage space",
+            "They cannot represent standard entity-relationship diagrams under any circumstances"
+        ],
+        "answer": "They demand that the user has proper knowledge of SQL and physical storage characteristics",
+        "explanation": "أحد عيوب النماذج الفيزيائية أو متطلباتها الصعبة هو أن بناءها واستخدامها يتطلب من المصمم معرفة تقنية عميقة بلغة SQL وخصائص التخزين الفيزيائية الخاصة بنظام إدارة قواعد البيانات (DBMS) المستخدم، مما يجعلها صعبة على المستخدمين غير التقنيين.\n\nA significant operational disadvantage or hurdle of physical data models is that developing and utilizing them requires proper, in-depth knowledge of SQL (Structured Query Language) and the specific physical data storage characteristics of the chosen DBMS.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 20,
+        "question": "Based on the structural comparison of data models, how does a UML Class Diagram explicitly denote the cardinality (e.g., one-to-many) between entities like CUSTOMER and INVOICE?",
+        "options": [
+            "By placing a diamond shape containing the relationship name between the classes",
+            "By using specific multiplicity notations such as '1..1' and '0..*' directly on the association lines",
+            "By merging the two entities into a single context data model array",
+            "By drawing a traditional crow's foot symbol at the physical end of the connection line",
+            "By omitting the relationship visually and relying entirely on shared primary keys"
+        ],
+        "answer": "By using specific multiplicity notations such as '1..1' and '0..*' directly on the association lines",
+        "explanation": "في مخططات الفئات الخاصة بـ UML (UML Class Diagrams)، يتم توضيح نوع العلاقة والعدد (Multiplicity) باستخدام أرقام ورموز صريحة مكتوبة على خطوط العلاقة مثل '1..1' (واحد فقط) و '0..*' (صفر أو أكثر)، وهو ما يختلف عن رموز أقدام الغراب (Crow's foot) المستخدمة في نماذج ER الكلاسيكية.\n\nIn a UML Class Diagram, the cardinality or multiplicity of a relationship between classes (entities) is explicitly denoted using specific numerical notations like '1..1' (exactly one) or '0..*' (zero to many) placed directly on the association lines, contrasting with the structural symbols used in standard ER diagrams.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 21,
+        "question": "In a corporate database, a specific company vehicle can be assigned to one employee, and that employee can only drive that specific assigned vehicle. What type of relationship does this describe?",
+        "options": [
+            "ONE-TO-MANY (1:M) relationship",
+            "MANY-TO-MANY (M:N) relationship",
+            "ONE-TO-ONE (1:1) relationship",
+            "Recursive dependent relationship",
+            "Directional network association"
+        ],
+        "answer": "ONE-TO-ONE (1:1) relationship",
+        "explanation": "هذه علاقة 'واحد إلى واحد' (ONE-TO-ONE). الموظف الواحد (كيان أول) يرتبط بسيارة واحدة فقط، والسيارة الواحدة (كيان ثاني) ترتبط بهذا الموظف الواحد فقط. كل سجل في الكيان الأول يقابله سجل واحد كحد أقصى في الكيان الثاني.\n\nThis describes a ONE-TO-ONE (1:1) relationship. One instance of the first entity (Employee) is associated with exactly one instance of the related entity (Vehicle), and vice versa. It is a strict, exclusive association between single instances.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "According to the relational table representation of AGENT and CUSTOMER, how is the logical link between a specific customer and their assigned agent structurally maintained?",
+        "options": [
+            "By placing the AGENT_CODE from the AGENT table into the CUSTOMER table as a linking attribute",
+            "By merging the AGENT and CUSTOMER tables into one single unstructured flat file",
+            "By using a Context Data Model to encapsulate both into a single object",
+            "By relying solely on the application server to memorize the connections dynamically",
+            "By ensuring both tables share the exact same number of rows and aligning them by index"
+        ],
+        "answer": "By placing the AGENT_CODE from the AGENT table into the CUSTOMER table as a linking attribute",
+        "explanation": "في النموذج العلائقي (كما هو موضح في ربط جداول AGENT و CUSTOMER)، يتم بناء العلاقة هيكلياً عن طريق أخذ المفتاح الأساسي للجدول الأول (AGENT_CODE) ووضعه كحقل (مفتاح أجنبي) داخل الجدول الثاني (CUSTOMER)، مما يربط سجل العميل بالوكيل الخاص به.\n\nIn relational database models (as illustrated by linking the AGENT and CUSTOMER tables), the logical association is structurally maintained by placing the primary key of the 'one' side (AGENT_CODE) into the table of the 'many' side (CUSTOMER) as a linking attribute (foreign key).",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 23,
+        "question": "Why is the Semi-Structured Data Model considered highly suitable for handling non-uniform datasets?",
+        "options": [
+            "Because it strictly forces all data into a two-dimensional float array without any duplicates",
+            "Because it physically encrypts the HTML tags on the server side to prevent data leaks",
+            "Because it provides immense flexibility, allowing some entities to have extra attributes and others to have missing attributes",
+            "Because it completely eliminates the need for any external application servers",
+            "Because it mandates that every relationship is strictly ONE-TO-ONE"
+        ],
+        "answer": "Because it provides immense flexibility, allowing some entities to have extra attributes and others to have missing attributes",
+        "explanation": "نموذج البيانات شبه المهيكلة (Semi-Structured Data Model) يتميز بالمرونة العالية، فهو لا يفرض هيكلاً صارماً للجدول. بل يسمح بوجود كيانات تمتلك سمات إضافية وأخرى تفتقر لسمات معينة دون التسبب في أخطاء هيكلية، مما يجعله مثالياً للبيانات غير الموحدة.\n\nThe Semi-Structured Data Model is highly suitable for non-uniform data because of its flexibility. Unlike strict relational tables, it natively accommodates irregular data formats, allowing certain entities to possess extra attributes while others may lack standard attributes entirely without breaking the overall schema.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 24,
+        "question": "A system is designed using a paradigm that simultaneously incorporates both an Entity-Relationship (ER) Model and an Object-Oriented Data Model to accomplish multifaceted tasks. This approach is formally termed a:",
+        "options": [
+            "Float Data Model",
+            "Pure Relational Data Model",
+            "Context Data Model",
+            "Hierarchical Tree Model",
+            "1-Tier Conceptual Model"
+        ],
+        "answer": "Context Data Model",
+        "explanation": "نموذج بيانات السياق (Context Data Model) هو مصطلح يُطلق على النموذج الذي يتكون من دمج أكثر من نموذج بيانات واحد (مثل دمج نموذج ER مع النموذج كائني التوجه Object-Oriented) للسماح للمستخدمين بإنجاز مهام معقدة تتجاوز قدرة نموذج واحد بمفرده.\n\nA Context Data Model is fundamentally an integrated model that consists of more than one distinct data model operating simultaneously (e.g., combining an ER Model with an Object-Oriented Data Model). This hybrid approach allows users to perform complex, multifaceted tasks that a single model could not support.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "When migrating an application from a 1-Tier to a 3-Tier Architecture, what fundamental architectural change occurs regarding processing?",
+        "options": [
+            "All processing logic and data storage are forced onto the user's local hard drive",
+            "A middle application server layer is introduced to handle processing logic and interact with the database system",
+            "The database is physically moved into a float data model array",
+            "The client application is rewritten to communicate directly via ODBC without network usage",
+            "The need for a Subschema is entirely eliminated"
+        ],
+        "answer": "A middle application server layer is introduced to handle processing logic and interact with the database system",
+        "explanation": "الفرق الجوهري عند الانتقال إلى معمارية الثلاث طبقات (3-Tier) هو إدخال طبقة وسطى جديدة وهي 'خادم التطبيقات' (Application Server). هذه الطبقة تتولى معالجة المنطق وتتوسط الاتصال بين تطبيق العميل وقاعدة البيانات، مما يزيد من الأمان وقابلية التوسع.\n\nThe fundamental shift in a 3-Tier Architecture is the introduction of a middle layer (the Application Server). This layer decouples the client from the database. It handles the business processing logic and manages interactions with the database server, enhancing both scalability and security.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "During the Database Life Cycle, the Conceptual Data Model is created primarily for which target audience to establish a common scope and vocabulary?",
+        "options": [
+            "Database administrators managing physical disk arrays",
+            "Network engineers configuring the 3-Tier subnets",
+            "Business stakeholders and non-technical end-users",
+            "Programmers writing low-level C++ structural code",
+            "Hardware vendors providing cloud servers"
+        ],
+        "answer": "Business stakeholders and non-technical end-users",
+        "explanation": "النموذج المفاهيمي (Conceptual Data Model) يتم إنشاؤه بمستوى عالٍ جداً من التجريد لتمثيل مفاهيم العمل بعيداً عن التعقيدات التقنية. هدفه الرئيسي هو بناء مفردات مشتركة وتأكيد الفهم مع أصحاب المصلحة (Business stakeholders) قبل البدء في التصميم التقني.\n\nThe Conceptual Data Model is designed and developed primarily for a business audience. Its goal is to offer organization-wide coverage of business concepts, creating a common vocabulary for all stakeholders (including non-technical end-users) independently of any hardware or software specificities.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "What is the primary objective of creating a Representational Data Model before moving to the physical implementation?",
+        "options": [
+            "To map out the logical structure of the database, such as tables and relationships, providing a foundation for the physical model",
+            "To specify the exact byte length and physical sector for each piece of incoming raw data",
+            "To restrict the database exclusively to single-user local device operations",
+            "To ensure that no DML commands can ever alter the historical data",
+            "To create an unstructured text file containing all raw end-user facts"
+        ],
+        "answer": "To map out the logical structure of the database, such as tables and relationships, providing a foundation for the physical model",
+        "explanation": "النموذج التمثيلي أو المنطقي (Representational Data Model) يهدف إلى تصميم الهيكل المنطقي لقاعدة البيانات (مثل الجداول في النموذج العلائقي وتحديد العلاقات بينها). هذا التصميم المنطقي يمثل الأساس والقاعدة التي سيُبنى عليها لاحقاً النموذج الفيزيائي الفعلي.\n\nThe primary objective of the Representational Data Model (like the Relational Model) is to represent the logical structure of the database using tables and relationships. It deliberately abstracts away physical storage details, serving as the essential logical foundation upon which the Physical Data Model is built.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "Which crucial structural advancement did the Network Data Model introduce over its predecessor, the Hierarchical Model?",
+        "options": [
+            "It completely eliminated the concept of records and fields",
+            "It allowed a child segment to have multiple parent segments, supporting complex many-to-many associations",
+            "It forced all data to be stored strictly in a two-dimensional array without duplicate values",
+            "It required all processing to happen natively in a 1-Tier offline environment",
+            "It introduced the mandatory use of Object-Oriented programming languages"
+        ],
+        "answer": "It allowed a child segment to have multiple parent segments, supporting complex many-to-many associations",
+        "explanation": "النموذج الشبكي (Network Model) جاء كتطوير للنموذج الهرمي (Hierarchical Model). الميزة الهيكلية الأهم التي قدمها هي قدرته على جعل السجل 'الابن' يمتلك أكثر من 'أب' واحد، مما أتاح إمكانية تمثيل العلاقات المنطقية المعقدة من نوع 'متعدد إلى متعدد'.\n\nThe Network Data Model, formalized in the 1960s, generalized the strict tree structure of the Hierarchical Model. Its crucial structural advancement was allowing a child segment to possess multiple parent segments. This innovation naturally facilitated the representation of complex many-to-many logical associations.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "Which of the following describes a critical disadvantage encountered when utilizing complex Data Models in application development?",
+        "options": [
+            "They automatically delete any duplicate data causing irreversible data loss",
+            "Even a small change made to the structure of the data model can require extensive modifications across the entire application",
+            "They completely disable the use of Data Manipulation Languages like SQL",
+            "They force enterprise databases to downgrade to Desktop Databases",
+            "They encrypt the subschema making it inaccessible to system administrators"
+        ],
+        "answer": "Even a small change made to the structure of the data model can require extensive modifications across the entire application",
+        "explanation": "من أبرز عيوب وصعوبات العمل مع نماذج البيانات (خاصة في الأنظمة التي تعاني من اقتران وثيق) هو أن أي تعديل صغير في هيكل النموذج (مثل إضافة حقل جديد أو تغيير نوع بيانات) قد يتطلب تعديل وتحديث كافة البرامج والتطبيقات التي تستخدم هذه القاعدة لضمان استمرار عملها.\n\nA critical disadvantage of data models (especially when applications are tightly coupled to the schema) is structural dependence. Even a minor change made to the structure of the data model can break existing code, requiring extensive and costly modifications across the entire associated application to restore functionality.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 30,
+        "question": "What is the primary operational drawback that prevents the 'Float Data Model' from being widely used in enterprise-level database systems?",
+        "options": [
+            "It requires a distributed 3-Tier cloud architecture to execute simple DML queries",
+            "It is restricted to only handling semi-structured XML data tags",
+            "Its reliance on a non-duplicating two-dimensional array severely limits its ability to store large amounts of data",
+            "It mandates that all entities encapsulate their behaviors inside an object framework",
+            "It forces the database administrator to manually code all referential integrity constraints"
+        ],
+        "answer": "Its reliance on a non-duplicating two-dimensional array severely limits its ability to store large amounts of data",
+        "explanation": "نموذج البيانات العائم (Float Data Model) يعتمد في تصميمه على مصفوفة ثنائية الأبعاد تمنع أي تكرار للعناصر. العيب التشغيلي الرئيسي لهذا التصميم هو عجزه الشديد عن تخزين أو التعامل مع كميات كبيرة من البيانات، مما يجعله غير مناسب لجداول وقواعد بيانات المؤسسات الضخمة.\n\nThe Float Data Model consists of a two-dimensional array that rejects duplicate elements. Its primary operational drawback is its poor scalability. It is fundamentally incapable of efficiently storing large amounts of data, rendering it unsuitable for the large-sized tables required in modern enterprise-level database systems.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 31,
+        "question": "If an organization wants a database architecture where clients do not directly connect to the database to prevent direct unauthorized access, while allowing a middle layer to handle business rules and transfer partially processed data, which architecture MUST they adopt?",
+        "options": [
+            "1-Tier Architecture",
+            "2-Tier Architecture",
+            "3-Tier Architecture",
+            "Decentralized Network Architecture",
+            "Hierarchical Client-Server Architecture"
+        ],
+        "answer": "3-Tier Architecture",
+        "explanation": "لتحقيق هذا المستوى من الأمان وعزل العميل عن قاعدة البيانات، يجب استخدام معمارية الثلاث طبقات (3-Tier Architecture). في هذا النظام، لا يتصل العميل بقاعدة البيانات مباشرة، بل يرسل طلباته إلى خادم تطبيقات (Application Server) يعمل كطبقة وسطى لمعالجة المنطق (Business rules) وتناقل البيانات المعالجة جزئياً، مما يمنع الهجمات المباشرة. نظام الطبقتين (2-Tier) يسمح بالاتصال المباشر وهو أقل أماناً.\n\nTo achieve this level of security and isolate the client from the database, a 3-Tier Architecture must be adopted. In this system, the client does not connect directly to the database; instead, it sends requests to an Application Server (middle layer) that handles business rules and transfers partially processed data, significantly reducing direct unauthorized access risks inherent in 2-Tier architectures.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "A data architect is designing a schema. They need to ensure that an 'Account Balance' can never drop below zero. Which specific data modeling building block is exclusively responsible for enforcing this business rule at the database level?",
+        "options": [
+            "Entity",
+            "Attribute",
+            "Constraint",
+            "Directional association",
+            "Logical schema"
+        ],
+        "answer": "Constraint",
+        "explanation": "القيد (Constraint) هو القاعدة التي تُفرض على البيانات لضمان دقتها ومنع إدخال قيم غير منطقية (مثل رصيد حساب أقل من الصفر). الكيانات (Entities) والسمات (Attributes) هي مجرد هياكل لتخزين البيانات، بينما القيود هي التي تضمن 'سلامة البيانات' (Data Integrity) وتلزم النظام بالقواعد.\n\nA Constraint is a restriction placed on data to ensure accuracy and prevent the entry of illogical values (like an account balance dropping below zero). While Entities and Attributes are structural elements for storing data, constraints act as the rule enforcers that maintain strict Data Integrity.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "In a legacy system migration, the development team notices that altering a database table's structure immediately breaks the client-side desktop application, necessitating a complete, simultaneous redeployment to all user machines. This operational nightmare is a classic symptom of:",
+        "options": [
+            "The flexible nature of Semi-Structured models",
+            "Connection pooling failure in a 3-Tier architecture",
+            "Decentralized control in a 1-Tier architecture",
+            "Tight coupling in a 2-Tier architecture",
+            "The abstraction provided by a Conceptual model"
+        ],
+        "answer": "Tight coupling in a 2-Tier architecture",
+        "explanation": "الاقتران الوثيق (Tight coupling) في معمارية الطبقتين (2-Tier) يعني أن تطبيق العميل مرتبط بشدة بهيكل قاعدة البيانات. هذا الاعتماد الهيكلي يؤدي إلى انهيار التطبيق بمجرد إجراء أي تغيير على قاعدة البيانات، مما يجبر المطورين على إجراء تحديثات مستمرة ومكلفة لتطبيقات المستخدمين. الطبقات الثلاث تفصل هذا الارتباط لتجنب المشكلة.\n\n'Tight coupling' in a 2-Tier Architecture implies a strong structural dependence between the client application and the database schema. When the database structure is altered, the tightly coupled client application inherently breaks, forcing immediate and costly updates across all client machines. A 3-Tier architecture abstracts this connection to prevent such issues.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 34,
+        "question": "While evaluating database models for a highly heterogeneous catalog where items have entirely different sets of attributes (e.g., a laptop has RAM and CPU, but a shirt has Size and Fabric), which model naturally accommodates these irregular structures without enforcing NULL values across rigid tables?",
+        "options": [
+            "Relational Data Model",
+            "Float Data Model",
+            "Hierarchical Data Model",
+            "Context Data Model",
+            "Semi-Structured Data Model"
+        ],
+        "answer": "Semi-Structured Data Model",
+        "explanation": "النموذج شبه المهيكل (Semi-Structured Data Model) يتيح مرونة هائلة لتمثيل كيانات ذات سمات متغيرة. فهو لا يجبر جميع السجلات على اتباع نفس هيكل الأعمدة الصارم الموجود في قواعد البيانات العلائقية، مما يجعله مثالياً للبيانات غير المتجانسة حيث تمتلك بعض الكيانات سمات إضافية وتفتقر أخرى لها.\n\nThe Semi-Structured Data Model offers immense flexibility, naturally accommodating heterogeneous entities with varying attributes. Unlike rigid relational tables that would force massive amounts of NULL values for non-applicable columns, a semi-structured model allows some entities to have extra attributes and others to miss them without structural conflict.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 35,
+        "question": "A database designer is creating a model to establish a common vocabulary with business managers. The designer deliberately omits the choice between Oracle and SQL Server, and completely avoids mentioning storage capacities or primary keys. This approach aligns perfectly with the characteristics of the:",
+        "options": [
+            "Representational Data Model",
+            "Physical Data Model",
+            "Conceptual Data Model",
+            "Network Data Model",
+            "Extensible Markup schema"
+        ],
+        "answer": "Conceptual Data Model",
+        "explanation": "النموذج المفاهيمي (Conceptual Data Model أو Domain model) يتم تصميمه لإنشاء لغة مشتركة بين أصحاب العمل (Stakeholders) لفهم المتطلبات. وهو مستقل تماماً عن أي تفاصيل تقنية مثل نوع الهاردوير، مساحة التخزين، أو نظام إدارة قواعد البيانات (DBMS)، ويركز فقط على مفاهيم 'العالم الحقيقي'.\n\nThe Conceptual Data Model (or Domain Model) is designed to establish a common vocabulary with business stakeholders. It operates at the highest level of abstraction, remaining completely independent of hardware constraints, storage capacities, and specific DBMS vendor software, focusing solely on representing real-world business requirements.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "An enterprise is struggling with an old hierarchical database because a 'Course' entity cannot logically be associated with both 'Department' and 'Professor' as parent records simultaneously. To resolve this strictly structural limitation without jumping to modern relational models, they historically would have upgraded to:",
+        "options": [
+            "The Network Model",
+            "The Context Model",
+            "The Float Model",
+            "A 1-Tier Architecture",
+            "A Physical Subschema"
+        ],
+        "answer": "The Network Model",
+        "explanation": "النموذج الشبكي (Network Model) تم ابتكاره في الستينيات تحديداً لحل مشكلة النموذج الهرمي الذي كان يسمح بأب واحد فقط لكل ابن. النموذج الشبكي سمح بوجود 'آباء متعددين' (Multiple parent segments) للسجل الواحد، مما أتاح تمثيل علاقات متعدد-إلى-متعدد المعقدة.\n\nThe Network Model was developed in the 1960s specifically to overcome the rigid single-parent limitation of the Hierarchical Model. By allowing a child segment to possess multiple parent segments, the Network Model enabled the logical representation of complex many-to-many associations previously impossible.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "You are examining an architectural blueprint where a client application communicates directly with the database system using Java Database Connectivity (JDBC) without any intermediate server executing business logic. What is the most severe vulnerability of this specific setup as user volume grows?",
+        "options": [
+            "The system will automatically revert to a decentralized 1-Tier deployment",
+            "The network connection will permanently lock the subschema to a single physical client",
+            "The system will lose its ability to support many-to-many relationships logically",
+            "The database server will suffer from limited scalability and overload due to too many direct client requests",
+            "The subschema will strictly refuse to accept Relational Calculus commands"
+        ],
+        "answer": "The database server will suffer from limited scalability and overload due to too many direct client requests",
+        "explanation": "في نظام الطبقتين (2-Tier)، الاتصال المباشر عبر JDBC/ODBC يعني أن كل عميل يفتح اتصالاً مباشراً ويستهلك موارد من خادم قاعدة البيانات. مع زيادة عدد المستخدمين، سيصاب الخادم بضغط شديد (Overload) بسبب كثرة الطلبات المتزامنة، مما يجعل محدودية التوسع (Limited scalability) أكبر عيوبه.\n\nIn a 2-Tier Architecture, direct client connections via JDBC/ODBC mean every active user consumes resources directly on the database server. As user volume increases, the server is bombarded with concurrent connections and processing demands, inevitably leading to severe overloads and revealing its critical limitation in scalability.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 38,
+        "question": "A development team decides to map their application classes directly to their database structure, storing both the data attributes and the execution methods (behaviors) within a single unified database entity. This paradigm is known as the:",
+        "options": [
+            "Float Data Model",
+            "Context Data Model",
+            "Representational Data Model",
+            "Hierarchical Data Model",
+            "Object-Oriented Data Model"
+        ],
+        "answer": "Object-Oriented Data Model",
+        "explanation": "النموذج الكائني التوجه (Object-Oriented Data Model) يقوم بدمج مفاهيم البرمجة مع قواعد البيانات، حيث يتم تخزين البيانات (الخصائص) والعلاقات وحتى السلوكيات (methods) داخل هيكل واحد متكامل يسمى الكائن (Object)، بدلاً من فصلها في جداول كما في النموذج العلائقي.\n\nThe Object-Oriented Data Model merges OOP principles with database management. It uniquely maps application classes to the database by encapsulating data attributes, complex relationships, and executable behaviors (methods) together into a single, cohesive database structure known as an object.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 39,
+        "question": "In the Database Life Cycle, why is the translation from a Conceptual Model to a Representational Model considered a critical abstraction step before physical implementation?",
+        "options": [
+            "Because the representational model automatically creates the required network topology for a 3-tier system",
+            "Because the representational model focuses solely on logical table structures and relations without being constrained by physical storage mechanisms",
+            "Because it converts all semi-structured data into a rigid float data array to prevent redundancy",
+            "Because it shifts the design focus from business stakeholders directly to end-user hardware capacity",
+            "Because it strictly mandates the use of object-oriented programming for all future queries"
+        ],
+        "answer": "Because the representational model focuses solely on logical table structures and relations without being constrained by physical storage mechanisms",
+        "explanation": "النموذج التمثيلي (Representational Model) يوفر تصميماً منطقياً بحتاً (مثل الجداول والعلاقات) بناءً على الجبر العلائقي، وهو يستخلص التعقيدات ليعطينا هيكلاً صافياً ومستقلاً عن تفاصيل التخزين الفيزيائي (مثل أجهزة التخزين أو الفهارس)، مما يشكل أساساً متيناً قبل البرمجة الفعلية.\n\nThe Representational Model serves as a crucial bridge by focusing entirely on the logical structure of the data (using tables, algebra, and relationships). It successfully abstracts and ignores the complexities of physical storage mechanisms, providing a clean, logical foundation necessary for the subsequent Physical Data Model implementation.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 40,
+        "question": "A developer writes a SQL statement: 'SELECT * FROM Employees WHERE Salary > 50000;'. In the context of database architecture and data models, this specific set of commands belongs to the:",
+        "options": [
+            "Subschema definition layer",
+            "Physical data storage model",
+            "Conceptual Domain Model",
+            "Context Data framework",
+            "Data Manipulation Language (DML)"
+        ],
+        "answer": "Data Manipulation Language (DML)",
+        "explanation": "لغة معالجة البيانات (DML) هي مجموعة الأوامر التي تتيح للمستخدم النهائي التعامل الفعلي مع البيانات، وتتضمن الاستعلام (SELECT) والإدراج (INSERT) والتحديث (UPDATE) والحذف (DELETE). الجملة المكتوبة هي تطبيق مباشر لعملية استرجاع عبر DML.\n\nThe Data Manipulation Language (DML) encompasses the specific set of commands that allow users and applications to manipulate and interact directly with stored data. Operations such as SELECT, INSERT, UPDATE, and DELETE fall strictly under the DML classification within the DBMS environment.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "If a research team implements a database entirely on a standalone, isolated laptop for a highly classified project that requires zero external collaboration or network access, which architecture is the most cost-effective and logical for this specific scenario?",
+        "options": [
+            "2-Tier Architecture",
+            "3-Tier Architecture",
+            "Distributed Cloud Architecture",
+            "Context Data Architecture",
+            "1-Tier Architecture"
+        ],
+        "answer": "1-Tier Architecture",
+        "explanation": "معمارية الطبقة الواحدة (1-Tier Architecture) تعني وجود التطبيق وقاعدة البيانات على نفس الجهاز (مثل جهاز كمبيوتر شخصي). هي بيئة بسيطة جداً وغير مكلفة، وتعتبر الخيار الأمثل والمثالي للمشاريع الفردية أو المعزولة التي لا تتطلب مشاركة بيانات عبر شبكة.\n\nA 1-Tier Architecture places the client application, DBMS, and database all on a single local machine. Because it requires no network infrastructure or intermediate servers, it is the most simple and cost-effective architectural solution for isolated, single-user desktop deployments that do not require external collaboration.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 42,
+        "question": "What is the defining characteristic that separates the Physical Data Model from the Representational Data Model?",
+        "options": [
+            "The Physical model utilizes conceptual Entity-Relationship diagrams to communicate with business managers",
+            "The Physical model relies entirely on theoretical Relational Calculus without using physical files",
+            "The Physical model is completely independent of the hardware and DBMS infrastructure",
+            "The Physical model dictates precise datatypes, disk storage locations, and indexes for a specific DBMS vendor",
+            "The Physical model supports only unstructured and semi-structured XML data"
+        ],
+        "answer": "The Physical model dictates precise datatypes, disk storage locations, and indexes for a specific DBMS vendor",
+        "explanation": "النموذج الفيزيائي (Physical model) هو الوحيد الذي يهتم بالتفاصيل التقنية الدقيقة الخاصة بالنظام. فهو يحدد أنواع البيانات الفعلية، وأحجامها بالبايت، وكيفية تخزينها على الأقراص الصلبة (Disk storage)، والفهارس الخاصة بنظام إدارة قواعد بيانات محدد (مثل SQL Server أو Oracle)، بعكس النموذج التمثيلي المنطقي.\n\nThe defining trait of the Physical Data Model is its strict adherence to technical implementation. Unlike the logical focus of the Representational model, the Physical model explicitly defines the precise datatypes, column lengths, storage paths on secondary disks, and indexing strategies tailored for a specific DBMS vendor technology.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "According to the evolution of data models, which mathematical concepts form the theoretical foundation for organizing and manipulating data within the Representational (Relational) Data Model?",
+        "options": [
+            "Differential Equations and Linear Geometry",
+            "Float array non-duplicating matrices",
+            "Object-oriented encapsulation procedures",
+            "Contextual metadata sorting algorithms",
+            "Relational Algebra and Relational Calculus"
+        ],
+        "answer": "Relational Algebra and Relational Calculus",
+        "explanation": "الجبر العلائقي والتفاضل العلائقي (Relational Algebra and Relational Calculus) هما الأساس الرياضي النظري الصلب الذي بُني عليه 'النموذج العلائقي' (والذي يعتبر أهم نماذج Representational Data Model). هذه المفاهيم هي ما يتيح لنا دمج الجداول والبحث فيها بمنطق سليم.\n\nThe Representational Data Model, primarily embodied by the Relational Model, is strictly grounded in theoretical mathematics. Specifically, Relational Algebra and Relational Calculus provide the robust logical foundation and operators required to structure, manipulate, and query data held within tabular formats.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "A database administrator is configuring user access rights. They create a restricted, customized view of the database that allows a specific HR application to see employee names but completely hides their salaries. This restricted portion of the database that interacts with the application program is formally called a:",
+        "options": [
+            "Conceptual Model",
+            "Float Data Model",
+            "Directional Association",
+            "Hardware domain",
+            "Subschema"
+        ],
+        "answer": "Subschema",
+        "explanation": "المخطط الفرعي (Subschema) هو جزء مخصص ومقتطع من قاعدة البيانات الكلية (Schema) يتم تصميمه ليتفاعل مع تطبيق معين أو مجموعة مستخدمين محددة. الهدف منه هو تقييد الوصول وعرض البيانات التي يحتاجها هذا التطبيق فقط لزيادة الأمان وتبسيط العرض.\n\nA Subschema is formally defined as the specific portion or restricted subset of the global database schema that interacts directly with specific application programs or user groups. It enhances security and usability by displaying only the necessary tailored views (like hiding salaries) while masking the rest of the database.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "Which of the following best explains why the 'Float Data Model' is considered heavily restricted and generally obsolete for modern enterprise database design?",
+        "options": [
+            "It inherently corrupts all XML and JSON semi-structured data formats globally",
+            "It forces the enterprise database to instantly downgrade from a 3-Tier to a 1-Tier architecture",
+            "It mandates the use of multiple parent segments which severely confuses the query engine",
+            "It requires that all entity associations must be strictly formatted as ONE-TO-ONE relationships",
+            "Its reliance on a two-dimensional array without duplicates makes it fundamentally incapable of storing or scaling to large amounts of data"
+        ],
+        "answer": "Its reliance on a two-dimensional array without duplicates makes it fundamentally incapable of storing or scaling to large amounts of data",
+        "explanation": "نموذج البيانات العائم (Float Data Model) يعاني من عيب قاتل وهو اعتماده على مصفوفة ثنائية الأبعاد ترفض أي تكرار للعناصر. هذا التصميم يجعله عاجزاً تماماً عن تخزين البيانات الضخمة التي تحتاجها المؤسسات الحديثة، حيث لا يستطيع التعامل مع جداول كبيرة الحجم.\n\nThe defining structure of the Float Data Model is a two-dimensional array that rejects duplicate elements. Its critical and fatal flaw for modern enterprise use is its severe lack of scalability; it is fundamentally incapable of efficiently processing, storing, or handling the massive amounts of data required in large-sized tables.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 46,
+        "question": "In a university database system, a single student can enroll in multiple courses simultaneously, and a single course is designed to have multiple enrolled students. To properly map this logic, what type of relationship must the designer address?",
+        "options": [
+            "ONE-TO-ONE (1:1) relationship",
+            "ONE-TO-MANY (1:M) relationship",
+            "Directional parent-child relationship",
+            "Subschema dependency constraint",
+            "MANY-TO-MANY (M:N) relationship"
+        ],
+        "answer": "MANY-TO-MANY (M:N) relationship",
+        "explanation": "علاقة متعدد إلى متعدد (MANY-TO-MANY) تحدث عندما يرتبط سجل من الكيان الأول (طالب) بعدة سجلات في الكيان الثاني (مقررات)، وفي نفس الوقت يرتبط سجل من الكيان الثاني (مقرر) بعدة سجلات من الكيان الأول (طلاب). هذا يتطلب تصميماً خاصاً في قواعد البيانات العلاقية.\n\nThis scenario perfectly defines a MANY-TO-MANY (M:N) relationship. It occurs when one instance of an entity (a Student) is associated with multiple instances of a related entity (Courses), while simultaneously, one instance of the related entity (a Course) is associated with multiple instances of the first entity (Students).",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "When analyzing the technical disadvantages of transitioning to a 3-Tier Architecture, why is 'doubling the communication points' considered a significant architectural trade-off?",
+        "options": [
+            "It forces the database to store every transaction record twice to maintain data integrity across tiers",
+            "It requires the client application to be physically merged and tightly coupled with the database schema",
+            "It permanently disables the ability to use standard API connections like JDBC or ODBC",
+            "It mandates that the conceptual data model must be written redundantly in two different languages",
+            "It introduces an extra network hop between the client, the application server, and the database, inevitably causing slower response times"
+        ],
+        "answer": "It introduces an extra network hop between the client, the application server, and the database, inevitably causing slower response times",
+        "explanation": "مضاعفة نقاط الاتصال (Communication points) في معمارية الثلاث طبقات تعني أن طلب المستخدم لا يذهب مباشرة لقاعدة البيانات، بل يمر عبر الشبكة إلى خادم التطبيقات (نقطة أولى)، ثم منه إلى قاعدة البيانات (نقطة ثانية). هذا المسار الطويل يضيف تأخيراً زمنياً (Latency) ويجعل الاستجابة أبطأ مقارنة بنظام الطبقتين.\n\nIn a 3-Tier Architecture, the client no longer communicates directly with the database. The request must travel to the intermediate Application Server, be processed, and then forwarded to the database server. Doubling these communication points inherently introduces network latency, resulting in potentially slower overall response times compared to direct 2-Tier interactions.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "hard"
+    },
+    {
+        "id": 48,
+        "question": "A database system creatively combines an Entity-Relationship (ER) model for managing its transactional data and an Object-Oriented model for managing multimedia assets within the same logical framework to accomplish highly complex tasks. This hybrid paradigm is formally defined as a:",
+        "options": [
+            "Float Data Model",
+            "1-Tier Relational Model",
+            "Fully Structured Schema",
+            "Representational Array",
+            "Context Data Model"
+        ],
+        "answer": "Context Data Model",
+        "explanation": "نموذج بيانات السياق (Context Data Model) هو مصطلح يشير إلى نموذج يتكون من دمج أكثر من نموذج بيانات واحد (مثل دمج نموذج ER مع النموذج الكائني التوجه Object-Oriented). هذا الدمج يسمح للمطورين بمعالجة مهام معقدة جداً ومتعددة الأوجه لا يستطيع أي نموذج تقليدي بمفرده التعامل معها بكفاءة.\n\nThe Context Data Model is explicitly defined as an integrated data model composed of more than one distinct data model paradigm operating concurrently. By combining frameworks like the ER Model and the Object-Oriented Data Model, it allows systems to perform highly complex, multifaceted tasks that exceed the capabilities of a single, standalone model.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 49,
+        "question": "During a security audit, it is discovered that if a hacker gains unauthorized access to a casual user's workstation, they immediately possess direct access to both the client application environment and the raw database files without any network barriers. This severe security architecture flaw is a hallmark of the:",
+        "options": [
+            "2-Tier Architecture",
+            "3-Tier Architecture",
+            "Distributed Subschema Architecture",
+            "Context Application Architecture",
+            "1-Tier Architecture"
+        ],
+        "answer": "1-Tier Architecture",
+        "explanation": "في معمارية الطبقة الواحدة (1-Tier)، توجد التطبيقات وقاعدة البيانات والبيانات الخام محلياً على نفس الجهاز المادي. هذا يعني انعدام أي حماية شبكية أو خوادم وسيطة، فمجرد اختراق جهاز المستخدم يعطي المهاجم وصولاً كاملاً ومباشراً لكل محتويات قاعدة البيانات.\n\nIn a 1-Tier Architecture, the client software, processing logic, and the physical database itself all reside on a single local machine. Consequently, if that local device is compromised, the attacker immediately gains unhindered access to both the application and the raw database files, highlighting the architecture's inherent lack of security boundaries.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "What is the primary, strategic reason Data Models are considered an indispensable tool before writing any actual SQL code or implementing physical structures?",
+        "options": [
+            "They automatically generate the required 3-Tier hardware infrastructure and network load balancers",
+            "They completely eliminate the need for a Database Administrator by dynamically encrypting the conceptual schema",
+            "They convert all raw unstructured data streams into purely hierarchical trees instantly",
+            "They artificially prevent the use of complex relational calculus in daily DML operations to speed up queries",
+            "They provide a transparent blueprint that accurately identifies missing data, enforces relationships, and minimizes redundancy before costly physical implementation"
+        ],
+        "answer": "They provide a transparent blueprint that accurately identifies missing data, enforces relationships, and minimizes redundancy before costly physical implementation",
+        "explanation": "نماذج البيانات (Data Models) تعمل كمخطط هندسي (Blueprint) دقيق. أهميتها الاستراتيجية تكمن في توفير رؤية شفافة للهيكل المنطقي، مما يساعد المصممين على اكتشاف النواقص وتقليل التكرار وتصحيح العلاقات على الورق، قبل إهدار الوقت والموارد في برمجة قواعد البيانات الفعلية المعقدة.\n\nData Models are strictly required because they function as a transparent architectural blueprint. They allow designers to proactively represent data accurately, identify missing components, establish relationships, and structurally minimize data redundancy. Resolving these issues conceptually is far more efficient than attempting to fix a flawed physical database implementation retroactively.",
+        "topic": "Database Architecture & Data Models",
+        "difficulty": "normal"
+    }
+]

@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "question": "What is the fundamental nature of Relational Algebra compared to SQL?",
+        "options": [
+            "It is a declarative language",
+            "It is a physical storage protocol",
+            "It is a procedural query language",
+            "It is an unstructured query model",
+            "It is an object-oriented programming language"
+        ],
+        "answer": "It is a procedural query language",
+        "explanation": "الجبر العلائقي (Relational Algebra) هو لغة إجرائية (Procedural)، مما يعني أنه يحدد للمحرك 'كيف' يتم جلب البيانات خطوة بخطوة باستخدام العمليات الرياضية. بينما SQL هي لغة تعريفية (Declarative) تخبر المحرك 'بماذا' تريد دون تحديد كيفية جلبه.\n\nRelational Algebra is a procedural query language, providing a step-by-step mathematical foundation for how to retrieve data. In contrast, SQL is primarily a declarative language where the user specifies what data is needed without explicitly dictating the retrieval procedure.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 2,
+        "question": "Which relational algebra operator is used to choose specific rows from a relation based on a given condition?",
+        "options": [
+            "Projection (π)",
+            "Selection (σ)",
+            "Cartesian Product (×)",
+            "Rename (ρ)",
+            "Natural Join (⋈)"
+        ],
+        "answer": "Selection (σ)",
+        "explanation": "عملية الاختيار أو التحديد (Selection)، ويُرمز لها بالحرف اليوناني سيجما (σ)، تُستخدم لتصفية الصفوف (Tuples) من الجدول بناءً على شرط منطقي محدد (مثل الراتب > 5000).\n\nThe Selection operation, denoted by the Greek letter Sigma (σ), is used to filter rows (tuples) from a relation that satisfy a specific logical condition or predicate.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 3,
+        "question": "According to the mapping of relational algebra to SQL, what does the Projection (π) operator correspond to?",
+        "options": [
+            "The FROM clause",
+            "The WHERE clause",
+            "The SELECT clause",
+            "The ORDER BY clause",
+            "The GROUP BY clause"
+        ],
+        "answer": "The SELECT clause",
+        "explanation": "عملية الإسقاط (Projection)، ويُرمز لها بـ (π)، تُستخدم لاختيار أعمدة معينة من الجدول. في لغة SQL، هذا يقابل تعليمة (SELECT) التي تحدد الأعمدة المراد إظهارها في النتيجة.\n\nIn the mapping between relational algebra and SQL, the Projection (π) operator, which chooses specific columns, corresponds directly to the SELECT clause in an SQL query.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 4,
+        "question": "If relation R has 5 tuples and relation S has 4 tuples, what is the maximum number of tuples resulting from the Cartesian Product (R × S)?",
+        "options": [
+            "9 tuples",
+            "5 tuples",
+            "4 tuples",
+            "20 tuples",
+            "1 tuple"
+        ],
+        "answer": "20 tuples",
+        "explanation": "الضرب الديكارتي (Cartesian Product) يقوم بدمج كل صف من الجدول الأول مع كل صف من الجدول الثاني. لذلك، عدد الصفوف الناتجة هو حاصل ضرب عدد صفوف الجدول الأول في عدد صفوف الجدول الثاني (5 × 4 = 20).\n\nThe Cartesian Product (×) combines every tuple of relation R with every tuple of relation S. Therefore, the resulting cardinality (number of rows) is the product of their individual cardinalities: 5 * 4 = 20 tuples.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 5,
+        "question": "In relational algebra, what is a strict mathematical property of the Projection (π) operation regarding its output?",
+        "options": [
+            "It automatically sorts the result alphabetically",
+            "It inherently eliminates any duplicate tuples in the result",
+            "It always includes the primary key regardless of the specified columns",
+            "It restricts the output to a maximum of 10 rows",
+            "It converts the selected columns into a single string"
+        ],
+        "answer": "It inherently eliminates any duplicate tuples in the result",
+        "explanation": "في الجبر العلائقي النظري، نظرًا لأنه يعتمد على نظرية المجموعات (Set Theory)، فإن عملية الإسقاط (Projection) تقوم تلقائيًا بإزالة أي صفوف مكررة تنتج عن اختيار أعمدة معينة، لأن المجموعة الرياضية لا تحتوي على عناصر مكررة.\n\nIn pure relational algebra based on set theory, relations are sets, and sets cannot contain duplicate elements. Therefore, a strict mathematical property of the Projection (π) operation is that it inherently eliminates any duplicate tuples that might arise after dropping columns.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 6,
+        "question": "Which SQL keyword acts as the direct equivalent to the Selection (σ) operator in relational algebra?",
+        "options": [
+            "SELECT",
+            "JOIN",
+            "WHERE",
+            "HAVING",
+            "TRUNCATE"
+        ],
+        "answer": "WHERE",
+        "explanation": "عملية التحديد (Selection σ) تُستخدم لتصفية الصفوف بناءً على شرط. في لغة SQL، الجملة التي تقوم بوظيفة تصفية الصفوف وفقاً لشرط معين هي جملة (WHERE).\n\nThe Selection (σ) operator filters rows based on a specific condition. In SQL, this filtering logic is directly implemented using the WHERE clause.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 7,
+        "question": "For the Union (∪), Intersection (∩), and Set Difference (-) operations to be valid, the two participating relations must be:",
+        "options": [
+            "In Third Normal Form (3NF)",
+            "Union-compatible (type-compatible)",
+            "Identical in their number of rows",
+            "Having the exact same primary key values",
+            "Physically stored on the same disk"
+        ],
+        "answer": "Union-compatible (type-compatible)",
+        "explanation": "لكي نتمكن من إجراء عمليات المجموعات (الاتحاد، التقاطع، الفرق)، يجب أن يكون الجدولان 'متوافقين للاتحاد' (Union-compatible). هذا يعني أن يكون لهما نفس عدد الأعمدة (Degree)، وأن تكون أنواع البيانات للأعمدة المتقابلة متوافقة.\n\nSet operations such as Union (∪), Intersection (∩), and Set Difference (-) require the two participating relations to be Union-compatible (or type-compatible). This strictly means they must have the same degree (number of columns) and the domains of corresponding attributes must be compatible.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 8,
+        "question": "What is the primary difference between an Equi Join and a Natural Join (⋈)?",
+        "options": [
+            "Equi Join only works on primary keys, while Natural Join works on any column",
+            "Natural Join retains all duplicate columns, while Equi Join removes them",
+            "Equi Join keeps duplicate join attributes, while Natural Join eliminates one set of the duplicate attributes",
+            "Natural Join requires a specific condition using < or >, while Equi Join uses =",
+            "There is no difference; they are exactly the same operation"
+        ],
+        "answer": "Equi Join keeps duplicate join attributes, while Natural Join eliminates one set of the duplicate attributes",
+        "explanation": "الفرق الجوهري هو أن الربط المتساوي (Equi Join) يعرض الأعمدة المشتركة من كلا الجدولين (مما يؤدي إلى تكرار العمود)، بينما الربط الطبيعي (Natural Join) يقوم بدمج الأعمدة المتطابقة في الاسم ويحذف النسخة المكررة، ليبقي عموداً واحداً فقط.\n\nAn Equi Join produces a result where the join attribute appears twice (once from each table). A Natural Join (⋈) automatically equates attributes with the same name and strictly eliminates one set of the duplicate join attributes from the final result, ensuring columns are unique.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 9,
+        "question": "A relational algebra query needs to combine data from two tables, keeping ALL rows from the left table even if there are no matching rows in the right table. Which operator should be used?",
+        "options": [
+            "Natural Join (⋈)",
+            "Cartesian Product (×)",
+            "Left Outer Join (⟕)",
+            "Intersection (∩)",
+            "Theta Join (θ)"
+        ],
+        "answer": "Left Outer Join (⟕)",
+        "explanation": "الربط الخارجي الأيسر (Left Outer Join) يُستخدم عندما نريد الاحتفاظ بجميع السجلات الموجودة في الجدول الأيسر، وإذا لم تجد تطابقاً في الجدول الأيمن، يتم ملء الفراغات بقيم فارغة (NULL).\n\nA Left Outer Join (⟕) is specifically designed to keep all tuples from the left relation. If there is no matching tuple in the right relation based on the join condition, the result will still include the left tuple, padded with NULL values for the right relation's attributes.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 10,
+        "question": "Which symbol is used in relational algebra to temporarily change the name of a relation or its attributes during a query?",
+        "options": [
+            "Pi (π)",
+            "Sigma (σ)",
+            "Theta (θ)",
+            "Rho (ρ)",
+            "Delta (δ)"
+        ],
+        "answer": "Rho (ρ)",
+        "explanation": "عملية إعادة التسمية (Rename)، ويُرمز لها بالحرف اليوناني رو (ρ)، تُستخدم لتغيير اسم الجدول أو أسماء أعمدته في النتيجة المؤقتة، وهو ما يقابل الكلمة المحجوزة (AS) في SQL.\n\nThe Rename operator is denoted by the Greek letter Rho (ρ). It is used to temporarily rename a relation or its attributes in the output of an algebraic expression, effectively functioning like the 'AS' alias keyword in SQL.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 11,
+        "question": "If you want to find all tuples that exist in Relation A but DO NOT exist in Relation B, which set operation is appropriate?",
+        "options": [
+            "Union (A ∪ B)",
+            "Intersection (A ∩ B)",
+            "Set Difference (A - B)",
+            "Cartesian Product (A × B)",
+            "Natural Join (A ⋈ B)"
+        ],
+        "answer": "Set Difference (A - B)",
+        "explanation": "عملية الفرق (Set Difference)، ويُرمز لها بالناقص (-)، تُرجع جميع السجلات الموجودة في المجموعة الأولى (A) والتي لا توجد لها نسخة مطابقة في المجموعة الثانية (B).\n\nThe Set Difference operation (A - B) returns all tuples that are present in relation A but completely absent from relation B. It essentially subtracts the matching rows of B from A.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 12,
+        "question": "In the terminology mapping between relational algebra and SQL, how is the algebraic concept of a 'Relation' expressed in SQL?",
+        "options": [
+            "Row",
+            "Column",
+            "Table",
+            "Database",
+            "Index"
+        ],
+        "answer": "Table",
+        "explanation": "في الجبر العلائقي والنظرية الرياضية، يُطلق على هيكل البيانات اسم 'علاقة' (Relation). في لغة SQL العملية، يُعبر عن هذه العلاقة بمصطلح 'الجدول' (Table).\n\nIn the theoretical terminology of relational algebra, a data set is called a 'Relation'. When mapped to practical SQL Database Management Systems, a Relation is directly equivalent to a 'Table'.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 13,
+        "question": "What type of join uses a general logical condition (such as <, >, or !=) rather than just an equality condition?",
+        "options": [
+            "Natural Join",
+            "Equi Join",
+            "Theta Join (θ)",
+            "Outer Join",
+            "Union Join"
+        ],
+        "answer": "Theta Join (θ)",
+        "explanation": "ربط ثيتا (Theta Join) هو أعم أنواع الربط، حيث يسمح باستخدام أي شرط منطقي للمقارنة بين الجداول (مثل أصغر من، أكبر من، لا يساوي). بينما Equi Join مقتصر على علامة التساوي (=) فقط.\n\nA Theta Join (θ) is the most general form of a join operation. Unlike an Equi Join that restricts conditions strictly to equality (=), a Theta Join can use any logical comparison operator (such as <, <=, >, >=, or !=) in its join condition.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 14,
+        "question": "If Relation X has a degree of 4 (4 columns) and Relation Y has a degree of 3 (3 columns), what is the degree of their Cartesian Product (X × Y)?",
+        "options": [
+            "12 columns",
+            "7 columns",
+            "4 columns",
+            "3 columns",
+            "1 column"
+        ],
+        "answer": "7 columns",
+        "explanation": "درجة العلاقة (Degree) تعني عدد الأعمدة. عند إجراء ضرب ديكارتي (Cartesian Product) بين جدولين، فإن الجدول الناتج سيحتوي على جميع أعمدة الجدول الأول مضافاً إليها جميع أعمدة الجدول الثاني (4 + 3 = 7 أعمدة).\n\nThe degree of a relation refers to its number of columns. The Cartesian Product (X × Y) concatenates every tuple of X with every tuple of Y. Therefore, the degree of the resulting relation is the sum of their individual degrees: 4 + 3 = 7 columns.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 15,
+        "question": "Which operation combines a Selection and a Cartesian Product into a single operation based on a shared attribute with an equality condition?",
+        "options": [
+            "Set Difference",
+            "Projection",
+            "Equi Join",
+            "Union",
+            "Rename"
+        ],
+        "answer": "Equi Join",
+        "explanation": "الربط المتساوي (Equi Join) هو في الأساس عملية ضرب ديكارتي (Cartesian Product) يتم بعدها تطبيق عملية تحديد (Selection) لتصفية الصفوف التي تتساوى فيها قيم الأعمدة المشتركة بين الجدولين.\n\nAn Equi Join mathematically represents a Cartesian Product followed immediately by a Selection operation, where the selection condition is strictly an equality (=) comparison between specified attributes of the two relations.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 16,
+        "question": "What is the mathematical outcome if a Natural Join (⋈) is performed between two relations that share absolutely no common attributes?",
+        "options": [
+            "It throws a syntax error because a joining condition is strictly required",
+            "It returns an completely empty relation",
+            "It acts exactly like a Cartesian Product (Cross Join)",
+            "It performs a Set Difference operation",
+            "It executes a Left Outer Join by default"
+        ],
+        "answer": "It acts exactly like a Cartesian Product (Cross Join)",
+        "explanation": "الربط الطبيعي (Natural Join) يبحث تلقائياً عن الأعمدة ذات الأسماء المتطابقة لربط الجداول بناءً عليها. إذا لم تكن هناك أي أعمدة مشتركة بين الجدولين، فلن يجد شرطاً للتصفية، وبالتالي سيقوم بدمج كل صف من الجدول الأول مع كل صف من الجدول الثاني، مما يجعله مطابقاً تماماً لعملية 'الضرب الديكارتي' (Cartesian Product).\n\nA Natural Join automatically equates attributes with the same name. If two relations have absolutely no common attributes, there is no equality condition to enforce. Consequently, every tuple of the first relation combines with every tuple of the second relation, making the operation mathematically identical to a Cartesian Product.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 17,
+        "question": "Which relational algebra operator is specifically designed to answer queries featuring the phrase 'FOR ALL', such as 'Find the names of sailors who have reserved ALL available boats'?",
+        "options": [
+            "Natural Join (⋈)",
+            "Division (÷)",
+            "Cartesian Product (×)",
+            "Set Intersection (∩)",
+            "Theta Join (θ)"
+        ],
+        "answer": "Division (÷)",
+        "explanation": "عملية القسمة (Division)، ويُرمز لها بـ (÷)، هي العملية الجبرية المخصصة للإجابة على الاستعلامات التي تتضمن كلمة 'كل' (FOR ALL). في هذا المثال، تقوم بقسمة جدول 'الحجوزات' على جدول 'كل القوارب' لاستخراج البحارة الذين قاموا بحجز جميع القوارب.\n\nThe Division operator (÷) is specifically designed and suited for queries that include the universal quantifier 'FOR ALL'. It identifies the entities in one relation that are associated with every entity in a specific subset of another relation.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 18,
+        "question": "If relation A contains 10 tuples and relation B contains 8 tuples, and they are union-compatible with exactly 3 tuples in common, what is the exact cardinality of their Union (A ∪ B)?",
+        "options": [
+            "18 tuples",
+            "15 tuples",
+            "80 tuples",
+            "10 tuples",
+            "3 tuples"
+        ],
+        "answer": "15 tuples",
+        "explanation": "عملية الاتحاد (Union) تقوم بجمع صفوف الجدولين مع إزالة الصفوف المكررة (لأنها مجموعة رياضية). بما أن هناك 3 صفوف مشتركة، فلن يتم حسابها مرتين. المعادلة هي: (10 + 8) - 3 = 15 صفاً.\n\nThe Union operation (∪) combines the tuples of both relations but, being a set operation, it strictly eliminates duplicates. The cardinality is calculated as: |A| + |B| - |A ∩ B|. Therefore, 10 + 8 - 3 = 15 tuples.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 19,
+        "question": "The relational algebra expression: π_Name (σ_Salary > 5000 (Employee)) is directly equivalent to which structured SQL query?",
+        "options": [
+            "SELECT Employee WHERE Salary > 5000",
+            "SELECT Name FROM Employee WHERE Salary > 5000",
+            "SELECT * FROM Employee WHERE Salary > 5000 AND Name IS NOT NULL",
+            "FROM Employee SELECT Name HAVING Salary > 5000",
+            "WHERE Salary > 5000 SELECT Name FROM Employee"
+        ],
+        "answer": "SELECT Name FROM Employee WHERE Salary > 5000",
+        "explanation": "في الجبر العلائقي، عملية التحديد (σ) تمثل جملة (WHERE)، وعملية الإسقاط (π) تمثل جملة (SELECT). التعبير المذكور يقوم أولاً بتصفية الموظفين الذين يزيد راتبهم عن 5000، ثم يسقط (يعرض) عمود الاسم فقط، وهذا يطابق الاستعلام: SELECT Name FROM Employee WHERE Salary > 5000.\n\nIn relational algebra, the Selection operator (σ) maps to the SQL 'WHERE' clause, and the Projection operator (π) maps to the SQL 'SELECT' clause. The expression filters the Employee relation for salaries over 5000 first, and then projects only the Name attribute, matching the SQL syntax correctly.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 20,
+        "question": "A fundamental property of relational algebra is the 'Closure Property' (or composability). What does this property guarantee?",
+        "options": [
+            "Operations automatically translate into DDL database commands",
+            "Each operation permanently alters the physical storage of the database",
+            "Relational algebra only works on single tables sequentially",
+            "The output of one operation is a new relation that can immediately be used as the input for another operation",
+            "Only Selection and Projection can be combined in a single query"
+        ],
+        "answer": "The output of one operation is a new relation that can immediately be used as the input for another operation",
+        "explanation": "خاصية الانغلاق (Closure Property) في الجبر العلائقي تعني أن نتيجة أي عملية جبرية (مثل ربط أو تحديد) هي بحد ذاتها 'علاقة' (جدول) جديدة. هذا يضمن إمكانية دمج العمليات وتركيبها معاً (Composability)، حيث يمكن استخدام المخرجات كمدخلات لعملية أخرى.\n\nThe Closure Property (composability) guarantees that the result of any relational algebra operation is inherently a new relation itself. This allows operations to be nested and combined infinitely, as the output of one operation seamlessly becomes the valid input for the next.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 21,
+        "question": "In a Right Outer Join (⟖) operation between Relation L (Left) and Relation R (Right), what data is strictly preserved in the final output?",
+        "options": [
+            "All tuples from Relation L, padding non-matching rows with NULLs",
+            "Only the intersecting matching tuples from both relations",
+            "All tuples from Relation R, padding non-matching rows with NULLs for Relation L's attributes",
+            "The Cartesian product of both relations excluding duplicate columns",
+            "The set difference of Relation R and Relation L"
+        ],
+        "answer": "All tuples from Relation R, padding non-matching rows with NULLs for Relation L's attributes",
+        "explanation": "في الربط الخارجي الأيمن (Right Outer Join)، يتم الاحتفاظ بجميع السجلات الموجودة في الجدول الأيمن (R) سواء كان لها تطابق في الجدول الأيسر أم لا. إذا لم يوجد تطابق، يتم وضع قيم فارغة (NULL) في أعمدة الجدول الأيسر لتلك السجلات.\n\nIn a Right Outer Join, every tuple from the right relation (R) is strictly preserved in the result. If a tuple from R has no matching tuple in the left relation (L) based on the join condition, it is still included in the output, with NULL values assigned to all attributes originating from L.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 22,
+        "question": "The Set Intersection operation (A ∩ B) is not considered a fundamental operator because it can be equivalently derived using which combination of basic relational algebra operators?",
+        "options": [
+            "A ∪ (A - B)",
+            "A - (A - B)",
+            "A × (A ∪ B)",
+            "σ(A × B)",
+            "π(A) - π(B)"
+        ],
+        "answer": "A - (A - B)",
+        "explanation": "عملية التقاطع (Intersection) هي عملية مركبة (Derived)، حيث يمكن التعبير عنها باستخدام عملية 'الفرق' (Set Difference) الأساسية. التقاطع (A ∩ B) يكافئ رياضياً طرح العناصر الموجودة في A والتي لا توجد في B من المجموعة A بأكملها: A - (A - B).\n\nThe Set Intersection (A ∩ B) is a derived operation in relational algebra. It can be logically and mathematically deduced using the fundamental Set Difference (-) operator. The expression A - (A - B) removes the tuples unique to A from the entirety of A, leaving only the tuples shared with B.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 23,
+        "question": "If a general Theta Join (θ) exclusively uses the equality operator (=) for its joining condition, it mathematically collapses into which other specific join type?",
+        "options": [
+            "Natural Join",
+            "Left Outer Join",
+            "Cartesian Product",
+            "Equi Join",
+            "Set Intersection"
+        ],
+        "answer": "Equi Join",
+        "explanation": "ربط ثيتا (Theta Join) يسمح باستخدام أي شرط مقارنة (<, >, =). ولكن عندما يقتصر الشرط حصرياً على علامة المساواة (=) لمطابقة الأعمدة بين الجدولين، فإنه يُسمى بشكل محدد 'الربط المتساوي' (Equi Join).\n\nA Theta Join is a general join that can utilize any logical comparison operator. However, if the condition restricts the comparison strictly to equality (=), the operation is formally classified as an Equi Join.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 24,
+        "question": "Regarding the sequence of multiple Selection (σ) operations, such as σ_A (σ_B (R)), which algebraic rule is mathematically true?",
+        "options": [
+            "The inner selection must always reference a primary key",
+            "A sequence of selection operations is strictly commutative",
+            "Changing the order fundamentally alters the final algebraic output",
+            "They can only be swapped if they are applied to different relational tables",
+            "They must be combined into a Projection operation to prevent errors"
+        ],
+        "answer": "A sequence of selection operations is strictly commutative",
+        "explanation": "عملية التحديد (Selection) تبديلية (Commutative). هذا يعني أن ترتيب تطبيق الشروط لا يؤثر على النتيجة النهائية. تصفية الجدول بناءً على الشرط B ثم الشرط A سيعطي نفس النتيجة تماماً لتصفيته بناءً على الشرط A ثم B: σ_A (σ_B (R)) = σ_B (σ_A (R)).\n\nThe Selection operation is mathematically commutative. The order in which multiple selections are applied to a relation does not affect the final resulting set. Therefore, filtering by condition B and then condition A yields the exact same result as filtering by condition A and then condition B.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 25,
+        "question": "When formulating a 'Self-Join' query in relational algebra (e.g., finding employees who earn more than their direct managers), which operator is absolutely critical to distinguish the two instances of the identical table?",
+        "options": [
+            "Projection (π)",
+            "Division (÷)",
+            "Rename (ρ)",
+            "Union (∪)",
+            "Theta Join (θ)"
+        ],
+        "answer": "Rename (ρ)",
+        "explanation": "في الاستعلامات التي تتطلب دمج الجدول مع نفسه (Self-Join)، سيكون من المستحيل التمييز بين أعمدة النسختين لأنهما تمتلكان نفس الأسماء. هنا يصبح مُعامل إعادة التسمية (Rename ρ) إلزامياً لإعطاء اسم مستعار مؤقت لإحدى النسختين أو كلتيهما.\n\nIn a Self-Join, a table is joined with itself. Because both instances share the exact same relation name and attribute names, ambiguity prevents the query from executing. The Rename operator (ρ) is absolutely critical here to temporarily alias at least one of the instances, making the attributes distinct.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 26,
+        "question": "What is the exact structural output of a Full Outer Join (⟗) operation?",
+        "options": [
+            "It returns only the tuples that have absolutely no match in either table",
+            "It performs a natural join and appends the un-matched tuples from both the left and right relations, padded with NULLs",
+            "It acts exactly as a Cartesian Product but automatically removes duplicate columns",
+            "It intersects the two tables and permanently removes all NULL values from the result",
+            "It returns the mathematical union of the primary keys of both tables only"
+        ],
+        "answer": "It performs a natural join and appends the un-matched tuples from both the left and right relations, padded with NULLs",
+        "explanation": "الربط الخارجي الكامل (Full Outer Join) يجمع بين خصائص الربط الداخلي والربط الخارجي بنوعيه. فهو يرجع السجلات المتطابقة أولاً، ثم يضيف جميع السجلات غير المتطابقة من الجدول الأيسر (ويضع فراغات للأيمن) وجميع السجلات غير المتطابقة من الجدول الأيمن (ويضع فراغات للأيسر).\n\nA Full Outer Join mathematically combines the results of both Left and Right Outer Joins. It performs an inner join for matching tuples, and then appends all unmatched tuples from both the left relation (padding right attributes with NULLs) and the right relation (padding left attributes with NULLs).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 27,
+        "question": "Which of the following relational algebra operators is formally classified as a 'derived' or 'composite' operator rather than a fundamental (basic) one?",
+        "options": [
+            "Selection (σ)",
+            "Cartesian Product (×)",
+            "Set Difference (-)",
+            "Natural Join (⋈)",
+            "Union (∪)"
+        ],
+        "answer": "Natural Join (⋈)",
+        "explanation": "العمليات الأساسية الخمس في الجبر العلائقي هي: الاختيار (σ)، الإسقاط (π)، الاتحاد (∪)، الفرق (-)، والضرب الديكارتي (×). أي عملية أخرى مثل 'الربط الطبيعي' (Natural Join) تعتبر 'مشتقة' لأنها يمكن التعبير عنها باستخدام مجموعة من العمليات الأساسية (ضرب ديكارتي ثم اختيار ثم إسقاط).\n\nThe five fundamental operations in relational algebra are Selection, Projection, Union, Set Difference, and Cartesian Product. The Natural Join (⋈) is classified as a derived operator because it can be mathematically constructed using a combination of a Cartesian Product, a Selection (equating common attributes), and a Projection (removing duplicate columns).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 28,
+        "question": "What mathematically occurs when a Projection operation (π) specifies only non-key attributes from a relation where multiple rows share the exact same values for those specific attributes?",
+        "options": [
+            "The query throws an error due to the violation of entity integrity constraints",
+            "The resulting relation will have fewer rows than the original because duplicate tuples are automatically eliminated",
+            "The resulting relation will retain the duplicates but generate a new temporary primary key to separate them",
+            "The operation will automatically force the inclusion of the primary key to prevent data loss",
+            "The resulting relation will have the exact same number of rows as the original with all duplicates present"
+        ],
+        "answer": "The resulting relation will have fewer rows than the original because duplicate tuples are automatically eliminated",
+        "explanation": "عملية الإسقاط (Projection) تُنتج مجموعة رياضية جديدة. وإذا كانت الأعمدة المختارة لا تتضمن المفتاح الأساسي، فقد تتشابه البيانات في بعض الصفوف. حسب نظرية المجموعات، يتم دمج هذه الصفوف المتشابهة وحذف التكرار تلقائياً، مما يجعل عدد الصفوف في الناتج أقل من الأصل.\n\nIn relational algebra, the result of a Projection (π) is a mathematical set. If the projected columns exclude the primary key, it is highly likely that identical rows will emerge. Because sets cannot contain duplicates, these redundant tuples are automatically eliminated, resulting in a relation with fewer rows than the original.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 29,
+        "question": "When converting the raw relational algebra expression (R × S) into its direct SQL equivalent without any implicit or explicit WHERE filtering, which syntax is used?",
+        "options": [
+            "SELECT R, S",
+            "FROM R CROSS JOIN S",
+            "JOIN R, S ON R.id = S.id",
+            "SELECT * FROM R UNION SELECT * FROM S",
+            "INTERSECT R AND S"
+        ],
+        "answer": "FROM R CROSS JOIN S",
+        "explanation": "الضرب الديكارتي (Cartesian Product R × S) يقوم بدمج كل شيء من R مع كل شيء من S دون أي شروط ربط. المعادل المباشر والصريح لهذه العملية في لغة SQL هو استخدام (CROSS JOIN).\n\nThe Cartesian Product (R × S) merges every tuple of relation R with every tuple of relation S without any joining condition. The explicit, direct SQL equivalent syntax for this mathematically unconditional merge is the 'CROSS JOIN' clause.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 30,
+        "question": "In database theory, a query language is formally considered 'Relationally Complete' if it possesses the ability to:",
+        "options": [
+            "Execute transactions while maintaining full ACID properties",
+            "Express any query that can be written using the basic operations of relational algebra",
+            "Define physical storage blocks and index paths for all tables",
+            "Automatically convert NoSQL documents into strictly typed relational tables",
+            "Connect and synchronize with multiple distributed databases concurrently"
+        ],
+        "answer": "Express any query that can be written using the basic operations of relational algebra",
+        "explanation": "مصطلح 'الاكتمال العلائقي' (Relational Completeness) هو مقياس لقوة لغة الاستعلام. وتُعتبر اللغة (مثل SQL) كاملة علائقياً إذا كانت قادرة على التعبير عن وتنفيذ أي استعلام يمكن صياغته باستخدام العمليات الأساسية في الجبر العلائقي.\n\nA query language is defined as 'relationally complete' if it is at least as powerful as relational algebra. This specifically means the language (like SQL) has the structural capability to express and execute any query that can be formulated using the fundamental relational algebra operators.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 31,
+        "question": "Which of the following relational algebra operators is strictly classified as a 'Unary' operator because it operates on only one single relation at a time?",
+        "options": [
+            "Cartesian Product (×)",
+            "Set Difference (-)",
+            "Selection (σ)",
+            "Natural Join (⋈)",
+            "Union (∪)"
+        ],
+        "answer": "Selection (σ)",
+        "explanation": "في الجبر العلائقي، المعاملات الأحادية (Unary operators) هي التي تُطبق على جدول واحد فقط في كل مرة. عمليات 'التحديد' (Selection σ) و'الإسقاط' (Projection π) و'إعادة التسمية' (Rename ρ) هي معاملات أحادية، بينما البقية (كالربط والاتحاد) تتطلب جدولين (Binary).\n\nIn relational algebra, Unary operators are those that operate on only one single relation at a time. The Selection (σ), Projection (π), and Rename (ρ) operators are unary, whereas operations like Joins, Unions, and Cartesian Products are binary because they require two relations.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 32,
+        "question": "In standard SQL, the mathematical behavior of the Projection (π) operator (which inherently eliminates duplicate rows to maintain set theory) is explicitly replicated using which specific keyword?",
+        "options": [
+            "SELECT UNIQUE",
+            "SELECT DISTINCT",
+            "SELECT ALL",
+            "GROUP BY",
+            "ORDER BY"
+        ],
+        "answer": "SELECT DISTINCT",
+        "explanation": "عملية الإسقاط (Projection) في الرياضيات تحذف التكرار تلقائياً لأنها تُنتج مجموعة (Set). ولكن في لغة SQL، تعليمة SELECT العادية لا تحذف التكرار. لكي نجعل SQL يتصرف تماماً مثل الإسقاط الرياضي، يجب إضافة كلمة DISTINCT.\n\nMathematically, the Projection (π) operator produces a set and therefore automatically eliminates duplicate tuples. In SQL, a standard SELECT statement does not remove duplicates by default. To explicitly replicate the strict set-theory behavior of the Projection operator, the 'SELECT DISTINCT' keyword must be used.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 33,
+        "question": "What is the standard SQL equivalent for the Relational Algebra 'Set Difference' (-) operator?",
+        "options": [
+            "DIFFERENCE",
+            "MINUS or EXCEPT",
+            "NOT IN",
+            "OUTER JOIN",
+            "REMOVE"
+        ],
+        "answer": "MINUS or EXCEPT",
+        "explanation": "عملية الفرق (Set Difference) في الجبر العلائقي تستخرج السجلات الموجودة في الجدول الأول وغير الموجودة في الثاني. المعادل القياسي لها في لغة SQL هو استخدام المعامل EXCEPT (أو MINUS في بعض قواعد البيانات مثل Oracle).\n\nThe Set Difference (-) operator in relational algebra extracts tuples present in the first relation but absent from the second. The standard SQL equivalent for this specific set operation is the 'EXCEPT' operator (though 'MINUS' is used in specific dialects like Oracle).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 34,
+        "question": "Consider relation R with attributes (A, B, C) and relation S with attributes (C, D, E). If a Natural Join (R ⋈ S) is successfully performed, what is the degree (number of columns) of the resulting relation?",
+        "options": [
+            "6 columns",
+            "5 columns",
+            "3 columns",
+            "4 columns",
+            "2 columns"
+        ],
+        "answer": "5 columns",
+        "explanation": "في الربط الطبيعي (Natural Join)، يتم دمج الجدولين بناءً على العمود المشترك (C)، ويتم حذف النسخة المكررة من هذا العمود. أعمدة R هي 3، وأعمدة S هي 3. المجموع 6، ناقص العمود المكرر C، يصبح الناتج 5 أعمدة (A, B, C, D, E).\n\nIn a Natural Join (⋈), relations are joined based on their common attributes, and the duplicate column is eliminated. Relation R has 3 attributes and S has 3 attributes. Totaling 6, minus the one shared overlapping attribute (C), results in a degree of 5 columns (A, B, C, D, E).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 35,
+        "question": "If relation R has a cardinality of 15 tuples and relation S has a cardinality of 10 tuples, what is the exact cardinality of their Cartesian Product (R × S)?",
+        "options": [
+            "25 tuples",
+            "150 tuples",
+            "5 tuples",
+            "1.5 tuples",
+            "250 tuples"
+        ],
+        "answer": "150 tuples",
+        "explanation": "الضرب الديكارتي (Cartesian Product) يقوم بدمج كل صف من الجدول الأول مع كل صف من الجدول الثاني. لذلك، يتم حساب عدد الصفوف (Cardinality) بضرب عدد صفوف الجدولين: 15 مضروبة في 10 يساوي 150 صفاً.\n\nThe Cartesian Product (×) concatenates every single tuple of relation R with every single tuple of relation S. Therefore, the resulting cardinality is mathematically the product of their individual cardinalities: 15 multiplied by 10 equals 150 tuples.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 36,
+        "question": "Which of the following fundamental relational algebra operations is mathematically NOT commutative? (i.e., changing the order of the tables changes the result)",
+        "options": [
+            "Set Intersection (∩)",
+            "Natural Join (⋈)",
+            "Cartesian Product (×)",
+            "Set Difference (-)",
+            "Union (∪)"
+        ],
+        "answer": "Set Difference (-)",
+        "explanation": "عملية الفرق (Set Difference) ليست تبديلية. (A - B) تختلف تماماً عن (B - A). فمثلاً إذا طرحنا B من A سنحصل على ما يملكه A ولا يملكه B، والعكس صحيح. بينما الاتحاد والتقاطع والربط الطبيعي والضرب الديكارتي كلها عمليات تبديلية.\n\nThe Set Difference (-) operation is strictly non-commutative. The expression (A - B) yields tuples in A that are not in B, which is fundamentally different from (B - A), which yields tuples in B that are not in A. Union, Intersection, Natural Join, and Cartesian Product are all commutative.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 37,
+        "question": "In the context of algebraic query optimization, why is it highly recommended to perform Selection (σ) operations as early as possible in the query tree (pushing selections down)?",
+        "options": [
+            "To automatically generate primary keys for the resulting views",
+            "To convert theta joins into natural joins seamlessly",
+            "To drastically reduce the number of tuples participating in expensive binary operations like Joins or Cartesian Products",
+            "To ensure that the final result does not contain any NULL values",
+            "To encrypt the data before it is processed by the CPU"
+        ],
+        "answer": "To drastically reduce the number of tuples participating in expensive binary operations like Joins or Cartesian Products",
+        "explanation": "في تحسين الاستعلامات (Query Optimization)، دفع عمليات التحديد (Selection) لتُنفذ أولاً يقلل بشكل كبير من عدد الصفوف المتبقية. هذا يوفر الكثير من وقت المعالجة والذاكرة عندما يتم تنفيذ عمليات ثقيلة لاحقاً مثل 'الربط' (Joins) أو 'الضرب الديكارتي'.\n\nIn algebraic query optimization, 'pushing selections down' is a critical heuristic. Performing Selection (σ) operations as early as possible drastically reduces the cardinality (number of tuples) of the relations. This significantly minimizes the computational cost and memory required for subsequent expensive binary operations like Joins or Cartesian Products.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 38,
+        "question": "Which implicit SQL syntax performs a mathematical Cartesian Product (×) between two tables because it lacks a joining condition?",
+        "options": [
+            "SELECT * FROM R INNER JOIN S",
+            "SELECT * FROM R, S",
+            "SELECT * FROM R UNION S",
+            "SELECT R JOIN S",
+            "SELECT * FROM R NATURAL JOIN S"
+        ],
+        "answer": "SELECT * FROM R, S",
+        "explanation": "إذا قمت بكتابة أسماء عدة جداول في جملة FROM وفصلت بينها بفاصلة (,) دون استخدام جملة WHERE لتحديد شرط الربط، فإن محرك SQL سيقوم بدمج كل صف من الأول مع كل صف من الثاني، وهو التطبيق العملي للضرب الديكارتي (Cartesian Product).\n\nIf multiple tables are listed in the SQL 'FROM' clause separated by commas (e.g., SELECT * FROM R, S) and no 'WHERE' clause or explicit JOIN condition is provided to filter the match, the SQL engine executes a complete Cartesian Product, merging every row of R with every row of S.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 39,
+        "question": "The relational algebra expression [π_Name(R) ∪ π_Name(S)] accurately maps to which of the following explicit SQL queries?",
+        "options": [
+            "SELECT Name FROM R INTERSECT SELECT Name FROM S",
+            "SELECT Name FROM R EXCEPT SELECT Name FROM S",
+            "SELECT Name FROM R UNION SELECT Name FROM S",
+            "SELECT Name FROM R JOIN S ON R.Name = S.Name",
+            "SELECT R.Name, S.Name FROM R, S"
+        ],
+        "answer": "SELECT Name FROM R UNION SELECT Name FROM S",
+        "explanation": "التعبير يطلب استخراج (إسقاط) الأسماء من الجدول R، واستخراج الأسماء من الجدول S، ثم إجراء عملية 'اتحاد' (Union) بين المجموعتين. الجملة المطابقة تماماً في SQL هي استخدام معامل UNION لدمج نتيجتي SELECT.\n\nThe relational algebra expression extracts the 'Name' attribute from relation R, does the same for relation S, and mathematically unions the two resulting sets. The exact structural equivalent in SQL is combining two independent SELECT statements using the UNION set operator.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 40,
+        "question": "What is the strict mathematical condition required before performing a valid Union (∪), Intersection (∩), or Set Difference (-) operation between two relations?",
+        "options": [
+            "They must share at least one primary key and one foreign key",
+            "The relations must have the exact same number of tuples (cardinality)",
+            "They must be physically stored on the exact same database sector",
+            "The relations must be union-compatible (same degree and matching attribute domains)",
+            "They must have completely different and distinct attribute names"
+        ],
+        "answer": "The relations must be union-compatible (same degree and matching attribute domains)",
+        "explanation": "عمليات المجموعات (الاتحاد، التقاطع، والفرق) تتطلب شرطاً صارماً وهو 'التوافق للاتحاد' (Union-compatibility). ويعني ذلك أن كلا الجدولين يجب أن يمتلكا نفس عدد الأعمدة، وأن تكون أنواع البيانات للأعمدة المتقابلة متماثلة أو متوافقة.\n\nSet operations (Union, Intersection, Set Difference) strictly require the two participating relations to be 'union-compatible'. This mathematical condition dictates that both relations must have the exact same degree (number of columns) and the corresponding attributes in the same order must have compatible data domains (types).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 41,
+        "question": "Why is the algebraic expression [σ_Age>20 (π_Name, Major (Students))] considered mathematically invalid and guaranteed to fail?",
+        "options": [
+            "Because the Projection operator (π) cannot accept more than one attribute",
+            "Because the Selection operator (σ) cannot be the outermost operation",
+            "Because the 'Age' attribute was permanently eliminated by the inner Projection before the outer Selection could evaluate it",
+            "Because 'Students' is not a valid relation name",
+            "Because 'Age' must be converted to an integer explicitly"
+        ],
+        "answer": "Because the 'Age' attribute was permanently eliminated by the inner Projection before the outer Selection could evaluate it",
+        "explanation": "في الجبر العلائقي، العمليات تُنفذ من الداخل للخارج. العملية الداخلية (الإسقاط) استخرجت عمودي 'الاسم' و'التخصص' فقط وتخلصت من الباقي. عندما حاولت العملية الخارجية (التحديد) البحث عن 'العمر' أكبر من 20، فشلت لأن عمود العمر لم يعد موجوداً في الجدول الناتج.\n\nIn relational algebra, inner operations evaluate first. The inner Projection (π) specifically extracted only the 'Name' and 'Major' attributes, discarding all others. Consequently, when the outer Selection (σ) attempts to filter tuples where 'Age > 20', it inevitably crashes because the 'Age' attribute no longer exists in the intermediate relation.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 42,
+        "question": "Which SQL clause directly corresponds to the grouping and aggregation operations (like SUM, COUNT, AVG) that were later added to Extended Relational Algebra?",
+        "options": [
+            "ORDER BY",
+            "GROUP BY",
+            "WHERE",
+            "HAVING",
+            "DISTINCT"
+        ],
+        "answer": "GROUP BY",
+        "explanation": "الجبر العلائقي الأساسي لا يحتوي على دوال تجميعية. تمت إضافة دوال التجميع (Aggregate functions) والتجميع (Grouping) لاحقاً في 'الجبر العلائقي الموسع'. في لغة SQL، الجملة التي تقوم بتجميع الصفوف بناءً على قيم مشتركة لتطبيق هذه الدوال هي GROUP BY.\n\nStandard relational algebra lacked aggregate capabilities. Extended Relational Algebra introduced operators for grouping and aggregation (often denoted by Gamma γ or Script F ℱ). In SQL, this powerful grouping mechanism to apply functions like SUM or COUNT across subsets of data is directly implemented using the 'GROUP BY' clause.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 43,
+        "question": "An Equi-Join (a specific type of Theta Join using equality) between Table A (5 columns) and Table B (4 columns) based on one shared attribute will result in a relation with how many columns?",
+        "options": [
+            "9 columns",
+            "8 columns",
+            "5 columns",
+            "4 columns",
+            "1 column"
+        ],
+        "answer": "9 columns",
+        "explanation": "على عكس 'الربط الطبيعي' (Natural Join) الذي يحذف العمود المكرر، فإن 'الربط المتساوي' (Equi Join) هو مجرد ضرب ديكارتي متبوع بعملية تحديد. لذلك فهو يحتفظ بجميع أعمدة الجدول الأول وجميع أعمدة الجدول الثاني كما هي. المجموع: 5 + 4 = 9 أعمدة.\n\nUnlike a Natural Join which actively eliminates the duplicate join column, an Equi-Join (being a Cartesian Product followed strictly by an equality Selection) retains all columns from both tables. Therefore, the degree of the resulting relation is simply the sum of the original degrees: 5 + 4 = 9 columns.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 44,
+        "question": "Which SQL operator combines the results of two separate SELECT queries and returns exclusively the rows that appear in BOTH result sets, acting as the direct equivalent of algebraic Set Intersection (∩)?",
+        "options": [
+            "UNION",
+            "EXCEPT",
+            "INTERSECT",
+            "CROSS JOIN",
+            "OUTER JOIN"
+        ],
+        "answer": "INTERSECT",
+        "explanation": "عملية التقاطع (Intersection) في الجبر العلائقي تُرجع فقط السجلات المشتركة بين المجموعتين. المعامل القياسي في لغة SQL الذي يقوم بنفس الوظيفة بالضبط من خلال دمج استعلامين واستخراج العناصر المشتركة فقط هو INTERSECT.\n\nThe Set Intersection (∩) operator in relational algebra yields tuples that are present in both relation A and relation B simultaneously. The exact structural equivalent in standard SQL that compares two SELECT query results and returns only their common rows is the 'INTERSECT' operator.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 45,
+        "question": "The associative property applies to Natural Joins, meaning (A ⋈ B) ⋈ C is logically equivalent to A ⋈ (B ⋈ C). What is the critical practical benefit of this mathematical property for a DBMS?",
+        "options": [
+            "It completely eliminates the need for primary and foreign keys",
+            "It allows the query optimizer to dynamically rearrange the execution order of joins to find the fastest, most cost-effective path",
+            "It automatically converts inner joins into full outer joins to prevent data loss",
+            "It allows the database to ignore the 3NF normalization rules safely",
+            "It ensures that Cartesian Products are completely eliminated from the system"
+        ],
+        "answer": "It allows the query optimizer to dynamically rearrange the execution order of joins to find the fastest, most cost-effective path",
+        "explanation": "الخاصية التجميعية (Associativity) في الربط تعني أن ترتيب التنفيذ لا يغير النتيجة النهائية. هذه الخاصية تعتبر كنزاً لمحرك قاعدة البيانات (Query Optimizer)؛ لأنها تتيح له حرية تبديل ترتيب الربط واختيار المسار الأسرع والأقل تكلفة (استهلاكاً للذاكرة والوقت) لتنفيذ الاستعلام.\n\nThe associative property of joins guarantees that the final mathematical result remains the same regardless of grouping. This is absolutely critical for the DBMS Query Optimizer, as it grants it the freedom to analyze statistics and dynamically rearrange the join execution sequence to select the fastest, most memory-efficient path possible.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "hard"
+    },
+    {
+        "id": 46,
+        "question": "What is the structural outcome if you execute a Left Outer Join (⟕) between Table X and Table Y, and it turns out that every single tuple in Table X perfectly matches at least one tuple in Table Y?",
+        "options": [
+            "The result will be completely empty",
+            "The database will throw an execution error",
+            "The result will be mathematically identical to a standard Inner Join (Equi/Natural Join)",
+            "The result will automatically transform into a Right Outer Join",
+            "The result will be a Cartesian Product"
+        ],
+        "answer": "The result will be mathematically identical to a standard Inner Join (Equi/Natural Join)",
+        "explanation": "الربط الخارجي الأيسر (Left Outer Join) مصمم لجلب السجلات المتطابقة، بالإضافة إلى السجلات من الجدول الأيسر التي 'لم تجد تطابقاً' (مع وضع قيم فارغة). إذا كانت جميع السجلات في اليسار تمتلك تطابقاً بالفعل، فلن تكون هناك أي سجلات إضافية لوضع قيم فارغة لها، وتصبح النتيجة مطابقة تماماً للربط الداخلي العادي.\n\nA Left Outer Join (⟕) retrieves matching tuples and preserves unmatched tuples from the left table by padding the right attributes with NULLs. If every tuple in Table X perfectly matches in Table Y, there are no unmatched left tuples to preserve. Consequently, the output is mathematically identical to a standard Inner Join.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 47,
+        "question": "Which SQL keyword directly maps to the algebraic Rename (ρ) operator, specifically used when you need to assign a temporary alias to a table or column within a query?",
+        "options": [
+            "ALIAS",
+            "LIKE",
+            "AS",
+            "WITH",
+            "RENAME TO"
+        ],
+        "answer": "AS",
+        "explanation": "معامل إعادة التسمية (Rename ρ) يُستخدم لإعطاء اسم مستعار مؤقت للجداول أو الأعمدة لتسهيل التعامل معها. في لغة SQL، يتم تحقيق ذلك باستخدام الكلمة المحجوزة 'AS' (مثل SELECT Name AS EmployeeName).\n\nThe Rename operator (ρ) is algebraically used to assign a temporary alias to a relation or an attribute during query evaluation. In practical SQL, this precise temporary aliasing functionality is implemented using the 'AS' keyword (e.g., SELECT column AS alias_name).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 48,
+        "question": "In relational algebra, a Theta Join (θ) allows the use of arbitrary logical conditions. If the condition is specified as [R.salary < S.salary], how is this explicitly represented in standard SQL?",
+        "options": [
+            "SELECT * FROM R, S WHERE R.salary = S.salary",
+            "R INNER JOIN S ON R.salary < S.salary",
+            "R CROSS JOIN S HAVING R.salary < S.salary",
+            "SELECT R.salary MINUS S.salary",
+            "SELECT * FROM R OUTER JOIN S WHERE R.salary < S.salary"
+        ],
+        "answer": "R INNER JOIN S ON R.salary < S.salary",
+        "explanation": "ربط ثيتا (Theta Join) يسمح بشروط غير المساواة. في SQL، يتم تمثيل ذلك باستخدام عبارة INNER JOIN مع وضع الشرط المنطقي المطلوب (أصغر من، أكبر من، الخ) داخل جملة ON الخاصة بالربط.\n\nA Theta Join allows non-equality comparison conditions. In standard SQL syntax, this is explicitly represented by using an INNER JOIN clause (or just JOIN) combined with the 'ON' clause containing the specific logical condition (R.salary < S.salary).",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 49,
+        "question": "What is the crucial mathematical difference between the SQL 'UNION' operator and the 'UNION ALL' operator in relation to pure relational algebra?",
+        "options": [
+            "'UNION' works only on strings, while 'UNION ALL' works on numbers",
+            "'UNION' mathematically mimics relational algebra by eliminating duplicates, while 'UNION ALL' retains all duplicates as a multiset",
+            "'UNION' requires union-compatibility, but 'UNION ALL' completely ignores column types",
+            "'UNION' is an outer join operation, while 'UNION ALL' is an inner join",
+            "There is no difference; they are synonyms in SQL"
+        ],
+        "answer": "'UNION' mathematically mimics relational algebra by eliminating duplicates, while 'UNION ALL' retains all duplicates as a multiset",
+        "explanation": "في الجبر العلائقي، الاتحاد (Union) يحذف التكرار تلقائياً لأن الناتج هو مجموعة (Set). في SQL، معامل UNION العادي يفعل الشيء نفسه ويحذف التكرار، وهو ما يتطابق مع الرياضيات. أما معامل UNION ALL فهو أسرع لأنه لا يحذف التكرار ويحتفظ بكل السجلات (Multiset).\n\nIn pure relational algebra, the Union operation produces a formal mathematical set, which by definition cannot contain duplicates. The SQL 'UNION' operator mimics this by automatically filtering out duplicate rows. Conversely, 'UNION ALL' skips the distinct filtering process, retaining all duplicate rows and acting as a multiset operation.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    },
+    {
+        "id": 50,
+        "question": "In the theory of database querying, a query language is formally deemed 'Relationally Complete' if it has the proven ability to:",
+        "options": [
+            "Process semi-structured JSON and XML data natively",
+            "Ensure transaction durability against hardware failures",
+            "Express and execute any query that can be formulated using the fundamental operations of relational algebra",
+            "Create, alter, and drop physical tables autonomously",
+            "Synchronize instantly with distributed NoSQL databases"
+        ],
+        "answer": "Express and execute any query that can be formulated using the fundamental operations of relational algebra",
+        "explanation": "اللغة الكاملة علائقياً (Relationally Complete) هي اللغة التي تمتلك القوة الكافية لتنفيذ أي استعلام يمكن صياغته باستخدام العمليات الأساسية الخمس في الجبر العلائقي (التحديد، الإسقاط، الضرب، الاتحاد، الفرق). لغة SQL تعتبر كاملة علائقياً لأنها تغطي كل هذه العمليات وأكثر.\n\nThe benchmark for query language power is 'Relational Completeness'. A language is formally deemed relationally complete if it is at least as powerful as relational algebra. This means it structurally possesses the ability to express any query that can be written using the fundamental relational algebra operators.",
+        "topic": "relational algebra and query fundamentals",
+        "difficulty": "normal"
+    }
+]

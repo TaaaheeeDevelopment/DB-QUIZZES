@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "difficulty": "hard",
+    "question": "In the relational model context, what does the term \"Tuple\" represent within a relation:",
+    "options": [
+      "The set of allowed values for a column.",
+      "A unique name assigned to a table.",
+      "The logical design of the database.",
+      "A single row in a table representing an entity.",
+      "A collection of interrelated relations."
+    ],
+    "correct_answer": "A single row in a table representing an entity.",
+    "explanation_ar": "في النموذج العلائقي، مصطلح (Tuple) يمثل صفاً واحداً (سجلاً) داخل الجدول، والذي يعبر عن كيان واحد.",
+    "explanation_en": "A tuple represents a single row (record) in a relational table."
+  },
+  {
+    "id": 2,
+    "difficulty": "hard",
+    "question": "What defines the \"Degree\" of a relation?",
+    "options": [
+      "The total number of columns (attributes) in the relation.",
+      "The number of rows currently stored in the table.",
+      "The maximum length of a character field.",
+      "The total number of primary keys in the schema.",
+      "The hierarchy level of the data model."
+    ],
+    "correct_answer": "The total number of columns (attributes) in the relation.",
+    "explanation_ar": "الدرجة (Degree) لأي جدول تمثل إجمالي عدد الأعمدة (الخصائص - attributes) الموجودة فيه.",
+    "explanation_en": "The degree of a relation is defined by the number of attributes (columns) it contains."
+  },
+  {
+    "id": 3,
+    "difficulty": "hard",
+    "question": "Which \"Integrity Constraint\" states that no primary key attribute can contain a NULL value?",
+    "options": [
+      "Domain constraint.",
+      "Referential integrity.",
+      "Key constraint.",
+      "User-defined rule.",
+      "Entity integrity."
+    ],
+    "correct_answer": "Entity integrity.",
+    "explanation_ar": "تكامل الكيان (Entity Integrity) هو القيد الذي يضمن أن المفتاح الأساسي (Primary Key) لا يمكن أن يكون فارغاً (NULL).",
+    "explanation_en": "Entity integrity ensures that every relation has a primary key and that the primary key cannot be NULL."
+  },
+  {
+    "id": 4,
+    "difficulty": "hard",
+    "question": "Which of the following describes logical data independence?",
+    "options": [
+      "Changing physical storage without affecting conceptual schema",
+      "Changing conceptual schema without affecting external views",
+      "Changing external views without rewriting applications",
+      "Changing hardware without affecting software",
+      "Separating tables into different databases"
+    ],
+    "correct_answer": "Changing conceptual schema without affecting external views",
+    "explanation_ar": "استقلالية البيانات المنطقية تعني القدرة على تغيير المخطط المفاهيمي (Conceptual Schema) دون الحاجة لتغيير التطبيقات أو طرق العرض الخارجية (External Views).",
+    "explanation_en": "Logical data independence is the capacity to change the conceptual schema without altering the external schemas or application programs."
+  },
+  {
+    "id": 5,
+    "difficulty": "hard",
+    "question": "In an ER diagram, what shape is used to represent an entity?",
+    "options": [
+      "Diamond",
+      "Circle (ellipse)",
+      "Rectangle",
+      "Triangle",
+      "Arrow"
+    ],
+    "correct_answer": "Rectangle",
+    "explanation_ar": "في مخطط الكيانات والعلاقات (ER Diagram)، يُستخدم المستطيل لتمثيل الكيان (Entity).",
+    "explanation_en": "In ER modeling, entities are standardly represented by rectangles."
+  },
+  {
+    "id": 6,
+    "difficulty": "hard",
+    "question": "What is a primary key?",
+    "options": [
+      "Any column in a table",
+      "A column that links two tables together",
+      "A minimal set of attributes that uniquely identifies each tuple in a relation",
+      "The first column in every table",
+      "A column that can contain NULL values"
+    ],
+    "correct_answer": "A minimal set of attributes that uniquely identifies each tuple in a relation",
+    "explanation_ar": "المفتاح الأساسي هو أصغر مجموعة ممكنة من الخصائص التي يمكنها تحديد كل صف في الجدول بشكل فريد.",
+    "explanation_en": "A primary key is a candidate key chosen to uniquely identify tuples in a relation, requiring it to be minimal."
+  },
+  {
+    "id": 7,
+    "difficulty": "hard",
+    "question": "What is referential integrity?",
+    "options": [
+      "Ensuring all data is stored in the same file",
+      "Ensuring a foreign key value either matches a primary key in the referenced table or is NULL",
+      "Ensuring all attribute names are unique",
+      "Ensuring every relation has at least one primary key",
+      "Ensuring queries run without errors"
+    ],
+    "correct_answer": "Ensuring a foreign key value either matches a primary key in the referenced table or is NULL",
+    "explanation_ar": "التكامل المرجعي يضمن أن قيمة المفتاح الأجنبي (Foreign Key) يجب أن تتطابق مع مفتاح أساسي موجود في جدول آخر أو أن تكون قيمتها فارغة (NULL).",
+    "explanation_en": "Referential integrity guarantees that foreign key values point to existing primary key values in the referenced table, or remain NULL."
+  },
+  {
+    "id": 8,
+    "difficulty": "hard",
+    "question": "Relation R has attributes {A,B,C,D}. {A,B} is a candidate key and {A,B,C} also uniquely identifies tuples. {A,B,C} is best described as",
+    "options": [
+      "A primary key",
+      "A foreign key",
+      "A superkey that is not a candidate key",
+      "A composite primary key",
+      "A partial key"
+    ],
+    "correct_answer": "A superkey that is not a candidate key",
+    "explanation_ar": "بما أن {A,B} مفتاح مرشح (يحدد الصفوف بشكل فريد وهو الأصغر)، فإن إضافة الخاصية {C} تجعل {A,B,C} مفتاحاً فائقاً (Superkey) ولكنه ليس مرشحاً لأنه لم يعد يحقق شرط 'الأصغر' (Minimal).",
+    "explanation_en": "Adding attributes to a candidate key creates a superkey. It is not a candidate key because it is no longer minimal."
+  },
+  {
+    "id": 9,
+    "difficulty": "hard",
+    "question": "What does the natural join (⋈) operation do?",
+    "options": [
+      "Combines all tuples from two relations without any condition",
+      "Joins two relations on all common attribute names and removes duplicate columns",
+      "Produces only rows where no match exists",
+      "Filters rows based on a selection condition",
+      "Projects only one column from each relation"
+    ],
+    "correct_answer": "Joins two relations on all common attribute names and removes duplicate columns",
+    "explanation_ar": "عملية الربط الطبيعي تقوم بدمج الجداول بناءً على جميع الأعمدة التي تحمل نفس الاسم، وتقوم بإزالة الأعمدة المكررة من النتيجة النهائية.",
+    "explanation_en": "Natural join implicitly equates all identically named attributes from both relations and drops the duplicate columns."
+  },
+  {
+    "id": 10,
+    "difficulty": "hard",
+    "question": "Given R(A,B) and S(B,C) the result of R ÷ S (division) contains:",
+    "options": [
+      "All tuples from R that have no match in S",
+      "All B values common to both R and S",
+      "All A values in R that are associated with every B value appearing in S",
+      "The Cartesian product of R and S",
+      "All tuples from R minus tuples in S"
+    ],
+    "correct_answer": "All A values in R that are associated with every B value appearing in S",
+    "explanation_ar": "عملية القسمة (Division) ترجع قيم A من الجدول R والتي ترتبط بكل قيم B الموجودة في الجدول S.",
+    "explanation_en": "The division operator identifies tuples in one relation (A values) that match all tuples in another relation (B values in S)."
+  },
+  {
+    "id": 11,
+    "difficulty": "hard",
+    "question": "Which SQL statement is used to retrieve data from a table?",
+    "options": [
+      "INSERT INTO",
+      "UPDATE",
+      "DELETE",
+      "SELECT",
+      "FETCH"
+    ],
+    "correct_answer": "SELECT",
+    "explanation_ar": "تعليمة SELECT هي التعليمة القياسية في SQL المستخدمة لاسترجاع (قراءة) البيانات من الجداول.",
+    "explanation_en": "The SELECT statement is the standard DML command used to retrieve data from a database."
+  },
+  {
+    "id": 12,
+    "difficulty": "hard",
+    "question": "What is the correct SQL clause to filter results after grouping?",
+    "options": [
+      "WHERE",
+      "FILTER",
+      "ORDER BY",
+      "HAVING",
+      "GROUP FILTER"
+    ],
+    "correct_answer": "HAVING",
+    "explanation_ar": "تُستخدم عبارة HAVING لتصفية البيانات المجمعة (مجاميع) بعد استخدام عبارة GROUP BY، بينما WHERE تستخدم قبل التجميع.",
+    "explanation_en": "HAVING is used to filter aggregated data resulting from a GROUP BY clause."
+  },
+  {
+    "id": 13,
+    "difficulty": "hard",
+    "question": "Which SQL constraint ensures that a column cannot contain NULL values?",
+    "options": [
+      "UNIQUE",
+      "PRIMARY KEY",
+      "CHECK",
+      "NOT NULL",
+      "DEFAULT"
+    ],
+    "correct_answer": "NOT NULL",
+    "explanation_ar": "قيد NOT NULL يُجبر العمود على عدم قبول أي قيم فارغة (NULL).",
+    "explanation_en": "The NOT NULL constraint enforces a column to always contain a value."
+  },
+  {
+    "id": 14,
+    "difficulty": "hard",
+    "question": "Which JOIN returns only rows that have matching values in both tables?",
+    "options": [
+      "LEFT OUTER JOIN",
+      "RIGHT OUTER JOIN",
+      "FULL OUTER JOIN",
+      "INNER JOIN",
+      "CROSS JOIN"
+    ],
+    "correct_answer": "INNER JOIN",
+    "explanation_ar": "الربط الداخلي (INNER JOIN) يعرض فقط السجلات التي تمتلك تقاطعاً (تطابقاً) في كلا الجدولين.",
+    "explanation_en": "An INNER JOIN selects records that have matching values in both linked tables."
+  },
+  {
+    "id": 15,
+    "difficulty": "hard",
+    "question": "What is a VIEW in SQL?",
+    "options": [
+      "A physical copy of a table stored on disk",
+      "A virtual table based on the result of a SELECT query",
+      "A type of index on a table",
+      "A stored procedure that returns results",
+      "A backup copy of the database"
+    ],
+    "correct_answer": "A virtual table based on the result of a SELECT query",
+    "explanation_ar": "طريقة العرض (View) هي جدول افتراضي (Virtual) لا يُخزن البيانات فعلياً، بل يبنى بناءً على استعلام SELECT يتم تنفيذه عند الطلب.",
+    "explanation_en": "A VIEW is a virtual table whose contents are defined by a stored SELECT query."
+  },
+  {
+    "id": 16,
+    "difficulty": "hard",
+    "question": "An index that covers all columns needed by a query so the table need not be accessed is called:",
+    "options": [
+      "Clustered index",
+      "Composite index",
+      "Covering index",
+      "Bitmap index",
+      "Dense index"
+    ],
+    "correct_answer": "Covering index",
+    "explanation_ar": "الفهرس المغطي (Covering Index) يحتوي على جميع الأعمدة التي يطلبها الاستعلام، مما يغني محرك قاعدة البيانات عن الرجوع للجدول الأصلي، وهذا يسرع الاستعلام جداً.",
+    "explanation_en": "A covering index includes all the columns a query needs, meaning the database engine doesn't have to look at the actual table data."
+  },
+  {
+    "id": 17,
+    "difficulty": "hard",
+    "question": "What does JDBC stand for?",
+    "options": [
+      "Java Data Backup Connector",
+      "Java Database Connectivity",
+      "Joint Database Control Block",
+      "JavaScript Database Communication",
+      "Java Distributed Buffer Cache"
+    ],
+    "correct_answer": "Java Database Connectivity",
+    "explanation_ar": "اختصار JDBC يرمز إلى Java Database Connectivity، وهي واجهة برمجة تطبيقات (API) قياسية في جافا للاتصال بقواعد البيانات.",
+    "explanation_en": "JDBC stands for Java Database Connectivity, an API for connecting and executing queries on a database."
+  },
+  {
+    "id": 18,
+    "difficulty": "hard",
+    "question": "Which relational algebra operation directly corresponds to the SQL \"WHERE\" clause used for filtering rows based on conditions?",
+    "options": [
+      "Projection (π).",
+      "Join (⋈).",
+      "Union (U).",
+      "Rename (ρ).",
+      "Selection (σ)."
+    ],
+    "correct_answer": "Selection (σ).",
+    "explanation_ar": "عملية التحديد (Selection - σ) في الجبر العلائقي تقوم بتصفية الصفوف (Rows) بناءً على شرط معين، وهو تماماً ما تفعله تعليمة WHERE في SQL.",
+    "explanation_en": "Selection (σ) filters rows (tuples) based on a condition, exactly matching the function of the WHERE clause in SQL."
+  },
+  {
+    "id": 19,
+    "difficulty": "hard",
+    "question": "What is the expected outcome of executing the following SQL command: ALTER TABLE Employees DROP COLUMN Address:",
+    "options": [
+      "It removes the \"Address\" attribute and its data from the table structure permanently.",
+      "It deletes all rows where the Address field contains a NULL value.",
+      "It renames the \"Address\" column to \"Location\" for all existing records.",
+      "It creates a temporary backup of the Address data in the system log.",
+      "It changes the data type of the Address column to an Integer."
+    ],
+    "correct_answer": "It removes the \"Address\" attribute and its data from the table structure permanently.",
+    "explanation_ar": "تعليمة DROP COLUMN تقوم بحذف العمود المحدد (Address) والبيانات الموجودة فيه من هيكل الجدول بشكل نهائي.",
+    "explanation_en": "The DROP COLUMN command permanently removes the specified column and all its data from the table structure."
+  },
+  {
+    "id": 20,
+    "difficulty": "hard",
+    "question": "Why is the TRUNCATE command often classified as a DDL operation instead of DML?",
+    "options": [
+      "Because it allows for row-by-row filtering using a WHERE clause.",
+      "Because it is used to insert multiple rows into a table simultaneously.",
+      "Because it operates at the schema level by deallocating data pages.",
+      "Because it can only be executed by users with \"Read-Only\" access.",
+      "Because it encrypts the data before removing it from the disk."
+    ],
+    "correct_answer": "Because it operates at the schema level by deallocating data pages.",
+    "explanation_ar": "تعليمة TRUNCATE تُصنف كـ DDL لأنها تعمل على مستوى الهيكل، حيث تقوم بإلغاء تخصيص صفحات البيانات بدلاً من حذف الصفوف واحداً تلو الآخر مثل DELETE.",
+    "explanation_en": "TRUNCATE is considered DDL because it operates at the schema level by deallocating the data pages used to store table data, rather than logging individual row deletions."
+  },
+  {
+    "id": 21,
+    "difficulty": "hard",
+    "question": "Look at this statement: SELECT a.Name, b.Name FROM Category a, Category b WHERE a.ID = b.ParentID;. This is an example of:",
+    "options": [
+      "A Natural Join.",
+      "A Full Outer Join.",
+      "A Self Join using aliases.",
+      "A Syntax error in the SELECT clause.",
+      "A Cross Join with no conditions."
+    ],
+    "correct_answer": "A Self Join using aliases.",
+    "explanation_ar": "بما أننا نربط الجدول Category بنفسه باستخدام أسماء مستعارة (a و b)، فهذا يُسمى ربط ذاتي (Self Join).",
+    "explanation_en": "A Self Join occurs when a table is joined with itself. Here, the 'Category' table is aliased as 'a' and 'b' to facilitate this."
+  },
+  {
+    "id": 22,
+    "difficulty": "hard",
+    "question": "During which phase of the Database Life Cycle (DBLC) are the ER diagrams created and the tables normalized:",
+    "options": [
+      "Database initial study.",
+      "Implementation and loading.",
+      "Testing and evaluation.",
+      "Operation and maintenance.",
+      "Database design."
+    ],
+    "correct_answer": "Database design.",
+    "explanation_ar": "يتم إنشاء مخططات ER (التصميم المفاهيمي) وتطبيع الجداول (التصميم المنطقي) خلال مرحلة تصميم قاعدة البيانات (Database design).",
+    "explanation_en": "Conceptual design (ER diagrams) and logical design (normalization) are key steps within the overall Database Design phase."
+  },
+  {
+    "id": 23,
+    "difficulty": "hard",
+    "question": "What is a potential disadvantage of having too many indexes on a single table?",
+    "options": [
+      "It makes the \"SELECT\" queries run much slower.",
+      "It increases the time required for INSERT, UPDATE, and DELETE operations.",
+      "it deletes the primary key of the table.",
+      "it makes the database inaccessible to mobile users.",
+      "it prevents the use of JOIN operations."
+    ],
+    "correct_answer": "It increases the time required for INSERT, UPDATE, and DELETE operations.",
+    "explanation_ar": "كلما أضفت فهارس (Indexes) لتسريع القراءة (SELECT)، زاد الوقت المطلوب لعمليات الكتابة (INSERT, UPDATE, DELETE) لأن النظام يضطر لتحديث الفهارس مع كل تغيير.",
+    "explanation_en": "While indexes speed up retrieval, having too many degrades write performance because the database must update the indexes every time data is modified."
+  },
+  {
+    "id": 24,
+    "difficulty": "hard",
+    "question": "What is \"SQL Injection\" in the context of database security?",
+    "options": [
+      "A method to inject more RAM into the database server.",
+      "A technique where malicious SQL code is inserted into input fields to manipulate the database.",
+      "A way to physically clean the server's hard drive using chemicals.",
+      "A process of updating SQL software to the latest version automatically.",
+      "A programming language used to design database icons."
+    ],
+    "correct_answer": "A technique where malicious SQL code is inserted into input fields to manipulate the database.",
+    "explanation_ar": "حقن SQL (SQL Injection) هو هجوم أمني يتم فيه إدخال أكواد SQL خبيثة في حقول الإدخال للتلاعب بقاعدة البيانات.",
+    "explanation_en": "SQL Injection is a cyber attack where malicious SQL statements are inserted into entry fields for execution."
+  },
+  {
+    "id": 25,
+    "difficulty": "hard",
+    "question": "Which of the following is considered a significant \"Disadvantage\" of a Distributed DBMS compared to a Centralized one?",
+    "options": [
+      "Increased transparency for the end-user.",
+      "Improved data availability during site failures.",
+      "Lower complexity in database design and implementation.",
+      "Increased overhead and complexity in managing data distribution and integrity.",
+      "Faster response times for all local queries."
+    ],
+    "correct_answer": "Increased overhead and complexity in managing data distribution and integrity.",
+    "explanation_ar": "أكبر عيب في قواعد البيانات الموزعة هو التعقيد العالي جداً في الإدارة والتحكم في تزامن البيانات وتكاملها عبر المواقع المختلفة.",
+    "explanation_en": "Distributed databases introduce significant complexity and overhead in maintaining data consistency, replication, and query optimization across multiple sites."
+  },
+  {
+    "id": 26,
+    "difficulty": "hard",
+    "question": "Which type of NoSQL database is best suited for social networks where relationships between entities (like \"Friends\" or \"Followers\") are highly complex?",
+    "options": [
+      "Key-Value store.",
+      "Document database (JSON).",
+      "Column-family store.",
+      "Relational table.",
+      "Graph database."
+    ],
+    "correct_answer": "Graph database.",
+    "explanation_ar": "قواعد البيانات الرسمية (Graph Database) مصممة خصيصاً للتعامل مع العلاقات المعقدة بين الكيانات، مما يجعلها مثالية للشبكات الاجتماعية.",
+    "explanation_en": "Graph databases excel at managing highly connected data and complex relationships, making them ideal for modeling social networks."
+  },
+  {
+    "id": 27,
+    "difficulty": "hard",
+    "question": "In \"Boyce-Codd Normal Form\" (BCNF), what is the strict requirement for every non-trivial functional dependency (X → Y)?",
+    "options": [
+      "X must be a non-prime attribute.",
+      "Y must be part of a composite key.",
+      "X must be a super key (candidate key).",
+      "Y must be a numeric value.",
+      "The table must contain at least two foreign keys."
+    ],
+    "correct_answer": "X must be a super key (candidate key).",
+    "explanation_ar": "صيغة BCNF تشترط بصرامة أنه لأي اعتمادية وظيفية (X → Y)، يجب أن يكون المحدد (X) مفتاحاً فائقاً (Super Key).",
+    "explanation_en": "BCNF is a stricter version of 3NF, requiring that for any non-trivial functional dependency X → Y, X must be a superkey."
+  },
+  {
+    "id": 28,
+    "difficulty": "hard",
+    "question": "Which of the following best describes total participation in an ER diagram?",
+    "options": [
+      "Every entity in the entity set must participate in at least one relationship",
+      "Some entities may not participate in the relationship",
+      "Only weak entities participate",
+      "Only strong entities participate",
+      "Participation depends on cardinality only"
+    ],
+    "correct_answer": "Every entity in the entity set must participate in at least one relationship",
+    "explanation_ar": "المشاركة الكلية (Total Participation)، والتي يُمز لها بخط مزدوج، تعني أن كل عنصر في الكيان يجب أن يكون مرتبطاً في هذه العلاقة.",
+    "explanation_en": "Total participation mandates that every instance of an entity must be involved in the associated relationship."
+  },
+  {
+    "id": 29,
+    "difficulty": "hard",
+    "question": "To do a union in relational algebra, the two relations must have",
+    "options": [
+      "Same schema (same number of attributes and compatible domains)",
+      "Same data values in all tuples",
+      "Same primary key only",
+      "Same number of rows",
+      "Same attribute names only"
+    ],
+    "correct_answer": "Same schema (same number of attributes and compatible domains)",
+    "explanation_ar": "لتنفيذ عملية الاتحاد (Union)، يجب أن يكون الجدولان (متوافقين) أي لهما نفس عدد الأعمدة وأنواع بيانات متوافقة (Same Schema).",
+    "explanation_en": "Union compatibility requires both relations to have the same number of attributes with corresponding compatible domains."
+  },
+  {
+    "id": 30,
+    "difficulty": "hard",
+    "question": "DDL includes",
+    "options": [
+      "CREATE",
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE"
+    ],
+    "correct_answer": "CREATE",
+    "explanation_ar": "لغة تعريف البيانات (DDL) تتضمن أوامر الهيكل مثل CREATE و DROP و ALTER. بينما البقية تابعة لـ DML.",
+    "explanation_en": "DDL (Data Definition Language) includes commands that define the schema, such as CREATE, ALTER, and DROP."
+  },
+  {
+    "id": 31,
+    "difficulty": "hard",
+    "question": "A subquery is",
+    "options": [
+      "Outer query",
+      "Join operation",
+      "A query inside another query",
+      "Table structure",
+      "Index structure"
+    ],
+    "correct_answer": "A query inside another query",
+    "explanation_ar": "الاستعلام الفرعي (Subquery) هو بكل بساطة استعلام متداخل يتم كتابته داخل استعلام آخر.",
+    "explanation_en": "A subquery is a query that is nested inside another SQL query."
+  },
+  {
+    "id": 32,
+    "difficulty": "hard",
+    "question": "In a database, an index is used to",
+    "options": [
+      "Improve data retrieval performance",
+      "Increase storage size",
+      "Delete duplicate records",
+      "Enforce referential integrity",
+      "Replace primary keys"
+    ],
+    "correct_answer": "Improve data retrieval performance",
+    "explanation_ar": "الفهرس (Index) يُستخدم بشكل أساسي لتسريع وتحسين أداء استرجاع البيانات (عمليات البحث والقراءة) من جداول قاعدة البيانات.",
+    "explanation_en": "An index is a data structure used to speed up data retrieval operations on a database table."
+  },
+  {
+    "id": 33,
+    "difficulty": "hard",
+    "question": "Conceptual design uses",
+    "options": [
+      "ER model",
+      "SQL",
+      "Programming code",
+      "Hardware design",
+      "Index structures"
+    ],
+    "correct_answer": "ER model",
+    "explanation_ar": "مرحلة التصميم المفاهيمي (Conceptual Design) تعتمد على نماذج عالية المستوى مثل مخطط الكيانات والعلاقات (ER Model) لتمثيل بنية البيانات بشكل مستقل عن أي نظام.",
+    "explanation_en": "Conceptual design utilizes high-level data models like the Entity-Relationship (ER) model to represent data requirements independently of specific software."
+  },
+  {
+    "id": 34,
+    "difficulty": "hard",
+    "question": "What kind of anomaly happens because of redundancy?",
+    "options": [
+      "Insertion anomaly",
+      "Deletion anomaly",
+      "Update anomaly",
+      "All of the above",
+      "Not of all"
+    ],
+    "correct_answer": "All of the above",
+    "explanation_ar": "تكرار البيانات (Redundancy) في الجداول غير المطبعة يؤدي إلى حدوث شذوذ في الإضافة، والحذف، والتحديث (جميع ما سبق).",
+    "explanation_en": "Data redundancy leads to three main types of anomalies: insertion, deletion, and update anomalies (All of the above)."
+  },
+  {
+    "id": 35,
+    "difficulty": "hard",
+    "question": "Which of the following is NOT a characteristic of the database approach?",
+    "options": [
+      "Insulation between programs and data",
+      "Support of multiple views of the data",
+      "Sharing of data and multi-user transaction processing",
+      "Physical coupling of applications and storage structures",
+      "Use of a software catalog to store metadata"
+    ],
+    "correct_answer": "Physical coupling of applications and storage structures",
+    "explanation_ar": "من أهم خصائص قواعد البيانات هو \"فصل\" واستقلالية التطبيقات عن هياكل التخزين المادي. لذلك، الارتباط المادي (Physical coupling) هو من عيوب نظام الملفات القديم وليس من خصائص قواعد البيانات.",
+    "explanation_en": "The database approach provides program-data independence. Physical coupling of applications and storage structures is a characteristic of older file systems, not modern databases."
+  },
+  {
+    "id": 36,
+    "difficulty": "hard",
+    "question": "Which type of database user is characterized by occasionally accessing the database but needing different information each time?",
+    "options": [
+      "Casual end users",
+      "Naive or Parametric end users",
+      "Sophisticated end users",
+      "Standalone users",
+      "Database Designers"
+    ],
+    "correct_answer": "Casual end users",
+    "explanation_ar": "المستخدمون العرضيون (Casual end users) هم الذين يدخلون لقاعدة البيانات من وقت لآخر ويحتاجون إلى معلومات مختلفة ومعقدة في كل مرة (مثل المديرين).",
+    "explanation_en": "Casual end users occasionally access the database, and their information needs typically vary from one request to another."
+  },
+  {
+    "id": 37,
+    "difficulty": "hard",
+    "question": "What is the main purpose of the \"Internal Level\" schema in the Three-Schema Architecture?",
+    "options": [
+      "To describe the entire database for a community of users",
+      "To define the user views",
+      "To describe physical storage structures and access paths",
+      "To handle logical record relationships",
+      "To define the security constraints for the DBA"
+    ],
+    "correct_answer": "To describe physical storage structures and access paths",
+    "explanation_ar": "المستوى الداخلي (Internal Level) في معمارية الثلاث مخططات يختص بوصف هياكل التخزين المادي للبيانات ومسارات الوصول إليها (Access paths) داخل النظام.",
+    "explanation_en": "The internal schema is concerned with how the data is physically stored and the access paths (like indexes) used to retrieve it."
+  },
+  {
+    "id": 38,
+    "difficulty": "hard",
+    "question": "The process of transforming requests and results between the different levels of the Three-Schema Architecture is known as",
+    "options": [
+      "Normalization",
+      "Mapping",
+      "Encapsulation",
+      "Compilation",
+      "Translation"
+    ],
+    "correct_answer": "Mapping",
+    "explanation_ar": "عملية تحويل الطلبات والنتائج بين المستويات المختلفة (الخارجي، المنطقي، الداخلي) تسمى التخطيط أو الربط (Mapping).",
+    "explanation_en": "Mapping is the process of transforming requests and results between the external, conceptual, and internal levels of the database architecture."
+  },
+  {
+    "id": 39,
+    "difficulty": "hard",
+    "question": "Which of the following is NOT a valid value for a primary key attribute?",
+    "options": [
+      "Zero",
+      "A negative number",
+      "An empty string",
+      "A very large integer",
+      "NULL"
+    ],
+    "correct_answer": "NULL",
+    "explanation_ar": "المفتاح الأساسي (Primary Key) يجب أن يحدد السجل بشكل فريد ولا يمكن أبداً أن يحتوي على قيمة فارغة (NULL) بحسب قاعدة تكامل الكيان (Entity Integrity).",
+    "explanation_en": "According to the entity integrity constraint, no component of the primary key can have a NULL value."
+  },
+  {
+    "id": 40,
+    "difficulty": "hard",
+    "question": "In SQL, the CHECK clause is used to:",
+    "options": [
+      "Check if a table exists",
+      "Verify the user's password",
+      "Link a primary key to a foreign key",
+      "Sort the output of a query",
+      "Specify a condition that each row in the table must satisfy"
+    ],
+    "correct_answer": "Specify a condition that each row in the table must satisfy",
+    "explanation_ar": "قيد CHECK في SQL يُستخدم لتحديد شرط معين يجب أن تستوفيه جميع الصفوف في الجدول (مثال: التأكد من أن العمر المدخل أكبر من 18).",
+    "explanation_en": "The CHECK constraint ensures that all values in a column or multiple columns satisfy a specified condition."
+  },
+  {
+    "id": 41,
+    "difficulty": "hard",
+    "question": "A \"Correlated Subquery\" is a subquery that",
+    "options": [
+      "Executes independently of the outer query",
+      "References a column from the outer query",
+      "Returns only one value",
+      "Is used only with the INSERT statement",
+      "Can only be used in the FROM clause"
+    ],
+    "correct_answer": "References a column from the outer query",
+    "explanation_ar": "الاستعلام الفرعي المترابط (Correlated Subquery) هو الاستعلام الذي يشير إلى عمود أو يعتمد على بيانات من الاستعلام الخارجي، ولذلك يتم تنفيذه مرة واحدة لكل صف في الاستعلام الخارجي.",
+    "explanation_en": "A correlated subquery is a subquery that references a column from a table in the outer query, meaning it must be evaluated for each row of the outer query."
+  },
+  {
+    "id": 42,
+    "difficulty": "hard",
+    "question": "If you want to join Table A and Table B such that only the rows with matching values in both tables are returned, you use:",
+    "options": [
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "INNER JOIN",
+      "FULL JOIN",
+      "CROSS JOIN"
+    ],
+    "correct_answer": "INNER JOIN",
+    "explanation_ar": "الربط الداخلي (INNER JOIN) يقوم بإرجاع الصفوف التي تحتوي على قيم متطابقة (تقاطع) في كلا الجدولين المربوطين فقط.",
+    "explanation_en": "An INNER JOIN clause selects records that have matching values in both tables."
+  },
+  {
+    "id": 43,
+    "difficulty": "hard",
+    "question": "Which of the following is a result of the Logical Design phase?",
+    "options": [
+      "The ER diagram",
+      "The Relational Schema (DDL)",
+      "The B-Tree index specifications",
+      "The hardware requirements list",
+      "The user interviews"
+    ],
+    "correct_answer": "The Relational Schema (DDL)",
+    "explanation_ar": "في مرحلة التصميم المنطقي (Logical Design)، يتم تحويل مخططات ER (المفاهيمية) إلى مخطط علائقي (Relational Schema) جاهز للاستخدام.",
+    "explanation_en": "The logical design phase results in a relational schema, converting conceptual models into tables, columns, and keys."
+  },
+  {
+    "id": 44,
+    "difficulty": "hard",
+    "question": "A \"Distributed Database\" is defined as a",
+    "options": [
+      "Single database stored on one powerful computer",
+      "Collection of independent databases not connected by a network",
+      "Single logical database physically spread across multiple computers in a network",
+      "Database used only for NoSQL data",
+      "Database that does not allow concurrent access"
+    ],
+    "correct_answer": "Single logical database physically spread across multiple computers in a network",
+    "explanation_ar": "قاعدة البيانات الموزعة تعتبر قاعدة بيانات واحدة من الناحية المنطقية، ولكن أجزاءها موزعة مادياً (Physically) عبر عدة أجهزة كمبيوتر متصلة بشبكة.",
+    "explanation_en": "A distributed database is a single logical database that is spread physically across computers in multiple locations that are connected by a data communications network."
+  },
+  {
+    "id": 45,
+    "difficulty": "hard",
+    "question": "A term used to describe the \"smallest unit of data\" like the \"Account Number\" in the bank table.",
+    "options": [
+      "Record",
+      "Tuple",
+      "Field or Data element",
+      "File",
+      "Metadata"
+    ],
+    "correct_answer": "Field or Data element",
+    "explanation_ar": "الحقل أو عنصر البيانات (Field or Data element) هو أصغر وحدة تخزين منطقية للبيانات في الجدول، مثل عمود \"رقم الحساب\" أو \"الاسم\".",
+    "explanation_en": "A field (or data element) is the smallest logical unit of data in a record, representing a specific attribute."
+  },
+  {
+    "id": 46,
+    "difficulty": "hard",
+    "question": "What is the name of this high-level data model often used in the early stages of database design?",
+    "options": [
+      "Relational Model",
+      "Entity-Relationship (E-R) Model",
+      "Semi-structured Model",
+      "Network Model",
+      "Hierarchical Model"
+    ],
+    "correct_answer": "Entity-Relationship (E-R) Model",
+    "explanation_ar": "نموذج الكيانات والعلاقات (ER Model) هو نموذج بيانات عالي المستوى يُستخدم دائماً في المراحل الأولى (التصميم المفاهيمي) لتمثيل متطلبات قاعدة البيانات.",
+    "explanation_en": "The Entity-Relationship (ER) model is a high-level conceptual data model typically used in the early stages of database design to gather and define requirements."
+  },
+  {
+    "id": 47,
+    "difficulty": "hard",
+    "question": "What is a data model that organizes data as a tree-like structure where each child node can have only one parent node?",
+    "options": [
+      "Relational Model",
+      "Network Model",
+      "Hierarchical Model",
+      "Object-Oriented Model",
+      "Semi-structured Model"
+    ],
+    "correct_answer": "Hierarchical Model",
+    "explanation_ar": "النموذج الهرمي (Hierarchical Model) ينظم البيانات في شكل يشبه الشجرة المقلوبة، حيث يكون لكل عقدة ابن (Child) أب واحد فقط (Parent).",
+    "explanation_en": "The Hierarchical Data Model organizes data into a tree-like structure, representing one-to-many relationships where each child has exactly one parent."
+  },
+  {
+    "id": 48,
+    "difficulty": "hard",
+    "question": "A Teacher table with attributes (TeacherID, name, salary). What is the formal term for the attribute TeacherID that identifies each tuple uniquely in the relation?",
+    "options": [
+      "Foreign Key",
+      "Super Key",
+      "Composite Attribute",
+      "Domain",
+      "Null attribute"
+    ],
+    "correct_answer": "Super Key",
+    "explanation_ar": "رقم المعلم (TeacherID) يحدد كل صف بشكل فريد، لذا فهو يُعتبر مفتاحاً أساسياً (Primary Key) ومفتاحاً فائقاً (Super Key) في نفس الوقت. وبما أن المفتاح الأساسي غير موجود في الخيارات، فالإجابة الصحيحة هي المفتاح الفائق.",
+    "explanation_en": "Since TeacherID uniquely identifies each tuple, it acts as a primary key, which by definition makes it a Super Key as well (and 'Primary Key' is not among the options)."
+  },
+  {
+    "id": 49,
+    "difficulty": "hard",
+    "question": "What type of participation constraint in the relationship that represented by a double line in the ER diagram ?",
+    "options": [
+      "Partial Participation",
+      "Optional Participation",
+      "Total Participation",
+      "Recursive Participation",
+      "Subordinate Participation"
+    ],
+    "correct_answer": "Total Participation",
+    "explanation_ar": "الخط المزدوج في مخطط ER يرمز إلى المشاركة الكلية (Total Participation)، ويعني أن كل كيان من هذا النوع يجب أن يشارك في العلاقة.",
+    "explanation_en": "A double line in an ER diagram indicates Total Participation, meaning every entity instance must participate in the relationship."
+  },
+  {
+    "id": 50,
+    "difficulty": "hard",
+    "question": "A Student entity has a BirthDate attribute. How should the Age attribute be modeled in the ER diagram when it is calculated from the BirthDate?",
+    "options": [
+      "As a composite attribute",
+      "As a multi-valued attribute",
+      "As a derived attribute",
+      "As a simple atomic attribute",
+      "As a primary key"
+    ],
+    "correct_answer": "As a derived attribute",
+    "explanation_ar": "بما أن العمر (Age) يمكن حسابه واستنتاجه برمجياً من تاريخ الميلاد (BirthDate)، فإنه يُصنف كخاصية مشتقة (Derived attribute) وتُرسم بشكل بيضوي منقط.",
+    "explanation_en": "An attribute whose value is calculated from another attribute (like Age from BirthDate) is modeled as a derived attribute."
+  },
+  {
+    "id": 51,
+    "difficulty": "hard",
+    "question": "A table is in 2NF, but it contains a \"transitive dependency\" where a non-prime attribute depends on another non-prime attribute. the required step to transform this table into 3NF is:",
+    "options": [
+      "Combine all attributes into a single table.",
+      "Eliminate multivalued attributes.",
+      "Move the non-key field and its dependent fields to a new table.",
+      "Make the primary key a composite key.",
+      "Add more NULL attribute to the existing table."
+    ],
+    "correct_answer": "Move the non-key field and its dependent fields to a new table.",
+    "explanation_ar": "للتخلص من الاعتمادية المتعدية (Transitive dependency) وتحويل الجدول إلى 3NF، يجب فصل الحقل غير الأساسي (الذي تعتمد عليه حقول أخرى) ونقله مع حقوله المعتمدة إلى جدول جديد.",
+    "explanation_en": "To achieve 3NF, transitive dependencies must be removed by placing the non-key determinant and its dependent attributes into a separate, new table."
+  },
+  {
+    "id": 52,
+    "difficulty": "hard",
+    "question": "To increase the salary of all employees in the \"finance\" department by 5%. The DML command that used to modify the data in a table is:",
+    "options": [
+      "INSERT",
+      "DELETE",
+      "SELECT",
+      "UPDATE",
+      "ALTER"
+    ],
+    "correct_answer": "UPDATE",
+    "explanation_ar": "أمر التحديث (UPDATE) هو التعليمة المخصصة في لغة DML لتعديل أو تحديث البيانات الموجودة مسبقاً في الجداول، مثل زيادة الراتب.",
+    "explanation_en": "The UPDATE command is the standard Data Manipulation Language (DML) statement used to modify existing records in a table."
+  },
+  {
+    "id": 53,
+    "difficulty": "hard",
+    "question": "To ensure that no employee is added to the database without a name. The integrity constraint that should be applied to the name attribute in the create table command is:",
+    "options": [
+      "primary key",
+      "unique",
+      "check",
+      "not null",
+      "foreign key"
+    ],
+    "correct_answer": "not null",
+    "explanation_ar": "قيد (NOT NULL) يضمن إجبار المستخدم على إدخال قيمة في هذا الحقل وعدم تركه فارغاً، مما يمنع إضافة موظف بدون اسم.",
+    "explanation_en": "The NOT NULL constraint ensures that a column cannot have a NULL value, requiring data to be entered during insertion."
+  },
+  {
+    "id": 54,
+    "difficulty": "hard",
+    "question": "To only see instructor names and departments, but not salaries, the \"virtual relation\" that used to provide this restricted view of the data is:",
+    "options": [
+      "Table",
+      "Index",
+      "View",
+      "Constraint",
+      "query"
+    ],
+    "correct_answer": "View",
+    "explanation_ar": "طريقة العرض (View) هي جدول افتراضي يُستخدم لحجب بعض البيانات الحساسة (مثل الرواتب) وتوفير رؤية مقيدة للبيانات التي يُسمح للمستخدم برؤيتها فقط.",
+    "explanation_en": "A View is a virtual table that can be used to restrict access to underlying data, showing only specific columns like names and departments while hiding sensitive ones like salaries."
+  },
+  {
+    "id": 55,
+    "difficulty": "hard",
+    "question": "Which part of the SDLC Planning phase that addresses if a new system is technically possible and if they can afford it?",
+    "options": [
+      "Initial assessment",
+      "Feasibility study",
+      "User requirements audit",
+      "Detailed systems design",
+      "System maintenance"
+    ],
+    "correct_answer": "Feasibility study",
+    "explanation_ar": "دراسة الجدوى (Feasibility study) هي الخطوة في مرحلة التخطيط التي تُقيم ما إذا كان المشروع قابلاً للتطبيق من الناحية الفنية (تقنياً) والمالية (مادياً).",
+    "explanation_en": "The feasibility study evaluates the technical and financial viability of a proposed system during the planning phase of the SDLC."
+  },
+  {
+    "id": 56,
+    "difficulty": "hard",
+    "question": "The specific name for a stage of database design that involves creating a structure realistic to real-world objects that is independent of any specific DBMS software or hardware is",
+    "options": [
+      "Physical Design",
+      "Logical Design",
+      "DBMS Selection",
+      "Implementation",
+      "Conceptual Design"
+    ],
+    "correct_answer": "Conceptual Design",
+    "explanation_ar": "التصميم المفاهيمي (Conceptual Design) هو مرحلة تصميم قاعدة البيانات بشكل يعكس الكيانات الواقعية، ويكون مستقلاً تماماً عن أي برامج (DBMS) أو أجهزة.",
+    "explanation_en": "Conceptual Design creates a high-level, software-and-hardware-independent model of the database representing real-world entities."
+  },
+  {
+    "id": 57,
+    "difficulty": "hard",
+    "question": "Which design stage is focusing on determining technical specifications for data storage, such as table spaces and access methods like indexes?",
+    "options": [
+      "Physical Design",
+      "Conceptual Design",
+      "Logical Design",
+      "DBMS installation",
+      "Database Initial Study"
+    ],
+    "correct_answer": "Physical Design",
+    "explanation_ar": "التصميم المادي (Physical Design) هو المرحلة التي تُعنى بتحديد التفاصيل التقنية الدقيقة للتخزين على الأقراص، مثل مساحات الجداول، وأنواع البيانات الفعلية، وبناء الفهارس.",
+    "explanation_en": "Physical Design deals with mapping the logical model to physical storage structures, defining table spaces, indexing, and access methods for a specific DBMS."
+  },
+  {
+    "id": 58,
+    "difficulty": "hard",
+    "question": "During physical design, what is the storage technique is used to store related rows from two tables in adjacent data blocks on a disk to reduce access time?",
+    "options": [
+      "Indexing",
+      "Fragmentation",
+      "Normalization",
+      "Clustered tables",
+      "Virtualization"
+    ],
+    "correct_answer": "Clustered tables",
+    "explanation_ar": "الجداول المجمعة (Clustered tables) هي تقنية تخزين مادية يتم فيها وضع الصفوف المرتبطة منطقياً ببعضها (من جداول مختلفة) بجوار بعضها البعض على القرص الصلب لتسريع القراءة.",
+    "explanation_en": "Clustering physically stores related rows from joined tables in adjacent blocks on the disk to significantly reduce I/O access time."
+  },
+  {
+    "id": 59,
+    "difficulty": "hard",
+    "question": "A specific connectivity interface that is designed for Java programs to interact with various data sources. This interface is",
+    "options": [
+      "ODBC",
+      "ADO.NET",
+      "DAO",
+      "JDBC",
+      "RDO"
+    ],
+    "correct_answer": "JDBC",
+    "explanation_ar": "واجهة JDBC (Java Database Connectivity) هي الواجهة القياسية المخصصة حصرياً لبرامج لغة جافا للتواصل وإرسال الأوامر إلى قواعد البيانات المختلفة.",
+    "explanation_en": "JDBC is a standard Java API that enables Java applications to connect to and interact with relational databases."
+  },
+  {
+    "id": 60,
+    "difficulty": "hard",
+    "question": "A basic NoSQL data model can be used to store user session tokens where each token is simply linked to a block of user data. this data model is",
+    "options": [
+      "Document database",
+      "Graph database",
+      "Column-family database",
+      "Key-value (KV) database",
+      "Relational database"
+    ],
+    "correct_answer": "Key-value (KV) database",
+    "explanation_ar": "قاعدة بيانات المفتاح والقيمة (Key-value KV) هي أبسط أنواع قواعد بيانات NoSQL، وهي مثالية لتخزين رموز الجلسات (Tokens) كمفتاح، وبيانات المستخدم كقيمة.",
+    "explanation_en": "A Key-Value database simply maps a unique identifier (key) to a blob of data (value), making it highly efficient for storing session tokens and fast lookups."
+  }
+]
